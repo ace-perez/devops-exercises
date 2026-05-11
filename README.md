@@ -449,16 +449,6 @@ Optimize costs
 
 </details>
 
-<details>
-<summary><b>How does FinOps fit into DevOps?</b></summary>
-
-FinOps (Financial Operations) helps manage cloud spending efficiently. Practices include:
-
-Cost monitoring tools (AWS Cost Explorer, Azure Cost Management)
-Auto-scaling and right-sizing resources
-Tagging and budgeting policies
-
-</details>
 
 <details>
 <summary><b>What are the challenges of DevOps adoption in large enterprises?</b></summary>
@@ -470,12 +460,6 @@ Skill gaps within teams
 
 </details>
 
-<details>
-<summary><b>What is a Kubernetes operator?</b></summary>
-
-A Kubernetes Operator automates complex application lifecycle management tasks by extending Kubernetes capabilities using custom controllers.
-
-</details>
 
 <details>
 <summary><b>What are observability pillars in DevOps?</b></summary>
@@ -948,13 +932,6 @@ Key DevOps best practices include:
 </details>
 
 <details>
-<summary><b>Why is version control important in DevOps?</b></summary>
-
-Version control (e.g., Git) helps track changes, collaborate effectively, and rollback if needed.
-
-</details>
-
-<details>
 <summary><b>What are the key components of a CI/CD pipeline?</b></summary>
 
 - Code commit
@@ -995,42 +972,14 @@ Logging helps in troubleshooting, analyzing trends, and ensuring application rel
 </details>
 
 <details>
-<summary><b>What is immutable infrastructure?</b></summary>
-
-Infrastructure that is replaced rather than modified to ensure consistency.
-
-</details>
-
-<details>
-<summary><b>What are microservices, and how do they impact DevOps?</b></summary>
-
-Microservices are small, independent services that allow faster development, scalability, and easier deployments.
-
-</details>
-
-<details>
 <summary><b>How do you manage secrets in DevOps?</b></summary>
 
 Using secret management tools like HashiCorp Vault, AWS Secrets Manager, and Kubernetes Secrets.
 
 </details>
 
-<details>
-<summary><b>Why is containerization important in DevOps?</b></summary>
-
-Containers provide portability, consistency, and efficient resource utilization.
-
-</details>
-
 
 ### 🟡 Intermediate
-
-<details>
-<summary><b>How do you handle configuration management in DevOps?</b></summary>
-
-Using tools like Ansible, Puppet, and Chef to automate configurations.
-
-</details>
 
 <details>
 <summary><b>How do you ensure high availability in a cloud-based architecture?</b></summary>
@@ -1039,13 +988,6 @@ Using load balancing, auto-scaling, multi-region deployments, and failover mecha
 
 </details>
 
-<details>
-<summary><b>What is the difference between monolithic and microservices architectures?</b></summary>
-
-- **Monolithic:** A single large application.
-- **Microservices:** Independent services communicating over APIs.
-
-</details>
 
 <details>
 <summary><b>How do you secure a CI/CD pipeline?</b></summary>
@@ -1103,13 +1045,6 @@ Using tools like Terratest (for Terraform), InSpec, and Pester.
 </details>
 
 <details>
-<summary><b>How do you manage multi-cloud deployments?</b></summary>
-
-Using Terraform, Kubernetes, and cloud-agnostic tools like HashiCorp Vault and Istio.
-
-</details>
-
-<details>
 <summary><b>What is the difference between SLO and SLI?</b></summary>
 
 - **SLO (Service Level Objective):** A target level of reliability (e.g., 99.9% uptime).
@@ -1149,23 +1084,9 @@ Using an on-call rotation, alerting, and post-mortems.
 </details>
 
 <details>
-<summary><b>How do you enforce security compliance in a DevOps pipeline?</b></summary>
-
-By integrating security scanning, linting, and automated compliance tests.
-
-</details>
-
-<details>
 <summary><b>How do you manage hybrid cloud environments?</b></summary>
 
 Using tools like Anthos, Azure Arc, and Terraform.
-
-</details>
-
-<details>
-<summary><b>What is an SBOM (Software Bill of Materials)?</b></summary>
-
-A list of all components in software, used for security analysis.
 
 </details>
 
@@ -1182,13 +1103,6 @@ Using AWS Lambda, Ansible, or Kubernetes operators to fix issues automatically.
 - Use RBAC (Role-Based Access Control)
 - Enable Pod Security Policies
 - Rotate TLS certificates
-
-</details>
-
-<details>
-<summary><b>How do you optimize cloud costs in a DevOps environment?</b></summary>
-
-By using spot instances, auto-scaling, and rightsizing resources.
 
 </details>
 
@@ -1563,45 +1477,6 @@ StackSets	Deploy stacks across multiple accounts
 
 </details>
 
-<details>
-<summary><b>How do you update a CloudFormation stack?</b></summary>
-
-Use:
-
-aws cloudformation update-stack --stack-name my-stack --template-body file://template.yml
-
-</details>
-
-<details>
-<summary><b>What is the difference between DependsOn and CreationPolicy in CloudFormation?</b></summary>
-
-Feature	Purpose
-DependsOn	Ensures a resource is created before another
-CreationPolicy	Waits for a signal before marking as successful
-Example (DependsOn):
-
-Resources:
-  WebServer:
-    Type: AWS::EC2::Instance
-    DependsOn: MyDB
-
-</details>
-
-<details>
-<summary><b>How do you use Conditions in CloudFormation?</b></summary>
-
-Conditions allow resources to be created based on parameters.
-
-Example:
-
-Conditions:
-  IsProd: !Equals [!Ref EnvType, "Prod"]
-Resources:
-  MyBucket:
-    Type: AWS::S3::Bucket
-    Condition: IsProd
-
-</details>
 
 <details>
 <summary><b>What is AWS CloudFormation Drift Detection?</b></summary>
@@ -1611,21 +1486,6 @@ Detects manual changes to resources outside CloudFormation.
 Run drift check:
 
 aws cloudformation detect-stack-drift --stack-name my-stack
-
-</details>
-
-<details>
-<summary><b>What are Intrinsic Functions in CloudFormation?</b></summary>
-
-Intrinsic functions dynamically reference values.
-
-Example (!Sub for string interpolation):
-
-Resources:
-  MyBucket:
-    Type: AWS::S3::Bucket
-    Properties:
-      BucketName: !Sub "${AWS::AccountId}-my-bucket"
 
 </details>
 
@@ -1753,24 +1613,6 @@ tfsec .
 </details>
 
 <details>
-<summary><b>How does Terraform manage multi-cloud environments?</b></summary>
-
-By using multiple providers in a single configuration.
-
-Example (AWS + Azure):
-
-provider "aws" {
-  region = "us-east-1"
-}
-
-provider "azurerm" {
-  features {}
-}
-Ansible Questions
-
-</details>
-
-<details>
 <summary><b>How do you test Ansible Playbooks before applying them?</b></summary>
 
 ✅ Use ansible-lint for syntax validation
@@ -1810,21 +1652,6 @@ ANSIBLE_VAULT_PASSWORD="myvaultpassword" ansible-playbook deploy.yml
 </details>
 
 <details>
-<summary><b>How does Ansible integrate with Kubernetes?</b></summary>
-
-✅ Use the k8s module
-✅ Define Kubernetes manifests in YAML
-
-Example:
-
-- name: Deploy to Kubernetes
-  k8s:
-    state: present
-    definition: "{{ lookup('file', 'deployment.yml') }}"
-
-</details>
-
-<details>
 <summary><b>How do you ensure Ansible Playbooks are idempotent?</b></summary>
 
 ✅ Always use state: present
@@ -1840,21 +1667,6 @@ CloudFormation Questions
 
 </details>
 
-<details>
-<summary><b>How do you modularize CloudFormation templates?</b></summary>
-
-✅ Use Nested Stacks
-✅ Use AWS::CloudFormation::Stack
-
-Example:
-
-Resources:
-  MyNetworkStack:
-    Type: AWS::CloudFormation::Stack
-    Properties:
-      TemplateURL: "https://s3.amazonaws.com/my-bucket/network.yml"
-
-</details>
 
 <details>
 <summary><b>How do you debug CloudFormation failures?</b></summary>
@@ -2085,17 +1897,6 @@ kubectl set image deployment/my-app my-container=nginx:latest
 ### 🟡 Intermediate
 
 <details>
-<summary><b>What is the difference between Docker ADD and COPY?</b></summary>
-
-| Feature | ADD | COPY |
-|---|---|---|
-| Function | Copies files and extracts compressed files | Copies files only |
-| Supports URLs? | Yes | No |
-| Best Practice | Use for archives (.tar.gz) | Use for simple file copies |
-
-</details>
-
-<details>
 <summary><b>How do you optimize Docker images?</b></summary>
 
 - Use smaller base images (e.g., `alpine` instead of `ubuntu`).
@@ -2151,16 +1952,6 @@ docker run --network=mynetwork nginx
 docker system prune -a
 ```
 This removes stopped containers, unused networks, and dangling images.
-
-</details>
-
-<details>
-<summary><b>What is Docker BuildKit?</b></summary>
-
-Docker BuildKit improves build speed and caching with faster builds, parallel execution, and improved caching. Enable it with:
-```bash
-DOCKER_BUILDKIT=1 docker build .
-```
 
 </details>
 
@@ -2315,13 +2106,6 @@ Namespaces isolate resources (PID, network, mount points, etc.) for each contain
 </details>
 
 <details>
-<summary><b>What are Docker BuildKit advantages?</b></summary>
-
-Parallel execution speeds up builds, efficient caching reduces rebuild time, and secret mounts improve security. Enable with `DOCKER_BUILDKIT=1 docker build .`
-
-</details>
-
-<details>
 <summary><b>How do you secure a Docker container?</b></summary>
 
 - Use minimal base images (e.g., `alpine`).
@@ -2338,23 +2122,6 @@ docker run --user 1001 --read-only nginx
 <summary><b>How do multi-stage builds improve security in Docker?</b></summary>
 
 Multi-stage builds keep sensitive files out of the final image and reduce the attack surface by discarding unnecessary dependencies. New image versions are deployed instead of patching live containers.
-
-</details>
-
-<details>
-<summary><b>What are immutable infrastructure principles in Docker?</b></summary>
-
-Containers should be replaced rather than modified. Use image versioning instead of patching running containers — deploy new image versions rather than updating live instances.
-
-</details>
-
-<details>
-<summary><b>How does Docker Content Trust (DCT) improve security?</b></summary>
-
-DCT ensures image integrity with digital signatures.
-```bash
-export DOCKER_CONTENT_TRUST=1
-```
 
 </details>
 
@@ -2376,13 +2143,6 @@ Docker Compose is for single-host deployments, while Docker Stack is for multi-n
 
 </details>
 
-<details>
-<summary><b>How do you handle container networking in a multi-host Docker Swarm?</b></summary>
-
-Overlay networks span multiple hosts.
-```bash
-docker network create -d overlay mynetwork
-```
 
 #### Kubernetes Advanced
 
@@ -2405,37 +2165,12 @@ spec:
 </details>
 
 <details>
-<summary><b>What are PodDisruptionBudgets (PDBs)?</b></summary>
-
-PDBs ensure minimum availability during voluntary disruptions.
-```yaml
-apiVersion: policy/v1
-kind: PodDisruptionBudget
-metadata:
-  name: my-pdb
-spec:
-  minAvailable: 2
-  selector:
-    matchLabels:
-      app: my-app
-```
-
-</details>
-
-<details>
 <summary><b>How do you secure Kubernetes Secrets?</b></summary>
 
 Use encryption at rest and store secrets in external vaults (e.g., HashiCorp Vault).
 ```bash
 kubectl create secret generic db-secret --from-literal=password=mysecurepassword
 ```
-
-</details>
-
-<details>
-<summary><b>What are Kubernetes Admission Controllers?</b></summary>
-
-Admission Controllers intercept API requests before they reach the cluster. Examples include PodSecurityPolicies and ValidatingWebhookConfiguration.
 
 </details>
 
@@ -2458,15 +2193,6 @@ kubectl exec -it pod -- nslookup my-service  # Validate DNS resolution
 
 </details>
 
-<details>
-<summary><b>How does Kubernetes Horizontal Pod Autoscaler (HPA) work internally?</b></summary>
-
-HPA uses the metrics API (CPU/memory usage) and adjusts replica count dynamically.
-```bash
-kubectl autoscale deployment my-app --cpu-percent=50 --min=2 --max=10
-```
-
-</details>
 
 <details>
 <summary><b>What is Kubernetes Cluster Federation?</b></summary>
@@ -2612,27 +2338,6 @@ An IAM (Identity and Access Management) role grants permissions to cloud service
 
 </details>
 
-<details>
-<summary><b>What is CloudFormation in AWS?</b></summary>
-
-AWS CloudFormation is an Infrastructure as Code (IaC) tool that automates provisioning of cloud resources using YAML or JSON templates.
-
-</details>
-
-<details>
-<summary><b>What is Google Kubernetes Engine (GKE)?</b></summary>
-
-GKE is Google Cloud's managed Kubernetes service for deploying and managing containerized applications.
-
-</details>
-
-<details>
-<summary><b>What is Azure DevOps?</b></summary>
-
-Azure DevOps is a set of development and CI/CD tools for building, testing, and deploying applications in the cloud.
-
-</details>
-
 ### 🟡 Intermediate
 
 <details>
@@ -2642,13 +2347,6 @@ A cloud region is a geographic area where a cloud provider has multiple data cen
 
 </details>
 
-
-<details>
-<summary><b>What are Reserved Instances in AWS?</b></summary>
-
-Reserved Instances (RIs) are a pricing model where users commit to a specific instance type for 1 or 3 years in exchange for discounts of up to 75% compared to On-Demand pricing. Types include Standard RIs (best discounts), Convertible RIs (can switch instance type), and Scheduled RIs (available at specific times).
-
-</details>
 
 <details>
 <summary><b>How do you secure data in cloud storage?</b></summary>
@@ -2720,75 +2418,11 @@ An SLA is a contract between a cloud provider and a customer defining uptime gua
 
 
 <details>
-<summary><b>How does Chaos Engineering apply to cloud environments?</b></summary>
-
-Chaos Engineering intentionally injects failures to test system resilience. For example, Netflix's Simian Army kills random instances to test system fault tolerance.
-
-</details>
-
-
-<details>
 <summary><b>How do you implement multi-region deployments?</b></summary>
 
 - **Data Replication:** Sync databases across regions.
 - **Traffic Routing:** Use DNS-based routing (e.g., AWS Route 53).
 - **Failover Mechanism:** Auto-switch to another region in case of failure.
-
-</details>
-
-<details>
-<summary><b>What is a Cloud Access Security Broker (CASB)?</b></summary>
-
-A CASB is a security layer between cloud users and providers, enforcing compliance, threat protection, and data security.
-
-</details>
-
-<details>
-<summary><b>What is zero-trust security in cloud environments?</b></summary>
-
-Zero-trust security assumes no implicit trust and enforces strict identity verification for every request, regardless of whether it originates inside or outside the network.
-
-</details>
-
-<details>
-<summary><b>How does serverless architecture improve scalability?</b></summary>
-
-Serverless auto-scales instantly based on demand, eliminating the need to pre-provision resources.
-
-</details>
-
-
-<details>
-<summary><b>How do you prevent DDoS attacks in the cloud?</b></summary>
-
-- Use AWS Shield, Azure DDoS Protection, or Cloudflare WAF.
-- Implement rate limiting on API endpoints.
-- Use Network ACLs and security groups to restrict unnecessary traffic.
-
-</details>
-
-<details>
-<summary><b>What are the best practices for cloud security?</b></summary>
-
-- Least Privilege Access via IAM policies.
-- Encrypt data at rest (AES-256) and in transit (TLS).
-- Enable Multi-Factor Authentication (MFA).
-- Implement firewalls, VPNs, and private subnets.
-- Enable AWS CloudTrail, Azure Monitor, or Google Cloud Logging for real-time threat detection.
-
-</details>
-
-<details>
-<summary><b>What is a policy-as-code approach in cloud security?</b></summary>
-
-Policy-as-Code (PaC) automates security and compliance checks using code-based policies. Tools include AWS Config, Azure Policy, OPA (Open Policy Agent), and HashiCorp Sentinel.
-
-</details>
-
-<details>
-<summary><b>How do you implement cloud governance?</b></summary>
-
-Cloud governance ensures compliance, security, and cost control through identity and access control (least-privilege IAM), budget management (AWS Budgets, Azure Cost Management), and automated compliance checks (AWS Config, Azure Policy).
 
 </details>
 
@@ -3070,13 +2704,6 @@ Control Groups (cgroups) provide a mechanism to limit, account for, and isolate 
 </details>
 
 <details>
-<summary><b>How do you optimize Linux for database servers?</b></summary>
-
-Optimizing Linux for database workloads involves several system-level adjustments. Tune kernel parameters in /etc/sysctl.conf: increase vm.swappiness=10 to reduce swapping, adjust vm.dirty_ratio and vm.dirty_background_ratio for write-heavy workloads, and optimize network buffers. Configure I/O schedulers for database disks, typically using deadline for SSDs or CFQ for HDDs. Implement proper RAID configurations, preferably RAID 10 for performance and redundancy. Set appropriate filesystem mount options like noatime and nodiratime to reduce unnecessary writes. Allocate sufficient RAM for database buffer pools while leaving memory for the OS. Configure huge pages for database engines that support them. Adjust resource limits in /etc/security/limits.conf for file descriptors and process counts. Set CPU governor to performance mode for consistent response times. Consider isolating database processes to specific CPU cores using taskset or cgroups.
-
-</details>
-
-<details>
 <summary><b>What is Linux Traffic Control (tc) and how is it used?</b></summary>
 
 Linux Traffic Control (tc) is a powerful framework for managing network traffic through Quality of Service (QoS) policies, traffic shaping, and bandwidth allocation. It uses the concept of queueing disciplines (qdiscs) to control how packets are sent and received. Common use cases include limiting bandwidth with tc qdisc add dev eth0 root tbf rate 1mbit burst 32kbit latency 400ms, prioritizing traffic types with Hierarchical Token Bucket (HTB) classes, implementing fair queuing with Stochastic Fairness Queuing (SFQ), and reducing latency with Controlled Delay (CoDel) for bufferbloat mitigation. Traffic can be classified using filters based on IP addresses, ports, or other criteria. TC is particularly useful for WAN links, ensuring critical services get priority, preventing a single user from consuming all bandwidth, and simulating network conditions for testing.
@@ -3145,23 +2772,6 @@ For monitoring and analysis, combine automated and manual approaches. Deploy log
 In larger environments, implement log shipping from all servers to a central log server using rsyslog's forwarding capabilities or specialized agents like Filebeat. This centralization facilitates cross-system correlation, simplifies backups, and protects logs from tampering on compromised systems. For security-sensitive environments, consider implementing log signing and verification to detect log tampering.
 
 Best practices include establishing baseline patterns to identify abnormal activity, implementing consistent timestamp formats (preferably UTC) across systems, maintaining proper permissions on log files, creating documented procedures for log review during incidents, and regularly testing that logging is functioning correctly, particularly for security-critical events.
-
-</details>
-
-<details>
-<summary><b>How do you implement disk quotas in Linux?</b></summary>
-
-Disk quotas in Linux limit how much disk space users or groups can consume, preventing individual users from monopolizing storage resources. Implementation involves kernel support, appropriate filesystem mounting, quota database initialization, and setting specific limits for users or groups.
-
-Begin by ensuring your kernel supports quotas and installing necessary utilities with apt install quota or equivalent. Modify /etc/fstab to enable quotas by adding usrquota,grpquota to the mount options for relevant filesystems, then remount with mount -o remount /filesystem or reboot the system to apply these changes.
-
-Initialize the quota database files by running quotacheck -cum /filesystem which creates the necessary aquota.user and aquota.group files. Enable quota enforcement with quotaon -av. For XFS filesystems, the process differs slightly, using xfs_quota commands instead.
-
-Set limits for users with edquota -u username, which opens an editor to define soft limits (warning thresholds), hard limits (absolute maximums), and grace periods (time allowed to exceed soft limits). Similar group quotas can be set with edquota -g groupname. For efficiency when applying the same quotas to multiple users, use edquota -p reference_user -u target_user.
-
-Monitor quota usage with repquota -a for a system-wide report, or quota -u username for individual users. Automate monitoring with scripts that alert administrators when users approach their limits. For users, provide clear documentation about their quota limits and how to check their current usage.
-
-In environments with dynamic user creation, integrate quota assignment into your user provisioning process, either through scripts or configuration management tools like Ansible. Regularly review quota policies to ensure they align with current storage capabilities and organizational requirements.
 
 </details>
 
@@ -3607,20 +3217,6 @@ The introduction of virtual machines allowed companies to deploy multiple busine
 
 </details>
 
-<details>
-<summary><b>Explain the concept of "Docker Compose" and its use in managing multi-container Docker applications</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-<details>
-<summary><b>How do you manage secrets and sensitive data in a containerized environment using Docker?</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
 ### Virtual Machines
 
 <details>
@@ -3690,15 +3286,6 @@ Port forwarding redirects network traffic from one port to another, often used t
 ### 🟡 Intermediate
 
 <details>
-<summary><b>What are the benefits of HTTPS over HTTP?</b></summary>
-
-Encryption
-Data integrity
-Authentication
-
-</details>
-
-<details>
 <summary><b>What is OSI Model and its layers?</b></summary>
 
 The OSI model has 7 layers: Physical, Data Link, Network, Transport, Session, Presentation, Application.
@@ -3716,14 +3303,6 @@ BGP is a routing protocol used for exchanging routing information between networ
 <summary><b>What is network segmentation?</b></summary>
 
 It is dividing a network into smaller parts to improve security and performance.
-
-</details>
-
-<details>
-<summary><b>What is the difference between active and passive reconnaissance?</b></summary>
-
-Active reconnaissance: Direct interaction with the target.
-Passive reconnaissance: Collecting data without direct interaction.
 
 </details>
 
@@ -3905,17 +3484,6 @@ Network Address Translation (NAT) is a process in which one or more local IP add
 </details>
 
 <details>
-<summary><b>What is a proxy? How does it work? What do we need it for?</b></summary>
-
-A proxy server acts as a gateway between you and the internet. It’s an intermediary server separating end users from the websites they browse.
-
-If you’re using a proxy server, internet traffic flows through the proxy server on its way to the address you requested. The request then comes back through that same proxy server (there are exceptions to this rule), and then the proxy server forwards the data received from the website to you.
-
-Proxy servers provide varying levels of functionality, security, and privacy depending on your use case, needs, or company policy.
-
-</details>
-
-<details>
 <summary><b>What is TCP? How does it work? What is the 3-way handshake?</b></summary>
 
 TCP 3-way handshake or three-way handshake is a process that is used in a TCP/IP network to make a connection between server and client.
@@ -4080,14 +3648,6 @@ ICMP messages are used for a variety of purposes, including:
 </details>
 
 <details>
-<summary><b>What is NAT? How does it work?</b></summary>
-
-NAT stands for Network Address Translation. It’s a way to map multiple local private addresses to a public one before transferring the information. Organizations that want multiple devices to employ a single IP address use NAT, as do most home routers.
-For example, your computer's private IP could be 192.168.1.100, but your router maps the traffic to its public IP (e.g. 1.1.1.1). Any device on the internet would see the traffic coming from your public IP (1.1.1.1) instead of your private IP (192.168.1.100).
-
-</details>
-
-<details>
 <summary><b>Which port number is used in each of the following protocols?: * SSH * SMTP * HTTP * DNS * HTTPS * FTP * SFTP?</b></summary>
 
 * SSH - 22
@@ -4247,23 +3807,6 @@ To prevent network congestion, it's important to monitor your network usage and 
 
 </details>
 
-#### Network - Misc
-
-<details>
-<summary><b>What is the Internet? Is it the same as the World Wide Web?</b></summary>
-
-The internet refers to a network of networks, transferring huge amounts of data around the globe.<br>
-The World Wide Web is an application running on millions of servers, on top of the internet, accessed through what is known as the web browser
-
-</details>
-
-<details>
-<summary><b>What is the ISP?</b></summary>
-
-ISP (Internet Service Provider) is the local internet company provider.
-
-</details>
-
 ---
 
 ### 📌 Additional Questions
@@ -4291,17 +3834,6 @@ ISP (Internet Service Provider) is the local internet company provider.
 <summary><b>True or False? HTTP is stateful?</b></summary>
 
 False. It doesn't maintain state for incoming request.
-
-</details>
-
-<details>
-<summary><b>How HTTP request looks like?</b></summary>
-
-It consists of:
-
- * Request line - request type
- * Headers - content info like length, encoding, etc.
- * Body (not always included)
 
 </details>
 
@@ -4349,13 +3881,6 @@ TODO: explain what is actually a Cookie
 </details>
 
 <details>
-<summary><b>What is HTTP Pipelining?</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-<details>
 <summary><b>You get "504 Gateway Timeout" error from an HTTP server. What does it mean?</b></summary>
 
 The server didn't receive a response from another server it communicates with in a timely manner.
@@ -4379,13 +3904,6 @@ A reverse proxy is a type of proxy server that sits between a client and a serve
 </details>
 
 
-<details>
-<summary><b>Explain what is "X-Forwarded-For"</b></summary>
-
-[Wikipedia](https://en.wikipedia.org/wiki/X-Forwarded-For): "The X-Forwarded-For (XFF) HTTP header field is a common method for identifying the originating IP address of a client connecting to a web server through an HTTP proxy or load balancer."
-
-</details>
-
 #### Load Balancers
 
 <details>
@@ -4403,47 +3921,11 @@ A load balancer accepts (or denies) incoming network traffic from a client, and 
 
 </details>
 
-<details>
-<summary><b>What load balancer techniques/algorithms are you familiar with?</b></summary>
-
-* Round Robin
-  * Weighted Round Robin
-  * Least Connection
-  * Weighted Least Connection
-  * Resource Based
-  * Fixed Weighting
-  * Weighted Response Time
-  * Source IP Hash
-  * URL Hash
-
-</details>
-
-<details>
-<summary><b>What are the drawbacks of round robin algorithm in load balancing?</b></summary>
-
-* A simple round robin algorithm knows nothing about the load and the spec of each server it forwards the requests to. It is possible, that multiple heavy workloads requests will get to the same server while other servers will got only lightweight requests which will result in one server doing most of the work, maybe even crashing at some point because it unable to handle all the heavy workloads requests by its own.
-  * Each request from the client creates a whole new session. This might be a problem for certain scenarios where you would like to perform multiple operations where the server has to know about the result of operation so basically, being sort of aware of the history it has with the client. In round robin, first request might hit server X, while second request might hit server Y and ask to continue processing the data that was processed on server X already.
-
-</details>
 
 <details>
 <summary><b>What is an Application Load Balancer?</b></summary>
 
 *(No answer provided in source)*
-
-</details>
-
-<details>
-<summary><b>In which scenarios would you use ALB?</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-<details>
-<summary><b>At what layers a load balancer can operate?</b></summary>
-
-L4 and L7
 
 </details>
 
@@ -4454,12 +3936,6 @@ Yes, you can use DNS for performing load balancing.
 
 </details>
 
-<details>
-<summary><b>What is DNS load balancing? What its advantages? When would you use it?</b></summary>
-
-*(No answer provided in source)*
-
-</details>
 
 #### Load Balancers - Sticky Sessions
 
@@ -4490,40 +3966,6 @@ Cookies. There are application based cookies and duration based cookies.
 
 </details>
 
-<details>
-<summary><b>Explain application-based cookies</b></summary>
-
-* Generated by the application and/or the load balancer
-* Usually allows to include custom data
-
-</details>
-
-<details>
-<summary><b>Explain duration-based cookies</b></summary>
-
-* Generated by the load balancer
-* Session is not sticky anymore once the duration elapsed
-
-</details>
-
-#### Load Balancers - Load Balancing Algorithms
-
-<details>
-<summary><b>Explain each of the following load balancing techniques * Round Robin * Weighted Round Robin * Least Connection * Weighted Least Connection * Resource Based * Fixed Weighting * Weighted Response Time * Source IP Hash * URL Hash</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-<details>
-<summary><b>Explain use case for connection draining?</b></summary>
-
-To ensure that a Classic Load Balancer stops sending requests to instances that are de-registering or unhealthy, while keeping the existing connections open, use connection draining. This enables the load balancer to complete in-flight requests made to instances that are de-registering or unhealthy.
-
-The maximum timeout value can be set between 1 and 3,600 seconds on both GCP and AWS.
-
-</details>
-
 #### Random
 
 <details>
@@ -4540,24 +3982,6 @@ CPU cache.
 A memory leak is a programming error that occurs when a program fails to release memory that is no longer needed, causing the program to consume increasing amounts of memory over time.
 
 The leaks can lead to a variety of problems, including system crashes, performance degradation, and instability. Usually occurring after failed maintenance on older systems and compatibility with new components over time.
-
-</details>
-
-<details>
-<summary><b>What is your favorite protocol?</b></summary>
-
-SSH
-HTTP
-DHCP
-DNS
-...
-
-</details>
-
-<details>
-<summary><b>What is the C10K problem? Is it relevant today?</b></summary>
-
-https://idiallo.com/blog/c10k-2016
 
 </details>
 
@@ -4868,23 +4292,6 @@ Grafana Questions
 
 </details>
 
-
-<details>
-<summary><b>How do you set up Grafana provisioning?</b></summary>
-
-Grafana supports automated provisioning of dashboards and data sources using YAML configuration files.
-
-Example datasource.yaml:
-
-apiVersion: 1
-datasources:
-  - name: Prometheus
-    type: prometheus
-    url: http://prometheus:9090
-    access: proxy
-
-</details>
-
 <details>
 <summary><b>What are Grafana Loki and Promtail?</b></summary>
 
@@ -4988,15 +4395,6 @@ PUT _settings
 {
   "index.search.slowlog.threshold.query.warn": "2s"
 }
-
-</details>
-
-<details>
-<summary><b>What is the ELK alternative to Prometheus and Grafana?</b></summary>
-
-Prometheus + Grafana → Metrics-based monitoring.
-ELK Stack (Elasticsearch, Logstash, Kibana) → Log-based monitoring.
-Alternative: OpenTelemetry, Loki, and InfluxDB.
 
 </details>
 
@@ -5141,22 +4539,6 @@ queue.max_bytes: 1gb
 Request cache: Stores query results.
 Shard request cache: Caches aggregations and filters.
 Doc value cache: Optimizes sorting and aggregations.
-
-</details>
-
-<details>
-<summary><b>How do you use Kibana for anomaly detection?</b></summary>
-
-Machine Learning Jobs → Identify unusual trends in logs.
-SIEM (Security Information and Event Management) → Detect security threats.
-Example anomaly detection job:
-
-{
-  "analysis_config": {
-    "bucket_span": "15m",
-    "detectors": [{ "function": "mean", "field_name": "cpu_usage" }]
-  }
-}
 
 </details>
 
@@ -5345,25 +4727,6 @@ This will return a list of all the values for the *method* label in the *http_re
 *(No answer provided in source)*
 
 </details>
-
-<details>
-<summary><b>What is "Serverless Monitoring," and how does it differ from traditional application monitoring?</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
----
-
-### Filebeat
-
-<details>
-<summary><b>What is Filebeat?</b></summary>
-
-Filebeat is used to monitor the logging directories inside of VMs or mounted as a sidecar if exporting logs from containers, and then forward these logs onward for further processing, usually to logstash.
-
-</details>
-
 
 ---
 
@@ -5581,58 +4944,6 @@ CDN (Content Delivery Network) responsible for distributing content geographical
 </details>
 
 <details>
-<summary><b>Explain Multi-CDN</b></summary>
-
-In single CDN, the whole content is originated from content delivery network.<br>
-In multi-CDN, content is distributed across multiple different CDNs, each might be on a completely different provider/cloud.
-
-</details>
-
-<details>
-<summary><b>What are the benefits of Multi-CDN over a single CDN?</b></summary>
-
-* Resiliency: Relying on one CDN means no redundancy. With multiple CDNs you don't need to worry about your CDN being down
-* Flexibility in Costs: Using one CDN enforces you to specific rates of that CDN. With multiple CDNs you can take into consideration using less expensive CDNs to deliver the content.
-* Performance: With Multi-CDN there is bigger potential in choosing better locations which more close to the client asking the content
-* Scale: With multiple CDNs, you can scale services to support more extreme conditions
-
-</details>
-
-<details>
-<summary><b>Explain "3-Tier Architecture" (including pros and cons)</b></summary>
-
-A "3-Tier Architecture" is a pattern used in software development for designing and structuring applications. It divides the application into 3 interconnected layers: Presentation, Business logic and Data storage.  
-PROS: 
-* Scalability
-* Security
-* Reusability
-CONS:
-* Complexity
-* Performance overhead
-* Cost and development time
-
-</details>
-
-
-<details>
-<summary><b>What are the drawbacks of monolithic architecture?</b></summary>
-
-* Not suitable for frequent code changes and the ability to deploy new features
-* Not designed for today's infrastructure (like public clouds)
-* Scaling a team to work monolithic architecture is more challenging
-* If a single component in this architecture fails, then the entire application fails.
-
-</details>
-
-<details>
-<summary><b>What are the advantages of microservices architecture over a monolithic architecture?</b></summary>
-
-* Each of the services individually fail without escalating into an application-wide outage.
-* Each service can be developed and maintained by a separate team and this team can choose its own tools and coding language
-
-</details>
-
-<details>
 <summary><b>Explain "Loose Coupling"</b></summary>
 
 In "Loose Coupling", components of a system communicate with each other with a little understanding of each other's internal workings. This improves scalability and ease of modification in complex systems.
@@ -5654,27 +4965,6 @@ It is a communication mechanism used in distributed systems to enable asynchrono
 
 </details>
 
-<details>
-<summary><b>What is the "12-Factor App" methodology, and how does it relate to DevOps practices?</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-
-<details>
-<summary><b>What is "Chaos Engineering," and how does it relate to DevOps practices?</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-<details>
-<summary><b>Explain the importance of "Serverless Computing" in DevOps</b></summary>
-
-*(No answer provided in source)*
-
-</details>
 
 <details>
 <summary><b>How does "Self-Healing Infrastructure" work in a DevOps environment?</b></summary>
@@ -5682,14 +4972,6 @@ It is a communication mechanism used in distributed systems to enable asynchrono
 *(No answer provided in source)*
 
 </details>
-
-<details>
-<summary><b>How to implement "Infrastructure as Code" for serverless architectures?</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
 
 <details>
 <summary><b>How do you handle data migration in a DevOps environment?</b></summary>
@@ -5969,20 +5251,6 @@ The main objective of unit tests are to verify each function is producing proper
 
 <details>
 <summary><b>Explain the concept of "Continuous Testing" in the context of DevOps</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-<details>
-<summary><b>What is "Shift-Left Testing," and how does it enhance software quality in DevOps?</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-<details>
-<summary><b>How to perform "A/B Testing" in a DevOps pipeline to evaluate new features?</b></summary>
 
 *(No answer provided in source)*
 
@@ -6286,22 +5554,9 @@ TODO: add more details!
 
 </details>
 
-<details>
-<summary><b>How does DevOps support the principles of Agile software development?</b></summary>
-
-*(No answer provided in source)*
-
-</details>
 
 <details>
 <summary><b>How do you handle configuration drift in a DevOps environment?</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-<details>
-<summary><b>What is the importance of "Continuous Documentation" in DevOps?</b></summary>
 
 *(No answer provided in source)*
 
@@ -6315,32 +5570,12 @@ TODO: add more details!
 </details>
 
 <details>
-<summary><b>Explain the concept of "Dependency Management" in DevOps</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-<details>
-<summary><b>Explain the role of "ChatOps" in DevOps communication and collaboration</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-<details>
 <summary><b>Explain the concept of "Environment Drift" and its impact on DevOps environments</b></summary>
 
 *(No answer provided in source)*
 
 </details>
 
-<details>
-<summary><b>What is "Git Flow," and How Does It Structure the Development Process in DevOps?</b></summary>
-
-*(No answer provided in source)*
-
-</details>
 
 ### API
 
@@ -6353,23 +5588,6 @@ I like this definition from [blog.christianposta.com](https://blog.christianpost
 
 </details>
 
-<details>
-<summary><b>What is an API specification?</b></summary>
-
-From [swagger.io](https://swagger.io/resources/articles/difference-between-api-documentation-specification):
-
-"An API specification provides a broad understanding of how an API behaves and how the API links with other APIs. It explains how the API functions and the results to expect when using the API"
-
-</details>
-
-<details>
-<summary><b>True or False? API Definition is the same as API Specification?</b></summary>
-
-False. From [swagger.io](https://swagger.io/resources/articles/difference-between-api-documentation-specification):
-
-"An API definition is similar to an API specification in that it provides an understanding of how an API is organized and how the API functions. But the API definition is aimed at machine consumption instead of human consumption of APIs."
-
-</details>
 
 <details>
 <summary><b>What is an API gateway?</b></summary>
@@ -6451,61 +5669,12 @@ I can't answer this for you :)
 
 </details>
 
-<details>
-<summary><b>What's KPI?</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-<details>
-<summary><b>What's OKR?</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-<details>
-<summary><b>What's DSL (Domain Specific Language)?</b></summary>
-
-Domain Specific Language (DSLs) are used to create a customised language that represents the domain such that domain experts can easily interpret it.
-
-</details>
-
-<details>
-<summary><b>What's the difference between KPI and OKR?</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
 ### YAML
 
 <details>
 <summary><b>What is YAML?</b></summary>
 
 Data serialization language used by many technologies today like Kubernetes, Ansible, etc.
-
-</details>
-
-<details>
-<summary><b>True or False? Any valid JSON file is also a valid YAML file?</b></summary>
-
-True. Because YAML is superset of JSON.
-
-</details>
-
-<details>
-<summary><b>What is the format of the following data? ``` { applications: [ { name: "my_app", language: "python", version: 20.17 } ] } ```?</b></summary>
-
-JSON
-
-</details>
-
-<details>
-<summary><b>What is the format of the following data? ``` applications: - app: "my_app" language: "python" version: 20.17 ```?</b></summary>
-
-YAML
 
 </details>
 
