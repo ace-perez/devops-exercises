@@ -1028,23 +1028,9 @@ Key DevOps best practices include:
 </details>
 
 <details>
-<summary><b>What is the purpose of Infrastructure as Code (IaC)?</b></summary>
-
-IaC enables automated and consistent provisioning of infrastructure using tools like Terraform, CloudFormation, and Ansible.
-
-</details>
-
-<details>
 <summary><b>Why is version control important in DevOps?</b></summary>
 
 Version control (e.g., Git) helps track changes, collaborate effectively, and rollback if needed.
-
-</details>
-
-<details>
-<summary><b>What is Continuous Integration (CI)?</b></summary>
-
-CI is the practice of frequently merging code changes into a shared repository and automatically testing them.
 
 </details>
 
@@ -1082,13 +1068,6 @@ Monitoring tools (e.g., Prometheus, Grafana, ELK) track system performance and d
 </details>
 
 <details>
-<summary><b>What are blue-green deployments?</b></summary>
-
-A deployment strategy where two environments (blue & green) run simultaneously, allowing easy rollback in case of failure.
-
-</details>
-
-<details>
 <summary><b>What is the role of logging in DevOps?</b></summary>
 
 Logging helps in troubleshooting, analyzing trends, and ensuring application reliability.
@@ -1096,37 +1075,9 @@ Logging helps in troubleshooting, analyzing trends, and ensuring application rel
 </details>
 
 <details>
-<summary><b>What is shift-left testing in DevOps?</b></summary>
-
-Shift-left means testing earlier in the development lifecycle to catch bugs sooner.
-
-</details>
-
-<details>
-<summary><b>What is feature flagging?</b></summary>
-
-Feature flags allow enabling or disabling features without deploying new code.
-
-</details>
-
-<details>
 <summary><b>What is immutable infrastructure?</b></summary>
 
 Infrastructure that is replaced rather than modified to ensure consistency.
-
-</details>
-
-<details>
-<summary><b>What are rolling deployments?</b></summary>
-
-A deployment strategy that gradually updates instances to avoid downtime.
-
-</details>
-
-<details>
-<summary><b>What is canary deployment?</b></summary>
-
-A method where new changes are rolled out to a small subset of users before a full deployment.
 
 </details>
 
@@ -1145,25 +1096,12 @@ Using secret management tools like HashiCorp Vault, AWS Secrets Manager, and Kub
 </details>
 
 <details>
-<summary><b>What is GitOps?</b></summary>
-
-A DevOps practice where Git is the single source of truth for infrastructure and application deployment.
-
-</details>
-
-<details>
 <summary><b>Why is containerization important in DevOps?</b></summary>
 
 Containers provide portability, consistency, and efficient resource utilization.
 
 </details>
 
-<details>
-<summary><b>What is the 12-Factor App methodology?</b></summary>
-
-A set of best practices for building scalable, cloud-native applications.
-
-</details>
 
 ### 🟡 Intermediate
 
@@ -1217,13 +1155,6 @@ Using distributed tracing (Jaeger), centralized logging (ELK), and service mesh 
 </details>
 
 <details>
-<summary><b>How do you implement DevSecOps?</b></summary>
-
-Integrate security into every stage of development using tools like SonarQube, Snyk, and Trivy.
-
-</details>
-
-<details>
 <summary><b>What is a Service Level Agreement (SLA)?</b></summary>
 
 An SLA defines the expected level of service, including uptime and response times.
@@ -1238,13 +1169,6 @@ By automating security checks, auditing, and following regulatory frameworks lik
 </details>
 
 <details>
-<summary><b>What is a chaos engineering experiment?</b></summary>
-
-Intentionally injecting failures into a system to test its resilience (e.g., Netflix's Chaos Monkey).
-
-</details>
-
-<details>
 <summary><b>How do you reduce deployment downtime?</b></summary>
 
 Using rolling updates, blue-green deployments, and zero-downtime migrations.
@@ -1255,13 +1179,6 @@ Using rolling updates, blue-green deployments, and zero-downtime migrations.
 <summary><b>How do you handle database migrations in CI/CD?</b></summary>
 
 Using tools like Flyway, Liquibase, or Django migrations in an automated pipeline.
-
-</details>
-
-<details>
-<summary><b>What is an API gateway, and why is it used?</b></summary>
-
-An API gateway manages API requests, security, and load balancing in microservices.
 
 </details>
 
@@ -1287,12 +1204,6 @@ Using Terraform, Kubernetes, and cloud-agnostic tools like HashiCorp Vault and I
 
 </details>
 
-<details>
-<summary><b>How do you manage dependencies in DevOps?</b></summary>
-
-Using dependency managers like `pip`, `npm`, `Maven`, and scanning tools like Snyk and OWASP Dependency-Check.
-
-</details>
 
 <details>
 <summary><b>How do you handle rollback in a Kubernetes environment?</b></summary>
@@ -1313,12 +1224,6 @@ kubectl rollout undo deployment <deployment_name>
 
 </details>
 
-<details>
-<summary><b>What is FinOps in cloud computing?</b></summary>
-
-A practice for optimizing cloud costs and budgeting efficiently.
-
-</details>
 
 ### 🔴 Advanced
 
@@ -1333,13 +1238,6 @@ Using tools like Open Policy Agent (OPA) and HashiCorp Sentinel.
 <summary><b>How do you handle incident response in DevOps?</b></summary>
 
 Using an on-call rotation, alerting, and post-mortems.
-
-</details>
-
-<details>
-<summary><b>What is Site Reliability Engineering (SRE)?</b></summary>
-
-A discipline that applies software engineering principles to system reliability.
 
 </details>
 
