@@ -627,16 +627,6 @@ source myenv/bin/activate
 
 </details>
 
-<details>
-<summary><b>How do you parse JSON in Python?</b></summary>
-
-```python
-import json
-data = '{"name": "DevOps"}'
-parsed = json.loads(data)
-print(parsed["name"])
-```
-
 </details>
 
 <details>
@@ -724,36 +714,12 @@ print(mydict["name"])
 
 </details>
 
-<details>
-<summary><b>How do you validate a YAML file?</b></summary>
-
-Use `yamllint` or `kubectl apply -f --dry-run=client`.
-
-</details>
 
 <details>
 <summary><b>How do you install Python modules?</b></summary>
 
 ```bash
 pip install requests
-```
-
-</details>
-
-<details>
-<summary><b>What is Jenkins pipeline syntax for automation?</b></summary>
-
-```groovy
-pipeline {
-    agent any
-    stages {
-        stage('Build') {
-            steps {
-                echo "Building..."
-            }
-        }
-    }
-}
 ```
 
 </details>
@@ -965,10 +931,6 @@ ssh user@server 'bash -s' < local_script.sh
 
 ---
 
-
-
----
-
 ## 🚀 CI/CD & DevOps Best Practices
 
 ### 🟢 Beginner
@@ -1086,13 +1048,6 @@ Using load balancing, auto-scaling, multi-region deployments, and failover mecha
 </details>
 
 <details>
-<summary><b>How do you monitor microservices effectively?</b></summary>
-
-Using distributed tracing (Jaeger), centralized logging (ELK), and service mesh (Istio).
-
-</details>
-
-<details>
 <summary><b>How do you secure a CI/CD pipeline?</b></summary>
 
 - Use least privilege access.
@@ -1185,12 +1140,6 @@ kubectl rollout undo deployment <deployment_name>
 
 ### 🔴 Advanced
 
-<details>
-<summary><b>How do you implement policy-as-code in DevOps?</b></summary>
-
-Using tools like Open Policy Agent (OPA) and HashiCorp Sentinel.
-
-</details>
 
 <details>
 <summary><b>How do you handle incident response in DevOps?</b></summary>
@@ -1449,30 +1398,6 @@ ansible-playbook playbook.yml -i inventory.ini
 </details>
 
 <details>
-<summary><b>What is an Ansible Galaxy?</b></summary>
-
-Ansible Galaxy is a repository for pre-built Ansible roles.
-
-Example:
-
-ansible-galaxy install geerlingguy.nginx
-
-</details>
-
-
-<details>
-<summary><b>What is Ansible Vault?</b></summary>
-
-Ansible Vault encrypts sensitive data like passwords.
-
-To create an encrypted file:
-
-ansible-vault encrypt secrets.yml
-CloudFormation Questions
-
-</details>
-
-<details>
 <summary><b>What is AWS CloudFormation?</b></summary>
 
 AWS CloudFormation is an IaC service that provisions AWS infrastructure using YAML/JSON templates.
@@ -1524,25 +1449,6 @@ Avoid hardcoding secrets in .tf files:
 ✅ Use Terraform Vault Provider
 ✅ Store secrets in AWS Secrets Manager
 
-Example using environment variables:
-
-export TF_VAR_db_password="mypassword"
-
-</details>
-
-<details>
-<summary><b>What is Terraform Locking, and why is it important?</b></summary>
-
-Terraform uses state locking to prevent simultaneous updates by multiple users.
-
-Enabled automatically for remote state backends (e.g., S3 + DynamoDB).
-Example (DynamoDB locking):
-
-backend "s3" {
-  bucket         = "my-terraform-bucket"
-  dynamodb_table = "terraform-lock"
-}
-
 </details>
 
 <details>
@@ -1556,64 +1462,12 @@ terraform workspace select dev
 </details>
 
 <details>
-<summary><b>How do you create reusable Terraform modules?</b></summary>
-
-Modules help organize and reuse code.
-
-Example (modules/network/main.tf):
-
-variable "vpc_cidr" {}
-
-resource "aws_vpc" "main" {
-  cidr_block = var.vpc_cidr
-}
-Usage:
-
-module "vpc" {
-  source   = "./modules/network"
-  vpc_cidr = "10.0.0.0/16"
-}
-
-</details>
-
-<details>
-<summary><b>What is Terraform Cloud and Terraform Enterprise?</b></summary>
-
-Feature	Terraform Cloud	Terraform Enterprise
-Type	SaaS	Self-hosted
-Use Case	Collaboration, remote state	Large enterprises
-Extras	Remote execution, VCS integration	Advanced security & governance
-
-</details>
-
-<details>
 <summary><b>How does Terraform handle drift detection?</b></summary>
 
 Terraform detects drift by running:
 
 terraform plan
 Drift occurs when actual infrastructure changes outside Terraform’s control.
-
-</details>
-
-<details>
-<summary><b>How do you use count and for_each in Terraform?</b></summary>
-
-count is used for simple lists.
-for_each is used for maps or sets.
-Example (count):
-
-resource "aws_instance" "web" {
-  count = 3
-  ami   = "ami-12345678"
-}
-Example (for_each):
-
-resource "aws_s3_bucket" "buckets" {
-  for_each = toset(["dev", "prod"])
-  bucket   = "my-app-${each.value}"
-}
-Ansible Questions
 
 </details>
 
@@ -1784,23 +1638,6 @@ Terraform can be integrated into CI/CD pipelines using GitHub Actions, GitLab CI
 ✅ Linting & Validation: terraform fmt, terraform validate
 ✅ Planning: terraform plan -out=tfplan
 ✅ Apply Changes: terraform apply tfplan
-
-Example GitHub Actions workflow:
-
-jobs:
-  terraform:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v1
-      - name: Terraform Init
-        run: terraform init
-      - name: Terraform Plan
-        run: terraform plan -out=tfplan
-      - name: Terraform Apply
-        run: terraform apply tfplan
 
 </details>
 
@@ -2016,53 +1853,6 @@ Resources:
     Type: AWS::CloudFormation::Stack
     Properties:
       TemplateURL: "https://s3.amazonaws.com/my-bucket/network.yml"
-
-</details>
-
-<details>
-<summary><b>How do you manage parameter changes in CloudFormation?</b></summary>
-
-Use the --parameters flag during updates.
-
-Example:
-
-aws cloudformation update-stack --stack-name my-stack \
-  --parameters ParameterKey=InstanceType,ParameterValue=t2.large
-
-</details>
-
-<details>
-<summary><b>How do you handle stateful resources in CloudFormation?</b></summary>
-
-✅ Use Stack Policies to prevent deletions
-✅ Enable RetainPolicy for S3, RDS
-
-Example:
-
-Resources:
-  MyBucket:
-    Type: AWS::S3::Bucket
-    DeletionPolicy: Retain
-
-</details>
-
-<details>
-<summary><b>What is AWS CloudFormation Stack Policy?</b></summary>
-
-A Stack Policy prevents accidental updates or deletions.
-
-Example:
-
-{
-  "Statement": [
-    {
-      "Effect": "Deny",
-      "Action": "Update:Delete",
-      "Principal": "*",
-      "Resource": "*"
-    }
-  ]
-}
 
 </details>
 
@@ -2310,27 +2100,6 @@ kubectl set image deployment/my-app my-container=nginx:latest
 
 - Use smaller base images (e.g., `alpine` instead of `ubuntu`).
 - Use multi-stage builds to reduce image size:
-```dockerfile
-FROM node:16 AS build
-WORKDIR /app
-COPY . .
-RUN npm install && npm run build
-
-FROM nginx:alpine
-COPY --from=build /app/dist /usr/share/nginx/html
-```
-- Use `.dockerignore` to exclude unnecessary files.
-
-</details>
-
-<details>
-<summary><b>What is the difference between Docker ENTRYPOINT and CMD?</b></summary>
-
-`ENTRYPOINT` is not overridden by command-line arguments, while `CMD` can be. Best practice is to use `ENTRYPOINT` for fixed commands.
-```dockerfile
-ENTRYPOINT ["nginx", "-g", "daemon off;"]
-CMD ["-p", "80"]
-```
 
 </details>
 
@@ -2376,17 +2145,6 @@ docker run --network=mynetwork nginx
 </details>
 
 <details>
-<summary><b>What is the difference between Docker Swarm and Kubernetes?</b></summary>
-
-| Feature | Docker Swarm | Kubernetes |
-|---|---|---|
-| Orchestration | Lightweight, built into Docker | Advanced, feature-rich |
-| Scaling | Manual | Auto-scaling |
-| Service Discovery | Built-in | Needs external setup (DNS, Ingress) |
-
-</details>
-
-<details>
 <summary><b>How do you remove unused Docker images and containers?</b></summary>
 
 ```bash
@@ -2414,9 +2172,9 @@ docker run --memory=512m --cpus=1 nginx
 ```
 This limits memory to 512MB and CPU usage to 1 core.
 
-#### Kubernetes Intermediate
-
 </details>
+
+#### Kubernetes Intermediate
 
 <details>
 <summary><b>How does Kubernetes handle high availability?</b></summary>
@@ -2457,29 +2215,6 @@ kubectl get pods -l app=my-app
 
 </details>
 
-<details>
-<summary><b>What is a Kubernetes Ingress?</b></summary>
-
-An Ingress manages external access to services and is used with Ingress controllers (NGINX, Traefik).
-```yaml
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: my-ingress
-spec:
-  rules:
-    - host: myapp.com
-      http:
-        paths:
-          - path: /
-            backend:
-              service:
-                name: my-service
-                port:
-                  number: 80
-```
-
-</details>
 
 <details>
 <summary><b>What is the difference between Horizontal Pod Autoscaler (HPA) and Vertical Pod Autoscaler (VPA)?</b></summary>
@@ -2711,12 +2446,6 @@ Kubelet marks the node as `NotReady`, pods are rescheduled onto healthy nodes, a
 
 </details>
 
-<details>
-<summary><b>What is a Kubernetes Mutating Webhook?</b></summary>
-
-A Mutating Webhook modifies requests dynamically before they reach the cluster — for example, injecting sidecars into Pods.
-
-</details>
 
 <details>
 <summary><b>How do you debug networking issues in Kubernetes?</b></summary>
@@ -2735,24 +2464,6 @@ kubectl exec -it pod -- nslookup my-service  # Validate DNS resolution
 HPA uses the metrics API (CPU/memory usage) and adjusts replica count dynamically.
 ```bash
 kubectl autoscale deployment my-app --cpu-percent=50 --min=2 --max=10
-```
-
-</details>
-
-<details>
-<summary><b>How do you implement multi-tenancy in Kubernetes?</b></summary>
-
-Use Namespaces to isolate workloads and apply RBAC (Role-Based Access Control).
-```yaml
-apiVersion: rbac.authorization.k8s.io/v1
-kind: Role
-metadata:
-  namespace: team-a
-  name: team-a-role
-rules:
-  - apiGroups: [""]
-    resources: ["pods"]
-    verbs: ["get", "list", "watch"]
 ```
 
 </details>
@@ -2931,17 +2642,6 @@ A cloud region is a geographic area where a cloud provider has multiple data cen
 
 </details>
 
-<details>
-<summary><b>How does AWS Lambda differ from EC2?</b></summary>
-
-| Feature | AWS Lambda | Amazon EC2 |
-|---|---|---|
-| Type | Serverless function | Virtual machine |
-| Scaling | Auto-scales instantly | Requires manual or auto-scaling setup |
-| Billing | Pay-per-execution | Pay for running instances |
-| Use Case | Short-lived tasks | Long-running applications |
-
-</details>
 
 <details>
 <summary><b>What are Reserved Instances in AWS?</b></summary>
@@ -3044,14 +2744,6 @@ A CASB is a security layer between cloud users and providers, enforcing complian
 </details>
 
 <details>
-<summary><b>How do you ensure compliance in cloud environments?</b></summary>
-
-- Use compliance frameworks such as HIPAA, SOC 2, and GDPR.
-- Enable logging and auditing via AWS CloudTrail and Azure Security Center.
-
-</details>
-
-<details>
 <summary><b>What is zero-trust security in cloud environments?</b></summary>
 
 Zero-trust security assumes no implicit trust and enforces strict identity verification for every request, regardless of whether it originates inside or outside the network.
@@ -3065,12 +2757,6 @@ Serverless auto-scales instantly based on demand, eliminating the need to pre-pr
 
 </details>
 
-<details>
-<summary><b>What is an egress charge in cloud pricing?</b></summary>
-
-Egress charges are fees applied to data transferred out of the cloud provider's network.
-
-</details>
 
 <details>
 <summary><b>How do you prevent DDoS attacks in the cloud?</b></summary>
@@ -3089,20 +2775,6 @@ Egress charges are fees applied to data transferred out of the cloud provider's 
 - Enable Multi-Factor Authentication (MFA).
 - Implement firewalls, VPNs, and private subnets.
 - Enable AWS CloudTrail, Azure Monitor, or Google Cloud Logging for real-time threat detection.
-
-</details>
-
-<details>
-<summary><b>What are the risks of vendor lock-in, and how do you mitigate them?</b></summary>
-
-Vendor lock-in occurs when a company becomes overly dependent on a single cloud provider, making migration difficult due to high costs or compatibility issues. Mitigation strategies include using multi-cloud approaches, adopting open-source portable tools (e.g., Kubernetes, Terraform), and designing cloud-agnostic architectures using containerisation and microservices.
-
-</details>
-
-<details>
-<summary><b>What is confidential computing in the cloud?</b></summary>
-
-Confidential computing encrypts data even while it is being processed, using Trusted Execution Environments (TEEs). Examples include AWS Nitro Enclaves, Azure Confidential Computing, and Google Cloud Confidential VMs.
 
 </details>
 
@@ -3644,41 +3316,6 @@ Debugging module issues involves checking kernel logs with dmesg immediately aft
 
 </details>
 
-<details>
-<summary><b>How do you implement and manage user authentication with LDAP?</b></summary>
-
-LDAP (Lightweight Directory Access Protocol) provides centralized user authentication and directory services for Linux environments. Implementing LDAP involves setting up a directory server, configuring clients for authentication, and managing the directory content effectively.
-
-The implementation begins with choosing and setting up an LDAP server such as OpenLDAP or 389 Directory Server. Installation typically involves packages like slapd and ldap-utils. Configure the server with the appropriate domain structure (usually in DC=example,DC=com format), TLS/SSL certificates for encryption, and proper access controls. Initialize the directory with a base organizational structure that includes user and group organizational units.
-
-On client systems, install authentication packages like libnss-ldap, libpam-ldap, and nscd. Configure /etc/ldap.conf or /etc/ldap/ldap.conf with server connection details, search base, and binding credentials. Modify PAM configuration in /etc/pam.d/ to include LDAP authentication, and update NSS configuration in /etc/nsswitch.conf to query LDAP for user and group information. Test the configuration with getent passwd username and id username to verify proper integration.
-
-For secure implementation, enforce TLS/SSL encryption for all LDAP traffic, verify certificate validity, and implement strong access controls on the directory. Configure client systems to fail closed rather than open if LDAP becomes unavailable, preventing security bypasses during outages. Consider implementing LDAP proxy servers or replicas for high availability in larger environments.
-
-User management can be handled through LDAP administration tools like Apache Directory Studio, phpLDAPadmin, or command-line tools like ldapadd and ldapmodify. Create standardized user templates (LDIF files) for consistent account creation. Implement password policies through the LDAP server, enforcing complexity requirements, expiration, and account lockout after failed attempts.
-
-Integration with existing systems often requires schema extensions to store application-specific attributes. Plan these extensions carefully to maintain compatibility while meeting organizational requirements. For environments with multiple authentication sources, consider implementing SSSD (System Security Services Daemon) to provide caching, failover between sources, and more sophisticated authentication policies.
-
-</details>
-
-<details>
-<summary><b>How do you implement and manage DRBD (Distributed Replicated Block Device)?</b></summary>
-
-DRBD (Distributed Replicated Block Device) provides block-level replication of storage devices across network-connected servers, effectively creating a network RAID-1 solution for high availability. Implementation involves configuring paired nodes to synchronously or asynchronously replicate data, ensuring storage consistency across multiple servers.
-
-Setup begins with installing DRBD packages (drbd-utils) on both nodes and loading the kernel module with modprobe drbd. Create a configuration in /etc/drbd.d/resource.res that defines the resource name, protocol (A for asynchronous, C for fully synchronous), network configuration, disk devices, and meta-data location. A typical configuration includes node addresses, replication ports, disk paths, and synchronization settings.
-
-Initialize the DRBD devices with drbdadm create-md resource_name followed by drbdadm up resource_name on both nodes. On the node designated as primary, run drbdadm primary resource_name --force to establish the initial synchronization. Monitor the synchronization progress with cat /proc/drbd until the devices are fully synchronized.
-
-After initialization, create a filesystem on the primary node's DRBD device (mkfs.ext4 /dev/drbd0), mount it, and configure it in /etc/fstab with appropriate options to prevent automatic mounting at boot. Implement resource management through a cluster manager like Pacemaker to automate failover, as DRBD by itself only handles data replication, not service migration.
-
-For effective management, regularly monitor DRBD status using drbdadm status and cat /proc/drbd. Configure split-brain detection and automatic recovery strategies in the configuration file. Implement notification systems for replication failures or split-brain situations. Test failover scenarios regularly to ensure the configuration works correctly under failure conditions.
-
-Performance optimization involves selecting the appropriate replication protocol based on requirements (Protocol C for data integrity, Protocol A for performance), tuning network parameters for replication traffic, configuring appropriate buffer sizes, and potentially dedicating a separate network interface for replication traffic.
-
-Maintenance operations like upgrading DRBD itself require careful planning: gracefully switch all resources to one node, stop DRBD on the maintenance node, perform updates, bring the node back online, and then reestablish synchronization. Document all configuration details, failover procedures, and recovery processes thoroughly for operational use.
-
-</details>
 
 <details>
 <summary><b>How do you configure and manage syslog in Linux?</b></summary>
@@ -3697,22 +3334,6 @@ Performance optimization involves balancing comprehensive logging with system im
 
 </details>
 
-<details>
-<summary><b>How do you configure and manage DNS server (BIND) in Linux?</b></summary>
-
-BIND (Berkeley Internet Name Domain) is the most widely deployed DNS server software, providing domain name resolution services. Configuring and managing BIND involves setting up zone files, configuring resolver behavior, implementing security measures, and maintaining ongoing operations.
-
-Installation and basic configuration starts with installing the BIND package (apt install bind9 or yum install bind) and configuring the main configuration file /etc/named.conf or /etc/bind/named.conf. This file defines global options, zone declarations, and access controls. For organizational clarity, split configurations into separate files like named.conf.options for server settings and named.conf.local for zone definitions.
-
-For authoritative DNS service, create forward and reverse zone files in the /var/named/ or /etc/bind/zones/ directory. A forward zone file contains SOA (Start of Authority) records, NS (Name Server) records, and various resource records like A (IPv4), AAAA (IPv6), MX (Mail Exchanger), and CNAME (Canonical Name). Implement proper TTL (Time To Live) values based on how frequently records change.
-
-Security implementation is critical for DNS servers. Configure TSIG (Transaction Signature) keys for secure zone transfers between servers. Implement DNSSEC (DNS Security Extensions) by generating key pairs (dnssec-keygen), signing zones (dnssec-signzone), and configuring the parent zone with DS (Delegation Signer) records. Restrict zone transfers to authorized servers, implement query rate limiting to prevent DoS attacks, and configure access control lists to restrict who can query different zones.
-
-For recursive resolvers, implement DNS filtering to block malicious domains, configure forwarding for efficient resolution, and implement response policy zones (RPZ) to override certain DNS responses. Configure caching parameters based on server resources and query volume to optimize performance while maintaining reasonable memory usage.
-
-Ongoing management involves regular zone file updates, monitoring query logs for unusual patterns, scheduling automatic DNSSEC key rollovers, configuring monitoring for service availability and response times, and implementing backup strategies for zone data. Use tools like rndc (Remote Name Daemon Control) for runtime server management without full restarts. For complex deployments, consider implementing configuration management through tools like Ansible to maintain consistency across multiple DNS servers.
-
-</details>
 
 <details>
 <summary><b>How do you implement and manage High Availability clustering in Linux?</b></summary>
