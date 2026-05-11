@@ -693,6 +693,31 @@ Yes, it's a operating-system-level virtualization, where the kernel is shared an
 The introduction of virtual machines allowed companies to deploy multiple business applications on the same hardware, while each application is separated from each other in secured way, where each is running on its own separate operating system.
 </b></details>
 
+<details>
+<summary>What are containers, and how do they relate to DevOps?</summary><br><b>
+
+</b></details>
+
+<details>
+<summary>Explain the importance of container orchestration tools like Kubernetes in DevOps.</summary><br><b>
+
+</b></details>
+
+<details>
+<summary>How do you ensure the security of Docker containers in a DevOps pipeline?</summary><br><b>
+
+</b></details>
+
+<details>
+<summary>Explain the concept of "Docker Compose" and its use in managing multi-container Docker applications.</summary><br><b>
+
+</b></details>
+
+<details>
+<summary>How do you manage secrets and sensitive data in a containerized environment using Docker?</summary><br><b>
+
+</b></details>
+
 #### Virtual Machines
 
 <details>
@@ -871,6 +896,20 @@ For example, to get the CPU usage in percentage for the last 5 minutes for a job
 ```
 </b></details>
 
+<details>
+<summary>How do you monitor and troubleshoot applications in a DevOps environment?</summary><br><b>
+
+</b></details>
+
+<details>
+<summary>Explain the concept of "Log Aggregation" in DevOps.</summary><br><b>
+
+</b></details>
+
+<details>
+<summary>What is "Serverless Monitoring," and how does it differ from traditional application monitoring?</summary><br><b>
+
+</b></details>
 
 ## SQL
 
@@ -1210,6 +1249,11 @@ It's an architecture in which data is and retrieved from a single, non-shared, s
 <summary>Explain the Sidecar Pattern (Or sidecar proxy)</summary><br><b>
 </b></details>
 
+<details>
+<summary>How do you ensure data consistency in a distributed microservices architecture?</summary><br><b>
+
+</b></details>
+
 ## Misc
 
 |Name|Topic|Objective & Instructions|Solution|Comments|
@@ -1231,6 +1275,56 @@ It's an architecture in which data is and retrieved from a single, non-shared, s
 7. The browser then sends subsequent requests as needed to the server to get the embedded links, javascript, images in the HTML and then steps 3 to 5 are repeated.
 
 TODO: add more details!
+</b></details>
+
+<details>
+<summary>What is DevOps, and how does it differ from traditional IT practices?</summary><br><b>
+
+</b></details>
+
+<details>
+<summary>What is version control, and why is it important in DevOps?</summary><br><b>
+
+</b></details>
+
+<details>
+<summary>How does DevOps support the principles of Agile software development?</summary><br><b>
+
+</b></details>
+
+<details>
+<summary>How do you handle configuration drift in a DevOps environment?</summary><br><b>
+
+</b></details>
+
+<details>
+<summary>What is the importance of "Continuous Documentation" in DevOps?</summary><br><b>
+
+</b></details>
+
+<details>
+<summary>How do you manage secrets and sensitive data in a DevOps environment?</summary><br><b>
+
+</b></details>
+
+<details>
+<summary>Explain the concept of "Dependency Management" in DevOps.</summary><br><b>
+
+</b></details>
+
+<details>
+<summary>Explain the role of "ChatOps" in DevOps communication and collaboration.</summary><br><b>
+
+</b></details>
+
+<details>
+<summary>Explain the concept of "Environment Drift" and its impact on DevOps environments.</summary><br><b>
+
+</b></details>
+
+<details>
+<summary>What is "Git Flow," and How Does It Structure the Development Process in DevOps?</summary><br><b>
+
 </b></details>
 
 #### API
@@ -1857,6 +1951,26 @@ The main objective of unit tests are to verify each function is producing proper
 </summary><br><b>
 </b></details>
 
+<details>
+<summary>Explain the concept of "Continuous Testing" in the context of DevOps.</summary><br><b>
+
+</b></details>
+
+<details>
+<summary>What is "Shift-Left Testing," and how does it enhance software quality in DevOps?</summary><br><b>
+
+</b></details>
+
+<details>
+<summary>How to perform "A/B Testing" in a DevOps pipeline to evaluate new features.</summary><br><b>
+
+</b></details>
+
+<details>
+<summary>What is "IaC Testing," and how does it ensure the reliability of infrastructure deployments in DevOps?</summary><br><b>
+
+</b></details>
+
 #### Extract
 
 <details>
@@ -1992,6 +2106,97 @@ In "Loose Coupling", components of a system communicate with each other with a l
 <summary>What is a message queue? When is it used?</summary><br><b>
 It is a communication mechanism used in distributed systems to enable asynchronous communication between different components. It is generally used when the systems use a microservices approach.
 </b></details>
+
+<details>
+<summary>Explain Infrastructure as Code (IaC).</summary><br><b>
+
+</b></details>
+
+<details>
+<summary>What is the role of configuration management in DevOps?</summary><br><b>
+
+</b></details>
+
+<details>
+<summary>What are microservices, and how do they relate to DevOps architecture?</summary><br><b>
+
+</b></details>
+
+<details>
+<summary>Explain the concept of "Immutable Infrastructure" and its benefits in DevOps.</summary><br><b>
+
+</b></details>
+
+<details>
+<summary>What is the "12-Factor App" methodology, and how does it relate to DevOps practices?</summary><br><b>
+
+</b></details>
+
+<details>
+<summary>What is the role of "Infrastructure as Code" (IaC) in disaster recovery and scaling?</summary><br><b>
+
+</b></details>
+
+<details>
+<summary>What is "Chaos Engineering," and how does it relate to DevOps practices?</summary><br><b>
+
+</b></details>
+
+<details>
+<summary>Explain the importance of "Serverless Computing" in DevOps.</summary><br><b>
+
+</b></details>
+
+<details>
+<summary>What is "Immutable Server," and how does it enhance reliability in DevOps?</summary><br><b>
+
+</b></details>
+
+<details>
+<summary>What is "Serverless Orchestration," and how does it impact application development in DevOps?</summary><br><b>
+
+</b></details>
+
+<details>
+<summary>How does "Self-Healing Infrastructure" work in a DevOps environment?</summary><br><b>
+
+</b></details>
+
+<details>
+<summary>How to implement "Infrastructure as Code" for serverless architectures?</summary><br><b>
+
+</b></details>
+
+<details>
+<summary>What is the role of "Service Mesh" in microservices architectures?</summary><br><b>
+
+</b></details>
+
+<details>
+<summary>How do you handle data migration in a DevOps environment?</summary><br><b>
+
+</b></details>
+
+<details>
+<summary>Explain the concept of "Serverless Databases" in DevOps applications.</summary><br><b>
+
+</b></details>
+
+<details>
+<summary>Benefits of Observability in Microservices Architecture.</summary><br><b>
+
+</b></details>
+
+<details>
+<summary>How to Achieve High Availability and Fault Tolerance in a DevOps Architecture.</summary><br><b>
+
+</b></details>
+
+<details>
+<summary>What Are the Key Considerations for Creating a Disaster Recovery Plan in a DevOps Environment?</summary><br><b>
+
+</b></details>
+
 
 #### Scalability
 
@@ -2385,3 +2590,114 @@ MINOR version when you add functionality in a backwards compatible manner
 PATCH version when you make backwards compatible bug fixes
 Additional labels for pre-release and build metadata are available as extensions to the MAJOR.MINOR.PATCH format.
 ```
+</b></details>
+
+<details>
+<summary>Explain the CI/CD pipeline.</summary><br><b>
+
+</b></details>
+
+<details>
+<summary>What are some best practices for security in a DevOps pipeline?</summary><br><b>
+
+</b></details>
+
+<details>
+<summary>What are blue-green deployments, and how do they work in DevOps?</summary><br><b>
+
+</b></details>
+
+<details>
+<summary>What is "GitOps," and how does it differ from traditional infrastructure management?</summary><br><b>
+
+</b></details>
+
+<details>
+<summary>What are the key differences between Jenkins and Travis CI?</summary><br><b>
+
+</b></details>
+
+<details>
+<summary>Explain the concept of "Dark Launching" in DevOps.</summary><br><b>
+
+</b></details>
+
+<details>
+<summary>What is "Canary Deployment," and how does it work in DevOps?</summary><br><b>
+
+</b></details>
+
+<details>
+<summary>Key metrics and tools for measuring the success of a DevOps pipeline.</summary><br><b>
+
+</b></details>
+
+<details>
+<summary>Benefits of "Feature Toggles" in DevOps development.</summary><br><b>
+
+</b></details>
+
+<details>
+<summary>How to handle database changes in a DevOps pipeline while minimizing downtime.</summary><br><b>
+
+</b></details>
+
+<details>
+<summary>How to ensure that your DevOps pipeline is compliant with security and regulatory requirements.</summary><br><b>
+
+</b></details>
+
+<details>
+<summary>Explain the concept of "Trunk-Based Development" and how it differs from feature branching in source control.</summary><br><b>
+
+</b></details>
+
+<details>
+<summary>What are "Immutable Artifacts," and how do they improve deployment reliability in DevOps?</summary><br><b>
+
+</b></details>
+
+<details>
+<summary>Explain the concept of "Continuous Deployment" and its benefits in DevOps.</summary><br><b>
+
+</b></details>
+
+<details>
+<summary>What are the key principles of "Continuous Compliance," and how do they ensure security in DevOps?</summary><br><b>
+
+</b></details>
+
+<details>
+<summary>How does "Feature Flag Management" enable controlled feature releases in DevOps applications?</summary><br><b>
+
+</b></details>
+
+<details>
+<summary>What is "Continuous Integration vs. Continuous Delivery vs. Continuous Deployment"?</summary><br><b>
+
+</b></details>
+
+<details>
+<summary>How do you manage database schema changes in a DevOps pipeline?</summary><br><b>
+
+</b></details>
+
+<details>
+<summary>What is a "Rolling Deployment" strategy, and what are its advantages?</summary><br><b>
+
+</b></details>
+
+<details>
+<summary>What is "Blue-Green Infrastructure," and how does it relate to application deployments in DevOps?</summary><br><b>
+
+</b></details>
+
+<details>
+<summary>How do you optimize DevOps pipelines for large-scale and complex applications?</summary><br><b>
+
+</b></details>
+
+<details>
+<summary>What is "Continuous Integration" in the DevOps Lifecycle?</summary><br><b>
+
+</b></details>
