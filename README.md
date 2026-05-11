@@ -2,8 +2,6 @@
 
 :information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE
 
-:bar_chart: &nbsp;There are currently **2624** exercises and questions
-
 
 ## Network
 
