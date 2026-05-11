@@ -117,22 +117,6 @@ Multicast: Sending a message to a group of subscribers. It can be one-to-many or
 </b></details>
 
 <details>
-<summary>What is CSMA/CD? Is it used in modern ethernet networks?</summary><br><b>
-
-CSMA/CD stands for Carrier Sense Multiple Access / Collision Detection.
-Its primary focus is to manage access to a shared medium/bus where only one host can transmit at a given point in time.
-
-CSMA/CD algorithm:
-
-1. Before sending a frame, it checks whether another host is already transmitting a frame.
-2. If no one is transmitting, it starts transmitting the frame.
-3. If two hosts transmit at the same time, we have a collision.
-4. Both hosts stop sending the frame and they send everyone a 'jam signal' notifying everyone that a collision occurred
-5. They are waiting for a random time before sending it again
-6. Once each host waited for a random time, they try to send the frame again and so the cycle starts again
-</b></details>
-
-<details>
 <summary>Describe the following network devices and the difference between them:
 
   * router
@@ -279,19 +263,6 @@ It is possible to have two DHCP servers on the same network, however, it is not 
 </b></details>
 
 <details>
-<summary>What is SSL tunneling? How does it work?</summary><br><b>
-
-- SSL (Secure Sockets Layer) tunneling is a technique used to establish a secure, encrypted connection between two endpoints over an insecure network, such as the Internet. The SSL tunnel is created by encapsulating the traffic within an SSL connection, which provides confidentiality, integrity, and authentication.
-
-Here's how SSL tunneling works:
-
-1. A client initiates an SSL connection to a server, which involves a handshake process to establish the SSL session.
-2. Once the SSL session is established, the client and server negotiate encryption parameters, such as the encryption algorithm and key length, then exchange digital certificates to authenticate each other.
-3. The client then sends traffic through the SSL tunnel to the server, which decrypts the traffic and forwards it to its destination.
-4. The server sends traffic back through the SSL tunnel to the client, which decrypts the traffic and forwards it to the application.
-</b></details>
-
-<details>
 <summary>What is a socket? Where can you see the list of sockets in your system?</summary><br><b>
 
 - A socket is a software endpoint that enables two-way communication between processes over a network. Sockets provide a standardized interface for network communication, allowing applications to send and receive data across a network. To view the list of open sockets on a Linux system: 
@@ -337,13 +308,6 @@ With IPv6 protocol, it issues an error to the user's computer.
 <summary>True or False? Ping is using UDP because it doesn't care about reliable connection</summary><br><b>
 
 False. Ping is actually using ICMP (Internet Control Message Protocol) which is a network protocol used to send diagnostic messages and control messages related to network communication.
-</b></details>
-
-<details>
-<summary>What is SDN?</summary><br><b>
-
-- SDN stands for Software-Defined Networking. It is an approach to network management that emphasizes the centralization of network control, enabling administrators to manage network behavior through a software abstraction.
-- In a traditional network, network devices such as routers, switches, and firewalls are configured and managed individually, using specialized software or command-line interfaces. In contrast, SDN separates the network control plane from the data plane, allowing administrators to manage network behavior through a centralized software controller.
 </b></details>
 
 <details>
@@ -431,34 +395,6 @@ Control Plane.
 </b></details>
 
 <details>
-<summary>Explain Spanning Tree Protocol (STP).</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is link aggregation? Why is it used?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is Asymmetric Routing? How to deal with it?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What overlay (tunnel) protocols are you familiar with?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is GRE? How does it work?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is VXLAN? How does it work?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is SNAT?</summary><br><b>
-</b></details>
-
-<details>
 <summary>Explain OSPF.</summary><br><b>
 
 
@@ -531,20 +467,6 @@ To prevent network congestion, it's important to monitor your network usage and 
 </b></details>
 
 <details>
-<summary>What can you tell me about the UDP packet format? What about the TCP packet format? How is it different?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is the exponential backoff algorithm? Where is it used?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Using Hamming code, what would be the code word for the following data word 100111010001101?</summary><br><b>
-
-00110011110100011101
-</b></details>
-
-<details>
 <summary>Give examples of protocols found in the application layer</summary><br><b>
 
 * Hypertext Transfer Protocol (HTTP) - used for the webpages on the internet
@@ -561,13 +483,6 @@ To prevent network congestion, it's important to monitor your network usage and 
 
 * Internet Protocol (IP) - assists in routing packets from one machine to another
 * Internet Control Message Protocol (ICMP) - lets one know what is going such as error messages and debugging information
-</b></details>
-
-<details>
-<summary>What is HSTS?</summary><br><b>
-HTTP Strict Transport Security is a web server directive that informs user agents and web browsers how to handle its connection through a response header sent at the very beginning and back to the browser. This forces connections over HTTPS encryption, disregarding any script's call to load any resource in that domain over HTTP.
-
-Read more [here](https://www.globalsign.com/en/blog/what-is-hsts-and-how-do-i-use-it#:~:text=HTTP%20Strict%20Transport%20Security%20(HSTS,and%20back%20to%20the%20browser.)
 </b></details>
 
 #### Network - Misc
@@ -721,18 +636,6 @@ The kernel is part of the operating system and is responsible for tasks like:
 <summary>True or False? Some pieces of the code in the kernel are loaded into protected areas of the memory so applications can't overwrite them.</summary><br><b>
 
 True
-</b></details>
-
-<details>
-<summary>What is POSIX?</summary><br><b>
-
-POSIX (Portable Operating System Interface) is a set of standards that define the interface between a Unix-like operating system and application programs.
-</b></details>
-
-<details>
-<summary>Explain what Semaphore is and what its role in operating systems.</summary><br><b>
-
-A semaphore is a synchronization primitive used in operating systems and concurrent programming to control access to shared resources. It's a variable or abstract data type that acts as a counter or a signaling mechanism for managing access to resources by multiple processes or threads.
 </b></details>
 
 <details>
@@ -1011,123 +914,6 @@ Additionally, since NoSQL does not adhere to the strict table with columns and r
 that Relational Databases require, you can store different data types together.
 </b></details>
 
-##### Practical SQL - Basics
-
-For these questions, we will be using the Customers and Orders tables shown below:
-
-**Customers**
-
-Customer_ID | Customer_Name | Items_in_cart | Cash_spent_to_Date
------------- | ------------- | ------------- | -------------
-100204 | John Smith | 0 | 20.00
-100205 | Jane Smith | 3 | 40.00
-100206 | Bobby Frank | 1 | 100.20
-
-**ORDERS**
-
-Customer_ID | Order_ID | Item | Price | Date_sold
------------- | ------------- | ------------- | ------------- | -------------
-100206 | A123 | Rubber Ducky | 2.20 | 2019-09-18
-100206 | A123 | Bubble Bath | 8.00 | 2019-09-18
-100206 | Q987 | 80-Pack TP | 90.00 | 2019-09-20
-100205 | Z001 | Cat Food - Tuna Fish | 10.00 | 2019-08-05
-100205 | Z001 | Cat Food - Chicken | 10.00 | 2019-08-05
-100205 | Z001 | Cat Food - Beef | 10.00 | 2019-08-05
-100205 | Z001 | Cat Food - Kitty quesadilla | 10.00 | 2019-08-05
-100204 | X202 | Coffee | 20.00 | 2019-04-29
-
-<details>
-<summary>How would I select all fields from this table?</summary><br><b>
-
-Select * <br>
-From Customers;
-</b></details>
-
-<details>
-<summary>How many items are in John's cart?</summary><br><b>
-
-Select Items_in_cart <br>
-From Customers <br>
-Where Customer_Name = "John Smith";
-</b></details>
-
-<details>
-<summary>What is the sum of all the cash spent across all customers?</summary><br><b>
-
-Select SUM(Cash_spent_to_Date) as SUM_CASH <br>
-From Customers;
-</b></details>
-
-<details>
-<summary>How many people have items in their cart?</summary><br><b>
-
-Select count(1) as Number_of_People_w_items <br>
-From Customers <br>
-where Items_in_cart > 0;
-</b></details>
-
-<details>
-<summary>How would you join the customer table to the order table?</summary><br><b>
-
-You would join them on the unique key. In this case, the unique key is Customer_ID in
-both the Customers table and Orders table
-</b></details>
-
-<details>
-<summary>How would you show which customer ordered which items?</summary><br><b>
-
-Select c.Customer_Name, o.Item <br>
-From Customers c <br>
-Left Join Orders o <br>
-  On c.Customer_ID = o.Customer_ID;
-
-</b></details>
-
-<details>
-<summary>Using a with statement, how would you show who ordered cat food, and the total amount of money spent?</summary><br><b>
-
-with cat_food as ( <br>
-Select Customer_ID, SUM(Price) as TOTAL_PRICE <br>
-From Orders <br>
-Where Item like "%Cat Food%" <br>
-Group by Customer_ID <br>
-) <br>
-Select Customer_name, TOTAL_PRICE <br>
-From Customers c <br>
-Inner JOIN cat_food f <br>
-  ON c.Customer_ID = f.Customer_ID <br>
-where c.Customer_ID in (Select Customer_ID from cat_food);
-
-Although this was a simple statement, the "with" clause really shines when
-a complex query needs to be run on a table before joining to another. With statements are nice,
-because you create a pseudo temp when running your query, instead of creating a whole new table.
-
-The Sum of all the purchases of cat food weren't readily available, so we used a with statement to create
-the pseudo table to retrieve the sum of the prices spent by each customer, then join the table normally.
-</b></details>
-
-<details>
-<summary>Which of the following queries would you use?
-
-```
-SELECT count(*)                             SELECT count(*)
-FROM shawarma_purchases                     FROM shawarma_purchases
-WHERE                               vs.     WHERE
-  YEAR(purchased_at) == '2017'              purchased_at >= '2017-01-01' AND
-                                            purchased_at <= '2017-31-12'
-```
-</summary><br><b>
-
-```
-SELECT count(*)
-FROM shawarma_purchases
-WHERE
-  purchased_at >= '2017-01-01' AND
-  purchased_at <= '2017-31-12'
-```
-
-When you use a function (`YEAR(purchased_at)`) it has to scan the whole database as opposed to using indexes and basically the column as it is, in its natural state.
-</b></details>
 
 ##### Elasticsearch
 
@@ -1251,12 +1037,6 @@ To this end, Elasticsearch allows you to make one or more copies of your index�
 </b></details>
 
 <details>
-<summary>Can you explain Term Frequency & Document Frequency?</summary><br><b>
-
-Term Frequency is how often a term appears in a given document and Document Frequency is how often a term appears in all documents. They both are used for determining the relevance of a term by calculating Term Frequency / Document Frequency.
-</b></details>
-
-<details>
 <summary>You check "Current Phase" under "Index lifecycle management" and you see it's set to "hot". What does it mean?</summary><br><b>
 
 "The index is actively being written to".
@@ -1289,20 +1069,6 @@ Bulk API is used when you need to index multiple documents. For high number of d
 </b></details>
 
 <details>
-<summary>Explain what is Relevance Score</summary><br><b>
-</b></details>
-
-<details>
-<summary>Explain Query Context and Filter Context</summary><br><b>
-
-From the official docs:
-
-"In the query context, a query clause answers the question “How well does this document match this query clause?” Besides deciding whether or not the document matches, the query clause also calculates a relevance score in the _score meta-field."
-
-"In a filter context, a query clause answers the question “Does this document match this query clause?” The answer is a simple Yes or No — no scores are calculated. Filter context is mostly used for filtering structured data"
-</b></details>
-
-<details>
 <summary>Describe how would an architecture of production environment with large amounts of data would be different from a small-scale environment</summary><br><b>
 
 There are several possible answers for this question. One of them is as follows:
@@ -1322,17 +1088,7 @@ A production environment with large amounts of data can include some kind of buf
 </b></details>
 
 <details>
-<summary>What is grok?</summary><br><b>
-
-A logstash plugin which modifies information in one format and immerse it in another.
-</b></details>
-
-<details>
 <summary>How grok works?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What grok patterns are you familiar with?</summary><br><b>
 </b></details>
 
 <details>
@@ -1343,9 +1099,6 @@ A logstash plugin which modifies information in one format and immerse it in ano
 <summary>How do you test or debug grok patterns?</summary><br><b>
 </b></details>
 
-<details>
-<summary>What are Logstash Codecs? What codecs are there?</summary><br><b>
-</b></details>
 
 ##### Kibana
 
@@ -1375,9 +1128,6 @@ Total number of documents matching the search results. If not query used then si
 <summary>What visualization type would you use for statistical outliers</summary><br><b>
 </b></details>
 
-<details>
-<summary>Describe in detail how do you create a dashboard in Kibana</summary><br><b>
-</b></details>
 
 #### Filebeat
 
@@ -1399,25 +1149,6 @@ Filebeat is a typical component of the ELK stack, since it was developed by Elas
 Read [here](https://www.elastic.co/guide/en/beats/filebeat/current/how-filebeat-works.html#harvester)
 </b></details>
 
-<details>
-<summary>True or False? a single harvester harvest multiple files, according to the limits set in filebeat.yml</summary><br><b>
-
-False. One harvester harvests one file.
-</b></details>
-
-<details>
-<summary>What are filebeat modules?</summary><br><b>
-
-These are pre-configured modules for specific types of logging locations (eg, Traefik, Fargate, HAProxy) to make it easy to configure forwarding logs using filebeat. They have different configurations based on where you're collecting logs from.
-</b></details>
-
-#### Elastic Stack
-
-<details>
-<summary>How do you secure an Elastic Stack?</summary><br><b>
-
-You can generate certificates with the provided elastic utils and change configuration to enable security using certificates model.
-</b></details>
 
 ## Distributed
 
@@ -1659,54 +1390,6 @@ applications:
 YAML
 </b></details>
 
-<details>
-<summary>How to write a multi-line string with YAML? What use cases is it good for?</summary><br><b>
-
-```
-someMultiLineString: |
-  look mama
-  I can write a multi-line string
-  I love YAML
-```
-
-It's good for use cases like writing a shell script where each line of the script is a different command.
-</b></details>
-
-<details>
-<summary>What is the difference between <code>someMultiLineString: |</code> to <code>someMultiLineString: ></code>?</summary><br><b>
-
-using `>` will make the multi-line string to fold into a single line
-
-```
-someMultiLineString: >
-  This is actually
-  a single line
-  do not let appearances fool you
-```
-</b></details>
-
-<details>
-<summary>What are placeholders in YAML?</summary><br><b>
-
-They allow you reference values instead of directly writing them and it is used like this:
-
-```
-username: {{ my.user_name }}
-```
-</b></details>
-
-<details>
-<summary>How can you define multiple YAML components in one file?</summary><br><b>
-
-Using this: `---`
-For Examples:
-
-```
-document_number: 1
----
-document_number: 2
-```
-</b></details>
 
 #### Firmware
 
@@ -2152,9 +1835,6 @@ The main objective of unit tests are to verify each function is producing proper
 <summary>What types of tests would you run to test a web application?</summary><br><b>
 </b></details>
 
-<details>
-<summary>Explain test harness?</summary><br><b>
-</b></details>
 
 <details>
 <summary>What is A/B testing?</summary><br><b>
@@ -2178,10 +1858,6 @@ The main objective of unit tests are to verify each function is producing proper
   * Endurance Testing
 </summary><br><b>
 </b></details>
-
-## Regex
-
-Given a text file, perform the following exercises
 
 #### Extract
 
@@ -2484,14 +2160,6 @@ DNS redirection
 </b></details>
 
 #### Design a system
-
-<details>
-<summary>Can you design a video streaming website?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Can you design a photo upload website?</summary><br><b>
-</b></details>
 
 <details>
 <summary>How would you build a URL shortener?</summary><br><b>
