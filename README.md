@@ -206,12 +206,6 @@ Immutable infrastructure replaces servers instead of modifying them, ensuring co
 
 </details>
 
-<details>
-<summary><b>How does DevSecOps integrate security into DevOps?</b></summary>
-
-DevSecOps embeds security at every stage of the DevOps lifecycle, using automated security scans and compliance checks.
-
-</details>
 
 <details>
 <summary><b>What are the benefits of CI/CD pipelines?</b></summary>
@@ -259,13 +253,6 @@ Chaos Engineering tests system resilience by introducing controlled failures.
 </details>
 
 <details>
-<summary><b>What is a service mesh?</b></summary>
-
-A service mesh manages microservices communication using proxies like Istio and Linkerd.
-
-</details>
-
-<details>
 <summary><b>What is an API gateway?</b></summary>
 
 An API gateway manages API traffic, security, and load balancing.
@@ -293,24 +280,11 @@ Monitoring collects data; observability provides deeper insights into system beh
 
 </details>
 
-<details>
-<summary><b>What are Helm charts?</b></summary>
-
-Helm charts package Kubernetes applications for easier deployment.
-
-</details>
 
 <details>
 <summary><b>What is A/B testing in DevOps?</b></summary>
 
 A/B testing compares different versions of an application to determine the best performance.
-
-</details>
-
-<details>
-<summary><b>How do you handle database schema changes in CI/CD?</b></summary>
-
-Using tools like Flyway or Liquibase for version-controlled migrations.
 
 </details>
 
@@ -5479,32 +5453,6 @@ Prometheus uses a pull model because it provides better control over scraping in
 
 </details>
 
-<details>
-<summary><b>How does Prometheus handle high-cardinality data?</b></summary>
-
-Prometheus stores time-series data efficiently, but high-cardinality metrics (many unique label combinations) can cause excessive memory and storage usage. Best practices include:
-
-Avoid unnecessary labels (e.g., user_id or request_id).
-Use histograms and summaries instead of tracking individual events.
-Enable retention policies and downsampling for old data.
-
-</details>
-
-<details>
-<summary><b>What are Recording Rules in Prometheus?</b></summary>
-
-Recording Rules allow precomputing and storing frequently used queries as new time-series metrics. This improves query performance.
-
-Example:
-
-groups:
-  - name: response_time_rules
-    rules:
-      - record: instance:response_time:avg
-        expr: avg(rate(http_request_duration_seconds[5m]))
-This stores the average request duration as instance:response_time:avg, making future queries faster.
-
-</details>
 
 <details>
 <summary><b>What is Thanos, and how does it complement Prometheus?</b></summary>
@@ -5530,34 +5478,6 @@ Grafana Questions
 
 </details>
 
-<details>
-<summary><b>How do you enable authentication in Grafana?</b></summary>
-
-Grafana supports multiple authentication methods:
-
-Basic authentication (default).
-OAuth providers (Google, GitHub, Azure AD, etc.).
-LDAP authentication for enterprise use.
-To enable OAuth authentication, modify grafana.ini:
-
-[auth.github]
-enabled = true
-client_id = YOUR_CLIENT_ID
-client_secret = YOUR_CLIENT_SECRET
-
-</details>
-
-<details>
-<summary><b>What are Templating Variables in Grafana?</b></summary>
-
-Templating allows users to create dynamic dashboards by using variables. Instead of hardcoding values, users can select values from dropdown menus.
-
-Example:
-
-rate(http_requests_total{job="$service"}[5m])
-Here, $service is a variable that can be selected from a dropdown list in Grafana.
-
-</details>
 
 <details>
 <summary><b>How do you set up Grafana provisioning?</b></summary>
@@ -5648,25 +5568,7 @@ This pipeline processes logs from Filebeat → Logstash → Elasticsearch.
 
 </details>
 
-<details>
-<summary><b>What are Kibana Canvas and Lens?</b></summary>
 
-Canvas → Used for creating custom, highly stylized reports and presentations.
-Lens → Drag-and-drop interface for creating advanced visualizations easily.
-
-</details>
-
-<details>
-<summary><b>How do you configure Kibana security?</b></summary>
-
-Enable authentication in kibana.yml:
-
-xpack.security.enabled: true
-elasticsearch.username: "kibana"
-elasticsearch.password: "changeme"
-Use role-based access control (RBAC) to restrict access.
-
-</details>
 
 <details>
 <summary><b>What is Beats in the ELK stack?</b></summary>
@@ -5679,12 +5581,6 @@ Packetbeat: Network monitoring.
 
 </details>
 
-<details>
-<summary><b>What is Curator in Elasticsearch?</b></summary>
-
-Curator is a tool for managing Elasticsearch indices, used for deleting old indices, snapshot backups, and optimizing performance.
-
-</details>
 
 <details>
 <summary><b>How do you integrate Prometheus and ELK Stack?</b></summary>
@@ -5716,17 +5612,6 @@ Alternative: OpenTelemetry, Loki, and InfluxDB.
 
 ### 🔴 Advanced
 
-<details>
-<summary><b>How do you scale Prometheus for a large environment?</b></summary>
-
-Prometheus is a single-node system, so for large environments:
-
-Use multiple Prometheus instances scraping different targets.
-Federation: Create a parent Prometheus that scrapes aggregated metrics from child Prometheus instances.
-Remote storage: Use Thanos, Cortex, or Mimir to store metrics in scalable object storage (S3, GCS).
-Sharding: Distribute scraping targets across Prometheus instances using load balancing tools like Kube StatefulSets.
-
-</details>
 
 <details>
 <summary><b>How does Prometheus handle stale or missing metrics?</b></summary>
@@ -5802,14 +5687,6 @@ Example: Mark a Kubernetes deployment event in Grafana.
 
 </details>
 
-<details>
-<summary><b>How do you configure Grafana for multi-tenancy?</b></summary>
-
-Organizations: Create multiple teams with separate dashboards.
-Data source permissions: Restrict access at the data-source level.
-Multi-instance deployment: Run separate Grafana instances for different teams.
-
-</details>
 
 <details>
 <summary><b>What is Alerting in Grafana and how does it work?</b></summary>
@@ -5890,15 +5767,6 @@ Example anomaly detection job:
     "detectors": [{ "function": "mean", "field_name": "cpu_usage" }]
   }
 }
-
-</details>
-
-<details>
-<summary><b>How do you secure Elasticsearch clusters?</b></summary>
-
-Enable TLS (xpack.security.enabled: true).
-Use API Key authentication.
-Implement firewall rules to restrict access.
 
 </details>
 
@@ -5998,16 +5866,6 @@ Overall, the Prometheus architecture is designed to be highly scalable and resil
 
 </details>
 
-<details>
-<summary><b>Can you compare Prometheus to other solutions like InfluxDB for example?</b></summary>
-
-Compared to other monitoring solutions, such as InfluxDB, Prometheus is known for its high performance and scalability. It can handle large volumes of data and can easily be integrated with other tools in the monitoring ecosystem. InfluxDB, on the other hand, is known for its ease of use and simplicity. It has a user-friendly interface and provides easy-to-use APIs for collecting and querying data.
-
-Another popular solution, Nagios, is a more traditional monitoring system that relies on a push-based model for collecting data. Nagios has been around for a long time and is known for its stability and reliability. However, compared to Prometheus, Nagios lacks some of the more advanced features, such as multi-dimensional data model and powerful query language.
-
-Overall, the choice of a monitoring solution depends on the specific needs and requirements of the organization. While Prometheus is a great choice for large-scale monitoring and alerting, InfluxDB may be a better fit for smaller environments that require ease of use and simplicity. Nagios remains a solid choice for organizations that prioritize stability and reliability over advanced features.
-
-</details>
 
 <details>
 <summary><b>What is an Alert?</b></summary>
@@ -6123,24 +5981,6 @@ This will return a list of all the values for the *method* label in the *http_re
 
 </details>
 
-<details>
-<summary><b>How do you convert cpu_user_seconds to cpu usage in percentage?</b></summary>
-
-To convert *cpu_user_seconds* to CPU usage in percentage, you need to divide it by the total elapsed time and the number of CPU cores, and then multiply by 100. The formula is as follows:
-
-```
-100 * sum(rate(process_cpu_user_seconds_total{job="<job-name>"}[<time-period>])) by (instance) / (<time-period> * <num-cpu-cores>)
-```
-
-Here, *<job-name>* is the name of the job you want to query, *<time-period>* is the time range you want to query (e.g. *5m*, *1h*), and *<num-cpu-cores>* is the number of CPU cores on the machine you are querying.
-
-For example, to get the CPU usage in percentage for the last 5 minutes for a job named *my-job* running on a machine with 4 CPU cores, you can use the following query:
-
-```
-100 * sum(rate(process_cpu_user_seconds_total{job="my-job"}[5m])) by (instance) / (5m * 4)
-```
-
-</details>
 
 <details>
 <summary><b>How do you monitor and troubleshoot applications in a DevOps environment?</b></summary>
@@ -6174,19 +6014,6 @@ Filebeat is used to monitor the logging directories inside of VMs or mounted as 
 
 </details>
 
-<details>
-<summary><b>If one is using ELK, is it a must to also use filebeat? In what scenarios it's useful to use filebeat?</b></summary>
-
-Filebeat is a typical component of the ELK stack, since it was developed by Elastic to work with the other products (Logstash and Kibana). It's possible to send logs directly to logstash, though this often requires coding changes for the application. Particularly for legacy applications with little test coverage, it might be a better option to use filebeat, since you don't need to make any changes to the application code.
-
-</details>
-
-<details>
-<summary><b>What is a harvester?</b></summary>
-
-Read [here](https://www.elastic.co/guide/en/beats/filebeat/current/how-filebeat-works.html#harvester)
-
-</details>
 
 ---
 
@@ -6436,26 +6263,6 @@ CONS:
 
 </details>
 
-<details>
-<summary><b>Explain Mono-repo vs. Multi-repo.What are the cons and pros of each approach?</b></summary>
-
-In a Mono-repo, all the code for an organization is stored in a single,centralized repository.
-PROS (Mono-repo):
-* Unified tooling
-* Code Sharing
-CONS (Mono-repo):
-* Increased complexity
-* Slower cloning
-
-In a Multi-repo setup, each component is stored in it's own separate repository. Each repository has it's own version control history.
-PROS (Multi-repo):
-* Simpler to manage
-* Different teams and developers can work on different parts of the project independently, making parallel development easier.
-CONS (Multi-repo):
-* Code duplication
-* Integration challenges
-
-</details>
 
 <details>
 <summary><b>What are the drawbacks of monolithic architecture?</b></summary>
@@ -6767,20 +6574,6 @@ Instead of working in "push mode", the consumers can pull tasks only when they a
 </details>
 
 <details>
-<summary><b>What is a "cache replacement policy"?</b></summary>
-
-Take a look [here](https://en.wikipedia.org/wiki/Cache_replacement_policies)
-
-</details>
-
-<details>
-<summary><b>Which cache replacement policies are you familiar with?</b></summary>
-
-You can find a list [here](https://en.wikipedia.org/wiki/Cache_replacement_policies)
-
-</details>
-
-<details>
 <summary><b>Explain the following cache policies: * FIFO * LIFO * LRU</b></summary>
 
 Read about it [here](https://en.wikipedia.org/wiki/Cache_replacement_policies)
@@ -6812,12 +6605,6 @@ DNS redirection
 
 </details>
 
-<details>
-<summary><b>Explain "Branch by Abstraction" technique</b></summary>
-
-*(No answer provided in source)*
-
-</details>
 
 ### Design a system
 
