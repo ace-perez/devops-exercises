@@ -577,26 +577,7 @@ greet()
 
 </details>
 
-<details>
-<summary><b>What is YAML, and where is it used?</b></summary>
 
-YAML (Yet Another Markup Language) is a human-readable format used for Kubernetes configurations, Ansible playbooks, CI/CD pipelines, etc.
-
-</details>
-
-<details>
-<summary><b>What is a YAML file example?</b></summary>
-
-```yaml
-version: '3'
-services:
-  web:
-    image: nginx
-    ports:
-      - "80:80"
-```
-
-</details>
 
 <details>
 <summary><b>What is the shebang (`#!`) in a script?</b></summary>
@@ -669,16 +650,6 @@ Extracts the first column from `file.txt`.
 
 </details>
 
-<details>
-<summary><b>How do you comment in YAML?</b></summary>
-
-Use `#` for comments.
-```yaml
-# This is a comment
-name: DevOps
-```
-
-</details>
 
 ### 🟡 Intermediate
 
@@ -697,13 +668,6 @@ Run: `./script.sh DevOps` → Output: `Hello, DevOps!`
 <summary><b>How do you handle errors in Bash scripts?</b></summary>
 
 Use `set -e` to stop execution on errors.
-
-</details>
-
-<details>
-<summary><b>What is an Ansible playbook?</b></summary>
-
-A YAML file that defines automation tasks for servers.
 
 </details>
 
@@ -813,12 +777,6 @@ export VAR="DevOps"
 
 </details>
 
-<details>
-<summary><b>What is an Ansible role?</b></summary>
-
-A reusable way to organize Ansible tasks, handlers, and templates.
-
-</details>
 
 <details>
 <summary><b>What is a multiline string in YAML?</b></summary>
@@ -1501,20 +1459,6 @@ ansible-galaxy install geerlingguy.nginx
 
 </details>
 
-<details>
-<summary><b>How does Ansible handle idempotency?</b></summary>
-
-Ansible ensures repeated executions produce the same result by only applying changes when needed.
-
-Example:
-
-- name: Ensure Nginx is installed
-  apt:
-    name: nginx
-    state: present
-If Nginx is already installed, the task is skipped.
-
-</details>
 
 <details>
 <summary><b>What is Ansible Vault?</b></summary>
@@ -3017,19 +2961,6 @@ Reserved Instances (RIs) are a pricing model where users commit to a specific in
 </details>
 
 <details>
-<summary><b>What is the difference between Kubernetes and Docker Swarm?</b></summary>
-
-| Feature | Kubernetes | Docker Swarm |
-|---|---|---|
-| Complexity | Steeper learning curve | Easier to set up |
-| Scaling | Automated, fine-grained | Manual or auto-scaling |
-| Networking | Uses CNI (customizable) | Simple overlay network |
-| Load Balancing | Built-in service discovery | DNS-based service discovery |
-| Use Case | Enterprise-grade orchestration | Lightweight container orchestration |
-
-</details>
-
-<details>
 <summary><b>What is a Stateful vs. Stateless application in the cloud?</b></summary>
 
 - **Stateless Application:** Doesn't retain session data. Each request is independent (e.g., REST APIs, serverless functions). Scales easily.
@@ -3087,12 +3018,6 @@ An SLA is a contract between a cloud provider and a customer defining uptime gua
 
 </details>
 
-<details>
-<summary><b>What is Kubernetes federation?</b></summary>
-
-Kubernetes Federation allows managing multiple Kubernetes clusters as a single unit for high availability and multi-cloud support.
-
-</details>
 
 <details>
 <summary><b>How does Chaos Engineering apply to cloud environments?</b></summary>
@@ -3101,12 +3026,6 @@ Chaos Engineering intentionally injects failures to test system resilience. For 
 
 </details>
 
-<details>
-<summary><b>What is a Kubernetes operator?</b></summary>
-
-A Kubernetes Operator automates complex tasks for stateful applications (e.g., managing databases in Kubernetes).
-
-</details>
 
 <details>
 <summary><b>How do you implement multi-region deployments?</b></summary>
@@ -3177,25 +3096,6 @@ Egress charges are fees applied to data transferred out of the cloud provider's 
 <summary><b>What are the risks of vendor lock-in, and how do you mitigate them?</b></summary>
 
 Vendor lock-in occurs when a company becomes overly dependent on a single cloud provider, making migration difficult due to high costs or compatibility issues. Mitigation strategies include using multi-cloud approaches, adopting open-source portable tools (e.g., Kubernetes, Terraform), and designing cloud-agnostic architectures using containerisation and microservices.
-
-</details>
-
-<details>
-<summary><b>What is Kubernetes pod affinity and anti-affinity?</b></summary>
-
-Pod affinity and anti-affinity define rules for where Kubernetes pods should be scheduled based on labels. Pod affinity ensures pods are scheduled together (e.g., for performance), while pod anti-affinity ensures pods are placed on different nodes (e.g., for high availability).
-```yaml
-affinity:
-  podAntiAffinity:
-    requiredDuringSchedulingIgnoredDuringExecution:
-      - labelSelector:
-          matchExpressions:
-            - key: app
-              operator: In
-              values:
-                - backend
-        topologyKey: "kubernetes.io/hostname"
-```
 
 </details>
 
@@ -4146,23 +4046,9 @@ A subnet mask divides an IP address into network and host portions, determining 
 </details>
 
 <details>
-<summary><b>What is DHCP, and how does it work?</b></summary>
-
-The Dynamic Host Configuration Protocol (DHCP) automatically assigns IP addresses to devices in a network, reducing manual configuration.
-
-</details>
-
-<details>
 <summary><b>What is DNS, and why is it important?</b></summary>
 
 The Domain Name System (DNS) translates domain names (e.g., google.com) into IP addresses, making it easier to access websites.
-
-</details>
-
-<details>
-<summary><b>What is NAT (Network Address Translation)?</b></summary>
-
-NAT allows multiple devices on a local network to share a single public IP address for internet access.
 
 </details>
 
@@ -4174,24 +4060,9 @@ SSH (Secure Shell) is a protocol used for secure remote access to servers using 
 </details>
 
 <details>
-<summary><b>What is HTTP and HTTPS?</b></summary>
-
-HTTP (Hypertext Transfer Protocol): Unencrypted web communication.
-HTTPS (HTTP Secure): Secure, encrypted communication using SSL/TLS.
-
-</details>
-
-<details>
 <summary><b>What is port forwarding?</b></summary>
 
 Port forwarding redirects network traffic from one port to another, often used to expose internal services externally.
-
-</details>
-
-<details>
-<summary><b>What is ARP (Address Resolution Protocol)?</b></summary>
-
-ARP translates IP addresses into MAC addresses to enable communication within a local network.
 
 </details>
 
@@ -5720,27 +5591,6 @@ Set audit logs for security compliance.
 ### 📌 Additional Questions
 
 <details>
-<summary><b>What is Prometheus? What are some of Prometheus's main features?</b></summary>
-
-Prometheus is a popular open-source systems monitoring and alerting toolkit, originally developed at SoundCloud. It is designed to collect and store time-series data, and to allow for querying and analysis of that data using a powerful query language called PromQL. Prometheus is frequently used to monitor cloud-native applications, microservices, and other modern infrastructure.
-
-Some of the main features of Prometheus include:
-
-    1. Data model: Prometheus uses a flexible data model that allows users to organize and label their time-series data in a way that makes sense for their particular use case. Labels are used to identify different dimensions of the data, such as the source of the data or the environment in which it was collected.
-
-    2. Pull-based architecture: Prometheus uses a pull-based model to collect data from targets, meaning that the Prometheus server actively queries its targets for metrics data at regular intervals. This architecture is more scalable and reliable than a push-based model, which would require every target to push data to the server.
-
-    3. Time-series database: Prometheus stores all of its data in a time-series database, which allows users to perform queries over time ranges and to aggregate and analyze their data in various ways. The database is optimized for write-heavy workloads, and can handle a high volume of data with low latency.
-
-    4. Alerting: Prometheus includes a powerful alerting system that allows users to define rules based on their metrics data and to send alerts when certain conditions are met. Alerts can be sent via email, chat, or other channels, and can be customized to include specific details about the problem.
-
-    5. Visualization: Prometheus has a built-in graphing and visualization tool, called PromDash, which allows users to create custom dashboards to monitor their systems and applications. PromDash supports a variety of graph types and visualization options, and can be customized using CSS and JavaScript.
-
-Overall, Prometheus is a powerful and flexible tool for monitoring and analyzing systems and applications, and is widely used in the industry for cloud-native monitoring and observability.
-
-</details>
-
-<details>
 <summary><b>In what scenarios it might be better to NOT use Prometheus?</b></summary>
 
 From Prometheus documentation: "if you need 100% accuracy, such as for per-request billing".
@@ -5798,18 +5648,6 @@ Prometheus also supports various functions and operators for aggregating and man
 
 </details>
 
-<details>
-<summary><b>What is an exporter? What is it used for?</b></summary>
-
-The exporter serves as a bridge between the third-party system or application and Prometheus, making it possible for Prometheus to monitor and collect data from that system or application.
-
-The exporter acts as a server, listening on a specific network port for requests from Prometheus to scrape metrics. It collects metrics from the third-party system or application and transforms them into a format that can be understood by Prometheus. The exporter then exposes these metrics to Prometheus via an HTTP endpoint, making them available for collection and analysis.
-
-Exporters are commonly used to monitor various types of infrastructure components such as databases, web servers, and storage systems. For example, there are exporters available for monitoring popular databases such as MySQL and PostgreSQL, as well as web servers like Apache and Nginx.
-
-Overall, exporters are a critical component of the Prometheus ecosystem, allowing for the monitoring of a wide range of systems and applications, and providing a high degree of flexibility and extensibility to the platform.
-
-</details>
 
 <details>
 <summary><b>Which Prometheus best practices?</b></summary>
@@ -5835,13 +5673,6 @@ sum(rate(http_requests_total[1h]))
 In this query, *http_requests_total* is the name of the metric that tracks the total number of HTTP requests, and the *rate* function calculates the per-second rate of requests over the last hour. The *sum* function then adds up all of the requests to give you the total number of requests in the last hour.
 
 You can adjust the time range by changing the duration in the *rate* function. For example, if you wanted to get the total number of requests in the last day, you could change the function to *rate(http_requests_total[1d])*.
-
-</details>
-
-<details>
-<summary><b>What HA in Prometheus means?</b></summary>
-
-HA stands for High Availability. This means that the system is designed to be highly reliable and always available, even in the face of failures or other issues. In practice, this typically involves setting up multiple instances of Prometheus and ensuring that they are all synchronized and able to work together seamlessly. This can be achieved through a variety of techniques, such as load balancing, replication, and failover mechanisms. By implementing HA in Prometheus, users can ensure that their monitoring data is always available and up-to-date, even in the face of hardware or software failures, network issues, or other problems that might otherwise cause downtime or data loss.
 
 </details>
 
@@ -6181,13 +6012,6 @@ CONS:
 </details>
 
 <details>
-<summary><b>What's a service mesh?</b></summary>
-
-It is a layer that facilitates communication management and control between microservices in a containerized application. It handles tasks such as load balancing, encryption, and monitoring.
-
-</details>
-
-<details>
 <summary><b>Explain "Loose Coupling"</b></summary>
 
 In "Loose Coupling", components of a system communicate with each other with a little understanding of each other's internal workings. This improves scalability and ease of modification in complex systems.
@@ -6201,29 +6025,9 @@ It is a communication mechanism used in distributed systems to enable asynchrono
 
 </details>
 
-<details>
-<summary><b>Explain Infrastructure as Code (IaC)</b></summary>
-
-*(No answer provided in source)*
-
-</details>
 
 <details>
 <summary><b>What is the role of configuration management in DevOps?</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-<details>
-<summary><b>What are microservices, and how do they relate to DevOps architecture?</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-<details>
-<summary><b>Explain the concept of "Immutable Infrastructure" and its benefits in DevOps</b></summary>
 
 *(No answer provided in source)*
 
@@ -6236,12 +6040,6 @@ It is a communication mechanism used in distributed systems to enable asynchrono
 
 </details>
 
-<details>
-<summary><b>What is the role of "Infrastructure as Code" (IaC) in disaster recovery and scaling?</b></summary>
-
-*(No answer provided in source)*
-
-</details>
 
 <details>
 <summary><b>What is "Chaos Engineering," and how does it relate to DevOps practices?</b></summary>
@@ -6252,20 +6050,6 @@ It is a communication mechanism used in distributed systems to enable asynchrono
 
 <details>
 <summary><b>Explain the importance of "Serverless Computing" in DevOps</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-<details>
-<summary><b>What is "Immutable Server," and how does it enhance reliability in DevOps?</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-<details>
-<summary><b>What is "Serverless Orchestration," and how does it impact application development in DevOps?</b></summary>
 
 *(No answer provided in source)*
 
@@ -6285,22 +6069,9 @@ It is a communication mechanism used in distributed systems to enable asynchrono
 
 </details>
 
-<details>
-<summary><b>What is the role of "Service Mesh" in microservices architectures?</b></summary>
-
-*(No answer provided in source)*
-
-</details>
 
 <details>
 <summary><b>How do you handle data migration in a DevOps environment?</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-<details>
-<summary><b>Explain the concept of "Serverless Databases" in DevOps applications</b></summary>
 
 *(No answer provided in source)*
 
@@ -6701,13 +6472,6 @@ When committed to a certain goal, Raspberry Pi can serve as an embedded system.
 </details>
 
 <details>
-<summary><b>What types of storage are there?</b></summary>
-
-There are several types of storage, including hard disk drives (HDDs), solid-state drives (SSDs), and optical drives (CD/DVD/Blu-ray). Other types of storage include USB flash drives, memory cards, and network-attached storage (NAS).
-
-</details>
-
-<details>
 <summary><b>What are some considerations DevOps teams should keep in mind when selecting hardware for their job?</b></summary>
 
 <br>
@@ -6881,180 +6645,6 @@ There are six classes of interrupts possible:
 
 ---
 
-## 📦 Release Management
-
-<details>
-<summary><b>Explain Semantic Versioning</b></summary>
-
-[This](https://semver.org/) page explains it perfectly:
-
-```
-Given a version number MAJOR.MINOR.PATCH, increment the:
-
-MAJOR version when you make incompatible API changes
-MINOR version when you add functionality in a backwards compatible manner
-PATCH version when you make backwards compatible bug fixes
-Additional labels for pre-release and build metadata are available as extensions to the MAJOR.MINOR.PATCH format.
-```
-
-</details>
-
-<details>
-<summary><b>Explain the CI/CD pipeline</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-<details>
-<summary><b>What are some best practices for security in a DevOps pipeline?</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-<details>
-<summary><b>What are blue-green deployments, and how do they work in DevOps?</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-<details>
-<summary><b>What is "GitOps," and how does it differ from traditional infrastructure management?</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-<details>
-<summary><b>What are the key differences between Jenkins and Travis CI?</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-<details>
-<summary><b>Explain the concept of "Dark Launching" in DevOps</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-<details>
-<summary><b>What is "Canary Deployment," and how does it work in DevOps?</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-<details>
-<summary><b>Key metrics and tools for measuring the success of a DevOps pipeline</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-<details>
-<summary><b>Benefits of "Feature Toggles" in DevOps development</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-<details>
-<summary><b>How to handle database changes in a DevOps pipeline while minimizing downtime?</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-<details>
-<summary><b>How to ensure that your DevOps pipeline is compliant with security and regulatory requirements?</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-<details>
-<summary><b>Explain the concept of "Trunk-Based Development" and how it differs from feature branching in source control</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-<details>
-<summary><b>What are "Immutable Artifacts," and how do they improve deployment reliability in DevOps?</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-<details>
-<summary><b>Explain the concept of "Continuous Deployment" and its benefits in DevOps</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-<details>
-<summary><b>What are the key principles of "Continuous Compliance," and how do they ensure security in DevOps?</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-<details>
-<summary><b>How does "Feature Flag Management" enable controlled feature releases in DevOps applications?</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-<details>
-<summary><b>What is "Continuous Integration vs. Continuous Delivery vs. Continuous Deployment"?</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-<details>
-<summary><b>How do you manage database schema changes in a DevOps pipeline?</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-<details>
-<summary><b>What is a "Rolling Deployment" strategy, and what are its advantages?</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-<details>
-<summary><b>What is "Blue-Green Infrastructure," and how does it relate to application deployments in DevOps?</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-<details>
-<summary><b>How do you optimize DevOps pipelines for large-scale and complex applications?</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-<details>
-<summary><b>What is "Continuous Integration" in the DevOps Lifecycle?</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
----
-
 ## 🧩 Miscellaneous (API, YAML, Firmware)
 
 <details>
@@ -7072,20 +6662,6 @@ Additional labels for pre-release and build metadata are available as extensions
 7. The browser then sends subsequent requests as needed to the server to get the embedded links, javascript, images in the HTML and then steps 3 to 5 are repeated.
 
 TODO: add more details!
-
-</details>
-
-<details>
-<summary><b>What is DevOps, and how does it differ from traditional IT practices?</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-<details>
-<summary><b>What is version control, and why is it important in DevOps?</b></summary>
-
-*(No answer provided in source)*
 
 </details>
 
@@ -7388,7 +6964,4 @@ Not only this will tell you what is expected from you, it will also provide big 
 
 ---
 
-## 📝 About This Document
-
-This README consolidates ~900 DevOps interview questions, drawn from multiple sources and reorganized into a unified taxonomy of 24 topical categories. For sections sourced from structured material, questions are further grouped by difficulty (🟢 Beginner · 🟡 Intermediate · 🔴 Advanced).
 
