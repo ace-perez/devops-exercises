@@ -1302,14 +1302,6 @@ Usage	Small-scale automation	Large-scale projects
 
 </details>
 
-<details>
-<summary><b>How do you run an Ansible Playbook?</b></summary>
-
-Command:
-
-ansible-playbook playbook.yml -i inventory.ini
-
-</details>
 
 <details>
 <summary><b>What is AWS CloudFormation?</b></summary>
@@ -2095,17 +2087,6 @@ Namespaces isolate resources (PID, network, mount points, etc.) for each contain
 </details>
 
 <details>
-<summary><b>What is the difference between Docker Volumes, Bind Mounts, and tmpfs?</b></summary>
-
-| Type | Persistent? | Use Case |
-|---|---|---|
-| Volumes | Yes | Best for data persistence |
-| Bind Mounts | Yes | Direct host file access |
-| tmpfs | No | In-memory storage for performance |
-
-</details>
-
-<details>
 <summary><b>How do you secure a Docker container?</b></summary>
 
 - Use minimal base images (e.g., `alpine`).
@@ -2146,33 +2127,7 @@ Docker Compose is for single-host deployments, while Docker Stack is for multi-n
 
 #### Kubernetes Advanced
 
-</details>
 
-<details>
-<summary><b>How does Kubernetes handle stateful applications?</b></summary>
-
-Kubernetes uses StatefulSets instead of Deployments to provide stable network identities and persistent storage.
-```yaml
-apiVersion: apps/v1
-kind: StatefulSet
-metadata:
-  name: mysql
-spec:
-  serviceName: "mysql"
-  replicas: 3
-```
-
-</details>
-
-<details>
-<summary><b>How do you secure Kubernetes Secrets?</b></summary>
-
-Use encryption at rest and store secrets in external vaults (e.g., HashiCorp Vault).
-```bash
-kubectl create secret generic db-secret --from-literal=password=mysecurepassword
-```
-
-</details>
 
 <details>
 <summary><b>How does Kubernetes handle node failures?</b></summary>
@@ -2287,26 +2242,11 @@ An Availability Zone is a physically separate data center within a cloud provide
 
 </details>
 
-<details>
-<summary><b>What is the Shared Responsibility Model in cloud security?</b></summary>
-
-Cloud providers and customers share security responsibilities:
-- **Provider:** Secures hardware, networking, and cloud infrastructure.
-- **Customer:** Secures applications, data, and user access.
-
-</details>
 
 <details>
 <summary><b>What is a Virtual Private Cloud (VPC)?</b></summary>
 
 A VPC is an isolated cloud environment where users can define their own network settings, including subnets, IP addresses, and security groups.
-
-</details>
-
-<details>
-<summary><b>What is an Elastic Load Balancer (ELB)?</b></summary>
-
-An ELB distributes incoming traffic across multiple servers to ensure high availability and fault tolerance.
 
 </details>
 
@@ -2331,12 +2271,6 @@ A CDN is a distributed network of servers that caches content close to users for
 
 </details>
 
-<details>
-<summary><b>What is an IAM role in cloud security?</b></summary>
-
-An IAM (Identity and Access Management) role grants permissions to cloud services without needing credentials stored on a server.
-
-</details>
 
 ### 🟡 Intermediate
 
@@ -2399,12 +2333,6 @@ A Bastion Host is a publicly accessible server that provides secure SSH access t
 
 ### 🔴 Advanced
 
-<details>
-<summary><b>What is a Service Level Agreement (SLA) in cloud computing?</b></summary>
-
-An SLA is a contract between a cloud provider and a customer defining uptime guarantees (e.g., AWS offers 99.99% uptime for EC2), response times, and penalties if the SLA is not met (e.g., refunds or service credits).
-
-</details>
 
 <details>
 <summary><b>How do you optimize cloud costs?</b></summary>
@@ -4175,24 +4103,6 @@ Alerts: Set up log-based alerts
 
 </details>
 
-<details>
-<summary><b>How do you install the ELK stack?</b></summary>
-
-Install Elasticsearch, Logstash, and Kibana:
-
-# Install Elasticsearch
-sudo apt install elasticsearch
-
-# Install Logstash
-sudo apt install logstash
-
-# Install Kibana
-sudo apt install kibana
-Start services:
-
-sudo systemctl start elasticsearch logstash kibana
-
-</details>
 
 <details>
 <summary><b>What is an Index in Elasticsearch?</b></summary>
@@ -4488,18 +4398,6 @@ avg(http_requests_total) > 1000 → Sends an alert if requests exceed 1000.
 
 </details>
 
-<details>
-<summary><b>How does Loki compare with Elasticsearch for logging?</b></summary>
-
-Feature	Loki	Elasticsearch
-Storage	Compressed logs	Full-text index
-Querying	Label-based	Query DSL
-Performance	Faster (optimized for Kubernetes)	Heavy resource usage
-Loki is recommended for lightweight, Kubernetes-native logging, while Elasticsearch is better for complex log analysis.
-
-ELK Stack Questions
-
-</details>
 
 <details>
 <summary><b>What is the Hot-Warm-Cold architecture in Elasticsearch?</b></summary>
@@ -5189,80 +5087,6 @@ DNS redirection
 
 ---
 
-## 🧪 Testing
-
-<details>
-<summary><b>Explain white-box testing</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-<details>
-<summary><b>Explain black-box testing</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-<details>
-<summary><b>What are unit tests?</b></summary>
-
-Unit test are a software testing technique that involves systimatically breaking down a system and testing each individual part of the assembly. These tests are automated and can be run repeatedly to allow developers to catch edge case scenarios or bugs quickly while developing.
-
-The main objective of unit tests are to verify each function is producing proper outputs given a set of inputs.
-
-</details>
-
-<details>
-<summary><b>What types of tests would you run to test a web application?</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-<details>
-<summary><b>What is A/B testing?</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-<details>
-<summary><b>What is network simulation and how do you perform it?</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-<details>
-<summary><b>What types of performances tests are you familiar with?</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-<details>
-<summary><b>Explain the following types of tests: * Load Testing * Stress Testing * Capacity Testing * Volume Testing * Endurance Testing</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-<details>
-<summary><b>Explain the concept of "Continuous Testing" in the context of DevOps</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-<details>
-<summary><b>What is "IaC Testing," and how does it ensure the reliability of infrastructure deployments in DevOps?</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
 ### Extract
 
 <details>
@@ -5628,19 +5452,6 @@ While automation focuses on a task level, Orchestration is the process of automa
 
 </details>
 
-<details>
-<summary><b>Tell me about interesting bugs you've found and also fixed</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-<details>
-<summary><b>What is a Debugger and how it works?</b></summary>
-
-*(No answer provided in source)*
-
-</details>
 
 <details>
 <summary><b>What services an application might have?</b></summary>
