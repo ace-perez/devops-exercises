@@ -1355,8 +1355,6 @@ Linux is an open-source OS kernel created by Linus Torvalds in 1991. It dominate
 
 </details>
 
----
-
 <details>
 <summary><b>What are the fundamental Linux file permissions?</b></summary>
 
@@ -1383,8 +1381,6 @@ So `chmod 754 file` sets those permissions numerically.
 
 </details>
 
----
-
 <details>
 <summary><b>How do you change file permissions in Linux?</b></summary>
 
@@ -1405,8 +1401,6 @@ chmod 644 config.txt     # rw- for owner, r-- for group and others
 
 </details>
 
----
-
 <details>
 <summary><b>What is the difference between a soft link and a hard link?</b></summary>
 
@@ -1422,8 +1416,6 @@ chmod 644 config.txt     # rw- for owner, r-- for group and others
 **Soft link** = a shortcut that points to a path.
 
 </details>
-
----
 
 <details>
 <summary><b>What is a process in Linux and how do you manage processes?</b></summary>
@@ -1445,8 +1437,6 @@ fg / bg                  # bring to foreground / send to background
 
 </details>
 
----
-
 <details>
 <summary><b>What is the difference between a daemon and a regular process?</b></summary>
 
@@ -1462,8 +1452,6 @@ fg / bg                  # bring to foreground / send to background
 Daemons typically have names ending in `d`.
 
 </details>
-
----
 
 <details>
 <summary><b>Explain the Linux directory structure and key directories</b></summary>
@@ -1488,8 +1476,6 @@ Linux follows the **Filesystem Hierarchy Standard (FHS)**:
 | `/etc/systemd/system` | Custom systemd service files |
 
 </details>
-
----
 
 <details>
 <summary><b>What are environment variables and how do you set them?</b></summary>
@@ -1523,8 +1509,6 @@ MY_VAR="hello"
 
 </details>
 
----
-
 <details>
 <summary><b>What is SSH and how do you use it securely?</b></summary>
 
@@ -1545,8 +1529,6 @@ ssh-copy-id user@hostname            # deploy public key to server
 - Use `~/.ssh/config` to set per-host security options
 
 </details>
-
----
 
 <details>
 <summary><b>What is systemd and how do you manage services with it?</b></summary>
@@ -1571,8 +1553,6 @@ systemctl daemon-reload        # register changes
 ```
 
 </details>
-
----
 
 <details>
 <summary><b>How do you schedule tasks in Linux using cron?</b></summary>
@@ -1606,8 +1586,6 @@ crontab -r    # remove all
 
 </details>
 
----
-
 <details>
 <summary><b>How do you monitor system performance in Linux?</b></summary>
 
@@ -1640,8 +1618,6 @@ sar                  # system activity report (via sysstat)
 
 </details>
 
----
-
 <details>
 <summary><b>What is a package manager and how do you use it?</b></summary>
 
@@ -1669,8 +1645,6 @@ Package managers handle **dependencies automatically** and verify package integr
 
 </details>
 
----
-
 <details>
 <summary><b>What is RAID and what are the common RAID levels?</b></summary>
 
@@ -1687,8 +1661,6 @@ Package managers handle **dependencies automatically** and verify package integr
 Linux implements software RAID using the `mdadm` utility.
 
 </details>
-
----
 
 <details>
 <summary><b>What is LVM and why is it useful?</b></summary>
@@ -1718,7 +1690,6 @@ pvdisplay / vgdisplay / lvdisplay  # view info
 
 </details>
 
----
 
 <details>
 <summary><b>What is the purpose of /etc/fstab?</b></summary>
@@ -1748,8 +1719,6 @@ mount -a
 ```
 
 </details>
-
----
 
 <details>
 <summary><b>How do you troubleshoot network connectivity issues in Linux?</b></summary>
@@ -1794,7 +1763,6 @@ firewall-cmd --list-all
 
 </details>
 
----
 
 <details>
 <summary><b>How do you set up and configure a basic firewall in Linux?</b></summary>
@@ -1830,7 +1798,6 @@ iptables-save > /etc/iptables/rules.v4   # persist
 
 </details>
 
----
 
 <details>
 <summary><b>What is SELinux and AppArmor? How do they enhance security?</b></summary>
@@ -1862,7 +1829,6 @@ aa-complain /etc/apparmor.d/usr.sbin.nginx
 
 </details>
 
----
 
 <details>
 <summary><b>How do you manage user accounts and permissions in Linux?</b></summary>
@@ -1900,8 +1866,6 @@ chage -E 2025-12-31 username  # set expiry date
 ```
 
 </details>
-
----
 
 ## 🟡 Intermediate
 
@@ -1944,8 +1908,6 @@ Set resource limits in `/etc/security/limits.conf` for applications with high fi
 
 </details>
 
----
-
 <details>
 <summary><b>How do you implement centralized logging in a Linux environment?</b></summary>
 
@@ -1974,8 +1936,6 @@ input(type="imudp" port="514")
 - Protect logs from tampering on compromised systems by shipping off-host immediately
 
 </details>
-
----
 
 <details>
 <summary><b>How do you implement backup and recovery strategies for Linux systems?</b></summary>
@@ -2008,7 +1968,6 @@ pg_dump mydb > backup.sql               # PostgreSQL
 
 </details>
 
----
 
 <details>
 <summary><b>How do you secure a Linux server?</b></summary>
@@ -2028,7 +1987,6 @@ Work in layers:
 
 </details>
 
----
 
 <details>
 <summary><b>How do you manage kernel parameters and modules in Linux?</b></summary>
@@ -2063,7 +2021,6 @@ options module_name parameter=value
 
 </details>
 
----
 
 <details>
 <summary><b>How do you troubleshoot high CPU, memory, or disk I/O usage in Linux?</b></summary>
@@ -2097,7 +2054,6 @@ Once identified — remediation could be optimising application config, adjustin
 
 </details>
 
----
 
 <details>
 <summary><b>What is load balancing and how do you implement it in Linux?</b></summary>
@@ -2130,7 +2086,6 @@ For **HA of the load balancer itself**, use Keepalived with VRRP to provide a fl
 
 </details>
 
----
 
 <details>
 <summary><b>What is containerization and how do you use containers in Linux?</b></summary>
@@ -2153,8 +2108,6 @@ docker-compose up -d                # run multi-container app
 **Under the hood:** containers use Linux **namespaces** (isolation) and **cgroups** (resource limits).
 
 </details>
-
----
 
 <details>
 <summary><b>How do you implement configuration management in Linux environments?</b></summary>
@@ -2191,7 +2144,6 @@ ansible-playbook -i inventory.ini playbook.yml
 
 </details>
 
----
 
 <details>
 <summary><b>What is Software RAID and how do you implement it in Linux?</b></summary>
@@ -2228,7 +2180,6 @@ watch cat /proc/mdstat
 
 </details>
 
----
 
 <details>
 <summary><b>How do you manage disk quotas in Linux?</b></summary>
@@ -2259,7 +2210,6 @@ quota -u username    # specific user
 
 </details>
 
----
 
 <details>
 <summary><b>What is systemd-networkd and how do you configure networking with it?</b></summary>
@@ -2300,8 +2250,6 @@ networkctl status                    # view interface status
 
 </details>
 
----
-
 <details>
 <summary><b>What are Linux namespaces and how are they used?</b></summary>
 
@@ -2328,40 +2276,6 @@ When Docker starts a container, it creates a new set of namespaces so the contai
 
 </details>
 
----
-
-<details>
-<summary><b>How do you implement disk encryption in Linux?</b></summary>
-
-**LUKS (Linux Unified Key Setup)** — the standard for full disk encryption:
-
-```bash
-# Create encrypted container
-cryptsetup luksFormat /dev/sdb1
-
-# Open the encrypted device
-cryptsetup luksOpen /dev/sdb1 myencrypteddisk
-
-# Format and mount
-mkfs.ext4 /dev/mapper/myencrypteddisk
-mount /dev/mapper/myencrypteddisk /mnt/secure
-
-# Close when done
-umount /mnt/secure
-cryptsetup luksClose myencrypteddisk
-```
-
-**Auto-mount at boot:**
-- Add to `/etc/crypttab`: `myencrypteddisk /dev/sdb1 none luks`
-- Add to `/etc/fstab`: `/dev/mapper/myencrypteddisk /mnt/secure ext4 defaults 0 2`
-
-**For individual files:** use `gpg` or `age`.
-
-⚠️ Always back up encryption headers: `cryptsetup luksHeaderBackup /dev/sdb1 --header-backup-file header.bak`
-
-</details>
-
----
 
 <details>
 <summary><b>What is systemd-journald and how do you use it for system logging?</b></summary>
@@ -2394,7 +2308,6 @@ MaxRetentionSec=1month
 
 </details>
 
----
 
 <details>
 <summary><b>How do you manage system time and NTP in Linux?</b></summary>
@@ -2420,7 +2333,6 @@ server 1.pool.ntp.org iburst
 
 </details>
 
----
 
 <details>
 <summary><b>What is Linux resource management with cgroups?</b></summary>
@@ -2456,7 +2368,6 @@ cat /sys/fs/cgroup/memory/mygroup/memory.limit_in_bytes
 
 </details>
 
----
 
 <details>
 <summary><b>What is Linux Traffic Control (tc) and how is it used?</b></summary>
@@ -2486,8 +2397,6 @@ tc qdisc add dev eth0 root netem loss 5%
 - **SFQ** — Stochastic Fairness Queuing, prevents any one flow starving others
 
 </details>
-
----
 
 <details>
 <summary><b>How do you implement high availability for Linux servers?</b></summary>
@@ -2521,47 +2430,7 @@ pcs resource create VirtualIP ocf:heartbeat:IPaddr2 \
 
 </details>
 
----
-
 ## 🔴 Advanced
-
-<details>
-<summary><b>How do you implement Linux network bonding and teaming?</b></summary>
-
-Network bonding combines multiple NICs into one logical interface for redundancy or increased bandwidth.
-
-**Bonding modes:**
-
-| Mode | Name | Use case |
-|---|---|---|
-| 0 | Round-robin | Increased throughput |
-| 1 | Active-backup | Redundancy (most common) |
-| 4 | 802.3ad (LACP) | Throughput + redundancy (requires switch support) |
-| 6 | balance-alb | Adaptive load balancing |
-
-**Setup (netplan on Ubuntu):**
-```yaml
-network:
-  bonds:
-    bond0:
-      interfaces: [eth0, eth1]
-      parameters:
-        mode: active-backup
-        mii-monitor-interval: 100
-  ethernets:
-    eth0: {}
-    eth1: {}
-```
-
-**Verify:**
-```bash
-cat /proc/net/bonding/bond0
-ip -s link show bond0
-```
-
-</details>
-
----
 
 <details>
 <summary><b>How do you configure and troubleshoot IPtables firewall?</b></summary>
@@ -2598,8 +2467,6 @@ iptables -L -v -n     # look at the pkts column
 
 </details>
 
----
-
 <details>
 <summary><b>How do you implement and manage SELinux policies?</b></summary>
 
@@ -2634,8 +2501,6 @@ semodule -i mymodule.pp
 **Don't just `setenforce 0` when things break** — diagnose the denial and fix the policy properly.
 
 </details>
-
----
 
 <details>
 <summary><b>How do you manage and monitor system logs effectively?</b></summary>
@@ -2676,8 +2541,6 @@ awk '/ERROR/ {print $0}' /var/log/app.log
 
 </details>
 
----
-
 <details>
 <summary><b>How do you implement and manage RAID in Linux?</b></summary>
 
@@ -2708,8 +2571,6 @@ mdadm /dev/md0 --add /dev/sdb1
 ⚠️ **RAID is not a backup.** RAID protects against disk failure, not against accidental deletion, corruption, or site failure.
 
 </details>
-
----
 
 <details>
 <summary><b>How do you manage and troubleshoot systemd services?</b></summary>
@@ -2746,8 +2607,6 @@ systemctl daemon-reload                # apply after any changes
 
 </details>
 
----
-
 <details>
 <summary><b>How do you configure and optimize Linux for database servers?</b></summary>
 
@@ -2782,50 +2641,6 @@ numactl --localalloc            # bind process to local NUMA memory
 
 </details>
 
----
-
-<details>
-<summary><b>How do you implement and maintain LVM?</b></summary>
-
-**Setup:**
-```bash
-pvcreate /dev/sdb /dev/sdc                  # physical volumes
-vgcreate myvg /dev/sdb /dev/sdc             # volume group
-lvcreate -L 100G -n data myvg               # logical volume
-mkfs.xfs /dev/myvg/data                     # format
-mount /dev/myvg/data /data                  # mount
-```
-
-**Expand storage:**
-```bash
-vgextend myvg /dev/sdd                      # add disk to VG
-lvextend -L +50G /dev/myvg/data             # grow LV
-xfs_growfs /data                            # resize XFS (online)
-resize2fs /dev/myvg/data                    # resize ext4 (online)
-```
-
-**Snapshots (for backups):**
-```bash
-lvcreate -L 5G -s -n data_snap /dev/myvg/data
-# Backup from snapshot, then remove
-lvremove /dev/myvg/data_snap
-```
-
-**Migrate data between disks:**
-```bash
-pvmove /dev/sdb /dev/sde                    # live, no downtime
-```
-
-**Monitor:**
-```bash
-vgs / lvs / pvs                             # quick status
-vgdisplay myvg                              # detailed VG info
-```
-
-</details>
-
----
-
 <details>
 <summary><b>What is Linux Containers (LXC) and how do they differ from Docker?</b></summary>
 
@@ -2845,100 +2660,6 @@ Use LXC when you need VM-like behaviour without the VM overhead. Use Docker when
 
 </details>
 
----
-
-<details>
-<summary><b>How do you implement and manage KVM virtualization?</b></summary>
-
-```bash
-# Check hardware virtualisation support
-grep -E '(vmx|svm)' /proc/cpuinfo
-
-# Install KVM stack
-apt install qemu-kvm libvirt-daemon-system virtinst
-
-# Create a VM
-virt-install --name myvm \
-    --memory 4096 \
-    --vcpus 2 \
-    --disk size=50 \
-    --cdrom ubuntu.iso \
-    --os-variant ubuntu22.04
-
-# Manage VMs with virsh
-virsh list --all
-virsh start myvm
-virsh shutdown myvm
-virsh snapshot-create-as myvm snap1
-virsh snapshot-revert myvm snap1
-```
-
-**Storage options:**
-- `qcow2` — snapshot support, thin provisioning (slight overhead)
-- `raw` — better I/O performance, no overhead
-
-**Networking options:**
-- Default NAT (easy, isolated)
-- Bridge mode (direct network access)
-- Open vSwitch (SDN, complex environments)
-
-**Performance tips:** enable huge pages, use `virtio` drivers for disk and NIC, use CPU pinning for latency-sensitive VMs.
-
-</details>
-
----
-
-<details>
-<summary><b>How do you implement and configure Linux kernel hardening?</b></summary>
-
-**Kernel parameters in `/etc/sysctl.conf`:**
-```bash
-# ASLR — randomise memory addresses
-kernel.randomize_va_space = 2
-
-# Prevent symlink attacks
-fs.protected_symlinks = 1
-fs.protected_hardlinks = 1
-
-# Hide kernel pointers from unprivileged users
-kernel.kptr_restrict = 2
-
-# Restrict dmesg access
-kernel.dmesg_restrict = 1
-
-# Disable IP forwarding (unless this is a router)
-net.ipv4.ip_forward = 0
-
-# Ignore ICMP broadcasts
-net.ipv4.icmp_echo_ignore_broadcasts = 1
-```
-
-**Apply:**
-```bash
-sysctl -p
-```
-
-**Module control:**
-```bash
-# Prevent loading new modules after boot (lock down)
-echo 1 > /proc/sys/kernel/modules_disabled
-```
-
-**Audit and check with:**
-```bash
-lynis audit system          # security audit tool
-oscap xccdf eval ...        # OpenSCAP compliance scan
-```
-
-**Also do:**
-- Enable and configure `auditd`
-- Use SELinux or AppArmor in enforcing mode
-- Enable seccomp filtering for sensitive processes
-- Keep kernel patched — subscribe to your distro's security advisories
-
-</details>
-
----
 
 <details>
 <summary><b>How do you troubleshoot Linux boot problems?</b></summary>
@@ -2990,7 +2711,6 @@ systemd-analyze blame            # identify slow services
 
 </details>
 
----
 
 <details>
 <summary><b>How do you manage Linux kernel modules?</b></summary>
@@ -3031,8 +2751,6 @@ systool -v -m <module>            # current parameters
 ```
 
 </details>
-
----
 
 <details>
 <summary><b>How do you configure and manage syslog in Linux?</b></summary>
@@ -3124,46 +2842,6 @@ pcs resource create VirtualIP ocf:heartbeat:IPaddr2 \
 
 **Cluster filesystems** (for shared storage): GFS2, OCFS2
 **Block replication**: DRBD
-
-</details>
-
----
-
-<details>
-<summary><b>How do you implement and manage Linux Virtual Server (LVS) for load balancing?</b></summary>
-
-LVS is built into the Linux kernel (IPVS module) and operates at Layer 4 — very high throughput.
-
-```bash
-# Install management tool
-apt install ipvsadm
-
-# View current rules
-ipvsadm -L -n
-
-# Add a virtual service (TCP on port 80)
-ipvsadm -A -t 192.168.1.100:80 -s rr
-
-# Add real servers to the pool
-ipvsadm -a -t 192.168.1.100:80 -r 10.0.0.1:80 -g   # direct routing
-ipvsadm -a -t 192.168.1.100:80 -r 10.0.0.2:80 -g
-
-# Scheduling algorithms
-# rr = round-robin
-# wrr = weighted round-robin
-# lc = least-connection
-# wlc = weighted least-connection
-```
-
-**Three forwarding modes:**
-
-| Mode | How it works | Performance |
-|---|---|---|
-| DR (Direct Routing) | Real servers respond directly | Best |
-| NAT | Director translates addresses | Moderate |
-| IPIP (Tunneling) | Director encapsulates packets | Good for geo-distributed |
-
-**For HA of the director itself:** pair LVS with Keepalived for VRRP failover and health checking of real servers.
 
 </details>
 
