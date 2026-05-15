@@ -886,6 +886,30 @@ ssh user@server 'bash -s' < local_script.sh
 
 </details>
 
+<details>
+<summary><b>How do you run system commands from Python using subprocess?</b></summary>
+
+The `subprocess` module is the standard way to run system commands in Python.
+
+```python
+import subprocess
+
+# Run a command and get output
+result = subprocess.run(['ps', 'aux'], capture_output=True, text=True)
+print(result.stdout)
+print(result.stderr)
+print(result.returncode)  # 0 = success, anything else = failure
+
+# Run a shell command (use sparingly)
+result = subprocess.run('df -h | grep /dev', shell=True, capture_output=True, text=True)
+
+# Run command and raise exception if it fails
+try:
+    result = subprocess.run(['systemctl', 'restart', 'nginx'], 
+                          capture_output=True, text=True, check=True)
+except subprocess.CalledProcessError as e:
+    print(f"Failed: {e.stderr}")
+
 ---
 
 ## 🚀 CI/CD & DevOps Best Practices
@@ -5331,6 +5355,207 @@ There are six classes of interrupts possible:
 
 ---
 
+## 🏭 Bare Metal Provisioning & Fleet Management
+
+### PXE & Network Boot
+
+<details>
+<summary><b>What is the sequence of events in a PXE boot from power on to OS running?</b></summary>
+
+*(No answer provided in source)*
+
+</details>
+
+<details>
+<summary><b>What is a TFTP server and what role does it play in PXE booting?</b></summary>
+
+*(No answer provided in source)*
+
+</details>
+
+<details>
+<summary><b>What is a bootloader and what does GRUB do?</b></summary>
+
+*(No answer provided in source)*
+
+</details>
+
+<details>
+<summary><b>What is iPXE and how does it differ from standard PXE?</b></summary>
+
+*(No answer provided in source)*
+
+</details>
+
+<details>
+<summary><b>What happens if a PXE server is unavailable during provisioning?</b></summary>
+
+*(No answer provided in source)*
+
+</details>
+
+<details>
+<summary><b>What is a network boot image and what does it contain?</b></summary>
+
+*(No answer provided in source)*
+
+</details>
+
+<details>
+<summary><b>How do you troubleshoot a server that fails to PXE boot?</b></summary>
+
+*(No answer provided in source)*
+
+</details>
+
+### OS Installation & Configuration
+
+<details>
+<summary><b>What is a kickstart file and walk me through what it contains?</b></summary>
+
+*(No answer provided in source)*
+
+</details>
+
+<details>
+<summary><b>What is cloud-init and what is it used for?</b></summary>
+
+*(No answer provided in source)*
+
+</details>
+
+<details>
+<summary><b>What is an OS image and what is the difference between a golden image and a base image?</b></summary>
+
+*(No answer provided in source)*
+
+</details>
+
+<details>
+<summary><b>What is the difference between an interactive and unattended OS installation?</b></summary>
+
+*(No answer provided in source)*
+
+</details>
+
+<details>
+<summary><b>What is a preseed file and how does it differ from a kickstart file?</b></summary>
+
+*(No answer provided in source)*
+
+</details>
+
+<details>
+<summary><b>How do you ensure a consistent OS configuration across hundreds of servers?</b></summary>
+
+*(No answer provided in source)*
+
+</details>
+
+<details>
+<summary><b>What is immutable infrastructure and how does it apply to server provisioning?</b></summary>
+
+*(No answer provided in source)*
+
+</details>
+
+<details>
+<summary><b>What is a post-installation script and what would you typically include in one?</b></summary>
+
+*(No answer provided in source)*
+
+</details>
+
+### Configuration Management & Validation
+
+<details>
+<summary><b>What is configuration drift and how does it happen across a large fleet?</b></summary>
+
+*(No answer provided in source)*
+
+</details>
+
+<details>
+<summary><b>What is idempotency and why does it matter in provisioning scripts?</b></summary>
+
+*(No answer provided in source)*
+
+</details>
+
+<details>
+<summary><b>How would you roll out a configuration change to 1000 servers safely?</b></summary>
+
+*(No answer provided in source)*
+
+</details>
+
+<details>
+<summary><b>What checks would you run to validate a server is correctly provisioned?</b></summary>
+
+*(No answer provided in source)*
+
+</details>
+
+<details>
+<summary><b>What is a burn-in test and what does it check?</b></summary>
+
+*(No answer provided in source)*
+
+</details>
+
+<details>
+<summary><b>How would you stress test CPU, memory and storage simultaneously?</b></summary>
+
+*(No answer provided in source)*
+
+</details>
+
+### Fleet Scale Provisioning
+
+<details>
+<summary><b>How do you provision servers at scale without physically touching each one?</b></summary>
+
+*(No answer provided in source)*
+
+</details>
+
+<details>
+<summary><b>What is a CMDB (Configuration Management Database) and what is it used for?</b></summary>
+
+*(No answer provided in source)*
+
+</details>
+
+<details>
+<summary><b>What network configuration needs to happen during server provisioning?</b></summary>
+
+*(No answer provided in source)*
+
+</details>
+
+<details>
+<summary><b>What is a management network and why is it kept separate from the production network?</b></summary>
+
+*(No answer provided in source)*
+
+</details>
+
+<details>
+<summary><b>Why do you update firmware during the provisioning process and how is it done at scale?</b></summary>
+
+*(No answer provided in source)*
+
+</details>
+
+<details>
+<summary><b>What monitoring do you set up immediately after provisioning?</b></summary>
+
+*(No answer provided in source)*
+
+</details>
+
+---
+
 ## 🧩 Miscellaneous (API, YAML, Firmware)
 
 <details>
@@ -5468,6 +5693,273 @@ Data serialization language used by many technologies today like Kubernetes, Ans
 <summary><b>Explain what is a firmware</b></summary>
 
 [Wikipedia](https://en.wikipedia.org/wiki/Firmware): "In computing, firmware is a specific class of computer software that provides the low-level control for a device's specific hardware. Firmware, such as the BIOS of a personal computer, may contain basic functions of a device, and may provide hardware abstraction services to higher-level software such as operating systems."
+
+</details>
+
+---
+
+## 🚨 SRE & Fleet Operations Scenarios
+
+### Fleet Operations & Scale
+
+<details>
+<summary><b>You need to roll out a firmware update to 500 servers. How do you approach it?</b></summary>
+
+* Never update all at once — canary first.
+* Update 1 server, validate, then a small batch, then roll out.
+* Have a rollback plan before starting.
+* Schedule during a maintenance window.
+* Monitor health metrics throughout.
+* Document which servers are on which firmware version.
+
+</details>
+
+<details>
+<summary><b>A new batch of 50 GPU servers has arrived at the data centre. Walk me through how you'd get them ready for customers.</b></summary>
+
+* Physical inspection first — damage, all components present.
+* Power on, check POST, access BMC.
+* Update firmware to baseline version.
+* PXE boot, install OS from golden image.
+* Validate hardware — CPU, memory, storage, NICs, GPUs all detected.
+* Run burn-in tests under load.
+* Configure networking — IPs, VLANs, DNS.
+* Set up monitoring — Prometheus exporters.
+* Document and hand over.
+
+</details>
+
+<details>
+<summary><b>You notice one rack in the data centre is running significantly hotter than others. What do you do?</b></summary>
+
+* Check BMC temperature sensors on affected servers.
+* Check airflow — are blanking panels in place?
+* Check if fans are running correctly.
+* Is there a failed cooling unit nearby?
+* Is one server generating unusual heat (thermal throttling)?
+* Short term — reduce load on affected servers.
+* Long term — work with data centre ops team on cooling.
+
+</details>
+
+<details>
+<summary><b>You are asked to decommission 20 servers. What is your process?</b></summary>
+
+* Migrate any workloads off first.
+* Confirm with stakeholders before touching anything.
+* Wipe all data securely (multiple pass overwrite).
+* Remove from monitoring, DNS, CMDB.
+* Remove from configuration management.
+* Physical removal and asset tracking update.
+* Document everything.
+
+</details>
+
+<details>
+<summary><b>You need to validate that a fleet of servers all have the same configuration. How do you do it?</b></summary>
+
+* Use a configuration management tool (e.g., Ansible) to check state.
+* Compare against a golden baseline.
+* Check if firmware versions are consistent.
+* Check OS version, packages, kernel.
+* Check network config consistency.
+* Flag any drift and remediate.
+* Automate this check to run regularly.
+
+</details>
+
+### Incident & On-Call Scenarios
+
+<details>
+<summary><b>It's 3am and you get paged that 10 nodes in the fleet have gone offline simultaneously. What's your first thought and action?</b></summary>
+
+* 10 nodes at once suggests a common cause, not individual failures.
+* Check if they're in the same rack (power issue?).
+* Check if they're on the same network segment (switch failure?).
+* Check if they have the same firmware version (bad update?).
+* Check BMC for power events.
+* Don't start restarting things until you understand why.
+* Communicate status to the team immediately.
+
+</details>
+
+<details>
+<summary><b>A customer reports their GPU workload is running 50% slower than expected. You have no alerts firing. How do you approach it?</b></summary>
+
+* First verify the claim — compare to baseline metrics.
+* Check GPU utilisation (`nvidia-smi`).
+* Check CPU and memory to ensure they are not bottlenecking.
+* Check network throughput (RDMA issues?).
+* Check for thermal throttling.
+* Check if another workload is competing for resources.
+* Check PCIe bandwidth to the GPU.
+* Remember: No alerts firing doesn't mean nothing is wrong — it just means there are gaps in monitoring.
+
+</details>
+
+<details>
+<summary><b>You're on call and receive two simultaneous alerts — one for a disk failure and one for high memory usage on a different server. How do you prioritise?</b></summary>
+
+* Disk failure is more urgent due to the data loss risk.
+* High memory is degraded but not immediately catastrophic.
+* Acknowledge both immediately.
+* Triage disk failure first — is RAID protecting the data?
+* Delegate the memory issue if the team is available.
+* Communicate status on both and document the timeline.
+
+</details>
+
+<details>
+<summary><b>A server you just provisioned passes all automated checks but the customer says something feels wrong with performance. How do you handle it?</b></summary>
+
+* Take the complaint seriously even without evidence.
+* Run manual performance benchmarks.
+* Check NUMA configuration (is the workload on the wrong NUMA node?).
+* Check CPU frequency scaling (is performance mode enabled?).
+* Check memory speed and ensure channels are populated correctly.
+* Check PCIe bandwidth.
+* Compare against a known good server.
+
+</details>
+
+<details>
+<summary><b>Your automation script for provisioning has been running fine for months and suddenly starts failing on 30% of servers. What do you think is happening?</b></summary>
+
+* A 30% failure rate suggests something changed globally, it is not a random failure.
+* Was there a recent update to the script?
+* Did the OS image change?
+* Did network configuration change?
+* Are the failing servers part of a specific hardware batch?
+* Check logs from failing vs succeeding servers.
+* Don't fix blindly — understand *why* first.
+
+</details>
+
+### Engineering Judgement
+
+<details>
+<summary><b>You discover that a manual workaround has been applied to 200 servers that isn't in your configuration management. What do you do?</b></summary>
+
+* Don't immediately revert — understand *why* it was applied.
+* Was it a hotfix for a critical issue? Talk to whoever applied it.
+* Decide: codify it properly or remove it.
+* If keeping it: add it to configuration management.
+* If removing: test the impact first on a small batch.
+* Prevent recurrence by establishing a process for emergency changes.
+
+</details>
+
+<details>
+<summary><b>You're asked to cut provisioning time from 2 hours to 30 minutes. How do you approach it?</b></summary>
+
+* First, measure where time is actually spent — don't guess.
+* Firmware updates are usually the slowest — pre-stage them.
+* Parallelise steps where possible.
+* Use faster OS deployment (e.g., streaming vs full copy).
+* Pre-validate hardware before the OS install.
+* Automate manual steps and measure improvement at each stage.
+
+</details>
+
+<details>
+<summary><b>A junior engineer asks you to review their provisioning script. What do you look for?</b></summary>
+
+* Error handling — does it fail gracefully?
+* Idempotency — is it safe to run twice?
+* Logging — can you tell what it did?
+* Hardcoded values — these should be variables or config.
+* Secrets — are they handled safely?
+* Does it validate its own output?
+* Is it readable and documented?
+
+</details>
+
+<details>
+<summary><b>You find a server in the fleet that nobody seems to know about. It's not in the CMDB or monitoring. What do you do?</b></summary>
+
+* Don't touch it until you understand what it is. Shadow IT in a data centre is a serious risk.
+* Check BMC for asset info.
+* Check the network — what IPs does it have, what traffic is it sending?
+* Check when it was last accessed.
+* Escalate to find the owner.
+* Once identified — add it to the CMDB and monitoring.
+
+</details>
+
+<details>
+<summary><b>You're building an automated health check for the fleet. What metrics and checks would you include?</b></summary>
+
+* **Hardware:** CPU temp, memory errors, disk SMART, fan speeds.
+* **Performance:** CPU usage, memory usage, disk I/O, network throughput.
+* **Services:** Verify all expected services are running.
+* **Connectivity:** Reachable via network and BMC.
+* **Storage:** Disk space, RAID health.
+* **GPU (if applicable):** Utilisation, temperature, memory errors.
+* **Alert thresholds:** Set dynamic or tiered thresholds, not just binary up/down.
+
+</details>
+
+### Process & Documentation
+
+<details>
+<summary><b>You solve a difficult hardware issue nobody has seen before. What do you do after fixing it?</b></summary>
+
+* Write it up immediately while it is fresh in your mind.
+* Document symptoms, investigation steps, root cause, and the fix.
+* Add it to the runbook or knowledge base.
+* Share with the team to prevent the next person from spending the same amount of time.
+* Add monitoring if none existed to catch it automatically next time.
+
+</details>
+
+<details>
+<summary><b>You need to make a change to a production server that carries some risk. How do you approach it?</b></summary>
+
+* Get approval from relevant stakeholders.
+* Document exactly what you're going to do before doing it.
+* Have a rollback plan ready.
+* Make the change during a maintenance window if possible.
+* Make one change at a time and validate after each change.
+* Communicate before, during, and after.
+
+</details>
+
+<details>
+<summary><b>Your team is constantly firefighting the same recurring issues. How do you break the cycle?</b></summary>
+
+* Identify the most frequent issues using data.
+* Root cause each one properly — do not just fix the symptoms.
+* Automate detection and response where possible.
+* Add monitoring to catch it earlier.
+* Build runbooks for the ones that can't be automated.
+* Track the reduction in repeat incidents to ensure your fixes are working.
+
+</details>
+
+<details>
+<summary><b>You're handing over an on-call shift to a colleague. What do you make sure they know?</b></summary>
+
+* Any ongoing incidents or degraded systems.
+* Any recent changes that might cause issues.
+* Known flaky systems to watch out for.
+* Any scheduled maintenance.
+* Where to find the relevant runbooks.
+* The escalation path if something is beyond their scope.
+* Your availability if they desperately need backup.
+
+</details>
+
+<details>
+<summary><b>You are getting the first batch of a brand new GPU architecture that hasn't been fully tested yet. You're responsible for validation. How do you approach it?</b></summary>
+
+* Start with hardware detection — does the OS even see it?
+* Check that the firmware is the latest available.
+* Run basic functionality tests first.
+* Gradually increase the load — do not stress test immediately.
+* Monitor temperatures carefully since cooling requirements are unknown.
+* Document every finding — bugs, quirks, and performance baselines.
+* Work closely with hardware and kernel engineers.
+* Don't hand it to customers until you are confident in its stability.
 
 </details>
 
