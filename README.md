@@ -2763,204 +2763,6 @@ kubectl exec -it pod -- nslookup my-service  # Validate DNS resolution
 
 ---
 
-## ☁️ Cloud Computing
-
-### 🟢 Beginner
-
-<details>
-<summary><b>What is cloud computing?</b></summary>
-
-Cloud computing is the on-demand delivery of computing services such as servers, storage, databases, networking, and software over the internet. It eliminates the need for owning and maintaining physical hardware, allowing users to access scalable resources on a pay-as-you-go model.
-
-</details>
-
-<details>
-<summary><b>What are the different types of cloud computing?</b></summary>
-
-- **Public Cloud:** Services provided by third-party vendors like AWS, Azure, and GCP, accessible over the internet.
-- **Private Cloud:** Cloud infrastructure dedicated to a single organization, either on-premises or hosted by a provider.
-- **Hybrid Cloud:** A combination of public and private clouds, allowing data and applications to be shared between them.
-
-</details>
-
-<details>
-<summary><b>What are the benefits of cloud computing?</b></summary>
-
-- **Scalability:** Resources can be easily scaled up or down.
-- **Cost Efficiency:** No need to invest in physical hardware.
-- **Flexibility:** Access from anywhere using the internet.
-- **Disaster Recovery:** Cloud providers offer backup and recovery solutions.
-
-</details>
-
-<details>
-<summary><b>What are the different cloud service models?</b></summary>
-
-- **Infrastructure as a Service (IaaS):** Provides virtualized computing resources (e.g., AWS EC2, Azure Virtual Machines).
-- **Platform as a Service (PaaS):** Offers a managed environment for application development (e.g., AWS Elastic Beanstalk, Google App Engine).
-- **Software as a Service (SaaS):** Delivers software applications over the internet (e.g., Gmail, Office 365, Salesforce).
-
-</details>
-
-<details>
-<summary><b>What is serverless computing?</b></summary>
-
-Serverless computing allows developers to run applications without managing underlying infrastructure. The cloud provider dynamically allocates resources as needed. Examples include AWS Lambda, Azure Functions, and Google Cloud Functions.
-
-</details>
-
-<details>
-<summary><b>What is virtualization in cloud computing?</b></summary>
-
-Virtualization is the process of creating virtual instances of servers, storage, or networks. It enables multiple virtual machines (VMs) to run on a single physical server, improving resource utilization.
-
-</details>
-
-<details>
-<summary><b>What is multi-cloud?</b></summary>
-
-Multi-cloud refers to using multiple cloud service providers (e.g., AWS, Azure, GCP) for redundancy, cost optimization, and avoiding vendor lock-in.
-
-</details>
-
-<details>
-<summary><b>What are some common cloud deployment models?</b></summary>
-
-- **Community Cloud:** Shared infrastructure for a specific group of organizations.
-- **Hybrid Cloud:** Combination of on-premises, private, and public clouds.
-- **Public Cloud:** Services offered to multiple customers over the internet.
-
-</details>
-
-<details>
-<summary><b>What is the difference between vertical and horizontal scaling?</b></summary>
-
-- **Vertical Scaling (Scaling Up):** Increasing resources (CPU, RAM) in an existing server.
-- **Horizontal Scaling (Scaling Out):** Adding more servers to distribute the load.
-
-</details>
-
-<details>
-<summary><b>What is an Availability Zone (AZ)?</b></summary>
-
-An Availability Zone is a physically separate data center within a cloud provider's region, designed for fault tolerance and high availability.
-
-</details>
-
-
-<details>
-<summary><b>What is a Virtual Private Cloud (VPC)?</b></summary>
-
-A VPC is an isolated cloud environment where users can define their own network settings, including subnets, IP addresses, and security groups.
-
-</details>
-
-<details>
-<summary><b>What is Object Storage in the cloud?</b></summary>
-
-Object storage is a cloud-based storage architecture that stores data as objects (instead of files or blocks). Examples include Amazon S3 and Azure Blob Storage.
-
-</details>
-
-<details>
-<summary><b>What is Block Storage in cloud computing?</b></summary>
-
-Block storage stores data in fixed-sized blocks, commonly used for databases and virtual machines. Examples: AWS EBS, Azure Managed Disks.
-
-</details>
-
-<details>
-<summary><b>What is a Content Delivery Network (CDN)?</b></summary>
-
-A CDN is a distributed network of servers that caches content close to users for faster delivery. Examples: AWS CloudFront, Azure CDN.
-
-</details>
-
-
-### 🟡 Intermediate
-
-<details>
-<summary><b>What is a cloud region?</b></summary>
-
-A cloud region is a geographic area where a cloud provider has multiple data centers. Each region consists of multiple Availability Zones (AZs), ensuring redundancy and high availability. For example, AWS `us-east-1` (North Virginia) has multiple AZs like `us-east-1a`, `us-east-1b`, etc.
-
-</details>
-
-
-<details>
-<summary><b>How do you secure data in cloud storage?</b></summary>
-
-- **Encryption:** Use AES-256 for data at rest and TLS for data in transit.
-- **Access Control:** Implement IAM policies and bucket policies to restrict access.
-- **Versioning:** Enable object versioning to recover deleted or modified files.
-- **Auditing:** Use AWS CloudTrail, Azure Monitor, or GCP Audit Logs to track access.
-
-</details>
-
-<details>
-<summary><b>What is a Stateful vs. Stateless application in the cloud?</b></summary>
-
-- **Stateless Application:** Doesn't retain session data. Each request is independent (e.g., REST APIs, serverless functions). Scales easily.
-- **Stateful Application:** Retains user state across requests (e.g., databases, messaging queues). Requires persistent storage (e.g., AWS EBS, Azure Managed Disks).
-
-</details>
-
-<details>
-<summary><b>What is auto-scaling, and how does it work?</b></summary>
-
-Auto-scaling automatically adjusts the number of cloud instances based on traffic load. Horizontal scaling adds/removes instances, while vertical scaling increases/decreases resources on existing instances. For example, an AWS Auto Scaling Group increases EC2 instances when CPU usage exceeds 70%.
-
-</details>
-
-<details>
-<summary><b>What is Terraform, and how does it help in cloud automation?</b></summary>
-
-Terraform is an Infrastructure as Code (IaC) tool used to define and provision cloud resources using declarative configurations. It enables version control for infrastructure, supports multi-cloud deployments, and automates infrastructure provisioning.
-
-</details>
-
-<details>
-<summary><b>How do you handle logging in a cloud environment?</b></summary>
-
-- **AWS:** Use CloudWatch Logs and CloudTrail.
-- **Azure:** Use Monitor and Log Analytics.
-- **GCP:** Use Stackdriver Logging.
-- Best practices include centralised logging, structured logs (JSON), and retention policies.
-
-</details>
-
-<details>
-<summary><b>What is a Bastion Host, and why is it used?</b></summary>
-
-A Bastion Host is a publicly accessible server that provides secure SSH access to private cloud resources. It reduces attack surface by acting as a single controlled entry point to internal instances.
-
-</details>
-
-### 🔴 Advanced
-
-
-<details>
-<summary><b>How do you optimize cloud costs?</b></summary>
-
-- Use Reserved or Spot Instances instead of On-Demand.
-- Enable Auto-scaling to scale down during low traffic.
-- Monitor usage with AWS Cost Explorer or Azure Cost Management.
-- Right-size resources by selecting appropriate instance sizes.
-
-</details>
-
-
-<details>
-<summary><b>How do you implement multi-region deployments?</b></summary>
-
-- **Data Replication:** Sync databases across regions.
-- **Traffic Routing:** Use DNS-based routing (e.g., AWS Route 53).
-- **Failover Mechanism:** Auto-switch to another region in case of failure.
-
-</details>
-
----
-
 ## 🐧 Linux & System Administration
 
 ### 🟢 Beginner
@@ -4216,26 +4018,6 @@ A router, switch, and hub are all network devices used to connect devices in a l
 
 </details>
 
-<details>
-<summary><b>What is a "Collision Domain"?</b></summary>
-
-A collision domain is a network segment in which devices can potentially interfere with each other by attempting to transmit data at the same time. When two devices transmit data at the same time, it can cause a collision, resulting in lost or corrupted data. In a collision domain, all devices share the same bandwidth, and any device can potentially interfere with the transmission of data by other devices.
-
-</details>
-
-<details>
-<summary><b>What is a "Broadcast Domain"?</b></summary>
-
-A broadcast domain is a network segment in which all devices can communicate with each other by sending broadcast messages. A broadcast message is a message that is sent to all devices in a network rather than a specific device. In a broadcast domain, all devices can receive and process broadcast messages, regardless of whether the message was intended for them or not.
-
-</details>
-
-<details>
-<summary><b>three computers connected to a switch. How many collision domains are there? How many broadcast domains?</b></summary>
-
-Three collision domains and one broadcast domain
-
-</details>
 
 <details>
 <summary><b>How does a router work?</b></summary>
@@ -4468,13 +4250,6 @@ It refers to monitoring and management functions.
 </details>
 
 <details>
-<summary><b>To which plane (data, control, ...) does creating routing tables belong to?</b></summary>
-
-Control Plane.
-
-</details>
-
-<details>
 <summary><b>Explain OSPF</b></summary>
 
 OSPF (Open Shortest Path First) is a routing protocol that can be implemented on various types of routers. In general, OSPF is supported on most modern routers, including those from vendors such as Cisco, Juniper, and Huawei. The protocol is designed to work with IP-based networks, including both IPv4 and IPv6. Also, it uses a hierarchical network design, where routers are grouped into areas, with each area having its own topology map and routing table. This design helps to reduce the amount of routing information that needs to be exchanged between routers and improve network scalability.
@@ -4587,35 +4362,9 @@ To prevent network congestion, it's important to monitor your network usage and 
 </details>
 
 <details>
-<summary><b>Describe HTTP request lifecycle</b></summary>
-
-* Resolve host by request to DNS resolver
-* Client SYN
-* Server SYN+ACK
-* Client SYN
-* HTTP request
-* HTTP response
-
-</details>
-
-<details>
 <summary><b>True or False? HTTP is stateful?</b></summary>
 
 False. It doesn't maintain state for incoming request.
-
-</details>
-
-<details>
-<summary><b>What HTTP method types are there?</b></summary>
-
-* GET
-* POST
-* HEAD
-* PUT
-* DELETE
-* CONNECT
-* OPTIONS
-* TRACE
 
 </details>
 
@@ -4627,24 +4376,6 @@ False. It doesn't maintain state for incoming request.
 * 3xx - Redirect
 * 4xx - Error, client fault
 * 5xx - Error, server fault
-
-</details>
-
-<details>
-<summary><b>What is HTTPS?</b></summary>
-
-HTTPS is a secure version of the HTTP protocol used to transfer data between a web browser and a web server. It encrypts the communication using SSL/TLS encryption to ensure that the data is private and secure.
-
-Learn more: https://www.cloudflare.com/learning/ssl/why-is-http-not-secure/
-
-</details>
-
-<details>
-<summary><b>Explain HTTP Cookies</b></summary>
-
-HTTP is stateless. To share state, we can use Cookies.
-
-TODO: explain what is actually a Cookie
 
 </details>
 
@@ -4689,50 +4420,6 @@ A load balancer accepts (or denies) incoming network traffic from a client, and 
 
 </details>
 
-
-<details>
-<summary><b>What is an Application Load Balancer?</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-<details>
-<summary><b>Can you perform load balancing without using a dedicated load balancer instance?</b></summary>
-
-Yes, you can use DNS for performing load balancing.
-
-</details>
-
-
-#### Load Balancers - Sticky Sessions
-
-<details>
-<summary><b>What are sticky sessions? What are their pros and cons?</b></summary>
-
-Recommended read:
-  * [Red Hat Article](https://access.redhat.com/solutions/900933)
-
-Cons:
-  * Can cause uneven load on instance (since requests routed to the same instances)
-Pros:
-  * Ensures in-proc sessions are not lost when a new request is created
-
-</details>
-
-<details>
-<summary><b>Name one use case for using sticky sessions</b></summary>
-
-You would like to make sure the user doesn't lose the current session data.
-
-</details>
-
-<details>
-<summary><b>What sticky sessions use for enabling the "stickiness"?</b></summary>
-
-Cookies. There are application based cookies and duration based cookies.
-
-</details>
 
 #### Random
 
@@ -5116,7 +4803,6 @@ This pipeline processes logs from Filebeat → Logstash → Elasticsearch.
 </details>
 
 
-
 <details>
 <summary><b>What is Beats in the ELK stack?</b></summary>
 
@@ -5136,17 +4822,6 @@ Use Metricbeat to collect system metrics and send them to Elasticsearch, while P
 
 </details>
 
-<details>
-<summary><b>What is a Slow Query in Elasticsearch?</b></summary>
-
-A slow query is a query that takes too long to execute, often due to large data scans or missing indexes. Enable slow query logs to debug:
-
-PUT _settings
-{
-  "index.search.slowlog.threshold.query.warn": "2s"
-}
-
-</details>
 
 ### 🔴 Advanced
 
@@ -5727,159 +5402,6 @@ LVM is standard on most Linux servers and essential knowledge for storage manage
 
 ---
 
-## 🕸️ Distributed Systems
-
-<details>
-<summary><b>Explain Distributed Computing (or Distributed System)</b></summary>
-
-According to Martin Kleppmann:
-
-"Many processes running on many machines...only message-passing via an unreliable network with variable delays, and the system may suffer from partial failures, unreliable clocks, and process pauses."
-
-Another definition: "Systems that are physically separated, but logically connected"
-
-</details>
-
-<details>
-<summary><b>What can cause a system to fail?</b></summary>
-
-* Network
-* CPU
-* Memory
-* Disk
-
-</details>
-
-<details>
-<summary><b>Do you know what is "CAP theorem"? (aka as Brewer's theorem)?</b></summary>
-
-According to the CAP theorem, it's not possible for a distributed data store to provide more than two of the following at the same time:
-
-* Availability: Every request receives a response (it doesn't has to be the most recent data)
-* Consistency: Every request receives a response with the latest/most recent data
-* Partition tolerance: Even if some the data is lost/dropped, the system keeps running
-
-</details>
-
-<details>
-<summary><b>What are the problems with the following design? How to improve it?<br> <img src="images/distributed/distributed_design_standby.png" width="500x;" height="350px;"/>?</b></summary>
-
-1. The transition can take time. In other words, noticeable downtime.
-2. Standby server is a waste of resources - if first application server is running then the standby does nothing
-
-</details>
-
-<details>
-<summary><b>What are the problems with the following design? How to improve it?<br> <img src="images/distributed/distributed_design_lb.png" width="700x;" height="350px;"/>?</b></summary>
-
-Issues:
-If load balancer dies , we lose the ability to communicate with the application.
-
-Ways to improve:
-* Add another load balancer
-* Use DNS A record for both load balancers
-* Use message queue
-
-</details>
-
-<details>
-<summary><b>What is "Shared-Nothing" architecture?</b></summary>
-
-It's an architecture in which data is and retrieved from a single, non-shared, source usually exclusively connected to one node as opposed to architectures where the request can get to one of many nodes and the data will be retrieved from one shared location (storage, memory, ...).
-
-</details>
-
-<details>
-<summary><b>Explain the Sidecar Pattern (Or sidecar proxy)</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-<details>
-<summary><b>How do you ensure data consistency in a distributed microservices architecture?</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
----
-
-## 🏛️ System Design
-
-<details>
-<summary><b>Explain what a "single point of failure" is</b></summary>
-
-A "single point of failure", in a system or organization, if it were to fail would cause the entire system to fail or significantly disrupt it's operation. In other words, it is a vulnerability where there
-is no backup in place to compensate for the failure.
-
-</details>
-
-<details>
-<summary><b>What is CDN?</b></summary>
-
-CDN (Content Delivery Network) responsible for distributing content geographically. Part of it, is what is known as edge locations, aka cache proxies, that allows users to get their content quickly due to cache features and geographical distribution.
-
-</details>
-
-<details>
-<summary><b>Explain "Loose Coupling"</b></summary>
-
-In "Loose Coupling", components of a system communicate with each other with a little understanding of each other's internal workings. This improves scalability and ease of modification in complex systems.
-
-</details>
-
-<details>
-<summary><b>What is a message queue? When is it used?</b></summary>
-
-It is a communication mechanism used in distributed systems to enable asynchronous communication between different components. It is generally used when the systems use a microservices approach.
-
-</details>
-
-
-<details>
-<summary><b>What is the role of configuration management in DevOps?</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-
-<details>
-<summary><b>How does "Self-Healing Infrastructure" work in a DevOps environment?</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-<details>
-<summary><b>How do you handle data migration in a DevOps environment?</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-<details>
-<summary><b>Benefits of Observability in Microservices Architecture</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-<details>
-<summary><b>How to Achieve High Availability and Fault Tolerance in a DevOps Architecture?</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-<details>
-<summary><b>What Are the Key Considerations for Creating a Disaster Recovery Plan in a DevOps Environment?</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
 ### Scalability
 
 <details>
@@ -6053,16 +5575,6 @@ roll-back & roll-forward
 cut over
 dress rehearsals
 DNS redirection
-
-</details>
-
-
-### Design a system
-
-<details>
-<summary><b>How would you build a URL shortener?</b></summary>
-
-*(No answer provided in source)*
 
 </details>
 
