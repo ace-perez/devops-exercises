@@ -9,47 +9,6 @@ A comprehensive collection of DevOps interview questions covering fundamentals, 
 ### 🟢 Beginner
 
 <details>
-<summary><b>What is DevOps?</b></summary>
-
-DevOps is a set of practices that combine software development (Dev) and IT operations (Ops) to improve collaboration, automate workflows, and accelerate software delivery.
-
-</details>
-
-<details>
-<summary><b>What are the main goals of DevOps?</b></summary>
-
-Faster delivery of software
-Improved collaboration between teams
-Automation of repetitive tasks
-Continuous feedback and improvement
-
-</details>
-
-<details>
-<summary><b>What are the key components of DevOps?</b></summary>
-
-CI/CD (Continuous Integration/Continuous Deployment)
-Infrastructure as Code (IaC)
-Monitoring and Logging
-Collaboration and Communication
-
-</details>
-
-<details>
-<summary><b>How does DevOps differ from traditional IT operations?</b></summary>
-
-DevOps focuses on automation, collaboration, and continuous feedback, whereas traditional IT operations follow a siloed approach with manual deployments and slow release cycles.
-
-</details>
-
-<details>
-<summary><b>What is Continuous Integration (CI)?</b></summary>
-
-CI is a practice where developers frequently integrate code into a shared repository, followed by automated testing to detect errors early.
-
-</details>
-
-<details>
 <summary><b>What is Continuous Deployment (CD)?</b></summary>
 
 CD is the automated release of validated code changes into production, ensuring rapid and reliable delivery.
@@ -77,12 +36,6 @@ Git, GitHub, GitLab, Bitbucket, Subversion (SVN).
 
 </details>
 
-<details>
-<summary><b>What is a DevOps pipeline?</b></summary>
-
-A DevOps pipeline automates software delivery using stages like build, test, deploy, and monitor.
-
-</details>
 
 <details>
 <summary><b>What is containerization?</b></summary>
@@ -136,13 +89,6 @@ A rollback strategy reverts to a previous stable version if a new deployment fai
 </details>
 
 <details>
-<summary><b>What is the role of a DevOps Engineer?</b></summary>
-
-A DevOps engineer bridges development and operations, focusing on automation, CI/CD, and cloud management.
-
-</details>
-
-<details>
 <summary><b>What are feature flags in DevOps?</b></summary>
 
 Feature flags allow toggling features on/off without deploying new code.
@@ -165,12 +111,6 @@ SRE applies software engineering principles to operations, improving reliability
 
 </details>
 
-<details>
-<summary><b>How does DevOps help in cloud computing?</b></summary>
-
-DevOps automates infrastructure, deployments, and monitoring, making cloud environments scalable and efficient.
-
-</details>
 
 <details>
 <summary><b>What is Immutable Infrastructure?</b></summary>
