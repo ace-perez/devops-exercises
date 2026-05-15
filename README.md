@@ -642,7 +642,6 @@ print(f"Free: {mem['MemFree'] // 1024}MB")
 
 </details>
 <details>
-<details>
 <summary><b>Challenge 1 — Check if a service is running and restart if not</b></summary>
 
 ```bash
