@@ -109,16 +109,7 @@ Automation in DevOps refers to scripting repetitive tasks like provisioning, con
 Bash scripting is writing command-line instructions in a script file (.sh) to automate tasks in Unix/Linux environments.
 
 </details>
-<details>
-<summary><b>How do you write a basic Bash script?</b></summary>
 
-```bash
-#!/bin/bash
-echo "Hello, DevOps!"
-```
-Save the file (`script.sh`), make it executable (`chmod +x script.sh`), and run it (`./script.sh`).
-
-</details>
 <details>
 <summary><b>What is the difference between Bash and Shell scripting?</b></summary>
 
@@ -169,15 +160,7 @@ for i in {1..5}; do echo "Iteration $i"; done
 ```
 
 </details>
-<details>
-<summary><b>What are conditional statements in Bash?</b></summary>
 
-`if-else` statements execute different code based on conditions.
-```bash
-if [ $USER == "root" ]; then echo "Admin access"; else echo "User access"; fi
-```
-
-</details>
 <details>
 <summary><b>How do you read input in Bash?</b></summary>
 
@@ -245,15 +228,6 @@ Runs the script daily at 5 AM.
 
 </details>
 <details>
-<summary><b>How do you create a list in Python?</b></summary>
-
-```python
-mylist = [1, 2, 3]
-print(mylist[0])
-```
-
-</details>
-<details>
 <summary><b>What is `sed` in Bash?</b></summary>
 
 Used for text replacement. Example:
@@ -262,32 +236,7 @@ sed -i 's/old/new/g' file.txt
 ```
 
 </details>
-<details>
-<summary><b>How do you define a dictionary in Python?</b></summary>
 
-```python
-mydict = {"name": "DevOps"}
-print(mydict["name"])
-```
-
-</details>
-<details>
-<summary><b>How do you install Python modules?</b></summary>
-
-```bash
-pip install requests
-```
-
-</details>
-<details>
-<summary><b>How do you iterate over a dictionary in Python?</b></summary>
-
-```python
-for key, value in mydict.items():
-    print(key, value)
-```
-
-</details>
 <details>
 <summary><b>How do you set environment variables in Bash?</b></summary>
 
@@ -541,31 +490,6 @@ for process in processes[:5]:  # top 5
 
 </details>
 <details>
-<summary><b>How do you use regex for pattern matching in logs with Python?</b></summary>
-
-```python
-import re
-
-# Find IP addresses in a log file
-with open('/var/log/syslog', 'r') as f:
-    for line in f:
-        ip_pattern = re.findall(r'\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}', line)
-        if ip_pattern:
-            print(f"IPs found: {ip_pattern} in: {line.strip()}")
-
-# Find error lines with timestamp
-error_pattern = re.compile(r'(\w+\s+\d+\s+\d+:\d+:\d+).*?(error|critical|failed)',
-                           re.IGNORECASE)
-
-with open('/var/log/syslog', 'r') as f:
-    for line in f:
-        match = error_pattern.search(line)
-        if match:
-            print(f"Time: {match.group(1)} — {line.strip()}")
-```
-
-</details>
-<details>
 <summary><b>How do you parse JSON output from CLI tools or APIs in Python?</b></summary>
 
 Very common with APIs and modern CLI tools:
@@ -609,28 +533,6 @@ value = sys.stdin.readline().strip()
 
 # Read all stdin at once
 content = sys.stdin.read()
-```
-
-</details>
-<details>
-<summary><b>How do you handle command line arguments in Python scripts?</b></summary>
-
-```python
-import sys
-import argparse
-
-# Simple way
-script_name = sys.argv[0]
-first_arg = sys.argv[1]
-
-# Proper way with argparse
-parser = argparse.ArgumentParser(description='Monitor a service')
-parser.add_argument('--service', required=True, help='Service name to monitor')
-parser.add_argument('--threshold', type=int, default=80, help='CPU threshold')
-parser.add_argument('--interval', type=int, default=30, help='Check interval seconds')
-
-args = parser.parse_args()
-print(f"Monitoring {args.service} with threshold {args.threshold}%")
 ```
 
 </details>
@@ -740,41 +642,6 @@ print(f"Free: {mem['MemFree'] // 1024}MB")
 
 </details>
 <details>
-<summary><b>How do you make HTTP requests to Redfish/BMC APIs in Python?</b></summary>
-
-Directly relevant for BMC Redfish API work:
-
-```python
-import requests
-import json
-
-# Call a Redfish API endpoint on a BMC
-def get_server_health(bmc_ip, username, password):
-    url = f"https://{bmc_ip}/redfish/v1/Systems/1"
-
-    try:
-        response = requests.get(
-            url,
-            auth=(username, password),
-            verify=False,  # BMCs often use self-signed certs
-            timeout=10
-        )
-        response.raise_for_status()
-        data = response.json()
-        return data['Status']['Health']
-
-    except requests.exceptions.Timeout:
-        logging.error(f"BMC at {bmc_ip} timed out")
-        return None
-    except requests.exceptions.ConnectionError:
-        logging.error(f"Cannot reach BMC at {bmc_ip}")
-        return None
-
-health = get_server_health('192.168.1.100', 'admin', 'password')
-print(f"Server health: {health}")
-```
-
-</details>
 <details>
 <summary><b>Challenge 1 — Check if a service is running and restart if not</b></summary>
 
