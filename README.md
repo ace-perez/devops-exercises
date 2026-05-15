@@ -2845,8 +2845,6 @@ pcs resource create VirtualIP ocf:heartbeat:IPaddr2 \
 
 </details>
 
----
-
 ## 🧠 Additional — Frequently Asked in Interviews
 
 <details>
@@ -2863,8 +2861,6 @@ pcs resource create VirtualIP ocf:heartbeat:IPaddr2 \
 
 </details>
 
----
-
 <details>
 <summary><b>What is the difference between a process and a thread?</b></summary>
 
@@ -2880,7 +2876,6 @@ A process is an independent execution environment. Threads are lighter units of 
 
 </details>
 
----
 
 <details>
 <summary><b>What are the different states a process can be in?</b></summary>
@@ -2901,8 +2896,6 @@ ps aux | awk '$8 == "D"'    # find processes in D state
 
 </details>
 
----
-
 <details>
 <summary><b>What is a zombie process and how do you handle it?</b></summary>
 
@@ -2919,8 +2912,6 @@ ps aux | grep 'Z'           # find zombies
 Zombies themselves don't consume CPU or memory, but they do occupy a PID slot. A large number indicates a bug in the parent application.
 
 </details>
-
----
 
 <details>
 <summary><b>How does the Linux kernel handle memory management?</b></summary>
@@ -2941,8 +2932,6 @@ vmstat 1 5                  # track paging/swapping activity
 **`vm.swappiness`** (0-100) controls how aggressively the kernel swaps. Lower = prefer to keep things in RAM.
 
 </details>
-
----
 
 <details>
 <summary><b>What is a kernel panic and what causes it?</b></summary>
@@ -2971,8 +2960,6 @@ kernel.panic = 30         # reboot 30s after panic
 
 </details>
 
----
-
 <details>
 <summary><b>What is the OOM killer and when does it trigger?</b></summary>
 
@@ -2998,8 +2985,6 @@ echo 1000 > /proc/<pid>/oom_score_adj
 **Prevention:** set `MemoryMax` limits in systemd units so runaway processes get OOM-killed at the container/service level before affecting the whole system.
 
 </details>
-
----
 
 <details>
 <summary><b>How do you troubleshoot a service that won't start?</b></summary>
