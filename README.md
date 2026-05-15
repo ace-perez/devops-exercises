@@ -2711,47 +2711,6 @@ systemd-analyze blame            # identify slow services
 
 </details>
 
-
-<details>
-<summary><b>How do you manage Linux kernel modules?</b></summary>
-
-```bash
-lsmod                            # list loaded modules
-modinfo <module>                 # details (version, params, dependencies)
-modprobe <module>                # load with dependencies
-modprobe -r <module>             # unload
-insmod <module.ko>               # load without dependency resolution
-
-# Pass parameters at load time
-modprobe <module> param=value
-```
-
-**Load at boot** — add to `/etc/modules`:
-```
-loop
-dm_crypt
-```
-
-**Set persistent parameters** — create `/etc/modprobe.d/mymodule.conf`:
-```
-options <module> param=value
-```
-
-**Blacklist a module** — create `/etc/modprobe.d/blacklist.conf`:
-```
-blacklist nouveau
-install nouveau /bin/false    # even stronger — prevents explicit loading
-```
-
-**Debug:**
-```bash
-dmesg | tail -20              # kernel messages after load attempt
-modprobe --show-depends <module>  # what would be loaded
-systool -v -m <module>            # current parameters
-```
-
-</details>
-
 <details>
 <summary><b>How do you configure and manage syslog in Linux?</b></summary>
 
@@ -2797,51 +2756,6 @@ systemctl restart rsyslog
 - Immutable log storage for compliance
 - Rate limiting to prevent log flooding
 - Set strict permissions: `chmod 640 /var/log/auth.log`
-
-</details>
-
----
-
-<details>
-<summary><b>How do you implement and manage High Availability clustering in Linux?</b></summary>
-
-**Core stack: Pacemaker + Corosync**
-
-```bash
-# Install
-apt install pacemaker corosync
-
-# Configure Corosync — /etc/corosync/corosync.conf
-totem {
-    interface {
-        ringnumber: 0
-        bindnetaddr: 192.168.1.0
-    }
-}
-nodelist {
-    node { ring0_addr: node1; nodeid: 1 }
-    node { ring0_addr: node2; nodeid: 2 }
-}
-
-# Start cluster
-systemctl start corosync pacemaker
-
-# Status
-pcs status
-crm_mon -1
-
-# Add a virtual IP resource
-pcs resource create VirtualIP ocf:heartbeat:IPaddr2 \
-    ip=192.168.1.100 cidr_netmask=24 op monitor interval=30s
-```
-
-**STONITH (fencing) — critical:**
-- Prevents split-brain by forcibly powering off failed nodes
-- Common agents: IPMI, iDRAC, iLO, AWS/Azure power APIs
-- **Never run a production HA cluster without fencing**
-
-**Cluster filesystems** (for shared storage): GFS2, OCFS2
-**Block replication**: DRBD
 
 </details>
 
