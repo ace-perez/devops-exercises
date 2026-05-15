@@ -4144,29 +4144,6 @@ This is critical during incidents where the OS is unresponsive.
 
 </details>
 <details>
-<summary><b>How would you use IPMI to power cycle a server remotely?</b></summary>
-
-```bash
-# Check current power status
-ipmitool -I lanplus -H <bmc-ip> -U admin -P password chassis power status
-
-# Power off gracefully
-ipmitool -I lanplus -H <bmc-ip> -U admin -P password chassis power soft
-
-# Force power off (hard reset)
-ipmitool -I lanplus -H <bmc-ip> -U admin -P password chassis power off
-
-# Power on
-ipmitool -I lanplus -H <bmc-ip> -U admin -P password chassis power on
-
-# Power cycle (off then on)
-ipmitool -I lanplus -H <bmc-ip> -U admin -P password chassis power cycle
-```
-
-Use `power cycle` with caution in production — it is equivalent to pulling the power plug.
-
-</details>
-<details>
 <summary><b>What is out-of-band management and why is it critical in a large fleet?</b></summary>
 
 Out-of-band (OOB) management refers to managing servers through a dedicated management channel (the BMC/IPMI network) that is completely separate from the production data network.
@@ -4237,26 +4214,6 @@ ipmitool -I lanplus -H <bmc-ip> -U admin -P password sol activate
 # Exit SOL session
 # Press: ~.
 ```
-
-</details>
-<details>
-<summary><b>How would you check hardware health sensors via IPMI?</b></summary>
-
-```bash
-# List all hardware sensors (temperature, fans, voltage, power)
-ipmitool -I lanplus -H <bmc-ip> -U admin -P password sdr list
-
-# Filter to just temperature sensors
-ipmitool -I lanplus -H <bmc-ip> -U admin -P password sdr type Temperature
-
-# Filter to just fan sensors
-ipmitool -I lanplus -H <bmc-ip> -U admin -P password sdr type Fan
-
-# Get a compact summary
-ipmitool -I lanplus -H <bmc-ip> -U admin -P password sensor list
-```
-
-Look for readings marked `cr` (critical) or `nc` (non-critical) — these indicate sensors outside normal thresholds and may signal hardware issues.
 
 </details>
 <details>
