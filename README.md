@@ -886,31 +886,6 @@ ssh user@server 'bash -s' < local_script.sh
 
 </details>
 
-<details>
-<summary><b>How do you run system commands from Python using subprocess?</b></summary>
-
-The `subprocess` module is the standard way to run system commands in Python.
-
-```python
-import subprocess
-
-# Run a command and get output
-result = subprocess.run(['ps', 'aux'], capture_output=True, text=True)
-print(result.stdout)
-print(result.stderr)
-print(result.returncode)  # 0 = success, anything else = failure
-
-# Run a shell command (use sparingly)
-result = subprocess.run('df -h | grep /dev', shell=True, capture_output=True, text=True)
-
-# Run command and raise exception if it fails
-try:
-    result = subprocess.run(['systemctl', 'restart', 'nginx'], 
-                          capture_output=True, text=True, check=True)
-except subprocess.CalledProcessError as e:
-    print(f"Failed: {e.stderr}")
-
----
 
 ## 🚀 CI/CD & DevOps Best Practices
 
