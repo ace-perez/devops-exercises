@@ -4,33 +4,6 @@ A comprehensive collection of DevOps interview questions covering fundamentals, 
 
 ---
 
-## 📚 Table of Contents
-
-- [🧭 DevOps Fundamentals](#devops-fundamentals) — 59 questions
-- [⚙️ Scripting & Automation](#scripting-automation) — 50 questions
-- [🔀 Version Control (Git)](#version-control-git) — 60 questions
-- [🚀 CI/CD & DevOps Best Practices](#cicd-devops-best-practices) — 49 questions
-- [🏗️ Infrastructure as Code](#infrastructure-as-code) — 60 questions
-- [📦 Containers (Docker & Kubernetes)](#containers-docker-kubernetes) — 60 questions
-- [☁️ Cloud Computing](#cloud-computing) — 48 questions
-- [🐧 Linux & System Administration](#linux-system-administration) — 60 questions
-- [🖥️ Operating Systems](#operating-systems) — 17 questions
-- [🔮 Virtualization](#virtualization) — 13 questions
-- [🌐 Networking](#networking) — 73 questions
-- [🔗 HTTP & Load Balancers](#http-load-balancers) — 37 questions
-- [📊 Monitoring, Logging & Observability](#monitoring-logging-observability) — 77 questions
-- [💾 Storage](#storage) — 13 questions
-- [🕸️ Distributed Systems](#distributed-systems) — 8 questions
-- [🏛️ System Design](#system-design) — 55 questions
-- [🧪 Testing](#testing) — 19 questions
-- [🔧 Hardware](#hardware) — 14 questions
-- [📦 Release Management](#release-management) — 23 questions
-- [🧩 Miscellaneous (API, YAML, Firmware)](#miscellaneous-api-yaml-firmware) — 32 questions
-- [💬 Questions To Ask Interviewers](#questions-to-ask-interviewers) — 7 questions
-- [🏢 Real-World Case Studies](#real-world-case-studies) — 10 questions
-
----
-
 ## 🧭 DevOps Fundamentals
 
 ### 🟢 Beginner
