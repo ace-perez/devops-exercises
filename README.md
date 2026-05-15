@@ -1,6 +1,6 @@
-# DevOps Interview Questions
+# Interview Preparation — Ace Perez
 
-A comprehensive collection of DevOps interview questions covering fundamentals, tooling, cloud, containers, security, system design and more. Click any question to expand its answer.
+Focused question bank for the Crusoe Infrastructure Engineer technical screen.
 
 ---
 
@@ -8,12 +8,6 @@ A comprehensive collection of DevOps interview questions covering fundamentals, 
 
 ### 🟢 Beginner
 
-<details>
-<summary><b>What is Continuous Deployment (CD)?</b></summary>
-
-CD is the automated release of validated code changes into production, ensuring rapid and reliable delivery.
-
-</details>
 
 <details>
 <summary><b>What is Infrastructure as Code (IaC)?</b></summary>
@@ -21,307 +15,42 @@ CD is the automated release of validated code changes into production, ensuring 
 IaC is managing infrastructure using code, enabling automation, consistency, and easy scalability. Examples: Terraform, CloudFormation.
 
 </details>
-
-<details>
-<summary><b>What is version control, and why is it important?</b></summary>
-
-Version control tracks code changes, enabling collaboration and rollback. Example: Git.
-
-</details>
-
-<details>
-<summary><b>What are some popular version control tools?</b></summary>
-
-Git, GitHub, GitLab, Bitbucket, Subversion (SVN).
-
-</details>
-
-
-<details>
-<summary><b>What is containerization?</b></summary>
-
-Containerization packages applications with dependencies, making them portable and consistent across environments. Example: Docker.
-
-</details>
-
-<details>
-<summary><b>What are microservices?</b></summary>
-
-Microservices are small, independent services that communicate via APIs, improving scalability and maintainability.
-
-</details>
-
-<details>
-<summary><b>What is a monolithic vs. microservices architecture?</b></summary>
-
-Monolithic apps have a single codebase; microservices break the application into independent, loosely coupled services.
-
-</details>
-
-<details>
-<summary><b>What are some common DevOps automation tools?</b></summary>
-
-CI/CD: Jenkins, GitHub Actions
-Configuration Management: Ansible, Puppet
-Infrastructure as Code: Terraform
-
-</details>
-
-<details>
-<summary><b>What is Shift-Left Testing?</b></summary>
-
-Shift-left testing integrates testing early in the development cycle to detect bugs earlier.
-
-</details>
-
 <details>
 <summary><b>What is observability in DevOps?</b></summary>
 
 Observability provides insights into system health using logs, metrics, and tracing.
 
 </details>
-
 <details>
 <summary><b>What is a rollback strategy?</b></summary>
 
 A rollback strategy reverts to a previous stable version if a new deployment fails.
 
 </details>
-
-<details>
-<summary><b>What are feature flags in DevOps?</b></summary>
-
-Feature flags allow toggling features on/off without deploying new code.
-
-</details>
-
-<details>
-<summary><b>What is a blue-green deployment?</b></summary>
-
-Blue-green deployment maintains two environments, switching traffic between them for zero-downtime updates.
-
-</details>
-
-### 🟡 Intermediate
-
 <details>
 <summary><b>What is Site Reliability Engineering (SRE)?</b></summary>
 
 SRE applies software engineering principles to operations, improving reliability and scalability.
 
 </details>
-
-
 <details>
 <summary><b>What is Immutable Infrastructure?</b></summary>
 
 Immutable infrastructure replaces servers instead of modifying them, ensuring consistency and reducing drift.
 
 </details>
-
-
-<details>
-<summary><b>What are the benefits of CI/CD pipelines?</b></summary>
-
-Faster releases
-Automated testing
-Reduced manual errors
-Enhanced collaboration
-
-</details>
-
-<details>
-<summary><b>What is canary deployment?</b></summary>
-
-Canary deployment gradually rolls out changes to a small user group before full deployment.
-
-</details>
-
-<details>
-<summary><b>What are some common monitoring tools?</b></summary>
-
-Prometheus, Grafana, ELK Stack, Datadog, New Relic.
-
-</details>
-
 <details>
 <summary><b>What is Configuration Management in DevOps?</b></summary>
 
 Configuration management automates infrastructure setup and maintenance. Examples: Ansible, Puppet, Chef.
 
 </details>
-
-<details>
-<summary><b>What is GitOps?</b></summary>
-
-GitOps manages infrastructure using Git repositories, ensuring version control and automation.
-
-</details>
-
-<details>
-<summary><b>What is Chaos Engineering?</b></summary>
-
-Chaos Engineering tests system resilience by introducing controlled failures.
-
-</details>
-
-<details>
-<summary><b>What is an API gateway?</b></summary>
-
-An API gateway manages API traffic, security, and load balancing.
-
-</details>
-
-<details>
-<summary><b>How do you optimize CI/CD pipelines?</b></summary>
-
-By parallelizing builds, caching dependencies, and using automated testing.
-
-</details>
-
-<details>
-<summary><b>What is hybrid cloud in DevOps?</b></summary>
-
-A hybrid cloud combines private and public cloud environments.
-
-</details>
-
 <details>
 <summary><b>What is observability vs. monitoring?</b></summary>
 
 Monitoring collects data; observability provides deeper insights into system behavior.
 
 </details>
-
-
-<details>
-<summary><b>What is A/B testing in DevOps?</b></summary>
-
-A/B testing compares different versions of an application to determine the best performance.
-
-</details>
-
-<details>
-<summary><b>What is autoscaling in cloud environments?</b></summary>
-
-Autoscaling automatically adjusts resource allocation based on demand.
-
-</details>
-
-### 🔴 Advanced
-
-<details>
-<summary><b>What is the Twelve-Factor App methodology?</b></summary>
-
-The Twelve-Factor App is a set of best practices for building modern, scalable cloud applications. The 12 principles focus on aspects like codebase, dependencies, configuration, logging, and disposability.
-
-</details>
-
-<details>
-<summary><b>How do you implement zero-trust security in DevOps?</b></summary>
-
-Zero-trust security enforces strict identity verification and least-privilege access across the entire system. It includes:
-
-Multi-factor authentication (MFA)
-Role-Based Access Control (RBAC)
-Encryption of data in transit and at rest
-Continuous monitoring and logging
-
-</details>
-
-<details>
-<summary><b>What are sidecars in Kubernetes?</b></summary>
-
-A sidecar is a helper container that runs alongside a main application container within the same pod. Sidecars enhance functionality without modifying the primary application (e.g., logging, monitoring, service mesh).
-
-</details>
-
-<details>
-<summary><b>How does Kubernetes handle self-healing?</b></summary>
-
-Kubernetes ensures self-healing by:
-
-Restarting failed containers
-Rescheduling pods on healthy nodes
-Automatically scaling replicas
-Rolling back deployments if necessary
-
-</details>
-
-<details>
-<summary><b>What is progressive delivery?</b></summary>
-
-Progressive delivery is an advanced deployment strategy that introduces new changes incrementally to users, using techniques like:
-
-Canary releases (small group testing)
-Feature flags (turning features on/off dynamically)
-A/B testing (comparing multiple versions in production)
-
-</details>
-
-<details>
-<summary><b>What is a service mesh, and why is it important?</b></summary>
-
-A service mesh (e.g., Istio, Linkerd) is a dedicated infrastructure layer that manages service-to-service communication in microservices architectures. It provides:
-
-Traffic control (load balancing, retries)
-Security (mutual TLS authentication)
-Observability (tracing, metrics, logging)
-
-</details>
-
-<details>
-<summary><b>What is GitOps, and how does it improve DevOps workflows?</b></summary>
-
-GitOps uses Git repositories as the single source of truth for declarative infrastructure and applications. Benefits include:
-
-Version-controlled deployments
-Automated reconciliation of state
-Increased security via RBAC
-
-</details>
-
-<details>
-<summary><b>What is Blue/Green vs. Rolling deployment?</b></summary>
-
-Blue/Green Deployment: Two identical environments (Blue and Green). Traffic is switched instantly.
-Rolling Deployment: Gradual update of application instances, minimizing downtime but increasing rollback complexity.
-
-</details>
-
-<details>
-<summary><b>How do you handle secrets management in DevOps?</b></summary>
-
-Best practices for secrets management include:
-
-Using vault solutions (e.g., HashiCorp Vault, AWS Secrets Manager)
-Avoiding hardcoded secrets in code
-Using environment variables or encrypted configuration files
-
-</details>
-
-<details>
-<summary><b>What is a chaos engineering experiment?</b></summary>
-
-Chaos engineering involves intentionally introducing failures to test system resilience. Examples include:
-
-Network disruptions (latency, packet loss)
-Server crashes (killing pods or nodes)
-Resource exhaustion (CPU/memory spikes)
-
-</details>
-
-<details>
-<summary><b>How do you implement compliance in DevOps pipelines?</b></summary>
-
-Compliance can be enforced using:
-
-Automated security scans (e.g., SonarQube, Snyk)
-Policy-as-Code (e.g., Open Policy Agent)
-Audit logging and access controls
-
-</details>
-
 <details>
 <summary><b>What is infrastructure drift, and how do you prevent it?</b></summary>
 
@@ -332,48 +61,6 @@ Regularly run drift detection checks
 Automate infrastructure provisioning
 
 </details>
-
-<details>
-<summary><b>What is a deployment freeze, and when should it be used?</b></summary>
-
-A deployment freeze is a temporary halt on new releases, typically during critical business periods (e.g., holiday sales, tax season).
-
-</details>
-
-<details>
-<summary><b>How do you ensure high availability in a DevOps environment?</b></summary>
-
-High availability can be ensured through:
-
-Multi-region deployments
-Load balancing & auto-scaling
-Database replication & failover mechanisms
-
-</details>
-
-<details>
-<summary><b>What is a multi-cloud strategy?</b></summary>
-
-A multi-cloud strategy uses multiple cloud providers (e.g., AWS, Azure, GCP) to:
-
-Reduce vendor lock-in
-Improve redundancy and fault tolerance
-Optimize costs
-
-</details>
-
-
-<details>
-<summary><b>What are the challenges of DevOps adoption in large enterprises?</b></summary>
-
-Legacy system integration
-Security and compliance concerns
-Cultural resistance to automation
-Skill gaps within teams
-
-</details>
-
-
 <details>
 <summary><b>What are observability pillars in DevOps?</b></summary>
 
@@ -384,7 +71,6 @@ Metrics (numerical measurements like CPU usage)
 Tracing (tracking requests across distributed systems)
 
 </details>
-
 <details>
 <summary><b>What are the best practices for incident response in DevOps?</b></summary>
 
@@ -394,11 +80,13 @@ Post-mortems for continuous learning
 
 </details>
 
+
 ---
 
 ## ⚙️ Scripting & Automation
 
 ### 🟢 Beginner
+
 
 <details>
 <summary><b>What is automation in DevOps?</b></summary>
@@ -406,7 +94,6 @@ Post-mortems for continuous learning
 Automation in DevOps refers to scripting repetitive tasks like provisioning, configuration, deployment, and monitoring to improve efficiency and reduce errors.
 
 </details>
-
 <details>
 <summary><b>What are the benefits of scripting in DevOps?</b></summary>
 
@@ -416,14 +103,12 @@ Automation in DevOps refers to scripting repetitive tasks like provisioning, con
 - Reduces errors and enhances security
 
 </details>
-
 <details>
 <summary><b>What is Bash scripting?</b></summary>
 
 Bash scripting is writing command-line instructions in a script file (.sh) to automate tasks in Unix/Linux environments.
 
 </details>
-
 <details>
 <summary><b>How do you write a basic Bash script?</b></summary>
 
@@ -434,14 +119,12 @@ echo "Hello, DevOps!"
 Save the file (`script.sh`), make it executable (`chmod +x script.sh`), and run it (`./script.sh`).
 
 </details>
-
 <details>
 <summary><b>What is the difference between Bash and Shell scripting?</b></summary>
 
 Bash is a type of shell, but shell scripting can also be done in other shells like `sh`, `csh`, and `zsh`. Bash provides more advanced scripting features.
 
 </details>
-
 <details>
 <summary><b>What are variables in Bash?</b></summary>
 
@@ -452,7 +135,6 @@ echo "Hello, $name"
 ```
 
 </details>
-
 <details>
 <summary><b>What is Python scripting used for in DevOps?</b></summary>
 
@@ -462,7 +144,6 @@ echo "Hello, $name"
 - Cloud automation (AWS, Azure, GCP SDKs)
 
 </details>
-
 <details>
 <summary><b>How do you define a function in Python?</b></summary>
 
@@ -473,16 +154,12 @@ greet()
 ```
 
 </details>
-
-
-
 <details>
 <summary><b>What is the shebang (`#!`) in a script?</b></summary>
 
 The shebang (`#!/bin/bash` or `#!/usr/bin/python3`) specifies the interpreter for executing the script.
 
 </details>
-
 <details>
 <summary><b>What are loops in Bash?</b></summary>
 
@@ -492,7 +169,6 @@ for i in {1..5}; do echo "Iteration $i"; done
 ```
 
 </details>
-
 <details>
 <summary><b>What are conditional statements in Bash?</b></summary>
 
@@ -502,7 +178,6 @@ if [ $USER == "root" ]; then echo "Admin access"; else echo "User access"; fi
 ```
 
 </details>
-
 <details>
 <summary><b>How do you read input in Bash?</b></summary>
 
@@ -513,7 +188,6 @@ echo "Hello, $name"
 ```
 
 </details>
-
 <details>
 <summary><b>How do you create a Python virtual environment?</b></summary>
 
@@ -523,9 +197,6 @@ source myenv/bin/activate
 ```
 
 </details>
-
-</details>
-
 <details>
 <summary><b>What is the `awk` command in Bash?</b></summary>
 
@@ -536,10 +207,6 @@ awk '{print $1}' file.txt
 Extracts the first column from `file.txt`.
 
 </details>
-
-
-### 🟡 Intermediate
-
 <details>
 <summary><b>How do you pass arguments to a Bash script?</b></summary>
 
@@ -550,14 +217,12 @@ echo "Hello, $1!"
 Run: `./script.sh DevOps` → Output: `Hello, DevOps!`
 
 </details>
-
 <details>
 <summary><b>How do you handle errors in Bash scripts?</b></summary>
 
 Use `set -e` to stop execution on errors.
 
 </details>
-
 <details>
 <summary><b>How do you handle exceptions in Python?</b></summary>
 
@@ -569,7 +234,6 @@ except ZeroDivisionError:
 ```
 
 </details>
-
 <details>
 <summary><b>How do you schedule a script with Cron?</b></summary>
 
@@ -580,7 +244,6 @@ Edit `crontab -e` and add:
 Runs the script daily at 5 AM.
 
 </details>
-
 <details>
 <summary><b>How do you create a list in Python?</b></summary>
 
@@ -590,7 +253,6 @@ print(mylist[0])
 ```
 
 </details>
-
 <details>
 <summary><b>What is `sed` in Bash?</b></summary>
 
@@ -600,7 +262,6 @@ sed -i 's/old/new/g' file.txt
 ```
 
 </details>
-
 <details>
 <summary><b>How do you define a dictionary in Python?</b></summary>
 
@@ -610,8 +271,6 @@ print(mydict["name"])
 ```
 
 </details>
-
-
 <details>
 <summary><b>How do you install Python modules?</b></summary>
 
@@ -620,7 +279,6 @@ pip install requests
 ```
 
 </details>
-
 <details>
 <summary><b>How do you iterate over a dictionary in Python?</b></summary>
 
@@ -630,7 +288,6 @@ for key, value in mydict.items():
 ```
 
 </details>
-
 <details>
 <summary><b>How do you set environment variables in Bash?</b></summary>
 
@@ -639,8 +296,6 @@ export VAR="DevOps"
 ```
 
 </details>
-
-
 <details>
 <summary><b>What is a multiline string in YAML?</b></summary>
 
@@ -651,7 +306,6 @@ message: |
 ```
 
 </details>
-
 <details>
 <summary><b>What is an associative array in Bash?</b></summary>
 
@@ -662,7 +316,6 @@ echo ${myarray[name]}
 ```
 
 </details>
-
 <details>
 <summary><b>How do you run a shell command in Python?</b></summary>
 
@@ -672,7 +325,6 @@ os.system("ls")
 ```
 
 </details>
-
 <details>
 <summary><b>What is `jq` in Linux?</b></summary>
 
@@ -682,7 +334,6 @@ cat data.json | jq '.name'
 ```
 
 </details>
-
 <details>
 <summary><b>How do you exit a script with a status code?</b></summary>
 
@@ -691,9 +342,6 @@ exit 1
 ```
 
 </details>
-
-### 🔴 Advanced
-
 <details>
 <summary><b>How do you debug a Bash script?</b></summary>
 
@@ -705,7 +353,6 @@ echo "Debugging mode enabled"
 ```
 
 </details>
-
 <details>
 <summary><b>How do you trap signals in a Bash script?</b></summary>
 
@@ -715,14 +362,12 @@ trap "echo 'Script interrupted'; exit" SIGINT SIGTERM
 Catches Ctrl+C (SIGINT) and terminates gracefully.
 
 </details>
-
 <details>
 <summary><b>What is the difference between `$(command)` and backticks in Bash?</b></summary>
 
 Both execute commands, but `$(command)` is preferred as it is nestable.
 
 </details>
-
 <details>
 <summary><b>How do you handle multiline commands in a Bash script?</b></summary>
 
@@ -733,7 +378,6 @@ multiline command"
 ```
 
 </details>
-
 <details>
 <summary><b>How do you use conditionals inside a YAML file?</b></summary>
 
@@ -747,7 +391,6 @@ tasks:
 ```
 
 </details>
-
 <details>
 <summary><b>How do you execute a Python script inside a Bash script?</b></summary>
 
@@ -758,7 +401,6 @@ EOF
 ```
 
 </details>
-
 <details>
 <summary><b>What is the difference between `continue` and `break` in Bash loops?</b></summary>
 
@@ -766,7 +408,6 @@ EOF
 - `continue` skips the current iteration.
 
 </details>
-
 <details>
 <summary><b>How do you parse a JSON file in Bash?</b></summary>
 
@@ -776,7 +417,6 @@ cat data.json | jq '.key'
 ```
 
 </details>
-
 <details>
 <summary><b>How do you set a timeout for a script in Bash?</b></summary>
 
@@ -785,7 +425,6 @@ timeout 10s ./script.sh
 ```
 
 </details>
-
 <details>
 <summary><b>How do you execute a Bash function in a subshell?</b></summary>
 
@@ -795,7 +434,6 @@ timeout 10s ./script.sh
 Runs in a new shell, not affecting the parent script.
 
 </details>
-
 <details>
 <summary><b>How do you use Python to send an HTTP request?</b></summary>
 
@@ -806,7 +444,6 @@ print(response.text)
 ```
 
 </details>
-
 <details>
 <summary><b>How do you handle authentication in a Python script?</b></summary>
 
@@ -816,7 +453,6 @@ requests.get("https://example.com", auth=("user", "pass"))
 ```
 
 </details>
-
 <details>
 <summary><b>How do you execute a script remotely via SSH in Bash?</b></summary>
 
@@ -825,10 +461,6 @@ ssh user@server 'bash -s' < local_script.sh
 ```
 
 </details>
-
-
-### 🔥 Python for Infrastructure & Production Engineering
-
 <details>
 <summary><b>How do you run system commands from Python using subprocess?</b></summary>
 
@@ -859,7 +491,6 @@ except subprocess.CalledProcessError as e:
 ```
 
 </details>
-
 <details>
 <summary><b>How do you read and write files in Python for infra scripts?</b></summary>
 
@@ -884,7 +515,6 @@ with open('/var/log/syslog', 'r') as f:
 ```
 
 </details>
-
 <details>
 <summary><b>How do you parse stdout / command output in Python?</b></summary>
 
@@ -910,7 +540,6 @@ for process in processes[:5]:  # top 5
 ```
 
 </details>
-
 <details>
 <summary><b>How do you use regex for pattern matching in logs with Python?</b></summary>
 
@@ -936,7 +565,6 @@ with open('/var/log/syslog', 'r') as f:
 ```
 
 </details>
-
 <details>
 <summary><b>How do you parse JSON output from CLI tools or APIs in Python?</b></summary>
 
@@ -964,7 +592,6 @@ print(f"Memory: {server_info['MemorySummary']['TotalSystemMemoryGiB']}GB")
 ```
 
 </details>
-
 <details>
 <summary><b>How do you read from stdin in Python (for piping)?</b></summary>
 
@@ -985,7 +612,6 @@ content = sys.stdin.read()
 ```
 
 </details>
-
 <details>
 <summary><b>How do you handle command line arguments in Python scripts?</b></summary>
 
@@ -1008,7 +634,6 @@ print(f"Monitoring {args.service} with threshold {args.threshold}%")
 ```
 
 </details>
-
 <details>
 <summary><b>How do you work with environment variables in Python?</b></summary>
 
@@ -1029,7 +654,6 @@ os.environ['MY_VAR'] = 'value'
 ```
 
 </details>
-
 <details>
 <summary><b>How do you set up proper logging for production Python scripts?</b></summary>
 
@@ -1056,7 +680,6 @@ logger.critical("Node unreachable")
 ```
 
 </details>
-
 <details>
 <summary><b>How do you handle errors robustly in Python infra scripts?</b></summary>
 
@@ -1085,7 +708,6 @@ def restart_service(service_name):
 ```
 
 </details>
-
 <details>
 <summary><b>How do you read from the /proc filesystem in Python?</b></summary>
 
@@ -1117,7 +739,6 @@ print(f"Free: {mem['MemFree'] // 1024}MB")
 ```
 
 </details>
-
 <details>
 <summary><b>How do you make HTTP requests to Redfish/BMC APIs in Python?</b></summary>
 
@@ -1154,11 +775,6 @@ print(f"Server health: {health}")
 ```
 
 </details>
-
-### 🔥 Bash Scripting Challenges — Fleet Operations
-
-#### Tier 1 — Most Relevant to Role
-
 <details>
 <summary><b>Challenge 1 — Check if a service is running and restart if not</b></summary>
 
@@ -1178,7 +794,6 @@ fi
 **Why relevant:** Core fleet ops task — keeping services alive. Run this via cron or a monitoring loop.
 
 </details>
-
 <details>
 <summary><b>Challenge 2 — Monitor disk space and alert if above threshold</b></summary>
 
@@ -1199,7 +814,6 @@ done
 **Why relevant:** Disk space is one of the most common fleet incidents. Running out of disk can crash services silently.
 
 </details>
-
 <details>
 <summary><b>Challenge 3 — Parse logs and extract errors from the last hour</b></summary>
 
@@ -1218,7 +832,6 @@ echo "Found $(wc -l < /tmp/recent_errors.log) errors in the last hour"
 **Why relevant:** Log parsing is daily work in fleet ops — quickly scoping an incident to the relevant time window.
 
 </details>
-
 <details>
 <summary><b>Challenge 4 — Find top 5 CPU consuming processes</b></summary>
 
@@ -1232,7 +845,6 @@ ps aux --sort=-%cpu | awk 'NR==1 || NR<=6 {printf "%-10s %-8s %-8s %s\n", $1, $2
 **Why relevant:** First thing you run during a high CPU incident — identify the offending process in seconds.
 
 </details>
-
 <details>
 <summary><b>Challenge 5 — Check multiple servers are reachable</b></summary>
 
@@ -1252,9 +864,6 @@ done
 **Why relevant:** Fleet health checking across multiple nodes — run this when investigating a potential network issue.
 
 </details>
-
-#### Tier 2 — Very Likely Relevant
-
 <details>
 <summary><b>Challenge 6 — Monitor memory usage and log if above threshold</b></summary>
 
@@ -1279,7 +888,6 @@ done
 **Why relevant:** Memory monitoring in a GPU fleet is critical — OOM events can silently kill training jobs.
 
 </details>
-
 <details>
 <summary><b>Challenge 7 — Check SSH connectivity to a list of servers</b></summary>
 
@@ -1300,7 +908,6 @@ done
 **Why relevant:** Verifying server accessibility across the fleet — distinguishes network issues from service issues.
 
 </details>
-
 <details>
 <summary><b>Challenge 8 — Collect system health snapshot</b></summary>
 
@@ -1333,7 +940,6 @@ echo "Report saved to $OUTPUT"
 **Why relevant:** Exactly what you'd run at the start of an incident — captures a full snapshot before anything changes.
 
 </details>
-
 <details>
 <summary><b>Challenge 9 — Watch a log file for specific error patterns</b></summary>
 
@@ -1352,7 +958,6 @@ done
 **Why relevant:** Real-time log monitoring during an incident — lets you see errors as they happen without noise.
 
 </details>
-
 <details>
 <summary><b>Challenge 10 — Automated server validation post provisioning</b></summary>
 
@@ -1401,9 +1006,6 @@ fi
 **Why relevant:** Directly maps to the hardware validation responsibility — confirms a newly provisioned server meets spec before hand-off.
 
 </details>
-
-#### Tier 3 — Good to Know
-
 <details>
 <summary><b>Challenge 11 — Rotate logs older than 7 days</b></summary>
 
@@ -1420,7 +1022,6 @@ echo "Cleanup complete"
 **Why relevant:** Disk space management in fleet ops — runaway logs are a common cause of disk-full incidents.
 
 </details>
-
 <details>
 <summary><b>Challenge 12 — Check if ports are open on a server</b></summary>
 
@@ -1441,7 +1042,6 @@ done
 **Why relevant:** Network validation during provisioning — confirm all expected services are listening before hand-off.
 
 </details>
-
 <details>
 <summary><b>Challenge 13 — Check system uptime and detect if reboot is required</b></summary>
 
@@ -1462,7 +1062,6 @@ fi
 **Why relevant:** Fleet maintenance and patching awareness — tracking which servers need a reboot window is a core ops task.
 
 </details>
-
 <details>
 <summary><b>Challenge 14 — Extract and summarise errors from multiple log files</b></summary>
 
@@ -1487,7 +1086,6 @@ cat $OUTPUT
 **Why relevant:** Post-incident log analysis across multiple files — quickly identifies which services generated errors.
 
 </details>
-
 <details>
 <summary><b>Challenge 15 — Monitor a process and alert with PID details if CPU spikes</b></summary>
 
@@ -1520,47 +1118,12 @@ done
 </details>
 
 
+---
+
 ## 🚀 CI/CD & DevOps Best Practices
 
 ### 🟢 Beginner
 
-<details>
-<summary><b>What are DevOps best practices?</b></summary>
-
-Key DevOps best practices include:
-- Infrastructure as Code (IaC)
-- Continuous Integration and Continuous Deployment (CI/CD)
-- Monitoring and Logging
-- Automated Testing
-- Security as Code
-
-</details>
-
-<details>
-<summary><b>What are the key components of a CI/CD pipeline?</b></summary>
-
-- Code commit
-- Build
-- Test
-- Deploy
-- Monitor
-
-</details>
-
-<details>
-<summary><b>What is the difference between Continuous Deployment and Continuous Delivery?</b></summary>
-
-- **Continuous Delivery:** Automated testing, but manual deployment approval.
-- **Continuous Deployment:** Fully automated release process.
-
-</details>
-
-<details>
-<summary><b>What is the importance of automated testing in DevOps?</b></summary>
-
-Automated testing ensures code quality, catches bugs early, and speeds up deployment.
-
-</details>
 
 <details>
 <summary><b>What is the purpose of monitoring in DevOps?</b></summary>
@@ -1568,87 +1131,24 @@ Automated testing ensures code quality, catches bugs early, and speeds up deploy
 Monitoring tools (e.g., Prometheus, Grafana, ELK) track system performance and detect issues in real-time.
 
 </details>
-
 <details>
 <summary><b>What is the role of logging in DevOps?</b></summary>
 
 Logging helps in troubleshooting, analyzing trends, and ensuring application reliability.
 
 </details>
-
 <details>
 <summary><b>How do you manage secrets in DevOps?</b></summary>
 
 Using secret management tools like HashiCorp Vault, AWS Secrets Manager, and Kubernetes Secrets.
 
 </details>
-
-
-### 🟡 Intermediate
-
-<details>
-<summary><b>How do you ensure high availability in a cloud-based architecture?</b></summary>
-
-Using load balancing, auto-scaling, multi-region deployments, and failover mechanisms.
-
-</details>
-
-
-<details>
-<summary><b>How do you secure a CI/CD pipeline?</b></summary>
-
-- Use least privilege access.
-- Store secrets securely.
-- Scan dependencies for vulnerabilities.
-- Implement code signing.
-
-</details>
-
-<details>
-<summary><b>What are some common DevOps anti-patterns?</b></summary>
-
-- Siloed teams
-- Manual deployments
-- Lack of monitoring
-- Ignoring security
-
-</details>
-
 <details>
 <summary><b>What is a Service Level Agreement (SLA)?</b></summary>
 
 An SLA defines the expected level of service, including uptime and response times.
 
 </details>
-
-<details>
-<summary><b>How do you ensure compliance in DevOps?</b></summary>
-
-By automating security checks, auditing, and following regulatory frameworks like GDPR and SOC 2.
-
-</details>
-
-<details>
-<summary><b>How do you reduce deployment downtime?</b></summary>
-
-Using rolling updates, blue-green deployments, and zero-downtime migrations.
-
-</details>
-
-<details>
-<summary><b>How do you handle database migrations in CI/CD?</b></summary>
-
-Using tools like Flyway, Liquibase, or Django migrations in an automated pipeline.
-
-</details>
-
-<details>
-<summary><b>How do you implement infrastructure testing?</b></summary>
-
-Using tools like Terratest (for Terraform), InSpec, and Pester.
-
-</details>
-
 <details>
 <summary><b>What is the difference between SLO and SLI?</b></summary>
 
@@ -1656,45 +1156,12 @@ Using tools like Terratest (for Terraform), InSpec, and Pester.
 - **SLI (Service Level Indicator):** A measurable metric (e.g., response time < 200ms).
 
 </details>
-
-
-<details>
-<summary><b>How do you handle rollback in a Kubernetes environment?</b></summary>
-
-```bash
-kubectl rollout undo deployment <deployment_name>
-```
-
-</details>
-
-<details>
-<summary><b>What are the best practices for writing Dockerfiles?</b></summary>
-
-- Use lightweight base images.
-- Minimize layers.
-- Avoid hardcoding secrets.
-- Use multi-stage builds.
-
-</details>
-
-
-### 🔴 Advanced
-
-
 <details>
 <summary><b>How do you handle incident response in DevOps?</b></summary>
 
 Using an on-call rotation, alerting, and post-mortems.
 
 </details>
-
-<details>
-<summary><b>How do you manage hybrid cloud environments?</b></summary>
-
-Using tools like Anthos, Azure Arc, and Terraform.
-
-</details>
-
 <details>
 <summary><b>How do you implement auto-remediation in DevOps?</b></summary>
 
@@ -1702,20 +1169,13 @@ Using AWS Lambda, Ansible, or Kubernetes operators to fix issues automatically.
 
 </details>
 
-<details>
-<summary><b>How do you secure a Kubernetes cluster?</b></summary>
-
-- Use RBAC (Role-Based Access Control)
-- Enable Pod Security Policies
-- Rotate TLS certificates
-
-</details>
 
 ---
 
 ## 🏗️ Infrastructure as Code
 
 ### 🟢 Beginner
+
 
 <details>
 <summary><b>What is Infrastructure as Code (IaC) and why is it important?</b></summary>
@@ -1726,7 +1186,6 @@ Infrastructure as Code (IaC) is a method of managing and provisioning infrastruc
 ✅ Scalability through repeatable scripts
 
 </details>
-
 <details>
 <summary><b>What is Terraform and how does it work?</b></summary>
 
@@ -1747,7 +1206,6 @@ resource "aws_instance" "my_instance" {
 }
 
 </details>
-
 <details>
 <summary><b>What is the difference between Terraform and Ansible?</b></summary>
 
@@ -1758,20 +1216,6 @@ State Management	Uses state file	Stateless
 Example Use	Creating VMs, Networks	Installing software, configuring OS
 
 </details>
-
-<details>
-<summary><b>What are Terraform Providers?</b></summary>
-
-Providers are plugins that allow Terraform to manage resources on different platforms (AWS, Azure, GCP, Kubernetes, etc.).
-
-Example:
-
-provider "aws" {
-  region = "us-west-2"
-}
-
-</details>
-
 <details>
 <summary><b>What is a Terraform State File?</b></summary>
 
@@ -1789,84 +1233,12 @@ backend "s3" {
 }
 
 </details>
-
-<details>
-<summary><b>What is the purpose of terraform init?</b></summary>
-
-It initializes the working directory by:
-✅ Downloading providers
-✅ Setting up backend storage
-✅ Validating configuration
-
-Command:
-
-terraform init
-
-</details>
-
-<details>
-<summary><b>How does Terraform manage dependencies between resources?</b></summary>
-
-Terraform uses implicit and explicit dependencies:
-
-Implicit: Recognized automatically
-Explicit: Defined using depends_on
-Example:
-
-resource "aws_instance" "web" {
-  ami           = "ami-12345678"
-  instance_type = "t2.micro"
-}
-
-resource "aws_ebs_volume" "data" {
-  size          = 10
-  availability_zone = "us-east-1a"
-  depends_on    = [aws_instance.web]
-}
-
-</details>
-
-<details>
-<summary><b>What is the difference between Terraform apply and plan?</b></summary>
-
-Command	Purpose
-terraform plan	Shows proposed changes before applying
-terraform apply	Executes changes to create/update resources
-
-</details>
-
-<details>
-<summary><b>What is a Terraform Module?</b></summary>
-
-A module is a reusable collection of Terraform configurations that helps organize code.
-
-Example of a module (main.tf):
-
-module "network" {
-  source = "./modules/vpc"
-}
-
-</details>
-
-<details>
-<summary><b>How do you destroy resources in Terraform?</b></summary>
-
-Use:
-
-terraform destroy
-This removes all resources defined in the configuration.
-
-Ansible Questions
-
-</details>
-
 <details>
 <summary><b>What is Ansible and how does it work?</b></summary>
 
 Ansible is an open-source configuration management tool that automates tasks like software installation, updates, and deployments. It works agentless, using SSH or WinRM.
 
 </details>
-
 <details>
 <summary><b>What are Ansible Playbooks?</b></summary>
 
@@ -1883,7 +1255,6 @@ Example (playbook.yml):
         state: present
 
 </details>
-
 <details>
 <summary><b>What is an Ansible Inventory file?</b></summary>
 
@@ -1896,7 +1267,6 @@ server1 ansible_host=192.168.1.10
 server2 ansible_host=192.168.1.11
 
 </details>
-
 <details>
 <summary><b>What is the difference between Ansible Roles and Playbooks?</b></summary>
 
@@ -1906,72 +1276,6 @@ Organization	Single YAML file	Structured directory
 Usage	Small-scale automation	Large-scale projects
 
 </details>
-
-
-<details>
-<summary><b>What is AWS CloudFormation?</b></summary>
-
-AWS CloudFormation is an IaC service that provisions AWS infrastructure using YAML/JSON templates.
-
-Example:
-
-Resources:
-  MyBucket:
-    Type: "AWS::S3::Bucket"
-
-</details>
-
-<details>
-<summary><b>How do you create a CloudFormation stack?</b></summary>
-
-Command:
-
-aws cloudformation create-stack --stack-name my-stack --template-body file://template.yml
-
-</details>
-
-### 🟡 Intermediate
-
-<details>
-<summary><b>What is the difference between Terraform local and remote state?</b></summary>
-
-Terraform state can be stored locally (on disk) or remotely (in S3, Consul, etc.).
-
-Storage	Pros	Cons
-Local State (terraform.tfstate)	Fast, simple	Not suitable for teams
-Remote State (S3, etc.)	Shared, secure	Slightly slower
-Example remote state (S3 backend):
-
-terraform {
-  backend "s3" {
-    bucket = "my-terraform-state"
-    key    = "prod/terraform.tfstate"
-    region = "us-east-1"
-  }
-}
-
-</details>
-
-<details>
-<summary><b>How do you handle secrets in Terraform?</b></summary>
-
-Avoid hardcoding secrets in .tf files:
-✅ Use environment variables
-✅ Use Terraform Vault Provider
-✅ Store secrets in AWS Secrets Manager
-
-</details>
-
-<details>
-<summary><b>What is Terraform Workspaces?</b></summary>
-
-Terraform Workspaces allow managing multiple environments within a single configuration.
-
-terraform workspace new dev
-terraform workspace select dev
-
-</details>
-
 <details>
 <summary><b>How does Terraform handle drift detection?</b></summary>
 
@@ -1981,273 +1285,6 @@ terraform plan
 Drift occurs when actual infrastructure changes outside Terraform’s control.
 
 </details>
-
-<details>
-<summary><b>How do you use Ansible variables?</b></summary>
-
-Variables can be defined in:
-✅ Playbooks (vars:)
-✅ Inventory (host_vars, group_vars)
-✅ Command-line (-e flag)
-
-Example:
-
-- hosts: web
-  vars:
-    app_port: 8080
-  tasks:
-    - debug: msg="App runs on port {{ app_port }}"
-
-</details>
-
-<details>
-<summary><b>What are Ansible Facts?</b></summary>
-
-Facts are system information collected automatically.
-
-Example:
-
-ansible all -m setup
-
-</details>
-
-<details>
-<summary><b>What is the purpose of Ansible Handlers?</b></summary>
-
-Handlers run only when notified.
-
-Example:
-
-- name: Install Nginx
-  apt:
-    name: nginx
-  notify: Restart Nginx
-
-- name: Restart Nginx
-  service:
-    name: nginx
-    state: restarted
-  listen: Restart Nginx
-
-</details>
-
-<details>
-<summary><b>How does Ansible manage dependencies?</b></summary>
-
-Ansible Roles handle dependencies using meta/main.yml.
-
-Example:
-
-dependencies:
-  - role: common
-
-</details>
-
-<details>
-<summary><b>What is the difference between command and shell modules in Ansible?</b></summary>
-
-Module	When to Use	Example
-command	Runs a command without shell features	ansible all -m command -a "ls"
-shell	Runs commands with shell features (`	,&&`)
-
-</details>
-
-<details>
-<summary><b>What is Ansible Dynamic Inventory?</b></summary>
-
-Dynamic Inventory fetches live host lists from AWS, Azure, GCP.
-
-Example for AWS:
-
-ansible-inventory --list -i aws_ec2.yml
-CloudFormation Questions
-
-</details>
-
-<details>
-<summary><b>What are the main components of AWS CloudFormation?</b></summary>
-
-Component	Description
-Templates	Defines resources in YAML/JSON
-Stacks	Collection of AWS resources
-StackSets	Deploy stacks across multiple accounts
-
-</details>
-
-
-<details>
-<summary><b>What is AWS CloudFormation Drift Detection?</b></summary>
-
-Detects manual changes to resources outside CloudFormation.
-
-Run drift check:
-
-aws cloudformation detect-stack-drift --stack-name my-stack
-
-</details>
-
-### 🔴 Advanced
-
-<details>
-<summary><b>How do you implement CI/CD pipelines with Terraform?</b></summary>
-
-Terraform can be integrated into CI/CD pipelines using GitHub Actions, GitLab CI, or Jenkins.
-✅ Linting & Validation: terraform fmt, terraform validate
-✅ Planning: terraform plan -out=tfplan
-✅ Apply Changes: terraform apply tfplan
-
-</details>
-
-<details>
-<summary><b>What are Terraform Data Sources?</b></summary>
-
-Data sources allow Terraform to query external resources without managing them.
-
-Example:
-
-data "aws_vpc" "existing_vpc" {
-  filter {
-    name   = "tag:Name"
-    values = ["my-vpc"]
-  }
-}
-
-</details>
-
-<details>
-<summary><b>How do you manage Terraform module versions?</b></summary>
-
-Use version constraints in source.
-
-Example (versions.tf):
-
-module "vpc" {
-  source  = "terraform-aws-modules/vpc/aws"
-  version = "3.5.0"
-}
-
-</details>
-
-<details>
-<summary><b>How does Terraform handle circular dependencies?</b></summary>
-
-Terraform detects and prevents circular dependencies by analyzing the DAG (Directed Acyclic Graph).
-Solution:
-✅ Use depends_on explicitly
-✅ Refactor resources
-
-Example:
-
-resource "aws_instance" "web" {
-  depends_on = [aws_s3_bucket.logs]
-}
-
-</details>
-
-<details>
-<summary><b>What are Terraform locals and output variables?</b></summary>
-
-locals: Store temporary values
-output: Expose values after deployment
-Example:
-
-locals {
-  env_name = "dev"
-}
-
-output "instance_ip" {
-  value = aws_instance.web.public_ip
-}
-
-</details>
-
-<details>
-<summary><b>What is a Terraform Sentinel Policy?</b></summary>
-
-Sentinel is a policy-as-code framework that enforces compliance.
-
-Example policy (enforce_cost.sentinel):
-
-import "tfplan"
-
-main = rule { tfplan.cost_estimate.total_monthly_cost < 500 }
-
-</details>
-
-<details>
-<summary><b>How do you roll back changes in Terraform?</b></summary>
-
-Option 1: Use version control (git revert)
-
-Option 2: Manually restore the previous state
-
-Option 3: Import last known working state:
-
-terraform apply "tfstate-previous.json"
-
-</details>
-
-<details>
-<summary><b>What is Terraform Refresh?</b></summary>
-
-terraform refresh updates the state file without modifying resources.
-
-terraform refresh
-
-</details>
-
-<details>
-<summary><b>How do you enforce security best practices in Terraform?</b></summary>
-
-✅ Use IAM least privilege for Terraform executions
-✅ Store state files securely (S3 + DynamoDB)
-✅ Run security scans with tools like tfsec
-
-Example:
-
-tfsec .
-
-</details>
-
-<details>
-<summary><b>How do you test Ansible Playbooks before applying them?</b></summary>
-
-✅ Use ansible-lint for syntax validation
-✅ Use Molecule for testing
-
-Example:
-
-molecule test
-
-</details>
-
-<details>
-<summary><b>How do you handle error handling in Ansible?</b></summary>
-
-Use ignore_errors: yes or rescue blocks.
-
-Example:
-
-tasks:
-  - name: Try to restart service
-    service:
-      name: nginx
-      state: restarted
-    ignore_errors: yes
-
-</details>
-
-<details>
-<summary><b>How do you implement Ansible Vault in CI/CD?</b></summary>
-
-Use environment variables to decrypt secrets.
-
-Example:
-
-ANSIBLE_VAULT_PASSWORD="myvaultpassword" ansible-playbook deploy.yml
-
-</details>
-
 <details>
 <summary><b>How do you ensure Ansible Playbooks are idempotent?</b></summary>
 
@@ -2265,26 +1302,12 @@ CloudFormation Questions
 </details>
 
 
-<details>
-<summary><b>How do you debug CloudFormation failures?</b></summary>
-
-✅ Check the CloudFormation console
-✅ Use aws cloudformation describe-stack-events
-✅ Enable rollback debugging
-
-Example:
-
-aws cloudformation describe-stack-events --stack-name my-stack
-
-Linux & System Administration - DevOps Interview Questions
-
-</details>
-
 ---
 
 ## 📦 Containers (Docker & Kubernetes)
 
 ### 🟢 Beginner
+
 
 <details>
 <summary><b>What is Docker, and why is it used?</b></summary>
@@ -2292,7 +1315,6 @@ Linux & System Administration - DevOps Interview Questions
 Docker is a containerisation platform that allows developers to package applications along with their dependencies into a single unit called a container. It ensures consistent environments across different machines, is lightweight and faster than virtual machines, and enables easy scaling in microservices architectures.
 
 </details>
-
 <details>
 <summary><b>What is the difference between Docker and a Virtual Machine (VM)?</b></summary>
 
@@ -2304,21 +1326,18 @@ Docker is a containerisation platform that allows developers to package applicat
 | Use Case | Ideal for microservices | Best for full OS emulation |
 
 </details>
-
 <details>
 <summary><b>What is a Docker image?</b></summary>
 
 A Docker image is a read-only template containing everything needed to run an application, including source code, libraries and dependencies, and configuration files. A container is created from a Docker image using the `docker run` command.
 
 </details>
-
 <details>
 <summary><b>What is a Docker container?</b></summary>
 
 A Docker container is a running instance of a Docker image. It is lightweight (shares OS kernel), isolated (has its own filesystem, network, and process space), and portable (can run on any system with Docker installed).
 
 </details>
-
 <details>
 <summary><b>How do you create and run a Docker container?</b></summary>
 
@@ -2330,7 +1349,6 @@ docker run -d --name myapp nginx
 - `nginx`: Use the nginx image.
 
 </details>
-
 <details>
 <summary><b>What is the purpose of the Dockerfile?</b></summary>
 
@@ -2344,14 +1362,12 @@ CMD ["node", "app.js"]
 ```
 
 </details>
-
 <details>
 <summary><b>What are Docker volumes?</b></summary>
 
 Docker volumes store persistent data outside a container's filesystem. Types include anonymous volumes (`docker run -v /data nginx`), named volumes (`docker volume create mydata`), and bind mounts (`docker run -v /host/path:/container/path nginx`).
 
 </details>
-
 <details>
 <summary><b>How do you list running Docker containers?</b></summary>
 
@@ -2361,7 +1377,6 @@ docker ps -a       # List all containers including stopped ones
 ```
 
 </details>
-
 <details>
 <summary><b>What is Docker Compose?</b></summary>
 
@@ -2381,7 +1396,6 @@ services:
 Start with `docker-compose up -d`, stop with `docker-compose down`.
 
 </details>
-
 <details>
 <summary><b>What is the difference between CMD and ENTRYPOINT in Docker?</b></summary>
 
@@ -2393,114 +1407,18 @@ Start with `docker-compose up -d`, stop with `docker-compose down`.
 #### Kubernetes Basics
 
 </details>
-
 <details>
 <summary><b>What is Kubernetes?</b></summary>
 
 Kubernetes (K8s) is an orchestration platform for managing containerised applications, providing automated scaling, self-healing (restarts failed containers), load balancing, and rolling updates.
 
 </details>
-
 <details>
 <summary><b>What is a Kubernetes Pod?</b></summary>
 
 A Pod is the smallest unit in Kubernetes. It groups one or more containers that share the same network and storage.
 
 </details>
-
-<details>
-<summary><b>What is a Kubernetes Deployment?</b></summary>
-
-A Deployment manages Pod creation and updates.
-```yaml
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: my-app
-spec:
-  replicas: 3
-  selector:
-    matchLabels:
-      app: my-app
-  template:
-    metadata:
-      labels:
-        app: my-app
-    spec:
-      containers:
-        - name: app
-          image: nginx
-```
-
-</details>
-
-<details>
-<summary><b>What is a Kubernetes Service?</b></summary>
-
-A Service exposes a set of Pods over a network. Types include ClusterIP (default), NodePort (exposes on a fixed port), and LoadBalancer (uses cloud provider's load balancer).
-
-</details>
-
-<details>
-<summary><b>What is the purpose of Kubernetes ConfigMaps and Secrets?</b></summary>
-
-ConfigMaps store non-sensitive configuration data, while Secrets store sensitive data like passwords and API keys.
-
-</details>
-
-<details>
-<summary><b>What is a Kubernetes Namespace?</b></summary>
-
-Namespaces logically separate resources within a cluster.
-```bash
-kubectl create namespace dev
-kubectl get namespaces
-```
-
-</details>
-
-<details>
-<summary><b>What is a StatefulSet in Kubernetes?</b></summary>
-
-A StatefulSet is used for stateful applications like databases. Unlike Deployments, it maintains stable pod identity and persistent storage.
-
-</details>
-
-<details>
-<summary><b>How do you scale a Deployment in Kubernetes?</b></summary>
-
-```bash
-kubectl scale deployment my-app --replicas=5
-```
-
-</details>
-
-<details>
-<summary><b>What is a DaemonSet?</b></summary>
-
-A DaemonSet ensures that one Pod runs on every node (e.g., for logging agents or monitoring).
-
-</details>
-
-<details>
-<summary><b>How do you update a Kubernetes Deployment?</b></summary>
-
-```bash
-kubectl set image deployment/my-app my-container=nginx:latest
-```
-
-</details>
-
-### 🟡 Intermediate
-
-<details>
-<summary><b>How do you optimize Docker images?</b></summary>
-
-- Use smaller base images (e.g., `alpine` instead of `ubuntu`).
-- Use multi-stage builds to reduce image size:
-
-</details>
-
 <details>
 <summary><b>How do you debug a running Docker container?</b></summary>
 
@@ -2511,47 +1429,6 @@ docker inspect my-container               # Inspect container details
 ```
 
 </details>
-
-<details>
-<summary><b>What is a Docker Multi-Stage Build?</b></summary>
-
-A multi-stage build reduces image size by using multiple `FROM` statements, so the final image only contains what is needed to run the application.
-```dockerfile
-FROM golang:1.17 AS builder
-WORKDIR /app
-COPY . .
-RUN go build -o myapp
-
-FROM alpine
-COPY --from=builder /app/myapp /myapp
-ENTRYPOINT ["/myapp"]
-```
-
-</details>
-
-<details>
-<summary><b>How does Docker handle networking?</b></summary>
-
-- **Bridge network (default):** Containers communicate via a virtual network.
-- **Host network:** Container shares the host's networking stack.
-- **Overlay network:** Used in Docker Swarm for multi-host networking.
-```bash
-docker network create mynetwork
-docker run --network=mynetwork nginx
-```
-
-</details>
-
-<details>
-<summary><b>How do you remove unused Docker images and containers?</b></summary>
-
-```bash
-docker system prune -a
-```
-This removes stopped containers, unused networks, and dangling images.
-
-</details>
-
 <details>
 <summary><b>How do you limit container resource usage?</b></summary>
 
@@ -2561,116 +1438,6 @@ docker run --memory=512m --cpus=1 nginx
 This limits memory to 512MB and CPU usage to 1 core.
 
 </details>
-
-#### Kubernetes Intermediate
-
-<details>
-<summary><b>How does Kubernetes handle high availability?</b></summary>
-
-Kubernetes uses multiple master nodes to avoid single points of failure, Deployments with replica sets to keep applications running, and load balancing with failover mechanisms to ensure availability.
-
-</details>
-
-<details>
-<summary><b>What is the role of kubelet in Kubernetes?</b></summary>
-
-Kubelet runs on each node and communicates with the master node, ensures containers are running, and monitors container health.
-
-</details>
-
-<details>
-<summary><b>How do you check logs of a running Pod in Kubernetes?</b></summary>
-
-```bash
-kubectl logs my-pod
-kubectl logs -f my-pod   # Stream logs in real-time
-```
-
-</details>
-
-<details>
-<summary><b>What are Kubernetes Labels and Selectors?</b></summary>
-
-Labels identify resources, while selectors filter resources.
-```yaml
-metadata:
-  labels:
-    app: my-app
-```
-```bash
-kubectl get pods -l app=my-app
-```
-
-</details>
-
-
-<details>
-<summary><b>What is the difference between Horizontal Pod Autoscaler (HPA) and Vertical Pod Autoscaler (VPA)?</b></summary>
-
-| Feature | HPA | VPA |
-|---|---|---|
-| Scaling Type | Adds/removes pods | Adjusts CPU/memory of existing pods |
-| Use Case | High traffic apps | Resource optimisation |
-
-```bash
-kubectl autoscale deployment my-app --cpu-percent=50 --min=2 --max=10
-```
-
-</details>
-
-<details>
-<summary><b>What is a Kubernetes Persistent Volume (PV) and Persistent Volume Claim (PVC)?</b></summary>
-
-A Persistent Volume (PV) is a storage resource, and a Persistent Volume Claim (PVC) requests storage.
-```yaml
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: my-pvc
-spec:
-  accessModes:
-    - ReadWriteOnce
-  resources:
-    requests:
-      storage: 1Gi
-```
-
-</details>
-
-<details>
-<summary><b>How do you upgrade a running application in Kubernetes?</b></summary>
-
-```bash
-kubectl set image deployment/my-app my-container=nginx:1.20
-kubectl rollout status deployment my-app
-```
-
-</details>
-
-<details>
-<summary><b>What is a Kubernetes Job and CronJob?</b></summary>
-
-A Job runs once and exits, while a CronJob runs on a schedule (like a Linux cron).
-```yaml
-apiVersion: batch/v1
-kind: CronJob
-metadata:
-  name: my-cronjob
-spec:
-  schedule: "0 * * * *"
-  jobTemplate:
-    spec:
-      template:
-        spec:
-          containers:
-            - name: hello
-              image: busybox
-              command: ["echo", "Hello from Kubernetes"]
-          restartPolicy: OnFailure
-```
-
-</details>
-
 <details>
 <summary><b>How do you debug Kubernetes pods stuck in "CrashLoopBackOff"?</b></summary>
 
@@ -2681,36 +1448,12 @@ kubectl exec -it my-pod -- /bin/sh  # Exec into the container
 ```
 
 </details>
-
-### 🔴 Advanced
-
 <details>
 <summary><b>What are Docker namespaces and cgroups?</b></summary>
 
 Namespaces isolate resources (PID, network, mount points, etc.) for each container, while cgroups (Control Groups) limit CPU, memory, and disk usage. Together, they ensure process isolation and resource allocation.
 
 </details>
-
-<details>
-<summary><b>How do you secure a Docker container?</b></summary>
-
-- Use minimal base images (e.g., `alpine`).
-- Run as a non-root user.
-- Limit container capabilities (`--cap-drop=ALL`).
-- Use read-only filesystems (`--read-only`).
-```bash
-docker run --user 1001 --read-only nginx
-```
-
-</details>
-
-<details>
-<summary><b>How do multi-stage builds improve security in Docker?</b></summary>
-
-Multi-stage builds keep sensitive files out of the final image and reduce the attack surface by discarding unnecessary dependencies. New image versions are deployed instead of patching live containers.
-
-</details>
-
 <details>
 <summary><b>How do you troubleshoot a Docker daemon issue?</b></summary>
 
@@ -2722,50 +1465,13 @@ dockerd --debug                # Run in debug mode
 
 </details>
 
-<details>
-<summary><b>What is the difference between Docker Stack and Docker Compose?</b></summary>
-
-Docker Compose is for single-host deployments, while Docker Stack is for multi-node Swarm clusters.
-
-</details>
-
-
-#### Kubernetes Advanced
-
-
-
-<details>
-<summary><b>How does Kubernetes handle node failures?</b></summary>
-
-Kubelet marks the node as `NotReady`, pods are rescheduled onto healthy nodes, and node auto-repair triggers in cloud-managed clusters.
-
-</details>
-
-
-<details>
-<summary><b>How do you debug networking issues in Kubernetes?</b></summary>
-
-```bash
-kubectl exec -it pod1 -- ping pod2        # Check Pod-to-Pod connectivity
-kubectl get networkpolicy                  # Inspect network policies
-kubectl exec -it pod -- nslookup my-service  # Validate DNS resolution
-```
-
-</details>
-
-
-<details>
-<summary><b>What is Kubernetes Cluster Federation?</b></summary>
-
-
-
-</details>
 
 ---
 
 ## 🐧 Linux & System Administration
 
 ### 🟢 Beginner
+
 
 <details>
 <summary><b>What is Linux and why is it popular in DevOps?</b></summary>
@@ -2777,142 +1483,120 @@ Linux powers most servers, cloud platforms, and containerization technologies li
 Additionally, Linux's permission model and user management align well with DevOps security practices, while its resource efficiency allows for higher density deployments compared to other operating systems. The extensive tooling ecosystem developed around Linux provides solutions for every aspect of the software development lifecycle.
 
 </details>
-
 <details>
 <summary><b>What are the fundamental Linux file permissions?</b></summary>
 
 Linux file permissions are categorized into three types (read, write, execute) for three user classes (owner, group, others). Read (r=4) allows viewing file contents, write (w=2) enables modification, and execute (x=1) permits running as a program. These are displayed in the format rwxrwxrwx representing permissions for owner, group, and others respectively. For example, -rwxr-xr-- shows the owner has full permissions (7), the group can read and execute (5), and others can only read (4). These permissions can be modified using the chmod command with either symbolic (u+x) or numeric (755) notation.
 
 </details>
-
 <details>
 <summary><b>How do you change file permissions in Linux?</b></summary>
 
 File permissions in Linux are changed using the chmod command in two formats: symbolic or numeric mode. Symbolic mode uses the format chmod [who][operation][permissions] where 'who' is u (user/owner), g (group), o (others), or a (all); 'operation' is + (add), - (remove), or = (set exactly); and 'permissions' are r (read), w (write), or x (execute). For example, chmod u+x script.sh adds execute permission for the owner. Numeric mode uses octal values where read=4, write=2, execute=1; adding these values for each user class creates a 3-digit code. For instance, chmod 755 script.sh sets rwx for owner (7) and r-x for group and others (5).
 
 </details>
-
 <details>
 <summary><b>What is the difference between soft link and hard link in Linux?</b></summary>
 
 Hard links and soft links (symbolic links) are two ways to reference files in Linux. A hard link is a direct reference to the inode of an existing file, essentially creating another directory entry pointing to the same data. Hard links share the same inode number, cannot cross filesystem boundaries, and the original data remains accessible even if the original file is deleted. Soft links, created with ln -s, are special files that point to the pathname of another file, similar to shortcuts in Windows. They have different inode numbers from the original file, can span across filesystems, and become invalid if the original file is deleted.
 
 </details>
-
 <details>
 <summary><b>What is a process in Linux and how do you manage processes?</b></summary>
 
 A process in Linux is an instance of a running program with its own memory space and system resources, identified by a unique Process ID (PID). Processes can be managed using commands like ps to view current processes, top or htop for interactive monitoring, and kill to terminate processes by sending signals. You can control processes with commands like nice and renice to adjust priority, or use bg and fg to move processes between background and foreground. Additionally, you can start programs in the background by appending & to commands, and use jobs to list background processes.
 
 </details>
-
 <details>
 <summary><b>What is the difference between a daemon and a regular process?</b></summary>
 
 A daemon is a background process that runs without direct user interaction, typically started at system boot and running continuously to provide services. Daemons often have names ending with 'd' (e.g., sshd, httpd), run with system privileges, have no controlling terminal, and are managed via service management tools like systemd. In contrast, regular processes are usually started by users directly, run in the foreground with user interaction, have a controlling terminal, typically run with the privileges of the user who started them, and terminate when their task is complete or when explicitly terminated by the user.
 
 </details>
-
 <details>
 <summary><b>Explain the Linux directory structure and key directories</b></summary>
 
 Linux follows the Filesystem Hierarchy Standard (FHS) with key directories including: / (root directory), /bin (essential commands), /boot (boot loader files), /etc (system configuration), /home (user home directories), /var (variable data like logs), /usr (user programs), /lib (libraries), /tmp (temporary files), /proc and /sys (virtual filesystems for system information), and /dev (device files). Important directories for system administrators include /var/log (system logs), /etc/systemd/system (systemd service files), and /opt (optional software). This standardized structure helps maintain consistency across different Linux distributions.
 
 </details>
-
 <details>
 <summary><b>What are environment variables and how do you set them in Linux?</b></summary>
 
 Environment variables are dynamic named values that affect the behavior of running processes in Linux. They store information like the system's search path, default shell, and user session details. You can view variables using env or echo $VARIABLE_NAME. To set variables for the current session, use export VARIABLE=value or simply VARIABLE=value (for shell-only scope). For persistent settings, add export commands to shell profiles like ~/.bashrc (user-specific) or /etc/profile (system-wide). Common variables include PATH (executable search path), HOME (user's home directory), and USER (current username).
 
 </details>
-
 <details>
 <summary><b>What is SSH and how do you use it securely?</b></summary>
 
 SSH (Secure Shell) is a cryptographic network protocol used for secure remote system administration and file transfers. Basic usage is ssh username@hostname, but security best practices include: using key-based authentication instead of passwords (ssh-keygen to create keys, ssh-copy-id to deploy), disabling root login, changing the default port, implementing fail2ban to prevent brute force attacks, and using strong encryption algorithms. The SSH config file (~/.ssh/config) can simplify connections and set per-host security options. For additional security, consider implementing two-factor authentication and limiting user access with AllowUsers/AllowGroups directives.
 
 </details>
-
 <details>
 <summary><b>What is systemd and how do you manage services with it?</b></summary>
 
 Systemd is the init system and service manager used in most modern Linux distributions to manage system startup and services. Common systemd commands include: systemctl start/stop/restart service to control services, systemctl enable/disable service to set autostart at boot, systemctl status service to check service status, and journalctl -u service to view service logs. Systemd uses unit files (typically stored in /etc/systemd/system/) to define service behavior, dependencies, and startup conditions. To create a custom service, you write a unit file with [Unit], [Service], and [Install] sections, then run systemctl daemon-reload to register it.
 
 </details>
-
 <details>
 <summary><b>How do you schedule tasks in Linux using cron?</b></summary>
 
 Cron is a time-based job scheduler in Linux that allows users to automate tasks at specified intervals. The crontab format consists of five time fields (minute, hour, day of month, month, day of week) followed by the command to execute. For example, 0 2 * * * /backup.sh runs a backup script at 2 AM daily. You manage cron jobs with crontab -e (edit), crontab -l (list), and crontab -r (remove). Special time shortcuts include @daily, @weekly, and @reboot. System-wide cron directories like /etc/cron.daily/ can also be used. For jobs that need to run at odd intervals, consider using anacron which ensures tasks run even if the computer was powered off at the scheduled time.
 
 </details>
-
 <details>
 <summary><b>How do you monitor system performance in Linux?</b></summary>
 
 Linux provides various commands for system performance monitoring. For CPU and memory, use top or htop for real-time monitoring, uptime for load averages, and free -h for memory usage. For disk usage and I/O, use df -h for filesystem space, du -sh for directory sizes, and iostat for I/O statistics. Network monitoring tools include netstat, ss, and iftop. More comprehensive tools include sysstat (providing sar for historical data collection), glances for all-in-one monitoring, and nmon for performance analysis. For distributed systems, consider implementing monitoring solutions like Prometheus, Grafana, or Nagios.
 
 </details>
-
 <details>
 <summary><b>What is a package manager and how do you use it?</b></summary>
 
 A package manager is a tool that automates installing, updating, configuring, and removing software on Linux. Debian-based distributions (Ubuntu) use APT with commands like apt update (refresh package lists), apt install package (install software), apt upgrade (update all packages), and apt remove package (uninstall software). Red Hat-based distributions (RHEL/CentOS) use YUM or DNF with similar commands. Package managers handle dependencies automatically, maintain a database of installed software, and can verify package integrity. They also support repositories (software sources), which can be added to extend available packages. Common operations include searching for packages (apt search or yum search) and listing installed packages (apt list --installed or yum list installed).
 
 </details>
-
 <details>
 <summary><b>What is RAID and what are the common RAID levels?</b></summary>
 
 RAID (Redundant Array of Independent Disks) combines multiple physical disks into logical units for data redundancy, performance improvement, or both. Common RAID levels include: RAID 0 (striping) which splits data across disks for performance but offers no redundancy; RAID 1 (mirroring) which duplicates data for redundancy but uses 50% capacity; RAID 5 which uses distributed parity for redundancy with better space efficiency; RAID 6 which adds double parity to survive two disk failures; and RAID 10 (combining RAID 1+0) which offers both mirroring and striping for high performance and redundancy. Linux systems typically implement RAID using either hardware controllers or software RAID via the mdadm utility.
 
 </details>
-
 <details>
 <summary><b>What is LVM and why is it useful?</b></summary>
 
 LVM (Logical Volume Manager) is a storage abstraction layer that provides flexible disk management in Linux. It consists of Physical Volumes (PVs), which are grouped into Volume Groups (VGs), from which Logical Volumes (LVs) are created as the actual partitions. LVM's key benefits include: the ability to resize volumes on-the-fly without downtime, spanning volumes across multiple disks, taking snapshots for backups, and migrating data between storage devices while online. Common LVM commands include pvcreate, vgcreate, lvcreate for creation; pvdisplay, vgdisplay, lvdisplay for viewing information; and lvextend followed by resize2fs for growing filesystems.
 
 </details>
-
 <details>
 <summary><b>What is the purpose of /etc/fstab file?</b></summary>
 
 The /etc/fstab (file system table) file is a configuration file that defines how disk partitions, block devices, or remote filesystems should be mounted into the Linux file system hierarchy. Each line represents a mount configuration with six fields: the device/partition (UUID or path), mount point, filesystem type, mount options, dump flag (for backups), and fsck order (for filesystem checks). The file is read at boot time to automatically mount filesystems, but users can also reference it with commands like mount -a. Common mount options include defaults, auto/noauto (mount at boot or not), ro/rw (read-only/read-write), and noexec (prevent execution of files). Using UUIDs instead of device paths is recommended for stability.
 
 </details>
-
 <details>
 <summary><b>How do you troubleshoot network connectivity issues in Linux?</b></summary>
 
 Network troubleshooting in Linux follows a systematic approach. First, check interface status with ip addr or ifconfig. Test basic connectivity with ping to localhost, gateway, and external IPs to isolate the issue. Verify DNS resolution with nslookup or dig. Examine routing with ip route or route -n. For specific service issues, check if ports are open with ss -tulpn or netstat -tulpn. Test remote connectivity with telnet or nc. Analyze the network path with traceroute or mtr. For detailed packet analysis, use tcpdump. Review firewall rules with iptables -L or firewall-cmd --list-all. Finally, examine system logs in /var/log/syslog or using journalctl for error messages.
 
 </details>
-
 <details>
 <summary><b>How do you set up and configure a basic firewall in Linux?</b></summary>
 
 Linux offers several firewall options. For Ubuntu/Debian, UFW (Uncomplicated Firewall) provides a simple interface: sudo ufw default deny incoming, sudo ufw default allow outgoing, sudo ufw allow ssh (or other services/ports), then sudo ufw enable. For RHEL/CentOS, firewalld is the default: sudo firewall-cmd --permanent --add-service=ssh, sudo firewall-cmd --permanent --add-service=http, then sudo firewall-cmd --reload. For lower-level control, iptables can be used: sudo iptables -A INPUT -p tcp --dport 22 -j ACCEPT, sudo iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT, sudo iptables -P INPUT DROP. Always allow SSH access before enabling firewall rules to prevent lockouts.
 
 </details>
-
 <details>
 <summary><b>What is SELinux and AppArmor? How do they enhance security?</b></summary>
 
 SELinux and AppArmor are Linux Security Modules (LSMs) that implement Mandatory Access Control (MAC) to enhance system security beyond traditional permissions. SELinux, developed by the NSA and used in Red Hat systems, uses security contexts and policies to control process actions based on types, roles, and levels. AppArmor, used in Ubuntu and SUSE, uses profiles to restrict programs' capabilities based on file paths. Both restrict processes even when running as root, limiting damage from compromised applications and preventing privilege escalation. They operate in different modes: enforcing/permissive for SELinux and enforce/complain for AppArmor, allowing administrators to test policies before full enforcement.
 
 </details>
-
 <details>
 <summary><b>How do you manage user accounts and permissions in Linux?</b></summary>
 
 User management in Linux involves several commands: useradd/adduser to create users, usermod to modify accounts, passwd to set passwords, and userdel to remove users. For groups, use groupadd, groupmod, and groupdel. File permissions are managed with chown (change owner), chgrp (change group), and chmod (change permissions). The sudo mechanism allows delegated privileges without sharing the root password, configured via visudo. For enhanced access control beyond the basic user/group/other model, Access Control Lists (ACLs) can be implemented with setfacl and getfacl. Password policies and account expiration can be set with chage, while user resource limits are configured through /etc/security/limits.conf.
 
 </details>
-
-### 🟡 Intermediate
-
 <details>
 <summary><b>How do you optimize Linux server performance?</b></summary>
 
@@ -2925,135 +1609,114 @@ Disk I/O performance can be significantly improved by selecting appropriate file
 Beyond these specific subsystems, implement appropriate resource limits in /etc/security/limits.conf, tune kernel parameters via sysctl.conf, and adjust application-specific settings like database buffer pools, connection handling, and web server worker processes. Establish performance baselines and regularly monitor metrics to identify emerging bottlenecks before they impact users.
 
 </details>
-
 <details>
 <summary><b>How do you implement centralized logging in a Linux environment?</b></summary>
 
 Centralized logging collects logs from multiple servers to a central location for analysis, troubleshooting, and compliance. Common architectures include the ELK stack (Elasticsearch for storage, Logstash for processing, Kibana for visualization) with Filebeat as a log shipper, or Graylog which combines Elasticsearch and MongoDB. For simpler setups, rsyslog can forward logs to a central server by configuring clients with *.* @logserver:514 and the server to receive and store these logs. Security considerations include encrypting log transmission (TLS/SSL), implementing log rotation for storage management, and setting proper retention policies. The implementation typically involves installing the necessary components, configuring servers to ship logs, setting up parsing rules for structured logging, and creating dashboards for visualization.
 
 </details>
-
 <details>
 <summary><b>How do you implement backup and recovery strategies for Linux systems?</b></summary>
 
 A comprehensive Linux backup strategy balances Recovery Point Objective (RPO) and Recovery Time Objective (RTO) requirements. Common tools include rsync for file-level backups (rsync -avz --delete /source/ /backup/), tar for archiving, and dd for disk imaging. For databases, use specialized tools like mysqldump or pg_dump for logical backups, or tools like XtraBackup for hot physical backups. Implement incremental backups to reduce storage and backup windows. For enterprise environments, consider solutions like Bacula, Amanda, or Restic. Schedule regular backups using cron and implement retention policies to manage storage. Critical components include encryption for sensitive data, off-site copies (following the 3-2-1 rule), automated verification testing, and well-documented recovery procedures with regular recovery testing.
 
 </details>
-
 <details>
 <summary><b>How do you secure a Linux server?</b></summary>
 
 Securing a Linux server involves multiple layers. Minimize the attack surface by installing only necessary packages and disabling unused services. Implement strong user account security with password policies, regular password rotation, and principle of least privilege using sudo. Harden SSH by disabling root login, using key-based authentication, and changing the default port. Configure a firewall (UFW, firewalld, or iptables) to restrict access to required services only. Implement Mandatory Access Control with SELinux or AppArmor. Keep the system updated with security patches, using automatic updates for critical fixes. Set up intrusion detection with tools like fail2ban to block brute force attempts. Enable system auditing, implement secure mount options, and ensure proper file permissions. Regularly review logs and conduct security audits to identify potential vulnerabilities.
 
 </details>
-
 <details>
 <summary><b>How do you manage kernel parameters and modules in Linux?</b></summary>
 
 Kernel parameters control Linux kernel behavior and can be viewed with sysctl -a. Temporary changes are made with sysctl -w parameter=value or by writing to files in /proc/sys/. For permanent changes, add entries to /etc/sysctl.conf or files in /etc/sysctl.d/. Kernel modules extend functionality and are managed with commands like lsmod (list loaded modules), modinfo (show module details), modprobe (load modules with dependencies), and rmmod (unload modules). To load modules at boot, add them to /etc/modules. Blacklist unwanted modules by adding entries to /etc/modprobe.d/blacklist.conf. Module parameters can be set temporarily via /sys/module/<module>/parameters/ or permanently in configuration files under /etc/modprobe.d/.
 
 </details>
-
 <details>
 <summary><b>How do you troubleshoot high CPU, memory, or disk I/O usage in Linux?</b></summary>
 
 Troubleshooting resource issues in Linux requires identifying the source of the problem. For high CPU usage, use top/htop to identify CPU-intensive processes, ps aux --sort=-%cpu to sort by CPU usage, and tools like perf for profiling. For memory issues, use free -h to check available memory, ps aux --sort=-%mem to identify memory-hungry processes, and vmstat to monitor swapping activity. Disk I/O bottlenecks can be diagnosed with iostat -x, iotop to see which processes are causing I/O, and df/du to find disk space usage. For a holistic view, tools like sysstat (providing sar), glances, or nmon can monitor multiple resources simultaneously. Once the cause is identified, remediation might involve optimizing application configuration, adjusting resource limits, or upgrading hardware.
 
 </details>
-
 <details>
 <summary><b>What is load balancing and how do you implement it in Linux?</b></summary>
 
 Load balancing distributes traffic or workloads across multiple servers to improve reliability, performance, and availability. Linux offers several load balancing options: HAProxy and Nginx operate at layer 7 (application level) allowing content-based routing, while Linux Virtual Server (LVS) with Keepalived works at layer 4 (transport level) for higher throughput. HAProxy implementation involves installing the package, configuring frontend (client-facing) and backend (server pool) sections in /etc/haproxy/haproxy.cfg, choosing an algorithm (round-robin, least connections, etc.), and setting health checks. Nginx configuration uses the upstream directive to define server pools. For high availability, implement master-backup configurations with Keepalived using Virtual Router Redundancy Protocol (VRRP) to provide automatic failover between load balancers.
 
 </details>
-
 <details>
 <summary><b>What is containerization and how do you use containers in Linux?</b></summary>
 
 Containerization is a lightweight virtualization technology that packages applications with their dependencies, providing consistency across environments while sharing the host OS kernel. Docker is the most popular container platform in Linux, allowing you to build, share, and run containers. Basic Docker commands include: docker pull image to download images, docker run image to start containers, docker ps to list running containers, and docker build -t name . to build custom images from a Dockerfile. Containers can be orchestrated with Kubernetes for production deployments, providing features like scaling, self-healing, and rolling updates. Container advantages include isolation, portability across environments, efficient resource utilization, and faster deployment compared to traditional VMs. Security considerations include image scanning, running as non-root users, and implementing resource limits.
 
 </details>
-
 <details>
 <summary><b>How do you implement configuration management in Linux environments?</b></summary>
 
 Configuration management automates and standardizes system configuration across multiple servers. Popular tools include Ansible (agentless, uses SSH, YAML-based), Puppet (agent-based, uses its DSL, pull model), Chef (agent-based, Ruby-based, pull model), and SaltStack (agent-based, event-driven). Ansible implementation involves creating an inventory file with target hosts, writing playbooks (YAML files defining desired state), and executing with ansible-playbook playbook.yml. Best practices include version controlling configuration code, using roles or modules for reusability, implementing environment-specific variables, testing changes in staging environments first, and documenting the configuration structure. This approach provides benefits like consistency across servers, automated provisioning, reduced configuration drift, easier scaling, and comprehensive change tracking with the ability to quickly recover from misconfigurations.
 
 </details>
-
 <details>
 <summary><b>What is Software RAID and how do you implement it in Linux?</b></summary>
 
 Software RAID (Redundant Array of Independent Disks) in Linux provides disk redundancy or performance improvements using the kernel's md (multiple device) driver. It's implemented using the mdadm utility. Common implementations include: RAID 1 (mirroring) with mdadm --create /dev/md0 --level=1 --raid-devices=2 /dev/sda1 /dev/sdb1, RAID 5 (striping with parity) with mdadm --create /dev/md0 --level=5 --raid-devices=3 /dev/sda1 /dev/sdb1 /dev/sdc1, or RAID 10 (mirroring and striping) for both redundancy and performance. After creation, the array can be formatted (mkfs.ext4 /dev/md0) and mounted. For persistence across reboots, update /etc/mdadm/mdadm.conf with mdadm --detail --scan >> /etc/mdadm/mdadm.conf and add the array to /etc/fstab. Monitor RAID health with cat /proc/mdstat or mdadm --detail /dev/md0.
 
 </details>
-
 <details>
 <summary><b>How do you manage disk quotas in Linux?</b></summary>
 
 Disk quotas limit the amount of disk space users or groups can use on Linux filesystems. To implement quotas, first modify /etc/fstab to include quota options (usrquota,grpquota) for the target filesystem, then remount it. Create quota database files with quotacheck -cum /mount/point. Enable quotas with quotaon -v /mount/point. Set quotas using edquota -u username for users or edquota -g groupname for groups, defining soft limits (warnings), hard limits (strict enforcement), and grace periods. Copy quota settings between users with edquota -p reference_user -u target_user. Monitor usage with repquota -a for all filesystems or quota -u username for specific users. Quotas help prevent individual users from consuming excessive resources, especially on multi-user systems or shared hosting environments.
 
 </details>
-
 <details>
 <summary><b>What is systemd-networkd and how do you configure networking with it?</b></summary>
 
 Systemd-networkd is a system daemon for managing network configurations in systemd-based Linux distributions, providing a modern alternative to traditional networking scripts. To use it, enable the service with systemctl enable --now systemd-networkd and systemctl enable --now systemd-resolved. Network configurations are defined in /etc/systemd/network/ using .network files for interface settings and .netdev files for virtual devices. A basic static IP configuration would use a .network file containing [Match] section to identify the interface and [Network] section for IP settings. For example, [Match] Name=eth0 [Network] Address=192.168.1.100/24 Gateway=192.168.1.1 DNS=8.8.8.8. For DHCP, simply use DHCP=yes in the [Network] section. After making changes, restart the service with systemctl restart systemd-networkd.
 
 </details>
-
 <details>
 <summary><b>What are Linux namespaces and how are they used?</b></summary>
 
 Linux namespaces are a kernel feature that isolate and virtualize system resources for processes, forming the foundation of container technologies like Docker. The main namespace types include: PID (process isolation), NET (network interfaces), MNT (filesystem mount points), UTS (hostname), IPC (inter-process communication), USER (user and group IDs), and CGROUP (control groups). They can be manipulated using the unshare command to create new namespaces or nsenter to enter existing ones. For example, unshare --net bash creates a shell in a new network namespace. Namespaces enable containerization by allowing processes to have their own isolated view of system resources without full virtualization overhead. This isolation provides security benefits while allowing efficient resource sharing of the underlying kernel.
 
 </details>
-
 <details>
 <summary><b>How do you implement disk encryption in Linux?</b></summary>
 
 Disk encryption in Linux protects data from unauthorized access if physical security is compromised. For full disk encryption, use LUKS (Linux Unified Key Setup) with the cryptsetup utility. During installation, most distributions offer encryption options, or you can encrypt post-installation with commands like cryptsetup luksFormat /dev/sdb1 to create an encrypted container and cryptsetup luksOpen /dev/sdb1 cryptname to open it. For home directory encryption, use eCryptfs with ecryptfs-migrate-home --user username. For individual files or directories, use VeraCrypt or gpg for file-based encryption. Encrypted volumes can be automatically mounted at boot by adding entries to /etc/crypttab and /etc/fstab. Key management considerations include using strong passphrases, key files on separate media, or TPM modules where available. Always maintain backups of encryption headers and recovery keys.
 
 </details>
-
 <details>
 <summary><b>What is systemd-journald and how do you use it for system logging?</b></summary>
 
 Systemd-journald is a system service that collects and stores logging data in a structured, indexed journal format. Unlike traditional syslog, it captures metadata like systemd unit, priority, and timestamps in a binary format. Access logs with journalctl using various filters: journalctl -u service-name for specific services, journalctl -b for current boot, journalctl -p err for error-level messages, or journalctl -f to follow new entries. For persistent storage across reboots, create /var/log/journal/ directory. Configure journald through /etc/systemd/journald.conf, where you can set options like storage method (volatile, persistent, auto), maximum sizes, and retention periods. Journald can forward logs to traditional syslog daemons for compatibility with existing tools. The journal's structured format enables more powerful querying and analysis compared to plain text logs.
 
 </details>
-
 <details>
 <summary><b>How do you manage system time and NTP in Linux?</b></summary>
 
 Proper time synchronization is crucial for logs, authentication, and distributed systems. Modern Linux distributions use systemd-timesyncd or chronyd as NTP clients. Check the current time with timedatectl status. Set the timezone with timedatectl set-timezone Region/City. Enable NTP synchronization with timedatectl set-ntp true. For more advanced setups, install chrony (apt install chrony or dnf install chrony), configure NTP servers in /etc/chrony/chrony.conf or /etc/chrony.conf, and restart the service with systemctl restart chronyd. Monitor synchronization status with chronyc tracking and sources with chronyc sources. For systems requiring precise time, consider hardware options like GPS-disciplined oscillators. In isolated networks, set up an internal NTP server hierarchy to distribute time accurately.
 
 </details>
-
 <details>
 <summary><b>What is Linux resource management with cgroups?</b></summary>
 
 Control Groups (cgroups) provide a mechanism to limit, account for, and isolate resource usage of process groups in Linux. Modern systems use cgroups v2, managed through systemd. Cgroups control CPU, memory, disk I/O, and network resources. Create a systemd slice with a unit file in /etc/systemd/system/custom.slice containing resource limits. Manage running services with commands like systemctl set-property service-name CPUQuota=20% or systemctl set-property service-name MemoryLimit=1G. For container environments, Docker and Kubernetes use cgroups to enforce resource limits with parameters like --memory and --cpus. View resource controller settings with systemd-cgls to display the hierarchy and systemd-cgtop to monitor resource usage. Cgroups are essential for multi-tenant systems and prevent resource starvation by enforcing fair allocation.
 
 </details>
-
 <details>
 <summary><b>What is Linux Traffic Control (tc) and how is it used?</b></summary>
 
 Linux Traffic Control (tc) is a powerful framework for managing network traffic through Quality of Service (QoS) policies, traffic shaping, and bandwidth allocation. It uses the concept of queueing disciplines (qdiscs) to control how packets are sent and received. Common use cases include limiting bandwidth with tc qdisc add dev eth0 root tbf rate 1mbit burst 32kbit latency 400ms, prioritizing traffic types with Hierarchical Token Bucket (HTB) classes, implementing fair queuing with Stochastic Fairness Queuing (SFQ), and reducing latency with Controlled Delay (CoDel) for bufferbloat mitigation. Traffic can be classified using filters based on IP addresses, ports, or other criteria. TC is particularly useful for WAN links, ensuring critical services get priority, preventing a single user from consuming all bandwidth, and simulating network conditions for testing.
 
 </details>
-
 <details>
 <summary><b>How do you implement high availability for Linux servers?</b></summary>
 
 High availability (HA) in Linux ensures systems remain operational despite component failures. Common implementations use Pacemaker and Corosync for cluster management. Install with apt install pacemaker corosync or dnf install pacemaker corosync, configure cluster nodes in /etc/corosync/corosync.conf, and define resources like virtual IPs, services, and failover policies. For database HA, solutions include MySQL/MariaDB with Galera Cluster, PostgreSQL with replication and Patroni, or MongoDB replica sets. Load balancing with HAProxy or Nginx provides service distribution and failover. Storage can be replicated using DRBD or shared using clustered filesystems like GFS2 or OCFS2. Implement fencing mechanisms to handle split-brain scenarios. Monitor the cluster with pcs status or tools like Nagios/Prometheus. Testing is crucial—regularly simulate failures to verify failover works correctly. Document recovery procedures for when automatic failover isn't possible.
 
 </details>
-
-### 🔴 Advanced
-
 <details>
 <summary><b>How do you implement Linux network bonding and teaming?</b></summary>
 
@@ -3066,7 +1729,6 @@ For network teaming, install the teamd package (apt install teamd or yum install
 Both implementations require switch configuration for modes that involve link aggregation (like LACP). After configuration, verify your setup with commands like cat /proc/net/bonding/bond0 for bonding or teamdctl team0 state for teaming. Monitor interface status with tools like ip -s link show to verify that traffic is properly distributed across the physical interfaces according to your selected mode.
 
 </details>
-
 <details>
 <summary><b>How do you configure and troubleshoot IPtables firewall?</b></summary>
 
@@ -3079,7 +1741,6 @@ Common troubleshooting approaches include: temporarily disabling the firewall (i
 For persistence across reboots, save rules with iptables-save > /etc/iptables/rules.v4 and restore them at boot through distribution-specific methods like netfilter-persistent or custom service files. For complex environments, consider tools like ufw (Uncomplicated Firewall) or firewalld that provide higher-level abstractions over iptables, making management simpler while still leveraging iptables' underlying power.
 
 </details>
-
 <details>
 <summary><b>How do you implement and manage SELinux policies?</b></summary>
 
@@ -3094,7 +1755,6 @@ Custom policy modules are essential for applications without pre-defined policie
 Best practices include thoroughly testing applications with SELinux enabled before deployment, using tools like sealert for guided troubleshooting, maintaining documentation of custom policies, and resisting the temptation to globally disable SELinux when encountering issues. Proper SELinux implementation significantly improves system security by containing breaches and preventing privilege escalation.
 
 </details>
-
 <details>
 <summary><b>How do you manage and monitor system logs effectively?</b></summary>
 
@@ -3109,7 +1769,6 @@ In larger environments, implement log shipping from all servers to a central log
 Best practices include establishing baseline patterns to identify abnormal activity, implementing consistent timestamp formats (preferably UTC) across systems, maintaining proper permissions on log files, creating documented procedures for log review during incidents, and regularly testing that logging is functioning correctly, particularly for security-critical events.
 
 </details>
-
 <details>
 <summary><b>How do you implement and manage RAID in Linux?</b></summary>
 
@@ -3126,7 +1785,6 @@ For failed disk replacement, first identify the failed disk, then remove it from
 Perform regular scrubbing operations with echo check > /sys/block/md0/md/sync_action to verify data consistency and detect silent errors. For complete data protection, combine RAID with a robust backup strategy, as RAID is not a substitute for backups.
 
 </details>
-
 <details>
 <summary><b>How do you manage and troubleshoot systemd services?</b></summary>
 
@@ -3143,7 +1801,6 @@ For persistent issues, create override configurations instead of modifying origi
 Advanced troubleshooting might involve running services in debug mode by temporarily modifying the service's ExecStart line, using environment variables to enable verbose logging, or directly executing the service binary from the command line to observe its behavior outside of systemd's management.
 
 </details>
-
 <details>
 <summary><b>How do you configure and optimize Linux for database servers?</b></summary>
 
@@ -3160,7 +1817,6 @@ Process scheduling and limits require attention: adjust resource limits in /etc/
 Finally, implement appropriate monitoring with tools like Prometheus, Grafana, or database-specific monitoring solutions to identify bottlenecks and validate optimizations. Remember that database optimization is iterative—establish performance baselines, make one change at a time, measure the impact, and adjust accordingly.
 
 </details>
-
 <details>
 <summary><b>How do you implement and maintain LVM (Logical Volume Management)?</b></summary>
 
@@ -3177,7 +1833,6 @@ Proper maintenance includes regular monitoring of space usage with vgs, lvs, and
 Advanced features like thin provisioning can optimize storage utilization by overcommitting space, but require careful monitoring to prevent actual space exhaustion. Consider implementing automated space reclamation for thin pools to maintain performance over time.
 
 </details>
-
 <details>
 <summary><b>What is Linux Containers (LXC) and how do they differ from Docker?</b></summary>
 
@@ -3192,7 +1847,6 @@ Management interfaces also differ significantly. LXC uses commands like lxc-crea
 In DevOps workflows, LXC is often chosen when VM-like behavior is needed with minimal overhead, such as for testing environment isolation or when multiple processes need to run together in the traditional way. Docker excels in microservices architectures, CI/CD pipelines, and scenarios where application portability and standardized deployment are priorities. Many organizations use both technologies for different aspects of their infrastructure.
 
 </details>
-
 <details>
 <summary><b>How do you implement and manage KVM virtualization?</b></summary>
 
@@ -3209,7 +1863,6 @@ Networking can be configured in multiple ways: the default NAT network (managed 
 Performance optimization involves tuning both host and guest settings: enable hugepages for memory-intensive workloads, use virtio drivers for disks and network interfaces, consider CPU pinning for latency-sensitive applications, and implement NUMA awareness for multi-socket systems. Regular maintenance should include monitoring VM resource usage, managing snapshots, planning capacity, and implementing backup strategies specific to virtualized environments.
 
 </details>
-
 <details>
 <summary><b>How do you implement and configure Linux kernel hardening?</b></summary>
 
@@ -3226,7 +1879,6 @@ Regularly update and maintain the kernel with security patches, ideally through 
 Monitor kernel security events through auditd and configure alerts for potential security violations. Implement file integrity monitoring to detect unauthorized changes to critical kernel files and modules. Document all kernel hardening measures applied to systems and maintain a regular review process to ensure configurations remain appropriate as security threats evolve.
 
 </details>
-
 <details>
 <summary><b>How do you troubleshoot Linux boot problems?</b></summary>
 
@@ -3243,7 +1895,6 @@ Filesystem corruption often causes boot failures and requires running fsck on th
 When making changes to fix boot issues, always create backups of configuration files before modification, document all changes made, and consider the implications for system security and stability. After resolving the issue, review logs to understand the root cause and implement preventive measures to avoid recurrence.
 
 </details>
-
 <details>
 <summary><b>How do you manage Linux kernel modules?</b></summary>
 
@@ -3260,8 +1911,6 @@ For security, consider signing modules if your kernel enforces module signing, o
 Debugging module issues involves checking kernel logs with dmesg immediately after loading/unloading, examining module dependencies with modprobe --show-depends module_name, and verifying module parameters with systool -v -m module_name. For performance optimization, unload unnecessary modules to reduce memory usage and potential attack surface, particularly on resource-constrained or security-focused systems.
 
 </details>
-
-
 <details>
 <summary><b>How do you configure and manage syslog in Linux?</b></summary>
 
@@ -3278,8 +1927,6 @@ Log rotation is essential for managing disk space and maintaining system perform
 Performance optimization involves balancing comprehensive logging with system impact. Use in-memory queues for high-volume logging, configure appropriate buffer sizes, and consider asynchronous processing for non-critical logs. For distributed systems, implement log aggregation with tools like Logstash, Fluentd, or rsyslog's own queuing features to ensure log delivery even during network interruptions.
 
 </details>
-
-
 <details>
 <summary><b>How do you implement and manage High Availability clustering in Linux?</b></summary>
 
@@ -3296,7 +1943,6 @@ For storage in HA environments, implement shared storage solutions like SAN/NAS 
 Ongoing management involves monitoring cluster health through tools like pcs status or crm_mon, configuring notifications for cluster events, regular testing of failover scenarios, and maintaining thorough documentation of the cluster configuration and recovery procedures. Implement backup strategies that account for the distributed nature of cluster data, and establish maintenance procedures that allow for patching and updates without service disruption.
 
 </details>
-
 <details>
 <summary><b>How do you implement and manage Linux Virtual Server (LVS) for load balancing?</b></summary>
 
@@ -3313,11 +1959,6 @@ For high availability of the director itself, implement Keepalived alongside LVS
 Maintenance and monitoring involve regularly checking the status of virtual services and real servers using ipvsadm -L -n, configuring comprehensive health checks to detect and remove failed servers from the pool, implementing proper logging for troubleshooting, and developing procedures for adding or removing servers without disrupting active connections. For complex environments, consider implementing a management layer above the basic LVS functionality to simplify configuration and provide better visibility into the load balancing system.
 
 </details>
-
----
-
-### 🔥 Linux Internals — Production Deep Dive
-
 <details>
 <summary><b>Walk me through what happens when a Linux system boots.</b></summary>
 
@@ -3340,7 +1981,6 @@ dmesg | head -50                 # kernel messages from boot
 ```
 
 </details>
-
 <details>
 <summary><b>What is the difference between a process and a thread?</b></summary>
 
@@ -3363,7 +2003,6 @@ ls /proc/<pid>/task/    # each directory = one thread
 ```
 
 </details>
-
 <details>
 <summary><b>What are the different states a process can be in?</b></summary>
 
@@ -3387,7 +2026,6 @@ ps aux | awk '$8 == "D" {print}'
 **D-state is the most dangerous** — the process cannot be killed until the I/O it's waiting on completes or fails. A server full of D-state processes usually means storage is hung.
 
 </details>
-
 <details>
 <summary><b>What is a zombie process and how do you handle it?</b></summary>
 
@@ -3413,7 +2051,6 @@ kill -SIGCHLD <parent_pid>   # signal parent to reap children
 ```
 
 </details>
-
 <details>
 <summary><b>How does the Linux kernel handle memory management?</b></summary>
 
@@ -3442,7 +2079,6 @@ slabtop                   # kernel slab allocator usage
 ```
 
 </details>
-
 <details>
 <summary><b>What is a kernel panic and what causes it?</b></summary>
 
@@ -3473,7 +2109,6 @@ journalctl -b -1 | grep -i "kernel BUG\|Oops\|panic\|Call Trace"
 Setting up kdump for crash analysis is strongly recommended on production servers.
 
 </details>
-
 <details>
 <summary><b>What is the OOM killer and when does it trigger?</b></summary>
 
@@ -3507,7 +2142,6 @@ systemctl set-property myservice.service MemoryMax=2G
 ```
 
 </details>
-
 <details>
 <summary><b>How do you troubleshoot a service that won't start?</b></summary>
 
@@ -3549,11 +2183,13 @@ sudo -u serviceuser /usr/bin/myservice --config /etc/myservice.conf
 
 </details>
 
+
 ---
 
 ## 🖥️ Operating Systems
 
 ### Operating System - Self Assessment
+
 
 <details>
 <summary><b>What is an operating system?</b></summary>
@@ -3563,16 +2199,12 @@ From the book "Operating Systems: Three Easy Pieces":
 "responsible for making it easy to run programs (even allowing you to seemingly run many at the same time), allowing programs to share memory, enabling programs to interact with devices, and other fun stuff like that".
 
 </details>
-
-### Operating System - Process
-
 <details>
 <summary><b>Can you explain what is a process?</b></summary>
 
 A process is a running program. A program is one or more instructions and the program (or process) is executed by the operating system.
 
 </details>
-
 <details>
 <summary><b>If you had to design an API for processes in an operating system, what would this API look like?</b></summary>
 
@@ -3584,7 +2216,6 @@ It would support the following:
 * Stop - allow to stop a running process
 
 </details>
-
 <details>
 <summary><b>How a process is created?</b></summary>
 
@@ -3596,14 +2227,12 @@ It would support the following:
 * OS is running the program, starting from main()
 
 </details>
-
 <details>
 <summary><b>True or False? The loading of the program into the memory is done eagerly (all at once)?</b></summary>
 
 False. It was true in the past but today's operating systems perform lazy loading, which means only the relevant pieces required for the process to run are loaded first.
 
 </details>
-
 <details>
 <summary><b>What are different states of a process?</b></summary>
 
@@ -3612,7 +2241,6 @@ False. It was true in the past but today's operating systems perform lazy loadin
 * Blocked - it's waiting for some operation to complete, for example I/O disk request
 
 </details>
-
 <details>
 <summary><b>What are some reasons for a process to become blocked?</b></summary>
 
@@ -3620,21 +2248,18 @@ False. It was true in the past but today's operating systems perform lazy loadin
   - Waiting for a packet from a network
 
 </details>
-
 <details>
 <summary><b>What is Inter Process Communication (IPC)?</b></summary>
 
 Inter-process communication (IPC) refers to the mechanisms provided by an operating system that allow processes to manage shared data.
 
 </details>
-
 <details>
 <summary><b>What is "time sharing"?</b></summary>
 
 Even when using a system with one physical CPU, it's possible to allow multiple users to work on it and run programs. This is possible with time sharing, where computing resources are shared in a way it seems to the user, the system has multiple CPUs, but in fact it's simply one CPU shared by applying multiprogramming and multi-tasking.
 
 </details>
-
 <details>
 <summary><b>What is "space sharing"?</b></summary>
 
@@ -3642,16 +2267,12 @@ Somewhat the opposite of time sharing. While in time sharing a resource is used 
 It's used by one entity, until this entity decides to get rid of it. Take for example storage. In storage, a file is yours, until you decide to delete it.
 
 </details>
-
 <details>
 <summary><b>What component determines which process runs at a given moment in time?</b></summary>
 
 CPU scheduler
 
 </details>
-
-### Operating System - Memory
-
 <details>
 <summary><b>What is "virtual memory" and what purpose does serve?</b></summary>
 
@@ -3659,14 +2280,12 @@ Virtual memory combines your computer's RAM with temporary space on your hard di
 https://www.minitool.com/lib/virtual-memory.html
 
 </details>
-
 <details>
 <summary><b>What is demand paging?</b></summary>
 
 Demand paging is a memory management technique where pages are loaded into physical memory only when accessed by a process. It optimizes memory usage by loading pages on demand, reducing startup latency and space overhead. However, it introduces some latency when accessing pages for the first time. Overall, it’s a cost-effective approach for managing memory resources in operating systems.
 
 </details>
-
 <details>
 <summary><b>What is copy-on-write?</b></summary>
 
@@ -3680,7 +2299,6 @@ The idea:
 3. As a solution only, if a WRITE operation is about to be performed on a shared resource, this resource gets COPIED first and then the changes are applied.
 
 </details>
-
 <details>
 <summary><b>What is a kernel, and what does it do?</b></summary>
 
@@ -3691,14 +2309,12 @@ The kernel is part of the operating system and is responsible for tasks like:
   * Control CPU
 
 </details>
-
 <details>
 <summary><b>True or False? Some pieces of the code in the kernel are loaded into protected areas of the memory so applications can't overwrite them?</b></summary>
 
 True
 
 </details>
-
 <details>
 <summary><b>What is cache? What is buffer?</b></summary>
 
@@ -3707,9 +2323,11 @@ Buffer: Reserved place in RAM, which is used to hold data for temporary purposes
 
 </details>
 
+
 ---
 
 ## 🔮 Virtualization
+
 
 <details>
 <summary><b>What is Virtualization?</b></summary>
@@ -3717,7 +2335,6 @@ Buffer: Reserved place in RAM, which is used to hold data for temporary purposes
 Virtualization uses software to create an abstraction layer over computer hardware, that allows the hardware elements of a single computer - processors, memory, storage and more - to be divided into multiple virtual computers, commonly called virtual machines (VMs).
 
 </details>
-
 <details>
 <summary><b>What is a hypervisor?</b></summary>
 
@@ -3726,14 +2343,12 @@ Red Hat: "A hypervisor is software that creates and runs virtual machines (VMs).
 Read more [here](https://www.redhat.com/en/topics/virtualization/what-is-a-hypervisor)
 
 </details>
-
 <details>
 <summary><b>What types of hypervisors are there?</b></summary>
 
 Hosted hypervisors and bare-metal hypervisors.
 
 </details>
-
 <details>
 <summary><b>What are the advantages and disadvantages of bare-metal hypervisor over a hosted hypervisor?</b></summary>
 
@@ -3742,53 +2357,12 @@ Due to having its own drivers and a direct access to hardware components, a bare
 On the other hand, there will probably be some limitation regarding loading (any) drivers so a hosted hypervisor will usually benefit from having a better hardware compatibility.
 
 </details>
-
-<details>
-<summary><b>What types of virtualization are there?</b></summary>
-
-Operating system virtualization
-Network functions virtualization
-Desktop virtualization
-
-</details>
-
 <details>
 <summary><b>Is containerization a type of Virtualization?</b></summary>
 
 Yes, it's a operating-system-level virtualization, where the kernel is shared and allows to use multiple isolated user-spaces instances.
 
 </details>
-
-<details>
-<summary><b>How the introduction of virtual machines changed the industry and the way applications were deployed?</b></summary>
-
-The introduction of virtual machines allowed companies to deploy multiple business applications on the same hardware, while each application is separated from each other in secured way, where each is running on its own separate operating system.
-
-</details>
-
-<details>
-<summary><b>What are containers, and how do they relate to DevOps?</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-<details>
-<summary><b>Explain the importance of container orchestration tools like Kubernetes in DevOps</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-<details>
-<summary><b>How do you ensure the security of Docker containers in a DevOps pipeline?</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-### Virtual Machines
-
 <details>
 <summary><b>Do we need virtual machines in the age of containers? Are they still relevant?</b></summary>
 
@@ -3796,11 +2370,13 @@ Yes, virtual machines are still relevant even in the age of containers. While co
 
 </details>
 
+
 ---
 
 ## 🌐 Networking
 
 ### 🟢 Beginner
+
 
 <details>
 <summary><b>What is a network?</b></summary>
@@ -3808,7 +2384,6 @@ Yes, virtual machines are still relevant even in the age of containers. While co
 A network is a group of interconnected devices that communicate to share resources and information. It can be wired or wireless.
 
 </details>
-
 <details>
 <summary><b>What is the difference between IPv4 and IPv6?</b></summary>
 
@@ -3816,7 +2391,6 @@ IPv4: 32-bit addressing, supports 4.3 billion addresses.
 IPv6: 128-bit addressing, supports an enormous number of addresses, improving scalability and security.
 
 </details>
-
 <details>
 <summary><b>What are private and public IP addresses?</b></summary>
 
@@ -3824,76 +2398,36 @@ Private IPs: Used within local networks (e.g., 192.168.x.x).
 Public IPs: Used on the internet and assigned by ISPs.
 
 </details>
-
 <details>
 <summary><b>What is a subnet mask?</b></summary>
 
 A subnet mask divides an IP address into network and host portions, determining which part identifies the network and which part identifies the device.
 
 </details>
-
 <details>
 <summary><b>What is DNS, and why is it important?</b></summary>
 
 The Domain Name System (DNS) translates domain names (e.g., google.com) into IP addresses, making it easier to access websites.
 
 </details>
-
 <details>
 <summary><b>What is SSH, and why is it used?</b></summary>
 
 SSH (Secure Shell) is a protocol used for secure remote access to servers using encrypted communication.
 
 </details>
-
-<details>
-<summary><b>What is port forwarding?</b></summary>
-
-Port forwarding redirects network traffic from one port to another, often used to expose internal services externally.
-
-</details>
-
-### 🟡 Intermediate
-
 <details>
 <summary><b>What is OSI Model and its layers?</b></summary>
 
 The OSI model has 7 layers: Physical, Data Link, Network, Transport, Session, Presentation, Application.
 
 </details>
-
-<details>
-<summary><b>What is BGP (Border Gateway Protocol)?</b></summary>
-
-BGP is a routing protocol used for exchanging routing information between networks on the internet.
-
-</details>
-
-<details>
-<summary><b>What is network segmentation?</b></summary>
-
-It is dividing a network into smaller parts to improve security and performance.
-
-</details>
-
-### 🔴 Advanced
-
 <details>
 <summary><b>What is an ephemeral port, and how is it used?</b></summary>
 
 Ephemeral ports (e.g., 49152-65535) are temporary ports used by client applications for outbound connections.
 
 </details>
-
-### 📌 Additional Questions
-
-<details>
-<summary><b>What is an IP address?</b></summary>
-
-An Internet Protocol address (IP address) is a numerical label assigned to each device connected to a computer network that uses the Internet Protocol for communication.An IP address serves two main functions: host or network interface identification and location addressing.
-
-</details>
-
 <details>
 <summary><b>What is the difference between TCP and UDP?</b></summary>
 
@@ -3902,16 +2436,6 @@ TCP establishes a connection between the client and the server to guarantee the 
 [Penguintutor.com](http://www.penguintutor.com/linux/basic-network-reference) provides a good explanation.
 
 </details>
-
-<details>
-<summary><b>In general, what do you need in order to communicate?</b></summary>
-
-- A common language (for the two ends to understand)
-  - A way to address who you want to communicate with
-  - A Connection (so the content of the communication can reach the recipients)
-
-</details>
-
 <details>
 <summary><b>What is TCP/IP?</b></summary>
 
@@ -3920,14 +2444,6 @@ A set of protocols that define how two or more devices can communicate with each
 To learn more about TCP/IP, read [here](http://www.penguintutor.com/linux/basic-network-reference)
 
 </details>
-
-<details>
-<summary><b>What is Ethernet?</b></summary>
-
-Ethernet simply refers to the most common type of Local Area Network (LAN) used today. A LAN—in contrast to a WAN (Wide Area Network), which spans a larger geographical area—is a connected network of computers in a small area, like your office, college campus, or even home.
-
-</details>
-
 <details>
 <summary><b>What is a MAC address? What is it used for?</b></summary>
 
@@ -3936,37 +2452,6 @@ A MAC address is a unique identification number or code used to identify individ
 Packets that are sent on the ethernet are always coming from a MAC address and sent to a MAC address. If a network adapter is receiving a packet, it is comparing the packet’s destination MAC address to the adapter’s own MAC address.
 
 </details>
-
-<details>
-<summary><b>When is this MAC address used?: ff:ff:ff:ff:ff:ff?</b></summary>
-
-When a device sends a packet to the broadcast MAC address (FF:FF:FF:FF:FF:FF​), it is delivered to all stations on the local network. Ethernet broadcasts are used to resolve IP addresses to MAC addresses (by ARP) at the data link layer.
-
-</details>
-
-<details>
-<summary><b>Explain the subnet mask and give an example</b></summary>
-
-A Subnet mask is a 32-bit number that masks an IP address and divides the IP addresses into network addresses and host addresses. Subnet Mask is made by setting network bits to all "1"s and setting host bits to all "0"s. Within a given network, out of the total usable host addresses, two are always reserved for specific purposes and cannot be allocated to any host. These are the first address, which is reserved as a network address (a.k.a network ID), and the last address used for network broadcast.
-
-[Example](https://github.com/philemonnwanne/projects/tree/main/exercises/exe-09)
-
-</details>
-
-<details>
-<summary><b>What is a private IP address? In which scenarios/system designs, one should use it?</b></summary>
-
-Private IP addresses are assigned to the hosts in the same network to communicate with one another. As the name "private" suggests, the devices having the private IP addresses assigned can't be reached by the devices from any external network. For example, if I am living in a hostel and I want my hostel mates to join the game server I have hosted, I will ask them to join via my server's private IP address, since the network is local to the hostel.
-
-</details>
-
-<details>
-<summary><b>What is a public IP address? In which scenarios/system designs, one should use it?</b></summary>
-
-A public IP address is a public-facing IP address. In the event that you were hosting a game server that you want your friends to join, you will give your friends your public IP address to allow their computers to identify and locate your network and server in order for the connection to take place. One time that you would not need to use a public-facing IP address is in the event that you were playing with friends who were connected to the same network as you, in that case, you would use a private IP address. In order for someone to be able to connect to your server that is located internally, you will have to set up a port forward to tell your router to allow traffic from the public domain into your network and vice versa.
-
-</details>
-
 <details>
 <summary><b>Explain the OSI model. What layers there are? What each layer is responsible for?</b></summary>
 
@@ -3981,7 +2466,6 @@ A public IP address is a public-facing IP address. In the event that you were ho
 You can read more about the OSI model in [penguintutor.com](http://www.penguintutor.com/linux/basic-network-reference)
 
 </details>
-
 <details>
 <summary><b>For each of the following determines to which OSI layer it belongs: * Error correction * Packets routing * Cables and electrical signals * MAC address * IP address * Terminate connections * 3 way handshake</b></summary>
 
@@ -3994,19 +2478,6 @@ You can read more about the OSI model in [penguintutor.com](http://www.penguintu
   * 3-way handshake - Transport
 
 </details>
-
-<details>
-<summary><b>What delivery schemes are you familiar with?</b></summary>
-
-Unicast: One-to-one communication where there is one sender and one receiver.
-
-Broadcast: Sending a message to everyone in the network. The address ff:ff:ff:ff:ff:ff is used for broadcasting.
-           Two common protocols which use broadcast are ARP and DHCP.
-
-Multicast: Sending a message to a group of subscribers. It can be one-to-many or many-to-many.
-
-</details>
-
 <details>
 <summary><b>Describe the following network devices and the difference between them: * router * switch * hub</b></summary>
 
@@ -4017,22 +2488,18 @@ A router, switch, and hub are all network devices used to connect devices in a l
 3. Hub: a network device that connects multiple devices through a single cable and is used to connect multiple devices without segmenting a network. However, unlike a switch, it operates at the physical layer (Layer 1) of the OSI model and simply broadcasts data packets to all devices connected to it, regardless of whether the device is the intended recipient or not. This means that data collisions can occur, and the network's efficiency can suffer as a result. Hubs are generally not used in modern network setups, as switches are more efficient and provide better network performance.
 
 </details>
-
-
 <details>
 <summary><b>How does a router work?</b></summary>
 
 A router is a physical or virtual appliance that passes information between two or more packet-switched computer networks. A router inspects a given data packet's destination Internet Protocol address (IP address), calculates the best way for it to reach its destination, and then forwards it accordingly.
 
 </details>
-
 <details>
 <summary><b>What is NAT?</b></summary>
 
 Network Address Translation (NAT) is a process in which one or more local IP addresses are translated into one or more Global IP address and vice versa in order to provide Internet access to the local hosts.
 
 </details>
-
 <details>
 <summary><b>What is TCP? How does it work? What is the 3-way handshake?</b></summary>
 
@@ -4045,48 +2512,12 @@ A three-way handshake is primarily used to create a TCP socket connection. It wo
 - The client node receives the SYN/ACK from the server and responds with an ACK packet.
 
 </details>
-
-<details>
-<summary><b>What is round-trip delay or round-trip time?</b></summary>
-
-From [wikipedia](https://en.wikipedia.org/wiki/Round-trip_delay): "the length of time it takes for a signal to be sent plus the length of time it takes for an acknowledgment of that signal to be received"
-
-Bonus question: what is the RTT of LAN?
-
-</details>
-
-<details>
-<summary><b>How does an SSL handshake work?</b></summary>
-
-SSL handshake is a process that establishes a secure connection between a client and a server.
-
-1. The client sends a Client Hello message to the server, which includes the client's version of the SSL/TLS protocol, a list of the cryptographic algorithms supported by the client, and a random value.
-2. The server responds with a Server Hello message, which includes the server's version of the SSL/TLS protocol, a random value, and a session ID.
-3. The server sends a Certificate message, which contains the server's certificate.
-4. The server sends a Server Hello Done message, which indicates that the server is done sending messages for the Server Hello phase.
-5. The client sends a Client Key Exchange message, which contains the client's public key.
-6. The client sends a Change Cipher Spec message, which notifies the server that the client is about to send a message encrypted with the new cipher spec.
-7. The client sends an Encrypted Handshake Message, which contains the pre-master secret encrypted with the server's public key.
-8. The server sends a Change Cipher Spec message, which notifies the client that the server is about to send a message encrypted with the new cipher spec.
-9. The server sends an Encrypted Handshake Message, which contains the pre-master secret encrypted with the client's public key.
-10. The client and server can now exchange application data.
-
-</details>
-
-<details>
-<summary><b>What TCP/IP protocols are you familiar with?</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
 <details>
 <summary><b>Explain the "default gateway"</b></summary>
 
 A default gateway serves as an access point or IP router that a networked computer uses to send information to a computer in another network or the internet.
 
 </details>
-
 <details>
 <summary><b>What is ARP? How does it work?</b></summary>
 
@@ -4095,7 +2526,6 @@ ARP stands for Address Resolution Protocol. When you try to ping an IP address o
 Systems keep an ARP look-up table where they store information about what IP addresses are associated with what MAC addresses. When trying to send a packet to an IP address, the system will first consult this table to see if it already knows the MAC address. If there is a value cached, ARP is not used.
 
 </details>
-
 <details>
 <summary><b>What is TTL? What does it help to prevent?</b></summary>
 
@@ -4105,7 +2535,6 @@ Systems keep an ARP look-up table where they store information about what IP add
 - In addition, TTL can be used to help detect and prevent IP spoofing attacks, where an attacker attempts to impersonate another device on the network by using a false or fake IP address. By limiting the number of hops that a packet can travel, TTL can help prevent packets from being routed to destinations that are not legitimate.
 
 </details>
-
 <details>
 <summary><b>What is DHCP? How does it work?</b></summary>
 
@@ -4119,54 +2548,18 @@ It stands for Dynamic Host Configuration Protocol and allocates IP addresses, su
 Read more [here](https://linuxjourney.com/lesson/dhcp-overview)
 
 </details>
-
-<details>
-<summary><b>Can you have two DHCP servers on the same network? How does it work?</b></summary>
-
-It is possible to have two DHCP servers on the same network, however, it is not recommended, and it is important to configure them carefully to prevent conflicts and configuration problems.
-- When two DHCP servers are configured on the same network, there is a risk that both servers will assign IP addresses and other network configuration settings to the same device, which can cause conflicts and connectivity issues. Additionally, if the DHCP servers are configured with different network settings or options, devices on the network may receive conflicting or inconsistent configuration settings.
-- However, in some cases, it may be necessary to have two DHCP servers on the same network, such as in large networks where one DHCP server may not be able to handle all the requests. In such cases, DHCP servers can be configured to serve different IP address ranges or different subnets, so they do not interfere with each other.
-
-</details>
-
-<details>
-<summary><b>What is a socket? Where can you see the list of sockets in your system?</b></summary>
-
-- A socket is a software endpoint that enables two-way communication between processes over a network. Sockets provide a standardized interface for network communication, allowing applications to send and receive data across a network. To view the list of open sockets on a Linux system: 
-***netstat -an***
-- This command displays a list of all open sockets, along with their protocol, local address, foreign address, and state.
-
-</details>
-
-<details>
-<summary><b>What is IPv6? Why should we consider using it if we have IPv4?</b></summary>
-
-- IPv6 (Internet Protocol version 6) is the latest version of the Internet Protocol (IP), which is used to identify and communicate with devices on a network. IPv6 addresses are 128-bit addresses and are expressed in hexadecimal notation, such as 2001:0db8:85a3:0000:0000:8a2e:0370:7334.
-
-There are several reasons why we should consider using IPv6 over IPv4:
-
-1. Address space: IPv4 has a limited address space, which has been exhausted in many parts of the world. IPv6 provides a much larger address space, allowing for trillions of unique IP addresses.
-2. Security: IPv6 includes built-in support for IPsec, which provides end-to-end encryption and authentication for network traffic.
-3. Performance: IPv6 includes features that can help to improve network performance, such as multicast routing, which allows a single packet to be sent to multiple destinations simultaneously.
-4. Simplified network configuration: IPv6 includes features that can simplify network configuration, such as stateless autoconfiguration, which allows devices to automatically configure their own IPv6 addresses without the need for a DHCP server.
-5. Better mobility support: IPv6 includes features that can improve mobility support, such as Mobile IPv6, which allows devices to maintain their IPv6 addresses as they move between different networks.
-
-</details>
-
 <details>
 <summary><b>What is VLAN?</b></summary>
 
 - A VLAN (Virtual Local Area Network) is a logical network that groups together a set of devices on a physical network, regardless of their physical location. VLANs are created by configuring network switches to assign a specific VLAN ID to frames sent by devices connected to a specific port or group of ports on the switch.
 
 </details>
-
 <details>
 <summary><b>What is MTU?</b></summary>
 
 MTU stands for Maximum Transmission Unit. It's the size of the largest PDU (protocol Data Unit) that can be sent in a single transaction.
 
 </details>
-
 <details>
 <summary><b>What happens if you send a packet that is bigger than the MTU?</b></summary>
 
@@ -4175,14 +2568,6 @@ With the IPv4 protocol, the router can fragment the PDU and then send all the fr
 With IPv6 protocol, it issues an error to the user's computer.
 
 </details>
-
-<details>
-<summary><b>True or False? Ping is using UDP because it doesn't care about reliable connection?</b></summary>
-
-False. Ping is actually using ICMP (Internet Control Message Protocol) which is a network protocol used to send diagnostic messages and control messages related to network communication.
-
-</details>
-
 <details>
 <summary><b>What is ICMP? What is it used for?</b></summary>
 
@@ -4196,7 +2581,6 @@ ICMP messages are used for a variety of purposes, including:
 5. Router discovery: ICMP is used to discover the routers in a network.
 
 </details>
-
 <details>
 <summary><b>Which port number is used in each of the following protocols?: * SSH * SMTP * HTTP * DNS * HTTPS * FTP * SFTP?</b></summary>
 
@@ -4209,7 +2593,6 @@ ICMP messages are used for a variety of purposes, including:
   * SFTP - 22
 
 </details>
-
 <details>
 <summary><b>Which factors affect network performance?</b></summary>
 
@@ -4225,30 +2608,24 @@ Several factors can affect network performance, including:
 8. Distance: The physical distance between devices on a network can impact network performance, especially for wireless networks where signal strength and interference can affect connectivity and data transfer rates.
 
 </details>
-
-#### Control Plane and Data Plane
-
 <details>
 <summary><b>What does "control plane" refer to?</b></summary>
 
 The control plane is a part of the network that decides how to route and forward packets to a different location.
 
 </details>
-
 <details>
 <summary><b>What does "data plane" refer to?</b></summary>
 
 The data plane is a part of the network that actually forwards the data/packets.
 
 </details>
-
 <details>
 <summary><b>What does "management plane" refer to?</b></summary>
 
 It refers to monitoring and management functions.
 
 </details>
-
 <details>
 <summary><b>Explain OSPF</b></summary>
 
@@ -4263,49 +2640,24 @@ The OSPF 4 Types of routers are:
   Learn more about OSPF router types: https://www.educba.com/ospf-router-types/
 
 </details>
-
 <details>
 <summary><b>What is latency?</b></summary>
 
 Latency is the time taken for information to reach its destination from the source.
 
 </details>
-
 <details>
 <summary><b>What is bandwidth?</b></summary>
 
 Bandwidth is the capacity of a communication channel to measure how much data the latter can handle over a specific time period. More bandwidth would imply more traffic handling and thus more data transfer.
 
 </details>
-
 <details>
 <summary><b>What is throughput?</b></summary>
 
 Throughput refers to the measurement of the real amount of data transferred over a certain period of time across any transmission channel.
 
 </details>
-
-<details>
-<summary><b>When performing a search query, what is more important, latency or throughput? And how to ensure that we manage global infrastructure?</b></summary>
-
-Latency. To have good latency, a search query should be forwarded to the closest data center.
-
-</details>
-
-<details>
-<summary><b>When uploading a video, what is more important, latency or throughput? And how to assure that?</b></summary>
-
-Throughput. To have good throughput, the upload stream should be routed to an underutilized link.
-
-</details>
-
-<details>
-<summary><b>What other considerations (except latency and throughput) are there when forwarding requests?</b></summary>
-
-* Keep caches updated (which means the request could be forwarded not to the closest data center)
-
-</details>
-
 <details>
 <summary><b>Explain Spine & Leaf</b></summary>
 
@@ -4319,7 +2671,6 @@ Within a Spine & Leaf network there are two main tipology of switches:
 The Spine & Leaf architecture has become increasingly popular in data centers due to its ability to handle the demands of modern cloud computing, virtualization, and big data applications, providing a scalable, high-performance, and reliable network infrastructure
 
 </details>
-
 <details>
 <summary><b>What is Network Congestion? What can cause it?</b></summary>
 
@@ -4328,101 +2679,6 @@ This can lead to increased latency and packet loss. The causes can be multiple, 
 To prevent network congestion, it's important to monitor your network usage and implement strategies to limit or manage the demand.
 
 </details>
-
-<details>
-<summary><b>Give examples of protocols found in the application layer</b></summary>
-
-* Hypertext Transfer Protocol (HTTP) - used for the webpages on the internet
-* Simple Mail Transfer Protocol (SMTP) - email transmission
-* Telecommunications Network - (TELNET) - terminal emulation to allow a client access to a telnet server
-* File Transfer Protocol (FTP) - facilitates the transfer of files between any two machines
-* Domain Name System (DNS) - domain name translation
-* Dynamic Host Configuration Protocol (DHCP) - allocates IP addresses, subnet masks, and gateways to hosts
-* Simple Network Management Protocol (SNMP) - gathers data on devices on the network
-
-</details>
-
-<details>
-<summary><b>Give examples of protocols found in the Network Layer</b></summary>
-
-* Internet Protocol (IP) - assists in routing packets from one machine to another
-* Internet Control Message Protocol (ICMP) - lets one know what is going such as error messages and debugging information
-
-</details>
-
----
-
-### 📌 Additional Questions
-
-<details>
-<summary><b>What is HTTP?</b></summary>
-
-[Avinetworks](https://avinetworks.com/glossary/layer-7/): HTTP stands for Hypertext Transfer Protocol. HTTP uses TCP port 80 to enable internet communication. It is part of the Application Layer (L7) in OSI Model.
-
-</details>
-
-<details>
-<summary><b>True or False? HTTP is stateful?</b></summary>
-
-False. It doesn't maintain state for incoming request.
-
-</details>
-
-<details>
-<summary><b>What HTTP response codes are there?</b></summary>
-
-* 1xx - informational
-* 2xx - Success
-* 3xx - Redirect
-* 4xx - Error, client fault
-* 5xx - Error, server fault
-
-</details>
-
-<details>
-<summary><b>You get "504 Gateway Timeout" error from an HTTP server. What does it mean?</b></summary>
-
-The server didn't receive a response from another server it communicates with in a timely manner.
-
-</details>
-
-<details>
-<summary><b>What is a proxy?</b></summary>
-
-A proxy is a server that acts as a middleman between a client device and a destination server. It can help improve privacy, security, and performance by hiding the client's IP address, filtering content, and caching frequently accessed data. 
-  - Proxies can be used for load balancing, distributing traffic across multiple servers to help prevent server overload and improve website or application performance. They can also be used for data analysis, as they can log requests and traffic, providing useful insights into user behavior and preferences.
-
-</details>
-
-<details>
-<summary><b>What is a reverse proxy?</b></summary>
-
-A reverse proxy is a type of proxy server that sits between a client and a server, but it is used to manage traffic going in the opposite direction of a traditional forward proxy. In a forward proxy, the client sends requests to the proxy server, which then forwards them to the destination server. However, in a reverse proxy, the client sends requests to the destination server, but the requests are intercepted by the reverse proxy before they reach the server. 
-  - They're commonly used to improve web server performance, provide high availability and fault tolerance, and enhance security by preventing direct access to the back-end server. They are often used in large-scale web applications and high-traffic websites to manage and distribute requests to multiple servers, resulting in improved scalability and reliability.
-
-</details>
-
-
-#### Load Balancers
-
-<details>
-<summary><b>What is a load balancer?</b></summary>
-
-A load balancer accepts (or denies) incoming network traffic from a client, and based on some criteria (application related, network, etc.) it distributes those communications out to servers (at least one).
-
-</details>
-
-<details>
-<summary><b>Why to use a load balancer?</b></summary>
-
-* Scalability - using a load balancer, you can possibly add more servers in the backend to handle more requests/traffic from the clients, as opposed to using one server.
-* Redundancy - if one server in the backend dies, the load balancer will keep forwarding the traffic/requests to the second server so users won't even notice one of the servers in the backend is down.
-
-</details>
-
-
-#### Random
-
 <details>
 <summary><b>What is faster than RAM?</b></summary>
 
@@ -4430,7 +2686,6 @@ CPU cache.
 [Source](https://www.enterprisestorageforum.com/hardware/cache-memory/)
 
 </details>
-
 <details>
 <summary><b>What is a memory leak?</b></summary>
 
@@ -4440,11 +2695,13 @@ The leaks can lead to a variety of problems, including system crashes, performan
 
 </details>
 
+
 ---
 
 ## 📊 Monitoring, Logging & Observability
 
 ### 🟢 Beginner
+
 
 <details>
 <summary><b>What is Prometheus, and why is it used?</b></summary>
@@ -4458,7 +2715,6 @@ Collecting application performance metrics
 Alerting on high error rates or latency
 
 </details>
-
 <details>
 <summary><b>How does Prometheus collect data?</b></summary>
 
@@ -4472,7 +2728,6 @@ scrape_configs:
       - targets: ['localhost:9100']
 
 </details>
-
 <details>
 <summary><b>What is PromQL?</b></summary>
 
@@ -4488,7 +2743,6 @@ Request rate:
 rate(http_requests_total[5m])
 
 </details>
-
 <details>
 <summary><b>What are Prometheus exporters?</b></summary>
 
@@ -4501,7 +2755,6 @@ Blackbox Exporter (network probes)
 MySQL Exporter (database metrics)
 
 </details>
-
 <details>
 <summary><b>How do you set up an alert in Prometheus?</b></summary>
 
@@ -4522,14 +2775,12 @@ groups:
 Grafana Questions
 
 </details>
-
 <details>
 <summary><b>What is Grafana?</b></summary>
 
 Grafana is an open-source analytics and visualization tool used to create interactive dashboards for monitoring data from Prometheus, ELK, and other sources.
 
 </details>
-
 <details>
 <summary><b>How do you connect Grafana to Prometheus?</b></summary>
 
@@ -4540,18 +2791,6 @@ Enter Prometheus URL (http://localhost:9090).
 Click Save & Test.
 
 </details>
-
-<details>
-<summary><b>What are Grafana Panels?</b></summary>
-
-Panels are visual components in Grafana used to display data in various formats:
-
-Graph Panel: Time-series data visualization
-Single Stat Panel: Displays a single numeric value
-Table Panel: Tabular data display
-
-</details>
-
 <details>
 <summary><b>How do you create alerts in Grafana?</b></summary>
 
@@ -4562,29 +2801,6 @@ Set the evaluation interval (e.g., every 1m).
 Configure the alert notification (Slack, Email, etc.).
 
 </details>
-
-<details>
-<summary><b>How do you configure a Grafana dashboard using JSON?</b></summary>
-
-Export and import dashboards using JSON files.
-
-Example JSON snippet:
-
-{
-  "panels": [
-    {
-      "type": "graph",
-      "title": "CPU Usage",
-      "targets": [
-        { "expr": "node_cpu_seconds_total", "format": "time_series" }
-      ]
-    }
-  ]
-}
-ELK Stack Questions (Elasticsearch, Logstash, Kibana)
-
-</details>
-
 <details>
 <summary><b>What is the ELK Stack?</b></summary>
 
@@ -4595,14 +2811,12 @@ Logstash (log processing pipeline)
 Kibana (visualization tool)
 
 </details>
-
 <details>
 <summary><b>What is the role of Elasticsearch in ELK?</b></summary>
 
 Elasticsearch is a NoSQL, distributed search engine used to store, search, and analyze log data.
 
 </details>
-
 <details>
 <summary><b>How does Logstash work?</b></summary>
 
@@ -4618,7 +2832,6 @@ filter { grok { match => { "message" => "%{SYSLOGTIMESTAMP:timestamp}" } } }
 output { elasticsearch { hosts => ["localhost:9200"] } }
 
 </details>
-
 <details>
 <summary><b>What is Kibana used for?</b></summary>
 
@@ -4629,46 +2842,6 @@ Discover: Search raw logs
 Alerts: Set up log-based alerts
 
 </details>
-
-
-<details>
-<summary><b>What is an Index in Elasticsearch?</b></summary>
-
-An index in Elasticsearch is like a database table that stores documents.
-
-Example:
-
-curl -X PUT "localhost:9200/logs"
-
-</details>
-
-<details>
-<summary><b>How do you send logs from Logstash to Elasticsearch?</b></summary>
-
-Define an output plugin in Logstash configuration:
-
-output {
-  elasticsearch {
-    hosts => ["http://localhost:9200"]
-    index => "logs-%{+YYYY.MM.dd}"
-  }
-}
-
-</details>
-
-<details>
-<summary><b>What is a Kibana Visualization?</b></summary>
-
-A Kibana Visualization is a graph, chart, or table displaying log data.
-
-Example Visualizations:
-
-Bar Chart (Logs per hour)
-Pie Chart (Error types distribution)
-Line Chart (CPU usage over time)
-
-</details>
-
 <details>
 <summary><b>What is Filebeat?</b></summary>
 
@@ -4684,7 +2857,6 @@ output.elasticsearch:
   hosts: ["localhost:9200"]
 
 </details>
-
 <details>
 <summary><b>What is the difference between Logstash and Filebeat?</b></summary>
 
@@ -4692,9 +2864,6 @@ Logstash: Heavyweight, processes logs with complex transformations
 Filebeat: Lightweight, only forwards logs with minimal processing
 
 </details>
-
-### 🟡 Intermediate
-
 <details>
 <summary><b>What is the difference between Pull and Push monitoring models?</b></summary>
 
@@ -4703,153 +2872,6 @@ Push Model (StatsD, InfluxDB) → The target system sends data to a central moni
 Prometheus uses a pull model because it provides better control over scraping intervals, avoids data duplication, and reduces unnecessary load on monitored systems. However, in some cases (e.g., short-lived jobs), Prometheus Pushgateway can be used to support push-based metrics.
 
 </details>
-
-
-<details>
-<summary><b>What is Thanos, and how does it complement Prometheus?</b></summary>
-
-Thanos extends Prometheus for scalability, long-term storage, and high availability. It:
-
-Provides deduplication across multiple Prometheus instances.
-Enables object storage support (e.g., S3, GCS).
-Allows querying across multiple Prometheus servers via a single query layer.
-Thanos is useful in multi-cluster environments where Prometheus instances are spread across multiple regions or clouds.
-
-</details>
-
-<details>
-<summary><b>How do you handle Prometheus high availability (HA)?</b></summary>
-
-Prometheus is a single-node system by design, but HA can be achieved by:
-
-Running multiple Prometheus replicas (scraping the same targets).
-Using Thanos or Cortex for deduplication and query federation.
-Storing time-series data externally (e.g., in S3, Bigtable).
-Grafana Questions
-
-</details>
-
-<details>
-<summary><b>What are Grafana Loki and Promtail?</b></summary>
-
-Loki is Grafana's log aggregation system, similar to Elasticsearch but optimized for Kubernetes and microservices.
-Promtail is the log collection agent for pushing logs to Loki.
-Promtail collects logs from /var/log and forwards them to Loki.
-
-</details>
-
-<details>
-<summary><b>How can you monitor Kubernetes with Grafana?</b></summary>
-
-Use kube-prometheus-stack, which includes:
-
-Prometheus Operator (for Kubernetes metrics).
-Grafana dashboards for cluster monitoring.
-Node Exporter and Kube-State-Metrics for detailed node/pod-level metrics.
-ELK Stack Questions (Elasticsearch, Logstash, Kibana)
-
-</details>
-
-<details>
-<summary><b>What is an Elasticsearch Shard, and why is it important?</b></summary>
-
-An Elasticsearch shard is a subdivision of an index. Each index is split into shards to allow parallel processing and redundancy.
-
-Primary Shards: Store original data.
-Replica Shards: Duplicates of primary shards for fault tolerance.
-Example:
-
-curl -X PUT "localhost:9200/logs?pretty" -H 'Content-Type: application/json' -d'
-{
-  "settings": { "number_of_shards": 3, "number_of_replicas": 2 }
-}'
-This creates an index with 3 primary and 2 replica shards.
-
-</details>
-
-<details>
-<summary><b>What is Index Lifecycle Management (ILM) in Elasticsearch?</b></summary>
-
-ILM automates index retention policies, ensuring efficient storage use. Stages include:
-
-Hot Phase: Frequent reads/writes.
-Warm Phase: Less frequent queries.
-Cold Phase: Rarely accessed data.
-Delete Phase: Data deletion.
-ILM is useful for managing log retention in ELK stacks.
-
-</details>
-
-<details>
-<summary><b>How do you configure Logstash pipelines?</b></summary>
-
-Logstash uses a pipeline of input → filter → output.
-
-Example logstash.conf:
-
-input {
-  beats {
-    port => 5044
-  }
-}
-filter {
-  grok { match => { "message" => "%{TIMESTAMP_ISO8601:timestamp}" } }
-}
-output {
-  elasticsearch { hosts => ["localhost:9200"] }
-}
-This pipeline processes logs from Filebeat → Logstash → Elasticsearch.
-
-</details>
-
-
-<details>
-<summary><b>What is Beats in the ELK stack?</b></summary>
-
-Beats are lightweight data shippers for sending logs, metrics, and security data to ELK.
-
-Filebeat: Log shipping.
-Metricbeat: System metrics.
-Packetbeat: Network monitoring.
-
-</details>
-
-
-<details>
-<summary><b>How do you integrate Prometheus and ELK Stack?</b></summary>
-
-Use Metricbeat to collect system metrics and send them to Elasticsearch, while Prometheus Node Exporter collects Prometheus-compatible metrics.
-
-</details>
-
-
-### 🔴 Advanced
-
-
-<details>
-<summary><b>How does Prometheus handle stale or missing metrics?</b></summary>
-
-Stale markers: Prometheus marks time-series data as stale if a target stops reporting metrics.
-Absent function (absent()): Used in PromQL to detect missing metrics.
-Dead Man’s Switch: A constant alert (e.g., ALWAYS_ON) ensures the alerting system is functional.
-Example:
-
-absent(up{job="my_service"})
-Triggers an alert if up{job="my_service"} is missing.
-
-</details>
-
-<details>
-<summary><b>What is Prometheus WAL (Write-Ahead Log) and its purpose?</b></summary>
-
-The Write-Ahead Log (WAL) in Prometheus:
-
-Stores data on disk before committing it to TSDB (Time-Series Database).
-Reduces data loss during crashes.
-WAL files are stored in /data/wal/ and help recover metrics quickly after a restart.
-
-</details>
-
 <details>
 <summary><b>What are Histogram and Summary metrics in Prometheus?</b></summary>
 
@@ -4863,44 +2885,6 @@ histogram_quantile(0.95, rate(http_request_duration_seconds_bucket[5m]))
 This calculates the 95th percentile response time.
 
 </details>
-
-<details>
-<summary><b>How do you secure Prometheus endpoints?</b></summary>
-
-Enable authentication & TLS via a reverse proxy (Nginx, Traefik).
-Use RBAC (Role-Based Access Control) in Kubernetes for limiting access.
-Set up network policies to restrict Prometheus access.
-Example: Using basic auth with Nginx:
-
-server {
-  listen 9090;
-  location / {
-    auth_basic "Restricted";
-    auth_basic_user_file /etc/nginx/.htpasswd;
-  }
-}
-Grafana Questions
-
-</details>
-
-<details>
-<summary><b>How do you monitor Prometheus itself using Grafana?</b></summary>
-
-Enable the built-in Prometheus self-metrics endpoint (/metrics).
-Use dashboards to monitor scrape latency, TSDB memory usage, query duration.
-Use the Prometheus Federation API to get meta-metrics.
-
-</details>
-
-<details>
-<summary><b>What are Grafana Annotations and how are they useful?</b></summary>
-
-Annotations mark events (deployments, incidents, downtimes) on Grafana graphs for better visualization.
-Example: Mark a Kubernetes deployment event in Grafana.
-
-</details>
-
-
 <details>
 <summary><b>What is Alerting in Grafana and how does it work?</b></summary>
 
@@ -4912,107 +2896,6 @@ Example Grafana alert condition:
 avg(http_requests_total) > 1000 → Sends an alert if requests exceed 1000.
 
 </details>
-
-
-<details>
-<summary><b>What is the Hot-Warm-Cold architecture in Elasticsearch?</b></summary>
-
-This strategy optimizes storage cost:
-
-Hot Nodes → Store recent, frequently queried data.
-Warm Nodes → Store older logs with infrequent access.
-Cold Nodes → Store archived logs for long-term retention.
-
-</details>
-
-<details>
-<summary><b>How do you reduce indexing pressure in Elasticsearch?</b></summary>
-
-Use ILM (Index Lifecycle Management).
-Optimize shard count (Avoid too many small shards).
-Increase refresh intervals (index.refresh_interval: 30s).
-
-</details>
-
-<details>
-<summary><b>How does Logstash manage backpressure?</b></summary>
-
-Persistent Queues → Buffer data before sending to Elasticsearch.
-Dead Letter Queue (DLQ) → Stores failed events for reprocessing.
-Example:
-
-queue.type: persisted
-queue.max_bytes: 1gb
-
-</details>
-
-<details>
-<summary><b>What are Query Caching strategies in Elasticsearch?</b></summary>
-
-Request cache: Stores query results.
-Shard request cache: Caches aggregations and filters.
-Doc value cache: Optimizes sorting and aggregations.
-
-</details>
-
-<details>
-<summary><b>How do you integrate Prometheus with Elasticsearch?</b></summary>
-
-Use Metricbeat to push Prometheus data into Elasticsearch.
-Use Grafana to visualize both Prometheus & ELK logs.
-Example Metricbeat configuration:
-
-metricbeat.modules:
-  - module: prometheus
-    metricsets: ["collector"]
-    host: "localhost:9090"
-
-</details>
-
-<details>
-<summary><b>How do you optimize Elasticsearch queries for performance?</b></summary>
-
-Use filters (term, match_phrase) instead of full-text search.
-Avoid wildcard (*) searches.
-Use doc_values for sorting and aggregations.
-
-</details>
-
-<details>
-<summary><b>How do you implement centralized logging in Kubernetes?</b></summary>
-
-Use Fluentd/Filebeat to collect logs.
-Send logs to Elasticsearch or Loki.
-Monitor logs via Kibana or Grafana dashboards.
-Example Fluentd configuration:
-
-<match kubernetes.**>
-  @type elasticsearch
-  host elasticsearch
-  logstash_format true
-</match>
-
-</details>
-
-<details>
-<summary><b>What are the best practices for log retention and compliance?</b></summary>
-
-Use ILM to delete old logs automatically.
-Encrypt sensitive logs (xpack.security).
-Mask PII data before indexing logs.
-Set audit logs for security compliance.
-
-</details>
-
-### 📌 Additional Questions
-
-<details>
-<summary><b>In what scenarios it might be better to NOT use Prometheus?</b></summary>
-
-From Prometheus documentation: "if you need 100% accuracy, such as for per-request billing".
-
-</details>
-
 <details>
 <summary><b>Describe Prometheus architecture and components</b></summary>
 
@@ -5029,24 +2912,6 @@ The Prometheus architecture consists of four major components:
 Overall, the Prometheus architecture is designed to be highly scalable and resilient. The server and client libraries can be deployed in a distributed fashion to support monitoring across large-scale, highly dynamic environments
 
 </details>
-
-
-<details>
-<summary><b>What is an Alert?</b></summary>
-
-In Prometheus, an alert is a notification triggered when a specific condition or threshold is met. Alerts can be configured to trigger when certain metrics cross a certain threshold or when specific events occur. Once an alert is triggered, it can be routed to various channels, such as email, pager, or chat, to notify relevant teams or individuals to take appropriate action. Alerts are a critical component of any monitoring system, as they allow teams to proactively detect and respond to issues before they impact users or cause system downtime.
-
-</details>
-
-<details>
-<summary><b>What is an Instance? What is a Job?</b></summary>
-
-In Prometheus, an instance refers to a single target that is being monitored. For example, a single server or service. A job is a set of instances that perform the same function, such as a set of web servers serving the same application. Jobs allow you to define and manage a group of targets together.
-
-In essence, an instance is an individual target that Prometheus collects metrics from, while a job is a collection of similar instances that can be managed as a group.
-
-</details>
-
 <details>
 <summary><b>What core metrics types Prometheus supports?</b></summary>
 
@@ -5063,77 +2928,6 @@ Prometheus supports several types of metrics, including:
 Prometheus also supports various functions and operators for aggregating and manipulating metrics, such as sum, max, min, and rate. These features make it a powerful tool for monitoring and alerting on system metrics.
 
 </details>
-
-
-<details>
-<summary><b>Which Prometheus best practices?</b></summary>
-
-Here are three of them:
-
-    1. Label carefully: Careful and consistent labeling of metrics is crucial for effective querying and alerting. Labels should be clear, concise, and include all relevant information about the metric.
-
-    2. Keep metrics simple: The metrics exposed by exporters should be simple and focus on a single aspect of the system being monitored. This helps avoid confusion and ensures that the metrics are easily understandable by all members of the team.
-
-    3. Use alerting sparingly: While alerting is a powerful feature of Prometheus, it should be used sparingly and only for the most critical issues. Setting up too many alerts can lead to alert fatigue and result in important alerts being ignored. It is recommended to set up only the most important alerts and adjust the thresholds over time based on the actual frequency of alerts.
-
-</details>
-
-<details>
-<summary><b>How to get total requests in a given period of time?</b></summary>
-
-To get the total requests in a given period of time using Prometheus, you can use the *sum* function along with the *rate* function. Here is an example query that will give you the total number of requests in the last hour:
-
-```
-sum(rate(http_requests_total[1h]))
-```
-In this query, *http_requests_total* is the name of the metric that tracks the total number of HTTP requests, and the *rate* function calculates the per-second rate of requests over the last hour. The *sum* function then adds up all of the requests to give you the total number of requests in the last hour.
-
-You can adjust the time range by changing the duration in the *rate* function. For example, if you wanted to get the total number of requests in the last day, you could change the function to *rate(http_requests_total[1d])*.
-
-</details>
-
-<details>
-<summary><b>How do you join two metrics?</b></summary>
-
-In Prometheus, joining two metrics can be achieved using the *join()* function. The *join()* function combines two or more time series based on their label values. It takes two mandatory arguments: *on* and *table*. The on argument specifies the labels to join *on* and the *table* argument specifies the time series to join.
-
-Here's an example of how to join two metrics using the *join()* function:
-
-```
-sum_series(
-  join(
-    on(service, instance) request_count_total,
-    on(service, instance) error_count_total,
-  )
-)
-```
-In this example, the *join()* function combines the *request_count_total* and *error_count_total* time series based on their *service* and *instance* label values. The *sum_series()* function then calculates the sum of the resulting time series
-
-</details>
-
-<details>
-<summary><b>How to write a query that returns the value of a label?</b></summary>
-
-To write a query that returns the value of a label in Prometheus, you can use the *label_values* function. The *label_values* function takes two arguments: the name of the label and the name of the metric.
-
-For example, if you have a metric called *http_requests_total* with a label called *method*, and you want to return all the values of the *method* label, you can use the following query:
-
-```
-label_values(http_requests_total, method)
-```
-
-This will return a list of all the values for the *method* label in the *http_requests_total* metric. You can then use this list in further queries or to filter your data.
-
-</details>
-
-
-<details>
-<summary><b>How do you monitor and troubleshoot applications in a DevOps environment?</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
 <details>
 <summary><b>Explain the concept of "Log Aggregation" in DevOps</b></summary>
 
@@ -5141,9 +2935,11 @@ This will return a list of all the values for the *method* label in the *http_re
 
 </details>
 
+
 ---
 
 ## 💾 Storage
+
 
 <details>
 <summary><b>What types of storage are there?</b></summary>
@@ -5153,7 +2949,6 @@ This will return a list of all the values for the *method* label in the *http_re
   * Object
 
 </details>
-
 <details>
 <summary><b>Explain Object Storage</b></summary>
 
@@ -5161,7 +2956,6 @@ This will return a list of all the values for the *method* label in the *http_re
 - Objects can contain metadata
 
 </details>
-
 <details>
 <summary><b>What are the pros and cons of object storage?</b></summary>
 
@@ -5173,14 +2967,6 @@ Cons:
   - No granular modification: to change an object, you have re-create it
 
 </details>
-
-<details>
-<summary><b>What are some use cases for using object storage?</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
 <details>
 <summary><b>Explain File Storage</b></summary>
 
@@ -5189,46 +2975,24 @@ Cons:
 - Files usually organized in directories
 
 </details>
-
-<details>
-<summary><b>What are the pros and cons of File Storage?</b></summary>
-
-Pros:
-- Users have full control of their own files and can run variety of operations on the files: delete, read, write and move.
-- Security mechanism allows for users to have a better control at things such as file locking
-
-</details>
-
-<details>
-<summary><b>What are some examples of file storage?</b></summary>
-
-Local filesystem
-Dropbox
-Google Drive
-
-</details>
-
 <details>
 <summary><b>What types of storage devices are there?</b></summary>
 
 *(No answer provided in source)*
 
 </details>
-
 <details>
 <summary><b>Explain IOPS</b></summary>
 
 *(No answer provided in source)*
 
 </details>
-
 <details>
 <summary><b>Explain storage throughput</b></summary>
 
 *(No answer provided in source)*
 
 </details>
-
 <details>
 <summary><b>What is a filesystem?</b></summary>
 
@@ -5244,23 +3008,12 @@ Commonly used filed systems:
   *APFS
 
 </details>
-
-<details>
-<summary><b>Explain Dark Data</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
 <details>
 <summary><b>Explain MBR</b></summary>
 
 *(No answer provided in source)*
 
 </details>
-
-### 🔥 Storage — Server Deep Dive
-
 <details>
 <summary><b>What is the difference between SAS, SATA, and NVMe drives?</b></summary>
 
@@ -5276,7 +3029,6 @@ Commonly used filed systems:
 In modern servers: SATA for bulk/archive, SAS for enterprise reliability, NVMe for high-performance storage (databases, AI/ML scratch space).
 
 </details>
-
 <details>
 <summary><b>What is RAID 0, 1, 5, and 10 and when would you use each?</b></summary>
 
@@ -5293,7 +3045,6 @@ Key trade-offs:
 - **RAID 10**: expensive (50% usable space) but fast rebuild and high performance — preferred for databases
 
 </details>
-
 <details>
 <summary><b>What is SMART data and how do you use it to predict disk failure?</b></summary>
 
@@ -5321,7 +3072,6 @@ smartctl -t short /dev/sda
 Any non-zero value for Reallocated, Pending, or Uncorrectable sectors is a red flag — plan for drive replacement.
 
 </details>
-
 <details>
 <summary><b>What is the difference between a RAID controller and software RAID?</b></summary>
 
@@ -5337,7 +3087,6 @@ Any non-zero value for Reallocated, Pending, or Uncorrectable sectors is a red f
 In modern cloud/hyperscale environments, software RAID (or no RAID — relying on distributed storage like Ceph) is preferred because it avoids hardware lock-in and is more flexible at scale.
 
 </details>
-
 <details>
 <summary><b>What is a JBOD (Just a Bunch of Disks)?</b></summary>
 
@@ -5351,7 +3100,6 @@ When to use JBOD:
 JBOD via HBA (not RAID controller) gives the OS full visibility into each drive's SMART data, which is harder to access through a RAID controller abstraction.
 
 </details>
-
 <details>
 <summary><b>What is an NVMe drive and how does it differ from a traditional SSD?</b></summary>
 
@@ -5370,7 +3118,6 @@ Key differences from SATA SSD:
 NVMe drives are used for any latency-sensitive server workload: databases, AI/ML training scratch space, high-frequency logging.
 
 </details>
-
 <details>
 <summary><b>What is LVM and why is it useful in a server environment?</b></summary>
 
@@ -5400,245 +3147,11 @@ LVM is standard on most Linux servers and essential knowledge for storage manage
 
 </details>
 
----
-
-### Scalability
-
-<details>
-<summary><b>Explain Scalability</b></summary>
-
-The ability easily grow in size and capacity based on demand and usage.
-
-</details>
-
-<details>
-<summary><b>Explain Elasticity</b></summary>
-
-The ability to grow but also to reduce based on what is required
-
-</details>
-
-<details>
-<summary><b>Explain Disaster Recovery</b></summary>
-
-Disaster recovery is the process of restoring critical business systems and data after a disruptive event. The goal is to minimize the impact and resume normal business activities quickly. This involves creating a plan, testing it, backing up critical data, and storing it in safe locations. In case of a disaster, the plan is then executed, backups are restored, and systems are hopefully brought back online. The recovery process may take hours or days depending on the damages of infrastructure. This makes business planning important, as a well-designed and tested disaster recovery plan can minimize the impact of a disaster and keep operations going.
-
-</details>
-
-<details>
-<summary><b>Explain Fault Tolerance and High Availability</b></summary>
-
-Fault Tolerance - The ability to self-heal and return to normal capacity. Also the ability to withstand a failure and remain functional.
-
-High Availability - Being able to access a resource (in some use cases, using different platforms)
-
-</details>
-
-<details>
-<summary><b>What is the difference between high availability and Disaster Recovery?</b></summary>
-
-[wintellect.com](https://www.wintellect.com/high-availability-vs-disaster-recovery): "High availability, simply put, is eliminating single points of failure and disaster recovery is the process of getting a system back to an operational state when a system is rendered inoperative. In essence, disaster recovery picks up when high availability fails, so HA first."
-
-</details>
-
-<details>
-<summary><b>Explain Vertical Scaling</b></summary>
-
-Vertical Scaling is the process of adding resources to increase power of existing servers. For example, adding more CPUs, adding more RAM, etc.
-
-</details>
-
-<details>
-<summary><b>What are the disadvantages of Vertical Scaling?</b></summary>
-
-With vertical scaling alone, the component still remains a single point of failure.
-In addition, it has hardware limit where if you don't have more resources, you might not be able to scale vertically.
-
-</details>
-
-<details>
-<summary><b>Which type of cloud services usually support vertical scaling?</b></summary>
-
-Databases, cache. It's common mostly for non-distributed systems.
-
-</details>
-
-<details>
-<summary><b>Explain Horizontal Scaling</b></summary>
-
-Horizontal Scaling is the process of adding more resources that will be able handle requests as one unit
-
-</details>
-
-<details>
-<summary><b>What is the disadvantage of Horizontal Scaling? What is often required in order to perform Horizontal Scaling?</b></summary>
-
-A load balancer. You can add more resources, but if you would like them to be part of the process, you have to serve them the requests/responses.
-Also, data inconsistency is a concern with horizontal scaling.
-
-</details>
-
-<details>
-<summary><b>Explain in which use cases will you use vertical scaling and in which use cases you will use horizontal scaling</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-<details>
-<summary><b>Explain Resiliency and what ways are there to make a system more resilient</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-<details>
-<summary><b>Explain "Consistent Hashing"</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-<details>
-<summary><b>How would you update each of the services in the following drawing without having app (foo.com) downtime?<br> <img src="images/design/cdn-no-downtime.png" width="300x;" height="400px;"/>?</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-<details>
-<summary><b>What is the problem with the following architecture and how would you fix it?<br> <img src="images/design/producers_consumers_issue.png" width="400x;" height="300px;"/>?</b></summary>
-
-The load on the producers or consumers may be high which will then cause them to hang or crash.<br>
-Instead of working in "push mode", the consumers can pull tasks only when they are ready to handle them. It can be fixed by using a streaming platform like Kafka, Kinesis, etc. This platform will make sure to handle the high load/traffic and pass tasks/messages to consumers only when the ready to get them.
-
-<img src="images/design/producers_consumers_fix.png" width="300x;" height="200px;"/>
-
-</details>
-
-<details>
-<summary><b>Users report that there is huge spike in process time when adding little bit more data to process as an input. What might be the problem?<br> <img src="images/design/input-process-output.png" width="300x;" height="200px;"/></b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-<details>
-<summary><b>How would you scale the architecture from the previous question to hundreds of users?</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-### Cache
-
-<details>
-<summary><b>What is "cache"? In which cases would you use it?</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-<details>
-<summary><b>What is "distributed cache"?</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-<details>
-<summary><b>Explain the following cache policies: * FIFO * LIFO * LRU</b></summary>
-
-Read about it [here](https://en.wikipedia.org/wiki/Cache_replacement_policies)
-
-</details>
-
-<details>
-<summary><b>Why not writing everything to cache instead of a database/datastore?</b></summary>
-
-Caching and databases serve different purposes and are optimized for different use cases.
-
-Caching is used to speed up read operations by storing frequently accessed data in memory or on a fast storage medium. By keeping data close to the application, caching reduces the latency and overhead of accessing data from a slower, more distant storage system such as a database or disk.
-
-On the other hand, databases are optimized for storing and managing persistent data. Databases are designed to handle concurrent read and write operations, enforce consistency and integrity constraints, and provide features such as indexing and querying.
-
-</details>
-
-### Migrations
-
-<details>
-<summary><b>How you prepare for a migration? (or plan a migration)?</b></summary>
-
-You can mention:
-
-roll-back & roll-forward
-cut over
-dress rehearsals
-DNS redirection
-
-</details>
-
----
-
-### Extract
-
-<details>
-<summary><b>Extract all the numbers</b></summary>
-
-- "\d+"
-
-</details>
-
-<details>
-<summary><b>Extract the first word of each line</b></summary>
-
-- "^\w+"
-Bonus: extract the last word of each line
-
-  - "\w+(?=\W*$)" (in most cases, depends on line formatting)
-
-</details>
-
-<details>
-<summary><b>Extract all the IP addresses</b></summary>
-
-- "\b(?:\d{1,3}\ .){3}\d{1,3}\b" IPV4:(This format looks for 1 to 3 digit sequence 3 times)
-
-</details>
-
-<details>
-<summary><b>Extract dates in the format of yyyy-mm-dd or yyyy-dd-mm</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-<details>
-<summary><b>Extract email addresses</b></summary>
-
-- "\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\ .[A-Za-z]{2,}\b"
-
-</details>
-
-### Replace
-
-<details>
-<summary><b>Replace tabs with four spaces</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-<details>
-<summary><b>Replace 'red' with 'green'</b></summary>
-
-*(No answer provided in source)*
-
-</details>
 
 ---
 
 ## 🔧 Hardware
+
 
 <details>
 <summary><b>What is a CPU?</b></summary>
@@ -5646,28 +3159,24 @@ Bonus: extract the last word of each line
 A central processing unit (CPU) performs basic arithmetic, logic, controlling, and input/output (I/O) operations specified by the instructions in the program. This contrasts with external components such as main memory and I/O circuitry, and specialized processors such as graphics processing units (GPUs).
 
 </details>
-
 <details>
 <summary><b>What is RAM?</b></summary>
 
 RAM (Random Access Memory) is the hardware in a computing device where the operating system (OS), application programs and data in current use are kept so they can be quickly reached by the device's processor. RAM is the main memory in a computer. It is much faster to read from and write to than other kinds of storage, such as a hard disk drive (HDD), solid-state drive (SSD) or optical drive.
 
 </details>
-
 <details>
 <summary><b>What is a GPU?</b></summary>
 
 A GPU, or Graphics Processing Unit, is a specialized electronic circuit designed to expedite image and video processing for display on a computer screen.
 
 </details>
-
 <details>
 <summary><b>What is an embedded system?</b></summary>
 
 An embedded system is a computer system - a combination of a computer processor, computer memory, and input/output peripheral devices—that has a dedicated function within a larger mechanical or electronic system. It is embedded as part of a complete device often including electrical or electronic hardware and mechanical parts.
 
 </details>
-
 <details>
 <summary><b>Can you give an example of an embedded system?</b></summary>
 
@@ -5676,7 +3185,6 @@ A common example of an embedded system is a microwave oven's digital control pan
 When committed to a certain goal, Raspberry Pi can serve as an embedded system.
 
 </details>
-
 <details>
 <summary><b>What are some considerations DevOps teams should keep in mind when selecting hardware for their job?</b></summary>
 
@@ -5750,7 +3258,6 @@ Choosing the right DevOps hardware is essential for ensuring streamlined CI/CD p
 In essence, DevOps teams should choose hardware that is compatible with their tasks, versatile, gives good performance, and stays within their budget. Furthermore, long-term considerations such as maintenance, potential upgrades, and compatibility with impending technological shifts must be prioritized.
 
 </details>
-
 <details>
 <summary><b>What is the role of hardware in disaster recovery planning and implementation?</b></summary>
 
@@ -5800,42 +3307,36 @@ Hardware is critical in disaster recovery (DR) solutions. While the broader scop
 In summary, while software and human interventions are important in disaster recovery operations, it is the hardware that provides the underlying support. It is critical for efficient disaster recovery plans to keep this hardware resilient, duplicated, and routinely assessed.
 
 </details>
-
 <details>
 <summary><b>What is a RAID?</b></summary>
 
 RAID is an acronym that stands for "Redundant Array of Independent Disks." It is a technique that combines numerous hard drives into a single device known as an array in order to improve performance, expand storage capacity, and/or offer redundancy to prevent data loss. RAID levels (for example, RAID 0, RAID 1, and RAID 5) provide varied benefits in terms of performance, redundancy, and storage efficiency.
 
 </details>
-
 <details>
 <summary><b>What is a microcontroller?</b></summary>
 
 A microcontroller is a small integrated circuit that controls certain tasks in an embedded system. It typically includes a CPU, memory, and input/output peripherals.
 
 </details>
-
 <details>
 <summary><b>What is a Network Interface Controller or NIC?</b></summary>
 
 A Network Interface Controller (NIC) is a piece of hardware that connects a computer to a network and allows it to communicate with other devices.
 
 </details>
-
 <details>
 <summary><b>What is a DMA?</b></summary>
 
 Direct memory access (DMA) is a feature of computer systems that allows certain hardware subsystems to access main system memory independently of the central processing unit (CPU).DMA enables devices to share and receive data from the main memory in a computer. It does this while still allowing the CPU to perform other tasks.
 
 </details>
-
 <details>
 <summary><b>What is a Real-Time Operating Systems?</b></summary>
 
 A real-time operating system (RTOS) is an operating system (OS) for real-time computing applications that processes data and events that have critically defined time constraints. An RTOS is distinct from a time-sharing operating system, such as Unix, which manages the sharing of system resources with a scheduler, data buffers, or fixed task prioritization in a multitasking or multiprogramming environment. Processing time requirements need to be fully understood and bound rather than just kept as a minimum. All processing must occur within the defined constraints. Real-time operating systems are event-driven and preemptive, meaning the OS can monitor the relevant priority of competing tasks, and make changes to the task priority. Event-driven systems switch between tasks based on their priorities, while time-sharing systems switch the task based on clock interrupts.
 
 </details>
-
 <details>
 <summary><b>List of interrupt types</b></summary>
 
@@ -5848,9 +3349,6 @@ There are six classes of interrupts possible:
 * Supervisor call (SVC)
 
 </details>
-
-### 🔥 BMC / IPMI / Redfish
-
 <details>
 <summary><b>What is a BMC and what is its purpose?</b></summary>
 
@@ -5864,7 +3362,6 @@ Key capabilities:
 - Update firmware remotely
 
 </details>
-
 <details>
 <summary><b>What is the difference between IPMI and Redfish?</b></summary>
 
@@ -5879,7 +3376,6 @@ Key capabilities:
 IPMI is the legacy standard; Redfish is the modern replacement designed for large-scale fleet management.
 
 </details>
-
 <details>
 <summary><b>What kind of information can you get from a BMC without the OS running?</b></summary>
 
@@ -5894,7 +3390,6 @@ The BMC operates independently of the OS, so you can retrieve:
 This is critical during incidents where the OS is unresponsive.
 
 </details>
-
 <details>
 <summary><b>How would you use IPMI to power cycle a server remotely?</b></summary>
 
@@ -5918,7 +3413,6 @@ ipmitool -I lanplus -H <bmc-ip> -U admin -P password chassis power cycle
 Use `power cycle` with caution in production — it is equivalent to pulling the power plug.
 
 </details>
-
 <details>
 <summary><b>What is out-of-band management and why is it critical in a large fleet?</b></summary>
 
@@ -5933,7 +3427,6 @@ Why it is critical:
 In a large fleet, OOB management is the difference between a 5-minute remote fix and a multi-hour physical dispatch.
 
 </details>
-
 <details>
 <summary><b>What is a Redfish API and how does it differ from traditional IPMI?</b></summary>
 
@@ -5952,7 +3445,6 @@ curl -s -u admin:password https://<bmc-ip>/redfish/v1/Systems/1 | jq '.Status'
 ```
 
 </details>
-
 <details>
 <summary><b>What information would you check in the BMC event log during an incident?</b></summary>
 
@@ -5974,7 +3466,6 @@ ipmitool -I lanplus -H <bmc-ip> -U admin -P password sel clear
 ```
 
 </details>
-
 <details>
 <summary><b>What is a Serial Over LAN (SOL) connection and when would you use it?</b></summary>
 
@@ -5995,7 +3486,6 @@ ipmitool -I lanplus -H <bmc-ip> -U admin -P password sol activate
 ```
 
 </details>
-
 <details>
 <summary><b>How would you check hardware health sensors via IPMI?</b></summary>
 
@@ -6016,7 +3506,6 @@ ipmitool -I lanplus -H <bmc-ip> -U admin -P password sensor list
 Look for readings marked `cr` (critical) or `nc` (non-critical) — these indicate sensors outside normal thresholds and may signal hardware issues.
 
 </details>
-
 <details>
 <summary><b>What is a dedicated IPMI/BMC network port and why is it kept separate from the main network?</b></summary>
 
@@ -6030,9 +3519,6 @@ Most server motherboards have a dedicated RJ45 port labeled IPMI, iDRAC, iLO, or
 In practice, the management network typically has no internet access and is restricted to jump hosts or VPN.
 
 </details>
-
-### 🔥 Server Components
-
 <details>
 <summary><b>What is the difference between a server and a consumer PC?</b></summary>
 
@@ -6050,7 +3536,6 @@ In practice, the management network typically has no internet access and is rest
 Servers are engineered for reliability, manageability, and continuous operation at scale.
 
 </details>
-
 <details>
 <summary><b>What is ECC memory and why does it matter for server workloads?</b></summary>
 
@@ -6065,7 +3550,6 @@ Why it matters:
 ECC is non-negotiable for any production server workload.
 
 </details>
-
 <details>
 <summary><b>What is the difference between RDIMM and UDIMM memory?</b></summary>
 
@@ -6080,7 +3564,6 @@ ECC is non-negotiable for any production server workload.
 RDIMMs are standard in data centre servers because the register chip reduces the electrical load on the memory controller, allowing more DIMMs per channel and improving stability at large memory capacities.
 
 </details>
-
 <details>
 <summary><b>What is RDMA and why does it matter for high performance computing?</b></summary>
 
@@ -6099,7 +3582,6 @@ Common RDMA implementations:
 In GPU computing clusters (like those at Crusoe), RDMA via InfiniBand or RoCE is essential for collective operations (all-reduce) in distributed training.
 
 </details>
-
 <details>
 <summary><b>What is a HBA (Host Bus Adapter) and what is it used for?</b></summary>
 
@@ -6113,7 +3595,6 @@ Common types:
 HBAs are distinct from RAID controllers — an HBA presents drives directly to the OS (JBOD mode), whereas a RAID controller presents a virtual disk with RAID logic handled in hardware.
 
 </details>
-
 <details>
 <summary><b>What is NUMA and how does it affect server performance?</b></summary>
 
@@ -6136,7 +3617,6 @@ numastat
 ```
 
 </details>
-
 <details>
 <summary><b>What is a dual socket server and what are the implications for memory access?</b></summary>
 
@@ -6152,7 +3632,6 @@ Memory access implications:
 Common use case: database servers, virtualisation hosts, HPC nodes where both raw compute and memory capacity are needed.
 
 </details>
-
 <details>
 <summary><b>What are redundant power supplies and why do servers have them?</b></summary>
 
@@ -6169,7 +3648,6 @@ Why redundancy matters:
 In a large fleet, PSU failures are a routine operational event handled without impact.
 
 </details>
-
 <details>
 <summary><b>What is a hot-swappable component and which server components typically support it?</b></summary>
 
@@ -6187,7 +3665,6 @@ Components that generally do NOT support hot-swap:
 Hot-swap capability is essential in a 24/7 data centre where planned maintenance windows are rare.
 
 </details>
-
 <details>
 <summary><b>What is a PCIe slot and what devices use it?</b></summary>
 
@@ -6207,7 +3684,6 @@ Devices that use PCIe:
 - **Accelerators** (FPGAs, custom ASICs) — x16
 
 </details>
-
 <details>
 <summary><b>What is PCIe lane bandwidth and why does it matter for GPU servers?</b></summary>
 
@@ -6224,7 +3700,6 @@ Why it matters for GPU servers:
 - In multi-GPU servers, ensuring each GPU has a full x16 PCIe connection (not shared) is important for maximum throughput
 
 </details>
-
 <details>
 <summary><b>What is a server chassis and what form factors exist?</b></summary>
 
@@ -6237,7 +3712,6 @@ Common form factors:
 - **MicroTX / Open Compute**: open-standard designs used by hyperscalers (Meta, Microsoft)
 
 </details>
-
 <details>
 <summary><b>What is the difference between a 1U, 2U, and 4U server?</b></summary>
 
@@ -6257,9 +3731,6 @@ Trade-offs:
 A full 42U rack can hold 42 × 1U servers, or ~10 × 4U GPU nodes.
 
 </details>
-
-### 🟢 Bonus — Hardware Deep Dives
-
 <details>
 <summary><b>What is a watchdog timer and what does it do?</b></summary>
 
@@ -6282,7 +3753,6 @@ systemctl status watchdog
 ```
 
 </details>
-
 <details>
 <summary><b>What is thermal throttling and how does it affect server performance?</b></summary>
 
@@ -6301,7 +3771,6 @@ Impact on server performance:
 In a fleet context, a server running consistently at high temperature should be flagged for physical inspection.
 
 </details>
-
 <details>
 <summary><b>What is the difference between active and passive cooling in servers?</b></summary>
 
@@ -6316,7 +3785,6 @@ In a fleet context, a server running consistently at high temperature should be 
 In data centre servers, **active cooling** (high-speed fans + hot-aisle/cold-aisle containment) is universal. Fans are redundant and hot-swappable. Some high-density GPU servers also use **liquid cooling** (direct liquid cooling on CPUs/GPUs) to handle the extreme thermal density that air cooling cannot manage.
 
 </details>
-
 <details>
 <summary><b>What is power capping and why would you use it in a data centre?</b></summary>
 
@@ -6340,11 +3808,13 @@ ipmitool -I lanplus -H <bmc-ip> -U admin -P password dcmi power reading
 
 </details>
 
+
 ---
 
 ## 🏭 Bare Metal Provisioning & Fleet Management
 
 ### PXE & Network Boot
+
 
 <details>
 <summary><b>What is the sequence of events in a PXE boot from power on to OS running?</b></summary>
@@ -6352,197 +3822,162 @@ ipmitool -I lanplus -H <bmc-ip> -U admin -P password dcmi power reading
 *(No answer provided in source)*
 
 </details>
-
 <details>
 <summary><b>What is a TFTP server and what role does it play in PXE booting?</b></summary>
 
 *(No answer provided in source)*
 
 </details>
-
 <details>
 <summary><b>What is a bootloader and what does GRUB do?</b></summary>
 
 *(No answer provided in source)*
 
 </details>
-
 <details>
 <summary><b>What is iPXE and how does it differ from standard PXE?</b></summary>
 
 *(No answer provided in source)*
 
 </details>
-
 <details>
 <summary><b>What happens if a PXE server is unavailable during provisioning?</b></summary>
 
 *(No answer provided in source)*
 
 </details>
-
 <details>
 <summary><b>What is a network boot image and what does it contain?</b></summary>
 
 *(No answer provided in source)*
 
 </details>
-
 <details>
 <summary><b>How do you troubleshoot a server that fails to PXE boot?</b></summary>
 
 *(No answer provided in source)*
 
 </details>
-
-### OS Installation & Configuration
-
 <details>
 <summary><b>What is a kickstart file and walk me through what it contains?</b></summary>
 
 *(No answer provided in source)*
 
 </details>
-
 <details>
 <summary><b>What is cloud-init and what is it used for?</b></summary>
 
 *(No answer provided in source)*
 
 </details>
-
 <details>
 <summary><b>What is an OS image and what is the difference between a golden image and a base image?</b></summary>
 
 *(No answer provided in source)*
 
 </details>
-
 <details>
 <summary><b>What is the difference between an interactive and unattended OS installation?</b></summary>
 
 *(No answer provided in source)*
 
 </details>
-
 <details>
 <summary><b>What is a preseed file and how does it differ from a kickstart file?</b></summary>
 
 *(No answer provided in source)*
 
 </details>
-
 <details>
 <summary><b>How do you ensure a consistent OS configuration across hundreds of servers?</b></summary>
 
 *(No answer provided in source)*
 
 </details>
-
 <details>
 <summary><b>What is immutable infrastructure and how does it apply to server provisioning?</b></summary>
 
 *(No answer provided in source)*
 
 </details>
-
 <details>
 <summary><b>What is a post-installation script and what would you typically include in one?</b></summary>
 
 *(No answer provided in source)*
 
 </details>
-
-### Configuration Management & Validation
-
 <details>
 <summary><b>What is configuration drift and how does it happen across a large fleet?</b></summary>
 
 *(No answer provided in source)*
 
 </details>
-
 <details>
 <summary><b>What is idempotency and why does it matter in provisioning scripts?</b></summary>
 
 *(No answer provided in source)*
 
 </details>
-
 <details>
 <summary><b>How would you roll out a configuration change to 1000 servers safely?</b></summary>
 
 *(No answer provided in source)*
 
 </details>
-
 <details>
 <summary><b>What checks would you run to validate a server is correctly provisioned?</b></summary>
 
 *(No answer provided in source)*
 
 </details>
-
 <details>
 <summary><b>What is a burn-in test and what does it check?</b></summary>
 
 *(No answer provided in source)*
 
 </details>
-
 <details>
 <summary><b>How would you stress test CPU, memory and storage simultaneously?</b></summary>
 
 *(No answer provided in source)*
 
 </details>
-
-### Fleet Scale Provisioning
-
 <details>
 <summary><b>How do you provision servers at scale without physically touching each one?</b></summary>
 
 *(No answer provided in source)*
 
 </details>
-
 <details>
 <summary><b>What is a CMDB (Configuration Management Database) and what is it used for?</b></summary>
 
 *(No answer provided in source)*
 
 </details>
-
 <details>
 <summary><b>What network configuration needs to happen during server provisioning?</b></summary>
 
 *(No answer provided in source)*
 
 </details>
-
 <details>
 <summary><b>What is a management network and why is it kept separate from the production network?</b></summary>
 
 *(No answer provided in source)*
 
 </details>
-
 <details>
 <summary><b>Why do you update firmware during the provisioning process and how is it done at scale?</b></summary>
 
 *(No answer provided in source)*
 
 </details>
-
 <details>
 <summary><b>What monitoring do you set up immediately after provisioning?</b></summary>
 
 *(No answer provided in source)*
 
 </details>
-
-### 🔥 Provisioning — Concepts & End-to-End Flow
-
 <details>
 <summary><b>What is server provisioning and what does the process look like end to end?</b></summary>
 
@@ -6562,7 +3997,6 @@ Server provisioning is the process of taking a bare piece of hardware from "powe
 At scale, steps 2–9 are fully automated and triggered by a provisioning system (e.g. Ironic, Foreman, custom tooling).
 
 </details>
-
 <details>
 <summary><b>What is the role of DHCP in the provisioning process?</b></summary>
 
@@ -6579,7 +4013,6 @@ DHCP plays a critical role in PXE-based provisioning by providing the server wit
 In provisioning environments, DHCP is typically configured with **reservations** (matching MAC address to a specific IP) so each server always gets the same management IP.
 
 </details>
-
 <details>
 <summary><b>What is netboot and how does it differ from PXE?</b></summary>
 
@@ -6591,7 +4024,6 @@ Modern UEFI firmware supports **HTTP boot** — it can download a bootloader dir
 **iPXE** extends PXE with scripting support, HTTP downloads, iSCSI, and cloud integration — used as a second-stage bootloader in many provisioning systems to overcome PXE's limitations.
 
 </details>
-
 <details>
 <summary><b>How would you validate a newly provisioned server before handing it to a customer?</b></summary>
 
@@ -6628,7 +4060,6 @@ ipmitool sdr type Fan
 - No unexpected processes or open ports
 
 </details>
-
 <details>
 <summary><b>What is bare metal provisioning and how does it differ from VM provisioning?</b></summary>
 
@@ -6644,7 +4075,6 @@ ipmitool sdr type Fan
 Bare metal is harder to automate but essential when workloads need direct hardware access, predictable performance, or strong tenant isolation (e.g. GPU compute for AI/ML).
 
 </details>
-
 <details>
 <summary><b>What is infrastructure as code and how does it apply to server provisioning?</b></summary>
 
@@ -6664,27 +4094,10 @@ Benefits:
 
 </details>
 
+
 ---
 
 ## 🧩 Miscellaneous (API, YAML, Firmware)
-
-<details>
-<summary><b>What happens when you type in a URL in an address bar in a browser?</b></summary>
-
-1. The browser searches for the record of the domain name IP address in the DNS in the following order:
-  * Browser cache
-  * Operating system cache
-  * The DNS server configured on the user's system (can be ISP DNS, public DNS, ...)
-2. If it couldn't find a DNS record locally, a full DNS resolution is started.
-3. It connects to the server using the TCP protocol
-4. The browser sends an HTTP request to the server
-5. The server sends an HTTP response back to the browser
-6. The browser renders the response (e.g. HTML)
-7. The browser then sends subsequent requests as needed to the server to get the embedded links, javascript, images in the HTML and then steps 3 to 5 are repeated.
-
-TODO: add more details!
-
-</details>
 
 
 <details>
@@ -6693,121 +4106,24 @@ TODO: add more details!
 *(No answer provided in source)*
 
 </details>
-
-<details>
-<summary><b>How do you manage secrets and sensitive data in a DevOps environment?</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
 <details>
 <summary><b>Explain the concept of "Environment Drift" and its impact on DevOps environments</b></summary>
 
 *(No answer provided in source)*
 
 </details>
-
-
-### API
-
-<details>
-<summary><b>Explain what is an API</b></summary>
-
-I like this definition from [blog.christianposta.com](https://blog.christianposta.com/microservices/api-gateways-are-going-through-an-identity-crisis):
-
-"An explicitly and purposefully defined interface designed to be invoked over a network that enables software developers to get programmatic access to data and functionality within an organization in a controlled and comfortable way."
-
-</details>
-
-
-<details>
-<summary><b>What is an API gateway?</b></summary>
-
-An API gateway is like the gatekeeper that controls how different parts talk to each other and how information is exchanged between them.
-
-The API gateway provides a single point of entry for all clients, and it can perform several tasks, including routing requests to the appropriate backend service, load balancing, security and authentication, rate limiting, caching, and monitoring.
-
-By using an API gateway, organizations can simplify the management of their APIs, ensure consistent security and governance, and improve the performance and scalability of their backend services. They are also commonly used in microservices architectures, where there are many small, independent services that need to be accessed by different clients.
-
-</details>
-
-<details>
-<summary><b>What are the advantages of using/implementing an API gateway?</b></summary>
-
-Advantages:
-
-  - Simplifies API management: Provides a single entry point for all requests, which simplifies the management and monitoring of multiple APIs.
-  - Improves security: Able to implement security features like authentication, authorization, and encryption to protect the backend services from unauthorized access.
-  - Enhances scalability: Can handle traffic spikes and distribute requests to backend services in a way that maximizes resource utilization and improves overall system performance.
-  - Enables service composition: Can combine different backend services into a single API, providing more granular control over the services that clients can access.
-  - Facilitates integration with external systems:  Can be used to expose internal services to external partners or customers, making it easier to integrate with external systems and enabling new business models.
-
-</details>
-
-<details>
-<summary><b>What is a Payload in API?</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-<details>
-<summary><b>What is Automation? How it's related or different from Orchestration?</b></summary>
-
-Automation is the act of automating tasks to reduce human intervention or interaction in regards to IT technology and systems.<br>
-While automation focuses on a task level, Orchestration is the process of automating processes and/or workflows which consists of multiple tasks that usually across multiple systems.
-
-</details>
-
-
-<details>
-<summary><b>What services an application might have?</b></summary>
-
-* Authorization
-  * Logging
-  * Authentication
-  * Ordering
-  * Front-end
-  * Back-end
-  ...
-
-</details>
-
-<details>
-<summary><b>What is Metadata?</b></summary>
-
-Data about data. Basically, it describes the type of information that an underlying data will hold.
-
-</details>
-
-<details>
-<summary><b>You can use one of the following formats: JSON, YAML, XML. Which one would you use? Why?</b></summary>
-
-I can't answer this for you :)
-
-</details>
-
-### YAML
-
 <details>
 <summary><b>What is YAML?</b></summary>
 
 Data serialization language used by many technologies today like Kubernetes, Ansible, etc.
 
 </details>
-
-### Firmware
-
 <details>
 <summary><b>Explain what is a firmware</b></summary>
 
 [Wikipedia](https://en.wikipedia.org/wiki/Firmware): "In computing, firmware is a specific class of computer software that provides the low-level control for a device's specific hardware. Firmware, such as the BIOS of a personal computer, may contain basic functions of a device, and may provide hardware abstraction services to higher-level software such as operating systems."
 
 </details>
-
-### 🟡 BIOS / UEFI / Firmware
-
 <details>
 <summary><b>What is the difference between BIOS and UEFI?</b></summary>
 
@@ -6824,7 +4140,6 @@ Data serialization language used by many technologies today like Kubernetes, Ans
 In modern data centres, all servers use UEFI. BIOS compatibility mode (CSM) is sometimes enabled for legacy OS support but is being phased out.
 
 </details>
-
 <details>
 <summary><b>What is Secure Boot and what does it do?</b></summary>
 
@@ -6844,7 +4159,6 @@ Why it matters:
 In Linux environments, the kernel and modules must be signed, or Secure Boot must be disabled (common in HPC/GPU clusters that use custom or unsigned kernel modules).
 
 </details>
-
 <details>
 <summary><b>What is POST (Power On Self Test) and what happens if it fails?</b></summary>
 
@@ -6867,7 +4181,6 @@ What happens if POST fails:
 Diagnosing POST failures remotely: connect via SOL (`ipmitool sol activate`) to see POST output without physical access.
 
 </details>
-
 <details>
 <summary><b>What is firmware and how does it differ from software?</b></summary>
 
@@ -6888,7 +4201,6 @@ Common server firmware components:
 - **RAID controller firmware** — manages storage arrays
 
 </details>
-
 <details>
 <summary><b>What risks does a firmware update carry and how do you mitigate them?</b></summary>
 
@@ -6915,7 +4227,6 @@ dmidecode -t bios | grep -E "Version|Release"
 ```
 
 </details>
-
 <details>
 <summary><b>How do you recover a server with corrupted firmware?</b></summary>
 
@@ -6945,11 +4256,13 @@ Firmware corruption (especially BIOS/UEFI or BMC) is one of the most serious har
 
 </details>
 
+
 ---
 
 ## 🚨 SRE & Fleet Operations Scenarios
 
 ### 🔥 Incident Scenarios — Tier 1 (Most Likely)
+
 
 <details>
 <summary><b>Scenario: A server stops responding. SSH is timing out. What do you do?</b></summary>
@@ -6986,7 +4299,6 @@ journalctl -k | grep -i 'oom\|killed\|panic'
 **Framework: Network → Power → OS → Service**
 
 </details>
-
 <details>
 <summary><b>Scenario: A node is showing 100% CPU usage. How do you investigate?</b></summary>
 
@@ -7020,7 +4332,6 @@ systemctl set-property <service>.service CPUQuota=80%
 ```
 
 </details>
-
 <details>
 <summary><b>Scenario: A server is throwing errors and you suspect disk space. How do you approach it?</b></summary>
 
@@ -7056,7 +4367,6 @@ find / -xdev -size +500M -ls 2>/dev/null
 ```
 
 </details>
-
 <details>
 <summary><b>Scenario: A service keeps crashing and you see OOM errors in the logs. What do you do?</b></summary>
 
@@ -7091,7 +4401,6 @@ systemctl set-property <service>.service MemoryMax=4G
 ```
 
 </details>
-
 <details>
 <summary><b>Scenario: How do you determine if an error is hardware, firmware, or network related?</b></summary>
 
@@ -7133,7 +4442,6 @@ Signs: interface errors, packet drops, wrong speed/duplex, high retransmit rates
 - If all three are clean → look at the OS/application layer
 
 </details>
-
 <details>
 <summary><b>Scenario: A server can't reach an external endpoint. How do you troubleshoot?</b></summary>
 
@@ -7169,7 +4477,6 @@ nc -zv <host> <port>
 ```
 
 </details>
-
 <details>
 <summary><b>Scenario: A GPU node is reporting fewer GPUs than expected. What do you check?</b></summary>
 
@@ -7204,9 +4511,6 @@ nvidia-smi --query-gpu=gpu_name,ecc.errors.corrected.volatile.total \
 ```
 
 </details>
-
-### 🟡 Incident Scenarios — Tier 2 (Likely to Come Up)
-
 <details>
 <summary><b>Scenario: A server is extremely slow and you suspect disk I/O. How do you investigate?</b></summary>
 
@@ -7234,7 +4538,6 @@ dmesg | grep -i 'error\|I/O error\|sd[a-z]'
 ```
 
 </details>
-
 <details>
 <summary><b>Scenario: A server is not coming up after a reboot. How do you approach it?</b></summary>
 
@@ -7264,7 +4567,6 @@ ipmitool sel list | tail -20    # BMC event log for hardware alerts
 ```
 
 </details>
-
 <details>
 <summary><b>Scenario: A server's log timestamps are wrong and drifting. What do you check?</b></summary>
 
@@ -7293,7 +4595,6 @@ iptables -L | grep 123
 ```
 
 </details>
-
 <details>
 <summary><b>Scenario: Users report intermittent connectivity to a server. How do you diagnose packet loss?</b></summary>
 
@@ -7322,7 +4623,6 @@ ethtool eth0 | grep -E 'Speed|Duplex'
 ```
 
 </details>
-
 <details>
 <summary><b>Scenario: A process is stuck and won't respond to kill -9. What's happening?</b></summary>
 
@@ -7354,7 +4654,6 @@ mount | grep nfs               # which NFS mounts?
 **You cannot kill a D-state process without resolving the underlying I/O issue. A reboot may be required.**
 
 </details>
-
 <details>
 <summary><b>Scenario: You can't SSH into a server but it's pingable. What do you check?</b></summary>
 
@@ -7391,7 +4690,6 @@ cat ~/.ssh/authorized_keys      # on the server
 ```
 
 </details>
-
 <details>
 <summary><b>Scenario: A service's memory usage keeps growing over days until it crashes. How do you investigate?</b></summary>
 
@@ -7426,9 +4724,6 @@ systemctl set-property <service>.service MemoryMax=4G  # cap it
 ```
 
 </details>
-
-### 🟢 Incident Scenarios — Tier 3 (Good to Know)
-
 <details>
 <summary><b>Scenario: A server is reporting a degraded RAID array. How do you handle it?</b></summary>
 
@@ -7460,7 +4755,6 @@ watch cat /proc/mdstat          # shows % complete and speed
 ```
 
 </details>
-
 <details>
 <summary><b>Scenario: A server has hundreds of zombie processes accumulating. What's causing it?</b></summary>
 
@@ -7492,7 +4786,6 @@ systemctl restart <parent_service>
 ```
 
 </details>
-
 <details>
 <summary><b>Scenario: A service is suddenly throwing SSL errors. What do you check?</b></summary>
 
@@ -7520,7 +4813,6 @@ openssl verify -CAfile /etc/ssl/certs/ca-certificates.crt cert.pem
 ```
 
 </details>
-
 <details>
 <summary><b>Scenario: A server rebooted unexpectedly. How do you find out why?</b></summary>
 
@@ -7554,9 +4846,6 @@ ls /var/crash/                  # crash dump from the panic
 ```
 
 </details>
-
-### 🧠 The Diagnostic Framework — Apply to Every Scenario
-
 <details>
 <summary><b>What is your general framework when debugging any infrastructure problem?</b></summary>
 
@@ -7583,9 +4872,6 @@ Structure your answer to every scenario with this framework:
 - **Correlate timestamps** — check if the incident aligns with any recent changes
 
 </details>
-
-### Fleet Operations & Scale
-
 <details>
 <summary><b>You need to roll out a firmware update to 500 servers. How do you approach it?</b></summary>
 
@@ -7597,7 +4883,6 @@ Structure your answer to every scenario with this framework:
 * Document which servers are on which firmware version.
 
 </details>
-
 <details>
 <summary><b>A new batch of 50 GPU servers has arrived at the data centre. Walk me through how you'd get them ready for customers.</b></summary>
 
@@ -7612,7 +4897,6 @@ Structure your answer to every scenario with this framework:
 * Document and hand over.
 
 </details>
-
 <details>
 <summary><b>You notice one rack in the data centre is running significantly hotter than others. What do you do?</b></summary>
 
@@ -7625,7 +4909,6 @@ Structure your answer to every scenario with this framework:
 * Long term — work with data centre ops team on cooling.
 
 </details>
-
 <details>
 <summary><b>You are asked to decommission 20 servers. What is your process?</b></summary>
 
@@ -7638,7 +4921,6 @@ Structure your answer to every scenario with this framework:
 * Document everything.
 
 </details>
-
 <details>
 <summary><b>You need to validate that a fleet of servers all have the same configuration. How do you do it?</b></summary>
 
@@ -7651,9 +4933,6 @@ Structure your answer to every scenario with this framework:
 * Automate this check to run regularly.
 
 </details>
-
-### Incident & On-Call Scenarios
-
 <details>
 <summary><b>It's 3am and you get paged that 10 nodes in the fleet have gone offline simultaneously. What's your first thought and action?</b></summary>
 
@@ -7666,7 +4945,6 @@ Structure your answer to every scenario with this framework:
 * Communicate status to the team immediately.
 
 </details>
-
 <details>
 <summary><b>A customer reports their GPU workload is running 50% slower than expected. You have no alerts firing. How do you approach it?</b></summary>
 
@@ -7680,7 +4958,6 @@ Structure your answer to every scenario with this framework:
 * Remember: No alerts firing doesn't mean nothing is wrong — it just means there are gaps in monitoring.
 
 </details>
-
 <details>
 <summary><b>You're on call and receive two simultaneous alerts — one for a disk failure and one for high memory usage on a different server. How do you prioritise?</b></summary>
 
@@ -7692,7 +4969,6 @@ Structure your answer to every scenario with this framework:
 * Communicate status on both and document the timeline.
 
 </details>
-
 <details>
 <summary><b>A server you just provisioned passes all automated checks but the customer says something feels wrong with performance. How do you handle it?</b></summary>
 
@@ -7705,7 +4981,6 @@ Structure your answer to every scenario with this framework:
 * Compare against a known good server.
 
 </details>
-
 <details>
 <summary><b>Your automation script for provisioning has been running fine for months and suddenly starts failing on 30% of servers. What do you think is happening?</b></summary>
 
@@ -7718,9 +4993,6 @@ Structure your answer to every scenario with this framework:
 * Don't fix blindly — understand *why* first.
 
 </details>
-
-### Engineering Judgement
-
 <details>
 <summary><b>You discover that a manual workaround has been applied to 200 servers that isn't in your configuration management. What do you do?</b></summary>
 
@@ -7732,7 +5004,6 @@ Structure your answer to every scenario with this framework:
 * Prevent recurrence by establishing a process for emergency changes.
 
 </details>
-
 <details>
 <summary><b>You're asked to cut provisioning time from 2 hours to 30 minutes. How do you approach it?</b></summary>
 
@@ -7744,7 +5015,6 @@ Structure your answer to every scenario with this framework:
 * Automate manual steps and measure improvement at each stage.
 
 </details>
-
 <details>
 <summary><b>A junior engineer asks you to review their provisioning script. What do you look for?</b></summary>
 
@@ -7757,7 +5027,6 @@ Structure your answer to every scenario with this framework:
 * Is it readable and documented?
 
 </details>
-
 <details>
 <summary><b>You find a server in the fleet that nobody seems to know about. It's not in the CMDB or monitoring. What do you do?</b></summary>
 
@@ -7769,7 +5038,6 @@ Structure your answer to every scenario with this framework:
 * Once identified — add it to the CMDB and monitoring.
 
 </details>
-
 <details>
 <summary><b>You're building an automated health check for the fleet. What metrics and checks would you include?</b></summary>
 
@@ -7782,9 +5050,6 @@ Structure your answer to every scenario with this framework:
 * **Alert thresholds:** Set dynamic or tiered thresholds, not just binary up/down.
 
 </details>
-
-### Process & Documentation
-
 <details>
 <summary><b>You solve a difficult hardware issue nobody has seen before. What do you do after fixing it?</b></summary>
 
@@ -7795,7 +5060,6 @@ Structure your answer to every scenario with this framework:
 * Add monitoring if none existed to catch it automatically next time.
 
 </details>
-
 <details>
 <summary><b>You need to make a change to a production server that carries some risk. How do you approach it?</b></summary>
 
@@ -7807,7 +5071,6 @@ Structure your answer to every scenario with this framework:
 * Communicate before, during, and after.
 
 </details>
-
 <details>
 <summary><b>Your team is constantly firefighting the same recurring issues. How do you break the cycle?</b></summary>
 
@@ -7819,7 +5082,6 @@ Structure your answer to every scenario with this framework:
 * Track the reduction in repeat incidents to ensure your fixes are working.
 
 </details>
-
 <details>
 <summary><b>You're handing over an on-call shift to a colleague. What do you make sure they know?</b></summary>
 
@@ -7832,7 +5094,6 @@ Structure your answer to every scenario with this framework:
 * Your availability if they desperately need backup.
 
 </details>
-
 <details>
 <summary><b>You are getting the first batch of a brand new GPU architecture that hasn't been fully tested yet. You're responsible for validation. How do you approach it?</b></summary>
 
@@ -7847,9 +5108,11 @@ Structure your answer to every scenario with this framework:
 
 </details>
 
+
 ---
 
 ## 💬 Questions To Ask Interviewers
+
 
 <details>
 <summary><b>What do you like about working here?</b></summary>
@@ -7857,7 +5120,6 @@ Structure your answer to every scenario with this framework:
 *(No answer provided in source)*
 
 </details>
-
 <details>
 <summary><b>How does the company promote personal growth?</b></summary>
 
@@ -7865,52 +5127,4 @@ Structure your answer to every scenario with this framework:
 
 </details>
 
-<details>
-<summary><b>What is the current level of technical debt you are dealing with?</b></summary>
-
-Be careful when asking this question - all companies, regardless of size, have some level of tech debt.
-Phrase the question in the light that all companies have the deal with this, but you want to see the current
-pain points they are dealing with <br>
-
-This is a great way to figure how managers deal with unplanned work, and how good they are at
-setting expectations with projects.
-
-</details>
-
-<details>
-<summary><b>Why I should NOT join you? (or 'what you don't like about working here?')?</b></summary>
-
-*(No answer provided in source)*
-
-</details>
-
-<details>
-<summary><b>What was your favorite project you've worked on?</b></summary>
-
-This can give you insights in some of the cool projects a company is working on, and if
-you would enjoy working on projects like these. This is also a good way to see if
-the managers are allowing employees to learn and grow with projects outside of the
-normal work you'd do.
-
-</details>
-
-<details>
-<summary><b>If you could change one thing about your day to day, what would it be?</b></summary>
-
-Similar to the tech debt question, this helps you identify any pain points with the company.
-Additionally, it can be a great way to show how you'd be an asset to the team.<br>
-
-For Example, if they mention they have problem X, and you've solved that in the past,
-you can show how you'd be able to mitigate that problem.
-
-</details>
-
-<details>
-<summary><b>Let's say that we agree and you hire me to this position, after X months, what do you expect that I have achieved?</b></summary>
-
-Not only this will tell you what is expected from you, it will also provide big hint on the type of work you are going to do in the first months of your job.
-
-</details>
-
 ---
-
