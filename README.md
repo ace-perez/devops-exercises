@@ -3574,6 +3574,241 @@ Maintenance and monitoring involve regularly checking the status of virtual serv
 
 ---
 
+### 🔥 Linux Internals — Production Deep Dive
+
+<details>
+<summary><b>Walk me through what happens when a Linux system boots.</b></summary>
+
+1. **Power on / firmware** — BIOS/UEFI runs POST, initialises hardware, reads the boot device
+2. **Bootloader (GRUB)** — loads from disk MBR or EFI partition, presents boot menu, loads the kernel and initramfs into memory
+3. **Kernel initialisation** — kernel decompresses itself, initialises CPU, memory management, device drivers; mounts the initramfs (temporary root filesystem)
+4. **initramfs** — a minimal in-memory filesystem that contains the tools and drivers needed to mount the real root filesystem (handles encrypted disks, LVM, RAID)
+5. **Root filesystem mount** — kernel hands off to the init process after mounting the real `/`
+6. **systemd (PID 1)** — systemd starts, reads unit files, brings up targets in dependency order: `sysinit.target` → `basic.target` → `multi-user.target` → `graphical.target`
+7. **Services start** — networking, SSH, monitoring agents, application services all start in parallel as defined by systemd
+8. **Login prompt** — system is ready
+
+Key commands for boot investigation:
+```bash
+systemd-analyze                  # total boot time
+systemd-analyze blame            # time each unit took
+journalctl -b                    # all logs from current boot
+journalctl -b -1                 # logs from previous boot
+dmesg | head -50                 # kernel messages from boot
+```
+
+</details>
+
+<details>
+<summary><b>What is the difference between a process and a thread?</b></summary>
+
+| Feature | Process | Thread |
+|---|---|---|
+| Memory space | Own independent address space | Shares parent process memory |
+| Creation cost | Higher (full memory copy) | Lower (just a new stack) |
+| Communication | IPC (pipes, sockets, shared memory) | Direct (shared variables) |
+| Fault isolation | Crash of one doesn't affect others | Thread crash can kill whole process |
+| Context switch | More expensive | Less expensive |
+
+In Linux, **both processes and threads are implemented as tasks** using `clone()`. The difference is which resources are shared — threads share memory space, file descriptors, and signal handlers with their parent.
+
+```bash
+# View threads of a process
+ps -eLf | grep nginx
+
+# Or
+ls /proc/<pid>/task/    # each directory = one thread
+```
+
+</details>
+
+<details>
+<summary><b>What are the different states a process can be in?</b></summary>
+
+| State | Symbol | Description |
+|---|---|---|
+| Running | R | Currently executing on CPU or runnable |
+| Sleeping (interruptible) | S | Waiting for event, can be woken by signal |
+| Sleeping (uninterruptible) | D | Waiting on I/O — **cannot be killed** |
+| Zombie | Z | Finished, waiting for parent to call wait() |
+| Stopped | T | Paused by SIGSTOP or debugger |
+| Dead | X | Being removed (rarely seen) |
+
+```bash
+# Check process states
+ps aux | awk '{print $8, $2, $11}' | sort | head -20
+
+# Find D-state (uninterruptible) processes — symptom of hung I/O
+ps aux | awk '$8 == "D" {print}'
+```
+
+**D-state is the most dangerous** — the process cannot be killed until the I/O it's waiting on completes or fails. A server full of D-state processes usually means storage is hung.
+
+</details>
+
+<details>
+<summary><b>What is a zombie process and how do you handle it?</b></summary>
+
+A zombie process is a process that has finished executing but whose exit status has not yet been collected by its parent process. The process entry remains in the process table until the parent calls `wait()`.
+
+Key points:
+- Zombies are already dead — they use no CPU or memory
+- They only consume a process table entry (PID)
+- You **cannot kill a zombie** with `kill -9` — it's already dead
+- Large numbers of zombies indicate a bug in the parent process
+
+How to handle:
+```bash
+# Find zombies
+ps aux | grep ' Z '
+
+# Find the parent of a zombie
+ps -o ppid= -p <zombie_pid>
+
+# Fix: restart or kill the PARENT process
+# If the parent is PID 1 (systemd absorbed it), a reboot may be needed
+kill -SIGCHLD <parent_pid>   # signal parent to reap children
+```
+
+</details>
+
+<details>
+<summary><b>How does the Linux kernel handle memory management?</b></summary>
+
+Linux memory management has several layers:
+
+**Physical memory:**
+- RAM is divided into page frames (typically 4KB)
+- The kernel maintains a page frame database tracking free/used pages
+
+**Virtual memory:**
+- Each process gets its own virtual address space (up to 128TB on x86-64)
+- The CPU's MMU translates virtual addresses to physical addresses via page tables
+- Allows processes to have more address space than physical RAM
+
+**Key mechanisms:**
+- **Page cache**: recently read disk data cached in RAM — most "free" memory is actually page cache and can be reclaimed
+- **Swap**: pages not recently used are moved to disk to free RAM
+- **OOM killer**: when memory is truly exhausted, the kernel kills processes to recover RAM
+- **Huge pages**: 2MB or 1GB pages to reduce TLB pressure for large-memory workloads
+
+```bash
+free -h                   # RAM and swap usage
+cat /proc/meminfo         # detailed memory breakdown
+vmstat 1 5                # memory pressure over time
+slabtop                   # kernel slab allocator usage
+```
+
+</details>
+
+<details>
+<summary><b>What is a kernel panic and what causes it?</b></summary>
+
+A kernel panic is the Linux equivalent of a Windows "Blue Screen of Death" — a fatal, unrecoverable error where the kernel detects an inconsistency it cannot recover from and halts the system.
+
+Common causes:
+- **Hardware failure** — bad RAM (ECC correctable errors becoming uncorrectable), CPU fault
+- **Kernel bug** — null pointer dereference, use-after-free in kernel code or a driver
+- **Filesystem corruption** — mounting a corrupt root filesystem
+- **Out of memory with no swap** — in rare configurations
+- **Bad kernel module** — loading a buggy driver
+
+How to investigate after recovery:
+```bash
+# Logs from the previous boot (if journald persists across reboots)
+journalctl -b -1 -p err
+
+# Kernel crash dump (if kdump is configured)
+ls /var/crash/
+
+# BMC system event log — hardware-triggered panics show up here
+ipmitool -I lanplus -H <bmc> -U admin -P pass sel list
+
+# dmesg from previous boot
+journalctl -b -1 | grep -i "kernel BUG\|Oops\|panic\|Call Trace"
+```
+
+Setting up kdump for crash analysis is strongly recommended on production servers.
+
+</details>
+
+<details>
+<summary><b>What is the OOM killer and when does it trigger?</b></summary>
+
+The OOM (Out Of Memory) killer is a Linux kernel mechanism that kills processes when the system runs out of available memory and swap space to prevent a complete system freeze.
+
+How it works:
+1. A process requests memory and the kernel cannot satisfy it
+2. The kernel attempts to reclaim memory (drop page cache, swap out pages)
+3. If that fails and no memory is available, the OOM killer is invoked
+4. The kernel calculates an **OOM score** for each process (higher score = more likely to be killed)
+5. The process with the highest score gets killed, freeing its memory
+
+OOM score factors:
+- Memory usage (main factor)
+- How long the process has been running
+- Priority (nice value)
+- Whether it's critical (PID 1, kernel threads are protected)
+
+```bash
+# Check OOM events
+journalctl -k | grep -i "oom\|killed process\|out of memory"
+
+# View a process's OOM score
+cat /proc/<pid>/oom_score
+
+# Protect a critical process from OOM killer
+echo -1000 > /proc/<pid>/oom_score_adj
+
+# Set MemoryMax to prevent a service from causing OOM in the first place
+systemctl set-property myservice.service MemoryMax=2G
+```
+
+</details>
+
+<details>
+<summary><b>How do you troubleshoot a service that won't start?</b></summary>
+
+Systematic approach:
+
+```bash
+# Step 1 — check status and last exit code
+systemctl status myservice
+# Look at: Active state, exit code, last log lines
+
+# Step 2 — check recent logs
+journalctl -u myservice -n 100 --no-pager
+
+# Step 3 — follow logs in real time while attempting start
+journalctl -u myservice -f &
+systemctl start myservice
+
+# Step 4 — check for config syntax errors (most services support this)
+nginx -t
+sshd -T
+apachectl configtest
+
+# Step 5 — check port conflicts
+ss -tulnp | grep <expected_port>
+# Is another process already using the port?
+
+# Step 6 — check file/directory permissions
+# Service may be trying to read a file it doesn't have access to
+# Look for "Permission denied" in the logs
+
+# Step 7 — check dependencies
+systemctl list-dependencies myservice
+# Is a required dependency failed or missing?
+
+# Step 8 — run the binary directly as the service user
+sudo -u serviceuser /usr/bin/myservice --config /etc/myservice.conf
+# This often reveals errors that systemd swallows
+```
+
+</details>
+
+---
+
 ## 🖥️ Operating Systems
 
 ### Operating System - Self Assessment
@@ -7229,9 +7464,673 @@ dmidecode -t bios | grep -E "Version|Release"
 
 </details>
 
+<details>
+<summary><b>How do you recover a server with corrupted firmware?</b></summary>
+
+Firmware corruption (especially BIOS/UEFI or BMC) is one of the most serious hardware failures. Recovery options depend on the device and vendor:
+
+**BMC firmware corruption:**
+- Most enterprise BMCs have a **dual-flash** design (two firmware images) — the BMC boots from the backup image automatically if the primary is corrupt
+- Access the backup image via the vendor's recovery interface (e.g., iDRAC, iLO recovery port)
+- Reflash via the vendor's out-of-band recovery tool
+
+**BIOS/UEFI corruption:**
+- Many server motherboards have a **BIOS recovery jumper** — short it, power on with a USB stick containing the recovery firmware image
+- Some vendors provide a **crisis recovery mode** (e.g., hold specific keys during POST)
+- BIOS dual-flash: some enterprise boards keep a backup BIOS chip and switch automatically
+
+**General recovery steps:**
+1. Access via BMC/IPMI — check if the BMC itself is still responding even if BIOS is corrupt
+2. Consult vendor documentation for the specific recovery procedure
+3. Prepare a bootable USB or PXE image with the recovery firmware
+4. If fully bricked — the motherboard may need physical replacement or return to vendor
+
+**Prevention:**
+- Never update firmware without a verified backup
+- Use dual-flash hardware where available
+- Maintain OOB access (BMC) throughout the update
+- Test firmware updates on a lab unit before fleet rollout
+
+</details>
+
 ---
 
 ## 🚨 SRE & Fleet Operations Scenarios
+
+### 🔥 Incident Scenarios — Tier 1 (Most Likely)
+
+<details>
+<summary><b>Scenario: A server stops responding. SSH is timing out. What do you do?</b></summary>
+
+**Structured investigation:**
+
+```bash
+# Step 1 — can you reach it at all?
+ping <server-ip>
+
+# Step 2 — if pingable, is SSH running?
+ssh -v <server>   # verbose — where does it hang?
+
+# Step 3 — use BMC/IPMI to access out-of-band
+ipmitool -I lanplus -H <bmc-ip> -U admin -P password chassis power status
+# Is the server even on?
+
+# Step 4 — access the console via SOL
+ipmitool -I lanplus -H <bmc-ip> -U admin -P password sol activate
+# Can you see a login prompt or kernel messages?
+
+# Step 5 — if OS is alive but SSH is dead, check:
+# Is sshd running? (via SOL console)
+systemctl status sshd
+ss -tulnp | grep 22     # is sshd listening?
+iptables -L             # firewall blocking port 22?
+
+# Step 6 — after recovery, find root cause
+journalctl -b -1        # what happened before reboot?
+dmesg | tail -50        # kernel messages
+journalctl -k | grep -i 'oom\|killed\|panic'
+```
+
+**Framework: Network → Power → OS → Service**
+
+</details>
+
+<details>
+<summary><b>Scenario: A node is showing 100% CPU usage. How do you investigate?</b></summary>
+
+```bash
+# Step 1 — identify the process
+top                              # which PID is consuming?
+ps aux --sort=-%cpu | head -10   # sorted by CPU
+
+# Step 2 — investigate the process
+pid=<offending_pid>
+journalctl -u $(systemctl status $pid 2>/dev/null | grep -oP '(?<=\().*(?=\.service)') -n 50
+ls -la /proc/$pid/exe            # what binary is it?
+cat /proc/$pid/cmdline | tr '\0' ' '  # full command line
+
+# Step 3 — what is it doing?
+strace -p $pid -c -f             # system calls summary (run briefly)
+lsof -p $pid                     # what files/sockets does it have open?
+
+# Step 4 — is it legitimate load or runaway?
+# Check load average trend
+uptime
+sar -u 1 5    # CPU history
+
+# Step 5 — remediation
+# Runaway: kill and restart the service
+kill -9 $pid
+systemctl restart <service>
+
+# Set CPU limit to prevent recurrence
+systemctl set-property <service>.service CPUQuota=80%
+```
+
+</details>
+
+<details>
+<summary><b>Scenario: A server is throwing errors and you suspect disk space. How do you approach it?</b></summary>
+
+```bash
+# Step 1 — confirm which partition is full
+df -h
+# Look for 100% Use%
+
+# Step 2 — find what's consuming space
+du -sh /* 2>/dev/null | sort -rh | head -10
+du -sh /var/* | sort -rh | head -10
+
+# Common culprits:
+# /var/log    — logs not rotating
+# /var/crash  — crash dumps
+# /tmp        — temp files not cleaned
+# /home       — user data
+
+# Step 3 — quick wins
+journalctl --vacuum-size=500M           # trim systemd journal
+find /var/log -name '*.gz' -mtime +30 -delete
+find /tmp -mtime +7 -delete
+rm -f /var/crash/*                      # if crash dumps are safe to remove
+
+# Step 4 — find large files
+find / -xdev -size +500M -ls 2>/dev/null
+
+# Step 5 — long term prevention
+# Add disk space alert to monitoring (Prometheus node_exporter)
+# Configure logrotate for all services
+# Set journald storage limits in /etc/systemd/journald.conf
+#   SystemMaxUse=2G
+```
+
+</details>
+
+<details>
+<summary><b>Scenario: A service keeps crashing and you see OOM errors in the logs. What do you do?</b></summary>
+
+```bash
+# Step 1 — confirm OOM killer fired
+journalctl -k | grep -i 'oom\|killed process\|out of memory'
+# Look for: "Out of memory: Kill process <pid> (<name>) score <n> or sacrifice child"
+
+# Step 2 — current memory state
+free -h
+vmstat 1 5      # is swap being used heavily?
+cat /proc/meminfo | grep -E 'MemAvailable|Cached|SwapFree'
+
+# Step 3 — what was killed?
+# The OOM killer logs the victim — check which service was killed
+# and whether it was the right one or a victim of another service's leak
+
+# Step 4 — identify the leaking process
+ps aux --sort=-%mem | head -10
+# Watch memory growth:
+watch -n 5 'ps aux --sort=-%mem | head -5'
+
+# Step 5 — short-term
+systemctl restart <leaking_service>
+
+# Step 6 — medium-term: add memory cap
+systemctl set-property <service>.service MemoryMax=4G
+# This causes a clean OOM kill of just that service, not a random victim
+
+# Step 7 — long-term: investigate the leak
+# Use valgrind, application APM tools, or enable memory profiling
+```
+
+</details>
+
+<details>
+<summary><b>Scenario: How do you determine if an error is hardware, firmware, or network related?</b></summary>
+
+This is a diagnostic framework, not a single command. Work through each layer:
+
+**Hardware indicators:**
+```bash
+dmesg | grep -iE 'error|fail|hardware|mce|edac|corrected'  # hardware errors in kernel ring buffer
+ipmitool sel list                                           # BMC event log — physical component alerts
+smartctl -a /dev/sda                                        # disk health
+nvidia-smi                                                  # GPU errors
+cat /proc/mcelog                                            # machine check exceptions (CPU/memory)
+```
+Signs: ECC memory errors, disk SMART failures, temperature alerts, physical component alerts in SEL
+
+**Firmware indicators:**
+```bash
+dmidecode -t bios                    # BIOS version
+ipmitool fru print                   # component firmware versions
+dmesg | grep -i 'firmware\|microcode' # firmware loading errors
+```
+Signs: unexpected behaviour after a firmware update, known firmware bugs matching your symptoms, driver/firmware version mismatch
+
+**Network indicators:**
+```bash
+ping <ip>                 # basic reachability
+ip -s link show eth0      # interface error/drop counters
+ethtool eth0              # link speed, duplex, negotiation
+ss -s                     # socket stats — drops, retransmits
+tcpdump -i eth0 -n        # capture traffic
+mtr <destination>         # traceroute with loss stats per hop
+```
+Signs: interface errors, packet drops, wrong speed/duplex, high retransmit rates, loss at a specific hop
+
+**Decision framework:**
+- If **dmesg + SEL** show hardware errors → hardware
+- If symptoms appeared **immediately after a firmware update** → firmware
+- If **ping fails** or **interface shows errors** → network
+- If all three are clean → look at the OS/application layer
+
+</details>
+
+<details>
+<summary><b>Scenario: A server can't reach an external endpoint. How do you troubleshoot?</b></summary>
+
+```bash
+# Work layer by layer — Physical → Network → DNS → Application
+
+# Layer 1 — is the interface up?
+ip a                             # check interface state and IP
+ip link show eth0                # is it UP?
+
+# Layer 2/3 — can you reach the gateway?
+ip route                         # what is the default gateway?
+ping <gateway-ip>                # can you reach it?
+
+# Layer 3 — can you reach by IP?
+ping 8.8.8.8                     # bypass DNS
+
+# Layer 7 — DNS working?
+nslookup <hostname>              # DNS lookup
+dig <hostname>                   # detailed DNS query
+cat /etc/resolv.conf             # what DNS servers are configured?
+
+# Trace the path
+traceroute <destination>
+mtr <destination>                # continuous with loss per hop
+
+# Check firewall
+iptables -L -n | grep -v ACCEPT  # any DROP rules?
+
+# Check if the destination port is reachable
+telnnet <host> <port>            # or:
+nc -zv <host> <port>
+```
+
+</details>
+
+<details>
+<summary><b>Scenario: A GPU node is reporting fewer GPUs than expected. What do you check?</b></summary>
+
+```bash
+# Step 1 — how many GPUs does the OS see?
+nvidia-smi                       # how many listed?
+
+# Step 2 — how many does the PCI bus see?
+lspci | grep -i nvidia           # each line = one GPU at PCI level
+
+# Compare: if PCI sees 8 but nvidia-smi shows 7:
+# → Driver issue with one GPU
+# If PCI sees 7 but 8 are installed:
+# → Hardware/slot issue — the GPU is not being detected at all
+
+# Step 3 — check kernel messages for GPU errors
+dmesg | grep -iE 'nvidia|nvrm|gpu|pcie'
+
+# Step 4 — check BMC for hardware alerts
+ipmitool sel list | tail -20
+
+# Step 5 — check PCIe slot health
+# A GPU not appearing in lspci = PCIe slot power or physical seating issue
+# Check:
+# - Is the GPU fully seated in the slot?
+# - Is the PCIe power connector attached?
+# - Is there a PCIe error in the BMC log?
+
+# Step 6 — check GPU memory errors on visible GPUs
+nvidia-smi --query-gpu=gpu_name,ecc.errors.corrected.volatile.total \
+  --format=csv
+```
+
+</details>
+
+### 🟡 Incident Scenarios — Tier 2 (Likely to Come Up)
+
+<details>
+<summary><b>Scenario: A server is extremely slow and you suspect disk I/O. How do you investigate?</b></summary>
+
+```bash
+# Step 1 — confirm I/O wait is high
+top                     # look at %wa (iowait) in the CPU line
+vmstat 1 5              # bi/bo = blocks in/out; wa = iowait
+
+# Step 2 — which disk is the bottleneck?
+iostat -x 1 5           # %util shows how busy each disk is
+                        # await = average I/O wait time (ms)
+                        # if await > 50ms for SSD or > 200ms for HDD — problem
+
+# Step 3 — which process is hammering disk?
+iotop                   # live view of per-process disk I/O
+iotop -ao               # accumulated I/O (easier to read)
+
+# Step 4 — is the disk healthy?
+smartctl -a /dev/sda    # SMART data — failing disk?
+dmesg | grep -i 'error\|I/O error\|sd[a-z]'
+
+# Step 5 — distinguish heavy legitimate load vs failing disk
+# Heavy load: iostat shows high throughput, SMART is clean
+# Failing disk: I/O errors in dmesg, high await with low throughput
+```
+
+</details>
+
+<details>
+<summary><b>Scenario: A server is not coming up after a reboot. How do you approach it?</b></summary>
+
+```bash
+# Step 1 — access via BMC before touching anything else
+ipmitool -I lanplus -H <bmc-ip> -U admin -P password chassis power status
+ipmitool -I lanplus -H <bmc-ip> -U admin -P password sol activate
+# Connect to the serial console — you can see POST output and GRUB
+
+# Step 2 — POST errors?
+# Watch the console for beep codes, POST error messages (e.g., "memory error", "no bootable device")
+ipmitool sel list | tail -20    # BMC event log for hardware alerts
+
+# Step 3 — GRUB issues?
+# If stuck at GRUB — wrong default kernel, or initramfs corruption
+# At GRUB prompt: press 'e' to edit the boot entry, try an older kernel
+
+# Step 4 — filesystem corruption?
+# If you see "filesystem check failed" or "fsck" prompts:
+# Boot to rescue mode and run fsck manually
+# Check /etc/fstab — a bad UUID or wrong mount option can hang boot
+
+# Step 5 — did a config change cause it?
+# Recall what changed before the reboot
+# A bad /etc/fstab entry (especially nfs without _netdev) will hang boot
+# A failed service with FailureAction=poweroff can also cause this
+```
+
+</details>
+
+<details>
+<summary><b>Scenario: A server's log timestamps are wrong and drifting. What do you check?</b></summary>
+
+```bash
+# Step 1 — check current time sync status
+timedatectl status
+# Look for: "NTP service: active" and "System clock synchronized: yes"
+
+# Step 2 — check chrony/NTP sync details
+chronyc tracking         # offset from true time, root delay
+chronyc sources -v       # which NTP servers, how far off
+
+# Step 3 — is the NTP service running?
+systemctl status chronyd  # or ntpd/systemd-timesyncd
+
+# Step 4 — is NTP port blocked by firewall?
+# NTP uses UDP port 123
+ss -ulnp | grep 123
+iptables -L | grep 123
+
+# Why this matters:
+# - Log correlation across servers becomes impossible if clocks drift
+# - TLS certificates fail if time is too far off
+# - Distributed systems (Kafka, etcd, distributed databases) rely on clock sync
+# - Even small drift (>100ms) can cause ordering issues in distributed systems
+```
+
+</details>
+
+<details>
+<summary><b>Scenario: Users report intermittent connectivity to a server. How do you diagnose packet loss?</b></summary>
+
+```bash
+# Step 1 — measure loss over time
+ping -c 100 <server-ip>        # look for % packet loss
+
+# Step 2 — find where loss is occurring
+mtr <server-ip>                # traceroute with per-hop loss percentages
+# Loss at a specific hop = issue at or upstream of that router/switch
+
+# Step 3 — check NIC error counters
+ip -s link show eth0           # RX/TX errors, drops
+ethtool eth0                   # speed, duplex, link detected
+
+# Step 4 — capture packets
+tcpdump -i eth0 -nn            # are packets arriving at the NIC?
+
+# Step 5 — check for duplex mismatch (very common cause of intermittent loss)
+ethtool eth0 | grep -E 'Speed|Duplex'
+# Half-duplex on one side, full on the other = intermittent collisions and loss
+
+# Step 6 — physical layer
+# Is the cable damaged? Is the switch port showing errors?
+# Request a switch port error check from your network team
+```
+
+</details>
+
+<details>
+<summary><b>Scenario: A process is stuck and won't respond to kill -9. What's happening?</b></summary>
+
+This is a D-state (uninterruptible sleep) process. It's waiting on I/O and **cannot be killed** until that I/O completes or the kernel times out.
+
+```bash
+# Confirm D state
+ps aux | awk '$8 == "D" {print}'
+# or:
+ps -eo pid,stat,comm | grep ' D'
+
+# Find what it's waiting on
+cat /proc/<pid>/wchan           # kernel function it's blocked in
+# common values:
+# "nfs_wait" or "rpc_wait" = NFS hang
+# "jbd2" = ext4 journal
+# "io_schedule" = block device I/O
+
+# Check for storage errors
+dmesg | tail -50               # disk timeouts, SCSI errors
+cat /proc/mdstat               # RAID issues?
+
+# For NFS hangs:
+mount | grep nfs               # which NFS mounts?
+# If NFS server is down, all processes waiting on it go D-state
+# Fix: unmount with "umount -f -l /mountpoint"
+```
+
+**You cannot kill a D-state process without resolving the underlying I/O issue. A reboot may be required.**
+
+</details>
+
+<details>
+<summary><b>Scenario: You can't SSH into a server but it's pingable. What do you check?</b></summary>
+
+```bash
+# Step 1 — verbose SSH for clues
+ssh -v <server>
+# Where does it hang? key exchange? authentication? 
+
+# Step 2 — check via BMC console (out-of-band)
+ipmitool -I lanplus -H <bmc-ip> -U admin -P password sol activate
+
+# Step 3 — on the server (via console):
+systemctl status sshd          # is sshd running?
+ss -tulnp | grep :22           # is sshd listening on port 22?
+
+# Step 4 — firewall blocking SSH?
+iptables -L -n | grep 22
+# or:
+nft list ruleset | grep 22
+
+# Step 5 — host-based access controls
+cat /etc/hosts.deny             # is your IP blocked?
+cat /etc/hosts.allow
+
+# Step 6 — check SSH logs for clues
+journalctl -u sshd -n 50
+cat /var/log/auth.log | tail -50
+
+# Step 7 — authentication issues?
+# Are you using the right key?
+ssh -i ~/.ssh/correct_key user@server
+# Check server's AuthorizedKeys:
+cat ~/.ssh/authorized_keys      # on the server
+```
+
+</details>
+
+<details>
+<summary><b>Scenario: A service's memory usage keeps growing over days until it crashes. How do you investigate?</b></summary>
+
+This is a memory leak — the service is allocating memory it never frees.
+
+```bash
+# Step 1 — confirm the growth pattern
+# Track memory over time (add to cron or monitoring)
+ps aux | grep <service> | awk '{print $6}'  # RSS in KB
+
+# Step 2 — current memory map of the process
+pmap -x <pid>                  # full memory map with sizes
+# Look for anonymous regions (heap) that are unusually large
+
+# Step 3 — check /proc for detail
+cat /proc/<pid>/status | grep -E 'VmRSS|VmHeap|VmSwap'
+cat /proc/<pid>/smaps_rollup   # aggregated memory breakdown
+
+# Step 4 — look for file descriptor leaks (another common leak type)
+ls /proc/<pid>/fd | wc -l      # how many open file descriptors?
+lsof -p <pid> | wc -l
+
+# Step 5 — immediate mitigation
+systemctl set-property <service>.service MemoryMax=4G  # cap it
+# Or add Restart=always + RestartSec=3600 to restart daily
+
+# Step 6 — root cause analysis
+# C/C++ services: run with valgrind in staging
+# Python: use tracemalloc or memory_profiler
+# Java: heap dump analysis
+# Report to the application team with evidence (growth graphs from Prometheus)
+```
+
+</details>
+
+### 🟢 Incident Scenarios — Tier 3 (Good to Know)
+
+<details>
+<summary><b>Scenario: A server is reporting a degraded RAID array. How do you handle it?</b></summary>
+
+```bash
+# Step 1 — check RAID status
+cat /proc/mdstat                # overview of all arrays
+# Look for "[UU_]" — underscore = missing/failed disk
+
+# Step 2 — detail on the specific array
+mdadm --detail /dev/md0
+# Shows: active disks, failed disks, rebuild status
+
+# Step 3 — identify the failed disk
+# It will show as "removed" or "faulty"
+# Note: degraded means one disk failed — data is INTACT with RAID 1/5/10
+# Do NOT panic. Replace the disk before a second failure
+
+# Step 4 — check remaining disks' health
+for disk in /dev/sd*; do
+    echo "$disk:"; smartctl -H $disk; done
+# A second failing disk is the real emergency
+
+# Step 5 — after replacing the failed disk, add it to the array
+mdadm --add /dev/md0 /dev/sdc   # add the new disk
+cat /proc/mdstat                # watch rebuild progress (can take hours)
+
+# Step 6 — monitor rebuild
+watch cat /proc/mdstat          # shows % complete and speed
+```
+
+</details>
+
+<details>
+<summary><b>Scenario: A server has hundreds of zombie processes accumulating. What's causing it?</b></summary>
+
+```bash
+# Step 1 — confirm zombies
+ps aux | awk '$8 == "Z" {print}'
+# or:
+ps -eo pid,ppid,stat,comm | grep ' Z'
+
+# Step 2 — find the parent process
+# Zombies can't be killed — they're already dead
+# The fix is in the PARENT, which isn't calling wait()
+ps -o pid,ppid,comm -p <zombie_pid>
+# Get the PPID (parent PID)
+
+# Step 3 — identify and fix the parent
+# Option 1: send SIGCHLD to wake the parent up
+kill -SIGCHLD <parent_pid>
+
+# Option 2: restart the parent service
+systemctl restart <parent_service>
+
+# Zombies are a code bug in the parent — it's not calling wait() on its children
+# They consume no CPU or memory, but they do occupy PID table entries
+# If PID table fills up, no new processes can be created — this IS a crisis
+
+# Root cause: faulty process management in the application
+# Report to the development team — this is a bug, not an ops problem
+```
+
+</details>
+
+<details>
+<summary><b>Scenario: A service is suddenly throwing SSL errors. What do you check?</b></summary>
+
+```bash
+# Step 1 — check if the certificate has expired
+openssl s_client -connect <host>:<port> 2>/dev/null | openssl x509 -noout -dates
+# Look at notAfter — has it passed?
+
+# Step 2 — check a cert file directly
+openssl x509 -noout -dates -in /path/to/cert.pem
+
+# Step 3 — common causes:
+# A) Certificate expired — renew immediately
+# B) Wrong hostname (CN/SAN mismatch)
+openssl x509 -noout -text -in cert.pem | grep -A2 "Subject Alternative Name"
+
+# C) Self-signed cert not in trust store
+# D) Certificate chain incomplete (intermediate cert missing)
+openssl verify -CAfile /etc/ssl/certs/ca-certificates.crt cert.pem
+
+# Step 4 — check expiry on all certs in the fleet
+# Use Prometheus blackbox_exporter — it monitors TLS expiry automatically
+# Set alert: probe_ssl_earliest_cert_expiry - time() < 86400 * 30
+#             (alert if expiry < 30 days away)
+```
+
+</details>
+
+<details>
+<summary><b>Scenario: A server rebooted unexpectedly. How do you find out why?</b></summary>
+
+```bash
+# Step 1 — when did it reboot?
+last reboot | head -5           # recent reboots with timestamp
+
+# Step 2 — what did the kernel say before the reboot?
+journalctl -b -1                # all logs from previous boot
+journalctl -b -1 | tail -100    # last 100 lines before reboot
+
+# Step 3 — was it a kernel panic?
+journalctl -b -1 | grep -i 'kernel BUG\|Oops\|panic\|Call Trace'
+
+# Step 4 — was it OOM?
+journalctl -b -1 -k | grep -i 'oom\|killed process'
+
+# Step 5 — was it hardware?
+ipmitool sel list               # BMC event log — power events, hardware alerts
+# Look for: "System Event", "Power Off", "Watchdog"
+
+# Step 6 — was it a watchdog reset?
+# Watchdog timers reset the server if the OS becomes unresponsive
+dmesg | grep -i watchdog
+journalctl -b -1 | grep -i watchdog
+
+# Step 7 — check crash dump if kdump was configured
+ls /var/crash/                  # crash dump from the panic
+
+# Common causes: OOM, kernel panic, hardware failure, watchdog, power event
+```
+
+</details>
+
+### 🧠 The Diagnostic Framework — Apply to Every Scenario
+
+<details>
+<summary><b>What is your general framework when debugging any infrastructure problem?</b></summary>
+
+Structure your answer to every scenario with this framework:
+
+| Step | Question | Tools |
+|---|---|---|
+| 1. **Reach** | Can I access it? | `ping`, `ssh`, BMC/IPMI |
+| 2. **Scope** | How widespread is this? | Monitoring dashboard, alert history |
+| 3. **Metrics** | What do the numbers say? | `top`, `free`, `df`, `iostat`, `vmstat` |
+| 4. **Logs** | What do the logs say? | `journalctl`, `dmesg`, `BMC SEL` |
+| 5. **Hypothesis** | Hardware, firmware, or network? | `dmesg`, `ipmitool`, `ethtool` |
+| 6. **Confirm** | Test your hypothesis before acting | Don't restart things blindly |
+| 7. **Fix** | Apply the minimum change needed | With approval if production |
+| 8. **Verify** | Did the fix work? | Check the original symptom is gone |
+| 9. **Prevent** | Why did this happen? | Add monitoring, fix root cause |
+| 10. **Document** | Write it up | Runbook, post-mortem, knowledge base |
+
+**Key principles:**
+- **Observe before you touch** — gather data first, act second
+- **One change at a time** — multiple simultaneous changes make debugging impossible
+- **Communicate early** — tell the team what you know and what you're doing
+- **BMC first** — for bare metal issues, always start with out-of-band access
+- **Correlate timestamps** — check if the incident aligns with any recent changes
+
+</details>
 
 ### Fleet Operations & Scale
 
@@ -7562,3 +8461,4 @@ Not only this will tell you what is expected from you, it will also provide big 
 </details>
 
 ---
+
