@@ -4728,7 +4728,7 @@ Firmware corruption (especially BIOS/UEFI or BMC) is one of the most serious har
 
 
 <details>
-<summary><b>Scenario: A server stops responding. SSH is timing out. What do you do?</b></summary>
+<summary><b>Scenario: A server stops responding. SSH is timing out. What do you do? 🔥</b></summary>
 
 **Structured investigation:**
 
@@ -4763,7 +4763,7 @@ journalctl -k | grep -i 'oom\|killed\|panic'
 
 </details>
 <details>
-<summary><b>Scenario: A node is showing 100% CPU usage. How do you investigate?</b></summary>
+<summary><b>Scenario: A node is showing 100% CPU usage. How do you investigate? 🔥</b></summary>
 
 ```bash
 # Step 1 — identify the process
@@ -4796,7 +4796,7 @@ systemctl set-property <service>.service CPUQuota=80%
 
 </details>
 <details>
-<summary><b>Scenario: A server is throwing errors and you suspect disk space. How do you approach it?</b></summary>
+<summary><b>Scenario: A server is throwing errors and you suspect disk space. How do you approach it? 🔥</b></summary>
 
 ```bash
 # Step 1 — confirm which partition is full
@@ -4831,7 +4831,7 @@ find / -xdev -size +500M -ls 2>/dev/null
 
 </details>
 <details>
-<summary><b>Scenario: A service keeps crashing and you see OOM errors in the logs. What do you do?</b></summary>
+<summary><b>Scenario: A service keeps crashing and you see OOM errors in the logs. What do you do? 🔥</b></summary>
 
 ```bash
 # Step 1 — confirm OOM killer fired
@@ -4865,7 +4865,7 @@ systemctl set-property <service>.service MemoryMax=4G
 
 </details>
 <details>
-<summary><b>Scenario: How do you determine if an error is hardware, firmware, or network related?</b></summary>
+<summary><b>Scenario: How do you determine if an error is hardware, firmware, or network related? 🔥</b></summary>
 
 This is a diagnostic framework, not a single command. Work through each layer:
 
@@ -4975,7 +4975,7 @@ nvidia-smi --query-gpu=gpu_name,ecc.errors.corrected.volatile.total \
 
 </details>
 <details>
-<summary><b>Scenario: A server is extremely slow and you suspect disk I/O. How do you investigate?</b></summary>
+<summary><b>Scenario: A server is extremely slow and you suspect disk I/O. How do you investigate? 🔥</b></summary>
 
 ```bash
 # Step 1 — confirm I/O wait is high
@@ -5002,7 +5002,7 @@ dmesg | grep -i 'error\|I/O error\|sd[a-z]'
 
 </details>
 <details>
-<summary><b>Scenario: A server is not coming up after a reboot. How do you approach it?</b></summary>
+<summary><b>Scenario: A server is not coming up after a reboot. How do you approach it? 🔥</b></summary>
 
 ```bash
 # Step 1 — access via BMC before touching anything else
@@ -5087,7 +5087,7 @@ ethtool eth0 | grep -E 'Speed|Duplex'
 
 </details>
 <details>
-<summary><b>Scenario: A process is stuck and won't respond to kill -9. What's happening?</b></summary>
+<summary><b>Scenario: A process is stuck and won't respond to kill -9. What's happening? 🔥</b></summary>
 
 This is a D-state (uninterruptible sleep) process. It's waiting on I/O and **cannot be killed** until that I/O completes or the kernel times out.
 
@@ -5277,7 +5277,7 @@ openssl verify -CAfile /etc/ssl/certs/ca-certificates.crt cert.pem
 
 </details>
 <details>
-<summary><b>Scenario: A server rebooted unexpectedly. How do you find out why?</b></summary>
+<summary><b>Scenario: A server rebooted unexpectedly. How do you find out why? 🔥</b></summary>
 
 ```bash
 # Step 1 — when did it reboot?
@@ -5310,7 +5310,7 @@ ls /var/crash/                  # crash dump from the panic
 
 </details>
 <details>
-<summary><b>What is your general framework when debugging any infrastructure problem?</b></summary>
+<summary><b>What is your general framework when debugging any infrastructure problem? 🔥</b></summary>
 
 Structure your answer to every scenario with this framework:
 
@@ -5336,7 +5336,7 @@ Structure your answer to every scenario with this framework:
 
 </details>
 <details>
-<summary><b>You need to roll out a firmware update to 500 servers. How do you approach it?</b></summary>
+<summary><b>You need to roll out a firmware update to 500 servers. How do you approach it? 🔥</b></summary>
 
 * Never update all at once — canary first.
 * Update 1 server, validate, then a small batch, then roll out.
@@ -5347,7 +5347,7 @@ Structure your answer to every scenario with this framework:
 
 </details>
 <details>
-<summary><b>A new batch of 50 GPU servers has arrived at the data centre. Walk me through how you'd get them ready for customers.</b></summary>
+<summary><b>A new batch of 50 GPU servers has arrived at the data centre. Walk me through how you'd get them ready for customers. 🔥</b></summary>
 
 * Physical inspection first — damage, all components present.
 * Power on, check POST, access BMC.
@@ -5397,7 +5397,7 @@ Structure your answer to every scenario with this framework:
 
 </details>
 <details>
-<summary><b>It's 3am and you get paged that 10 nodes in the fleet have gone offline simultaneously. What's your first thought and action?</b></summary>
+<summary><b>It's 3am and you get paged that 10 nodes in the fleet have gone offline simultaneously. What's your first thought and action? 🔥</b></summary>
 
 * 10 nodes at once suggests a common cause, not individual failures.
 * Check if they're in the same rack (power issue?).
@@ -5409,7 +5409,7 @@ Structure your answer to every scenario with this framework:
 
 </details>
 <details>
-<summary><b>A customer reports their GPU workload is running 50% slower than expected. You have no alerts firing. How do you approach it?</b></summary>
+<summary><b>A customer reports their GPU workload is running 50% slower than expected. You have no alerts firing. How do you approach it? 🔥</b></summary>
 
 * First verify the claim — compare to baseline metrics.
 * Check GPU utilisation (`nvidia-smi`).
@@ -5422,7 +5422,7 @@ Structure your answer to every scenario with this framework:
 
 </details>
 <details>
-<summary><b>You're on call and receive two simultaneous alerts — one for a disk failure and one for high memory usage on a different server. How do you prioritise?</b></summary>
+<summary><b>You're on call and receive two simultaneous alerts — one for a disk failure and one for high memory usage on a different server. How do you prioritise? 🔥</b></summary>
 
 * Disk failure is more urgent due to the data loss risk.
 * High memory is degraded but not immediately catastrophic.
@@ -5514,7 +5514,7 @@ Structure your answer to every scenario with this framework:
 
 </details>
 <details>
-<summary><b>You solve a difficult hardware issue nobody has seen before. What do you do after fixing it?</b></summary>
+<summary><b>You solve a difficult hardware issue nobody has seen before. What do you do after fixing it? 🔥</b></summary>
 
 * Write it up immediately while it is fresh in your mind.
 * Document symptoms, investigation steps, root cause, and the fix.
@@ -5524,7 +5524,7 @@ Structure your answer to every scenario with this framework:
 
 </details>
 <details>
-<summary><b>You need to make a change to a production server that carries some risk. How do you approach it?</b></summary>
+<summary><b>You need to make a change to a production server that carries some risk. How do you approach it? 🔥</b></summary>
 
 * Get approval from relevant stakeholders.
 * Document exactly what you're going to do before doing it.
@@ -5558,7 +5558,7 @@ Structure your answer to every scenario with this framework:
 
 </details>
 <details>
-<summary><b>You are getting the first batch of a brand new GPU architecture that hasn't been fully tested yet. You're responsible for validation. How do you approach it?</b></summary>
+<summary><b>You are getting the first batch of a brand new GPU architecture that hasn't been fully tested yet. You're responsible for validation. How do you approach it? 🔥</b></summary>
 
 * Start with hardware detection — does the OS even see it?
 * Check that the firmware is the latest available.
